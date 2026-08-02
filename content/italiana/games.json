@@ -1,0 +1,47 @@
+[
+  {
+    "id": "ITA-M01",
+    "title": "Mi Repertorio de Ajedrez - ITA-M01",
+    "headers": {
+      "Event": "Mi Repertorio de Ajedrez - ITA-M01",
+      "Site": "Material didáctico",
+      "Date": "2026.07.26",
+      "Round": "1",
+      "White": "Modelo: construcción sólida",
+      "Black": "Modelo: centro abierto",
+      "Result": "*"
+    },
+    "commentCount": 6,
+    "pgn": "[Event \"Mi Repertorio de Ajedrez - ITA-M01\"]\n[Site \"Material didáctico\"]\n[Date \"2026.07.26\"]\n[Round \"1\"]\n[White \"Modelo: construcción sólida\"]\n[Black \"Modelo: centro abierto\"]\n[Result \"*\"]\n\n1. e4 {Ocupa el centro y abre líneas.} e5 2. Nf3 Nc6 3. Bc4 Bc5 4. O-O {Primero, el rey seguro.} Nf6 5. c3 {Prepara d4.} O-O 6. d4 {La ruptura temática.} exd4 7. cxd4 Bb6 8. Nc3 d6 9. Be3 Bg4 10. Re1 {Refuerza e4 y ocupa la columna central.} Re8 11. Qd2 Nxe4 12. Nxe4 Rxe4 13. Bxf7+ Kxf7 14. Ng5+ Kg8 15. Nxe4 {La táctica funciona porque las piezas están desarrolladas y el centro se ha abierto.} *"
+  },
+  {
+    "id": "ITA-M02",
+    "title": "Mi Repertorio de Ajedrez - ITA-M02",
+    "headers": {
+      "Event": "Mi Repertorio de Ajedrez - ITA-M02",
+      "Site": "Material didáctico",
+      "Date": "2026.07.26",
+      "Round": "2",
+      "White": "Modelo: ataque prematuro",
+      "Black": "Modelo: desarrollo con tiempos",
+      "Result": "*"
+    },
+    "commentCount": 4,
+    "pgn": "[Event \"Mi Repertorio de Ajedrez - ITA-M02\"]\n[Site \"Material didáctico\"]\n[Date \"2026.07.26\"]\n[Round \"2\"]\n[White \"Modelo: ataque prematuro\"]\n[Black \"Modelo: desarrollo con tiempos\"]\n[Result \"*\"]\n\n1. e4 e5 2. Nf3 Nc6 3. Bc4 Bc5 4. Qh5?! {La dama ataca f7, pero sale demasiado pronto.} g6 5. Qf3 Nf6 6. c3 O-O 7. d3 d5 {El negro abre el centro porque está mejor desarrollado.} 8. exd5 e4! {Ataque con ganancia de tiempo.} 9. dxe4 Nxe4 10. O-O Ne5 11. Qxe4 Re8 {La columna e y la coordinación negra compensan ampliamente el material temporal.} *"
+  },
+  {
+    "id": "ITA-M03",
+    "title": "Mi Repertorio de Ajedrez - ITA-M03",
+    "headers": {
+      "Event": "Mi Repertorio de Ajedrez - ITA-M03",
+      "Site": "Material didáctico",
+      "Date": "2026.07.26",
+      "Round": "3",
+      "White": "Modelo: centro cerrado",
+      "Black": "Modelo: ruptura liberadora",
+      "Result": "*"
+    },
+    "commentCount": 4,
+    "pgn": "[Event \"Mi Repertorio de Ajedrez - ITA-M03\"]\n[Site \"Material didáctico\"]\n[Date \"2026.07.26\"]\n[Round \"3\"]\n[White \"Modelo: centro cerrado\"]\n[Black \"Modelo: ruptura liberadora\"]\n[Result \"*\"]\n\n1. e4 e5 2. Nf3 Nc6 3. Bc4 Bc5 4. d3 Nf6 5. O-O d6 6. c3 {Mantiene la opción de d4.} a6 7. Bb3 Ba7 8. Re1 O-O 9. h3 h6 10. Nbd2 {Comienza la ruta d2-f1-g3.} Re8 11. Nf1 Be6 12. Ng3 Qd7 13. Bc2 Rad8 14. d4 d5 {El plan negro obliga a recalcular.} 15. exd5 Bxd5 16. Nxe5 Nxe5 17. Rxe5 {La partida ha pasado de la maniobra al juego abierto.} *"
+  }
+]

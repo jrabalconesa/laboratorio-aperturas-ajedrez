@@ -1,0 +1,22 @@
+{
+  "id": "italiana",
+  "code": "ITA",
+  "manualNumber": 1,
+  "title": "Apertura Italiana",
+  "shortTitle": "La Italiana",
+  "version": "2",
+  "accent": "#bc3327",
+  "storageNamespace": "repertorio:italiana:v1",
+  "interactiveAvailable": true,
+  "status": "available",
+  "inventory": {
+    "position": 12,
+    "structure": 6,
+    "game_stop": 15,
+    "exercise": 40
+  },
+  "gameCount": 6,
+  "coreGameCount": 3,
+  "expansionGameCount": 3,
+  "atlasCount": 6
+}

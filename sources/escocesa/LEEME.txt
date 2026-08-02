@@ -1,0 +1,41 @@
+MI REPERTORIO DE AJEDREZ · CUADERNO 3 · APERTURA ESCOCESA
+PAQUETE DIGITAL v1.4 · EQUIVALENCIA VISUAL Y PEDAGÓGICA
+
+CONTENIDO
+1. Mi_Repertorio_de_Ajedrez_Cuaderno_3_Apertura_Escocesa_v1.4_Final.docx
+   Manual editable de 79 páginas A4. La edición v1.4 amplía los tableros, descomprime las fichas y distribuye los ejercicios con mayor espacio de lectura.
+
+2. Mi_Repertorio_de_Ajedrez_Cuaderno_3_Apertura_Escocesa_v1.4_Final.pdf
+   Versión revisada visualmente página por página para lectura e impresión.
+
+3. partidas_modelo_ESC.pgn
+   Tres partidas didácticas completas, importables en Lichess, con comentarios individuales de ambos bandos y las correcciones tácticas de ESC-M02.
+
+4. posiciones_ESC.csv
+   73 registros: 12 fichas, 6 estructuras, 15 paradas y 40 ejercicios. Incluye FEN, secuencia UCI, bando que mueve, comentarios bilaterales y continuidad didáctica.
+
+CAMBIOS PRINCIPALES DE LA v1.4
+- 79 páginas A4 y 33 diagramas distintos.
+- Diagramas principales ampliados y tableros de fichas y ejercicios más legibles.
+- Dos ejercicios por página como norma; únicamente los bloques finales de repaso agrupan tres.
+- Las 12 fichas ESC-P01 a ESC-P12 disponen de seis páginas propias, una por pareja.
+- Las soluciones razonadas se presentan con tipografía regular, mayor interlineado y recuadros diferenciados.
+- Índice paginado actualizado a la nueva distribución.
+- Se mantienen sin cambios las secuencias, FEN y partidas legalmente validadas de la v1.3.
+
+USO EN LICHESS
+- Estudiar > Nuevo estudio > Añadir capítulos > Importar PGN.
+- Para una posición: Herramientas > Editor de tablero > pegar el FEN del CSV.
+- Antes de continuar una secuencia, explica la intención de ambos bandos y compara al menos dos candidatas.
+
+RUTINA RECOMENDADA
+1. Lee la explicación narrativa.
+2. Reproduce la posición en el tablero.
+3. Identifica la amenaza o ruptura del rival.
+4. Formula dos candidatas concretas.
+5. Calcula la respuesta más fuerte.
+6. Compara con la solución.
+7. Anota qué cambió en centro, estructura, actividad y seguridad del rey.
+
+CRITERIO DE COHERENCIA
+Las secuencias del CSV, las partidas PGN, los diagramas y los comentarios del manual comparten las mismas posiciones y planes. La v1.4 modifica exclusivamente la presentación editorial y conserva los campos técnicos validados.

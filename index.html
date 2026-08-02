@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#17201c">
+  <title>Laboratorio de Aperturas de Ajedrez</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+  <link rel="stylesheet" href="styles.css">
+  <script src="content/catalog.js"></script>
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#/"><img class="brand-mark" src="assets/app-icon-192.png" alt="" width="46" height="46"><span><strong>Laboratorio de Aperturas</strong><small>Mi Repertorio de Ajedrez</small></span></a>
+    <p><span id="availableCount">3</span> cuadernos integrados</p>
+  </header>
+  <main>
+    <section class="hero">
+      <div><p class="eyebrow">COLECCIÓN INTERACTIVA</p><h1>Comprende la apertura.<br><em>Decide sobre el tablero.</em></h1><p>Una biblioteca común para estudiar posiciones clave, estructuras, partidas modelo y ejercicios.</p></div>
+      <div class="hero-board" aria-hidden="true"><span>♞</span><p>12 posiciones<br>40 ejercicios<br>3 partidas</p></div>
+    </section>
+    <section class="library">
+      <div class="section-heading"><div><p class="eyebrow">TU BIBLIOTECA</p><h2>Elige una apertura</h2></div><p>Los próximos cuadernos aparecerán aquí utilizando el mismo motor.</p></div>
+      <div id="openingGrid" class="opening-grid" aria-live="polite"></div>
+    </section>
+    <section id="openingDetail" class="opening-detail" hidden aria-live="polite"></section>
+  </main>
+  <footer>Laboratorio de Aperturas de Ajedrez · Colección en desarrollo</footer>
+</body>
+</html>

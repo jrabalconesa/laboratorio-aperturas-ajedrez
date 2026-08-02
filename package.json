@@ -1,0 +1,16 @@
+{
+    "name":  "laboratorio-aperturas-ajedrez",
+    "version":  "0.1.0",
+    "private":  true,
+    "type":  "module",
+    "scripts":  {
+                    "start":  "node server.cjs",
+                    "build:content":  "node scripts/build-italiana-source.mjs \u0026\u0026 node scripts/build-expansions.mjs \u0026\u0026 node scripts/build-content.mjs",
+                    "validate:content":  "node scripts/build-expansions.mjs \u0026\u0026 node scripts/build-content.mjs --check",
+                    "build:expansions":  "node scripts/build-expansions.mjs",
+                    "build":  "node scripts/build-italiana-source.mjs \u0026\u0026 node scripts/build-expansions.mjs \u0026\u0026 node scripts/build-content.mjs \u0026\u0026 node scripts/build-site.mjs"
+                },
+    "devDependencies":  {
+                            "chess.js":  "^1.4.0"
+                        }
+}

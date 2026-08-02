@@ -1,0 +1,156 @@
+[Event "Mi Repertorio de Ajedrez - ESC-M01"]
+[Site "Partida didáctica"]
+[Date "2026.08.01"]
+[Round "1"]
+[White "Blancas - repertorio Escocesa"]
+[Black "Negras - estructura 4...Cf6"]
+[Result "*"]
+[ECO "C45"]
+[Opening "Scotch Game"]
+[Variation "Schmidt structure with 5.Nxc6"]
+[Annotator "Mi Repertorio de Ajedrez"]
+[Edition "v1.3 - ampliación pedagógica"]
+
+1. e4 {Ocupa e4, abre la diagonal del alfil f1 y reserva d4 como ruptura inmediata.}
+e5 {Responde en el centro y crea una posición simétrica en la que el tiempo de desarrollo será decisivo.}
+2. Nf3 {Desarrolla con ataque sobre e5 y aproxima el enroque.}
+Nc6 {Defiende e5 mientras controla d4, precisamente la casilla que las blancas quieren ocupar.}
+3. d4 {Rompe antes de mover el alfil: obliga a las negras a aclarar la tensión central.}
+exd4 {Captura en d4 para que las blancas gasten un tiempo en recuperar y para eliminar el dúo e4-d4.}
+4. Nxd4 {El caballo recupera y queda activo en el centro; la dama permanece protegida en d1.}
+Nf6 {Ataca e4, desarrolla una pieza y prepara ...d5 sin exponer la dama.}
+5. Nxc6 {Elimina al defensor de e5 y crea una estructura asimétrica que será el tema de la partida.}
+bxc6 {Recaptura con el peón b: acepta c6-c7 doblados, pero abre la columna b y conserva la pareja de alfiles.}
+6. Bd3 {Coloca el alfil en una diagonal útil, vigila h7 y facilita O-O.}
+d5 {Golpea el centro antes de que las blancas terminen el desarrollo; también libera el alfil c8.}
+7. exd5 {Decide la tensión y evita que ...dxe4 gane espacio con tiempo.}
+cxd5 {El peón c6 recaptura en d5: obtiene espacio y una casilla de apoyo, aunque se convierte en objetivo estable.}
+8. O-O {Asegura el rey antes de aumentar la presión sobre d5.}
+Be7 {Desarrolla el alfil y prepara el enroque; evita que la torre blanca encuentre al rey en e8.}
+9. Re1 {La torre ocupa e1, sostiene e4 y mira al rey negro mientras la columna siga abierta.}
+O-O {Enroca a tiempo. Desde ahora las negras pueden jugar ...c5 sin temer un golpe inmediato contra e8.}
+10. Nd2 {Desarrolla la última pieza menor hacia una ruta flexible c4-f3.}
+c5 {Ataca la base del centro y prepara ...d4; no defiende pasivamente el peón d5.}
+11. b3 {Prepara Ab2, desde donde el alfil presionará d4 y e5.}
+Re8 {La torre se coloca frente a e4 y deja f8 libre para reagrupar el alfil.}
+12. Bb2 {Activa el alfil largo contra d4 y g7; la jugada da sentido al avance b3.}
+Be6 {Desarrolla con tempo estratégico: sostiene d5 y disputa c4.}
+13. Qf3 {La dama añade presión sobre d5 y h7 sin quedar expuesta a ...Ag4.}
+Rc8 {La torre ocupa la columna semiabierta c, preparando ...d4 con apoyo lateral.}
+14. Rad1 {Conecta las torres y refuerza d4; la torre a1 encuentra una columna real.}
+d4 {Avanza el peón para ganar espacio y expulsar piezas blancas de las casillas centrales.}
+15. Nc4 {El caballo entra en c4, ataca d6/e5 y bloquea el avance del peón.}
+Bd5 {El alfil se centraliza, protege e4 y obliga a la dama blanca a elegir una casilla estable.}
+16. Qg3 {La dama conserva presión sobre c7 y g7, y evita quedar encerrada por ...Ae4.}
+Bf8 {El alfil retrocede a f8 para sostener g7 y dejar e7 libre a la torre o dama.}
+17. Bc1 {El alfil se repliega a c1 para conservarse y preparar Af4 o Ag5; renuncia momentáneamente a presionar d4, que bloquea la diagonal b2-g7.}
+Ne4 {El caballo salta a e4, usando la casilla creada por el avance ...d4 y atacando g3/c3.}
+18. Bxe4 {Cambia el caballo central antes de que consolide la presión; el alfil d3 cumple una misión concreta.}
+Rxe4 {La torre recaptura con actividad y penetra en la cuarta fila, amenazando capturas sobre c4.}
+19. Rxe4 {Elimina la torre invasora y reduce el contrajuego negro.}
+Bxe4 {El alfil recupera en e4, conserva una pieza activa y deja a las negras con pareja de alfiles.}
+20. Re1 {La última torre vuelve a e1, ataca el alfil e4 y mantiene un medio juego equilibrado con planes comprensibles.}
+*
+
+[Event "Mi Repertorio de Ajedrez - ESC-M02"]
+[Site "Partida didáctica"]
+[Date "2026.08.01"]
+[Round "2"]
+[White "Blancas - repertorio Escocesa"]
+[Black "Negras - 4...Qh4?!"]
+[Result "*"]
+[ECO "C45"]
+[Opening "Scotch Game"]
+[Variation "Early queen sortie"]
+[Annotator "Mi Repertorio de Ajedrez"]
+[Edition "v1.3 - ampliación pedagógica"]
+
+1. e4 {Ocupa el centro y abre líneas; en una línea táctica, cada tiempo de desarrollo contará.}
+e5 {Acepta el reto central y mantiene la estructura clásica.} 2. Nf3 {Ataca e5 mientras prepara el enroque.}
+Nc6 {Defiende e5 y controla d4.}
+3. d4 {Abre el centro de inmediato para impedir que las negras jueguen un esquema cómodo.}
+exd4 {Captura y fuerza al caballo a invertir un segundo movimiento.}
+4. Nxd4 {Recupera con el caballo y deja la dama protegida.}
+Qh4 {La dama sale a h4 buscando e4 y un jaque. Parece activa, pero retrasa el desarrollo y deja al rey sin cobertura.}
+5. Nb5 {El caballo salta a b5 y amenaza Nxc7+, un tenedor de rey y torre a8. La idea aprovecha el retraso de desarrollo negro.}
+Qxe4+ {La dama toma e4 con jaque y gana un peón, pero obliga al rey negro a resolver amenazas sin piezas desarrolladas.}
+6. Be2 {Interpone el alfil, desarrolla y permite enrocar en la jugada siguiente.}
+Kd8 {El rey va a d8 para defender c7 y neutralizar el tenedor inmediato Nxc7+. A cambio pierde el enroque y ocupa una casilla que dificulta el desarrollo.}
+7. O-O {Enroca y pone la torre f1 en juego con tempo sobre la columna abierta.}
+a6 {Crea una casilla de escape en a7 y pregunta al caballo b5, aunque sigue sin sacar piezas del flanco de rey.}
+8. N1c3 {Desarrolla el segundo caballo y aumenta la presión sobre c7/d5.}
+Qg6 {La dama se retira a g6 y ataca c2 por la diagonal g6-f5-e4-d3-c2, pero continúa expuesta a jugadas de desarrollo con tiempo.}
+9. Nxc7 {El caballo captura c7 y ataca la torre a8. No da jaque: el rey de d8 defiende c7 y puede recapturar, aunque quedará expuesto.}
+Kxc7 {El rey recaptura porque perder la torre a8 sería peor; queda expuesto en c7.}
+10. Nd5+ {El otro caballo entra en d5 con jaque y coordina con el alfil e2.}
+Kd8 {El rey retrocede a d8; cada desplazamiento sustituye una jugada de desarrollo.}
+11. Be3 {El alfil ocupa e3, controla b6-c5-d4 y prepara un jaque en b6.}
+Nf6 {Por fin desarrolla el caballo y protege d5/e4, pero la iniciativa blanca ya es concreta.}
+12. Bb6+ {El alfil da jaque desde b6 y fija al rey en el centro.}
+Ke8 {El rey vuelve a e8; la torre h8 y el alfil f8 siguen sin jugar.}
+13. Nc7+ {El caballo salta a c7 con nuevo jaque y ataca a8.}
+Ke7 {El rey elige e7, evitando d8, pero bloquea el alfil f8 y la dama.}
+14. Nxa8 {El caballo captura la torre a8. La ganancia material es consecuencia del desarrollo, no de una trampa memorizada.}
+d5 {Juega ...d5 para abrir líneas y tratar de atrapar al caballo a8.}
+15. Re1 {La torre centraliza en e1 y aprovecha la posición del rey.}
+Be6 {El alfil sale a e6, desarrolla con ganancia de coordinación, sostiene d5 y limita la presión de la torre sobre la columna e.}
+16. Nc7 {El caballo regresa a c7, escapa del borde y ataca el alfil e6, que sostiene el centro negro.}
+Kd7 {El rey va a d7 para sostener e6 y conectar las piezas restantes.}
+17. Nxe6 {El caballo captura e6 sin dar jaque: elimina el alfil que sostiene d5 y obliga al peón f a recapturar, debilitando e6 y la cobertura del rey.}
+fxe6 {El peón f recaptura: repara el material, pero deja e6 débil y el rey sin escudo.}
+18. c4 {c4 ataca d5 y abre la dama a4-e8; las blancas golpean antes de que negras coordinen.}
+d4 {El peón avanza a d4 buscando espacio y un tempo sobre el alfil e3.}
+19. Bxd4 {El alfil captura d4 y elimina el peón pasado que sostenía la iniciativa negra.}
+Nxd4 {El caballo c6 recaptura, activándose y atacando e2/c2.}
+20. Qxd4+ {La dama recupera en d4 con jaque; las blancas consolidan la ventaja material y mantienen al rey negro expuesto.}
+*
+
+[Event "Mi Repertorio de Ajedrez - ESC-M03"]
+[Site "Partida didáctica"]
+[Date "2026.08.01"]
+[Round "3"]
+[White "Blancas - repertorio Escocesa"]
+[Black "Negras - 4...Bb4+"]
+[Result "*"]
+[ECO "C45"]
+[Opening "Scotch Game"]
+[Variation "Malaniuk-style check"]
+[Annotator "Mi Repertorio de Ajedrez"]
+[Edition "v1.3 - ampliación pedagógica"]
+
+1. e4 {Ocupa e4 y prepara el golpe d4.} e5 {Contesta de forma simétrica y abre el alfil f8.}
+2. Nf3 {Desarrolla con amenaza sobre e5.} Nc6 {Defiende e5 y controla d4.}
+3. d4 {Rompe el centro antes de elegir la casilla del alfil.} exd4 {Captura para eliminar el dúo central blanco.}
+4. Nxd4 {El caballo recupera y ocupa una casilla activa.}
+Bb4+ {El alfil da jaque en b4. Busca obligar c3 y desviar al caballo b1 de su casilla natural.}
+5. c3 {c3 bloquea el jaque, sostiene d4 y pregunta al alfil dónde será útil.}
+Be7 {El alfil vuelve a e7: ha provocado c3, pero ha gastado dos tiempos.}
+6. Nxc6 {El caballo cambia en c6 para crear una estructura que pueda atacarse en el medio juego.}
+bxc6 {El peón b recaptura y abre la columna b; las negras aceptan c6-c7 doblados.}
+7. Bd3 {El alfil desarrolla a d3, apunta a h7 y prepara el enroque.}
+d5 {La ruptura ...d5 libera el alfil c8 y exige una decisión al peón e4.}
+8. O-O {El rey queda seguro; las blancas conservan la tensión central.}
+Nf6 {El caballo desarrolla hacia f6 y ataca e4.}
+9. e5 {e5 gana espacio, expulsa al caballo y fija la estructura c6-d5.}
+Nd7 {El caballo retrocede a d7, desde donde prepara ...c5 o ...f6.}
+10. Re1 {La torre llega a e1 para sostener e5 y usar la columna si el centro se abre.}
+Nc5 {El caballo se activa en c5, atacando d3 y e4.}
+11. Bc2 {El alfil se conserva en c2, mantiene la diagonal hacia h7 y evita el cambio en d3.}
+O-O {Las negras enrocan antes de abrir la columna f.} 12. Nd2 {El caballo b1 desarrolla a d2, apoyando f3 y e4.}
+f6 {La ruptura ...f6 ataca la base e5 y busca abrir la torre f8.}
+13. Nf3 {El caballo mejora a f3, añade defensa a e5 y prepara saltos g5/e5.}
+Bg4 {El alfil clava el caballo respecto de la dama y aumenta la presión sobre e2.}
+14. h3 {h3 pregunta al alfil y evita que la clavada se mantenga sin decisión.}
+Bh5 {El alfil conserva la diagonal y prepara ...Ag6 tras una captura en f6.}
+15. b4 {b4 gana espacio y expulsa el caballo c5, pero se juega solo porque el centro está estable.}
+Ne6 {El caballo vuelve a e6 y apunta a f4/d4/c5.}
+16. exf6 {Las blancas capturan en f6 para abrir la columna y obligar a las negras a definir qué pieza recaptura.}
+Rxf6 {La torre recaptura, gana actividad en f6 y mantiene el peón g intacto.}
+17. Qd3 {La dama sale a d3, ataca h7 y coordina con el alfil c2.}
+Bg6 {El alfil retrocede a g6, corta la diagonal c2-h7 y ataca d3.}
+18. Qe2 {La dama va a e2, protege e5 y mantiene la opción de Tad1.}
+Bd6 {El alfil se coloca en d6, desafía h2 y completa la coordinación.}
+19. Bxg6 {El alfil cambia en g6 para reducir la actividad de la torre f6.}
+Rxg6 {La torre recaptura y queda activa en g6, pero la pareja de alfiles desaparece.}
+20. Be3 {Ae3 completa el desarrollo y conecta la torre a1. El medio juego gira ahora alrededor de c6, e5 y la columna g.}
+*

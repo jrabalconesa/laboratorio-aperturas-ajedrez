@@ -1,0 +1,22 @@
+{
+  "id": "escocesa",
+  "code": "ESC",
+  "manualNumber": 3,
+  "title": "Apertura Escocesa",
+  "shortTitle": "La Escocesa",
+  "version": "1.4",
+  "accent": "#496b5c",
+  "storageNamespace": "repertorio:escocesa:v1",
+  "interactiveAvailable": false,
+  "status": "available",
+  "inventory": {
+    "position": 12,
+    "structure": 6,
+    "game_stop": 15,
+    "exercise": 40
+  },
+  "gameCount": 6,
+  "coreGameCount": 3,
+  "expansionGameCount": 3,
+  "atlasCount": 6
+}

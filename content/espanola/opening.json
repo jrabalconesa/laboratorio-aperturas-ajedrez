@@ -1,0 +1,22 @@
+{
+  "id": "espanola",
+  "code": "ESP",
+  "manualNumber": 2,
+  "title": "Apertura Española o Ruy López",
+  "shortTitle": "La Española",
+  "version": "2.3",
+  "accent": "#8f4f3a",
+  "storageNamespace": "repertorio:espanola:v1",
+  "interactiveAvailable": false,
+  "status": "available",
+  "inventory": {
+    "position": 12,
+    "structure": 6,
+    "game_stop": 15,
+    "exercise": 40
+  },
+  "gameCount": 6,
+  "coreGameCount": 3,
+  "expansionGameCount": 3,
+  "atlasCount": 6
+}
