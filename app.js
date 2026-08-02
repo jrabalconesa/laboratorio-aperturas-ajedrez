@@ -15,7 +15,7 @@ async function loadCatalog() {
   document.querySelector("#openingGrid").innerHTML = state.catalog.map((opening) => `
     <article class="opening-card" style="--accent:${opening.accent}">
       <div class="card-topline"><span>CUADERNO ${String(opening.manualNumber).padStart(2, "0")}</span><span>v${escapeHtml(opening.version)}</span></div>
-      <div><p class="opening-code">${escapeHtml(opening.code)}</p><h3>${escapeHtml(opening.shortTitle)}</h3><p>${escapeHtml(opening.title)}</p></div>
+      <div><p class="opening-code">${escapeHtml(opening.code)}</p><h3><a class="opening-title-link" href="openings/${opening.id}/index.html">${escapeHtml(opening.shortTitle)}</a></h3><p>${escapeHtml(opening.title)}</p></div>
       <div class="card-summary"><span><strong>${opening.inventory.position}</strong> posiciones</span><span><strong>${opening.gameCount}</strong> partidas</span></div>
       <a href="#/aperturas/${opening.id}">Abrir laboratorio <span>→</span></a>
     </article>`).join("");
