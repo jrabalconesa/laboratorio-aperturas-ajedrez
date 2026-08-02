@@ -19,8 +19,16 @@ for (const file of ["index.html", "app.js", "styles.css"]) {
   fs.copyFileSync(path.join(root, file), path.join(client, file));
 }
 
+const localOnlyFiles = new Set([
+  path.join(root, "openings", "italiana", "partidas_modelo_ITA.pgn"),
+  path.join(root, "openings", "italiana", "posiciones_ITA.csv"),
+]);
+
 for (const directory of ["assets", "content", "openings"]) {
-  fs.cpSync(path.join(root, directory), path.join(client, directory), { recursive: true });
+  fs.cpSync(path.join(root, directory), path.join(client, directory), {
+    recursive: true,
+    filter: (source) => !localOnlyFiles.has(source),
+  });
 }
 
 const worker = `export default {
