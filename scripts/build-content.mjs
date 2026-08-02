@@ -263,7 +263,7 @@ for (const opening of openings) {
     version: opening.version,
     accent: opening.accent,
     storageNamespace: `repertorio:${opening.id}:v1`,
-    interactiveAvailable: opening.id === "italiana",
+    interactiveAvailable: true,
     status: validation.errors.length ? "invalid" : validation.warnings.length ? "partial" : "available",
     inventory: validation.counts,
     gameCount: validation.gameCount + expansion.games.length,

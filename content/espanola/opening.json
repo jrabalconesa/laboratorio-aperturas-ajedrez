@@ -7,7 +7,7 @@
   "version": "2.3",
   "accent": "#8f4f3a",
   "storageNamespace": "repertorio:espanola:v1",
-  "interactiveAvailable": false,
+  "interactiveAvailable": true,
   "status": "available",
   "inventory": {
     "position": 12,

@@ -30,7 +30,7 @@ window.OPENING_CATALOG = [
     "version": "2.3",
     "accent": "#8f4f3a",
     "storageNamespace": "repertorio:espanola:v1",
-    "interactiveAvailable": false,
+    "interactiveAvailable": true,
     "status": "available",
     "inventory": {
       "position": 12,
@@ -52,7 +52,7 @@ window.OPENING_CATALOG = [
     "version": "1.4",
     "accent": "#496b5c",
     "storageNamespace": "repertorio:escocesa:v1",
-    "interactiveAvailable": false,
+    "interactiveAvailable": true,
     "status": "available",
     "inventory": {
       "position": 12,
