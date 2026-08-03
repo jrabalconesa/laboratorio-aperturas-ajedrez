@@ -166,7 +166,7 @@ for (const [id, config] of Object.entries(configurations)) {
   fs.cpSync(path.join(sourceLab, "assets"), path.join(target, "assets"), { recursive: true, force: true });
   fs.copyFileSync(path.join(sourceLab, "styles.css"), path.join(target, "styles.css"));
   const serviceWorker = fs.readFileSync(path.join(sourceLab, "service-worker.js"), "utf8")
-    .replace("la-italiana-v14", `laboratorio-${id}-v4`)
+    .replace("la-italiana-v15", `laboratorio-${id}-v5`)
     .replace(/\s*"\.\/expansion-games\.js",/, "");
   fs.writeFileSync(path.join(target, "service-worker.js"), serviceWorker, "utf8");
   fs.writeFileSync(path.join(target, "index.html"), buildHtml(id, config, structures), "utf8");

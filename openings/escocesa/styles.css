@@ -826,3 +826,45 @@ footer { min-height: 64px; padding: 0 6vw; border-top: 1px solid var(--line); di
   #plan .game-checklist { margin-top: 8px; padding: 12px; }
   #plan .game-checklist ul { grid-template-columns: 1fr; gap: 5px; margin-top: 8px; }
 }
+/* RESPONSIVE USABILITY AUDIT */
+.collection-back { align-items: center; display: flex; min-height: 44px; }
+
+@media (max-width: 900px) {
+  .game-tabs {
+    max-width: 100%;
+    overflow-x: auto;
+    scrollbar-width: none;
+    width: 100%;
+  }
+  .game-tabs::-webkit-scrollbar { display: none; }
+  .topbar .nav-link {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    min-height: 44px;
+  }
+  .button, .icon-button, .mobile-disclosure,
+  .game-tab, .lesson-list-button, .variant-list-button,
+  .exercise-list-button, .collection-back {
+    min-height: 44px;
+  }
+}
+
+@media (max-width: 580px) {
+  body { padding-bottom: 58px; }
+  .topbar .nav-link { padding-top: 8px; padding-bottom: 8px; }
+  .collection-back { align-items: center; bottom: 9px; display: flex; left: 9px; }
+  #inicio .hero-actions .button,
+  #aprende #completeLesson,
+  #practica .practice-copy .button,
+  #ejercicios .exercise-copy .button {
+    min-height: 44px;
+  }
+  #aprende .board-controls .icon-button,
+  #variantes .board-controls .icon-button,
+  #partidas .board-controls .icon-button {
+    flex-basis: 40px;
+    height: 40px;
+    width: 40px;
+  }
+}

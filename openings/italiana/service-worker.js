@@ -1,8 +1,8 @@
-const CACHE_NAME = "la-italiana-v14";
+const CACHE_NAME = "la-italiana-v15";
 const APP_SHELL = [
   "./",
   "./index.html",
-  "./styles.css?v=20260803-flag-colors-1",
+  "./styles.css?v=20260803-responsive-audit-1",
   "./app.js?v=20260803-flag-colors-1",
   "./expansion-games.js",
   "./exercise-data.js",

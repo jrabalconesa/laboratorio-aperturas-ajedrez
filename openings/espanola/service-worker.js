@@ -1,8 +1,8 @@
-const CACHE_NAME = "laboratorio-espanola-v4";
+const CACHE_NAME = "laboratorio-espanola-v5";
 const APP_SHELL = [
   "./",
   "./index.html",
-  "./styles.css?v=20260803-flag-colors-1",
+  "./styles.css?v=20260803-responsive-audit-1",
   "./app.js?v=20260803-flag-colors-1",
   "./exercise-data.js",
   "./manifest.webmanifest",
