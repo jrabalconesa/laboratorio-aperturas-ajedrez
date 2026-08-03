@@ -37,3 +37,33 @@
   .module-note{font-size:13px;line-height:1.4;margin-top:10px;padding:9px 12px}
   footer{padding:13px}
 }
+/* OPENING DETAIL PREVIEW AND COMPLETION QUOTE */
+.opening-header { gap: 32px; }
+.opening-preview { flex: 0 0 118px; margin: 0; width: 118px; }
+.opening-mini-board { aspect-ratio: 1; border: 1px solid var(--ink); box-shadow: 7px 8px 0 color-mix(in srgb, var(--accent) 24%, transparent); display: grid; grid-template-columns: repeat(8, 1fr); overflow: hidden; transform: rotate(1deg); width: 118px; }
+.opening-mini-square { align-items: center; display: flex; justify-content: center; min-height: 0; min-width: 0; position: relative; }
+.opening-mini-square.light { background: #d8d2c0; }
+.opening-mini-square.dark { background: #77795c; }
+.opening-mini-square.last-move::after { border: 2px solid var(--accent); content: ""; inset: 8%; position: absolute; }
+.opening-mini-square i { font-family: "Segoe UI Symbol", "Arial Unicode MS", sans-serif; font-size: 13px; font-style: normal; line-height: 1; position: relative; z-index: 1; }
+.opening-mini-square i.white { color: #f5f1e5; text-shadow: 0 0 1px #171713, 1px 1px 0 #171713; }
+.opening-mini-square i.black { color: #171713; }
+.opening-preview figcaption { display: grid; gap: 2px; justify-items: end; margin-top: 8px; white-space: nowrap; }
+.opening-preview figcaption strong { color: var(--accent); font-family: Georgia, serif; font-size: 19px; font-weight: 500; }
+.opening-preview figcaption span { color: var(--muted); font-size: 8px; letter-spacing: .02em; }
+.opening-code-large { color: var(--accent); font-family: Georgia, serif; font-size: 38px; }
+.opening-quote { align-items: center; background: color-mix(in srgb, var(--accent) 8%, var(--surface)); border-left: 4px solid var(--accent); display: flex; gap: 24px; justify-content: space-between; margin: 10px 0 0; padding: 11px 14px; }
+.opening-quote p { font-family: Georgia, serif; font-size: 15px; line-height: 1.35; margin: 0; }
+.opening-quote cite { color: var(--accent); flex: 0 0 auto; font-size: 11px; font-style: normal; font-weight: 700; letter-spacing: .06em; }
+.module-note.ready { background: color-mix(in srgb, var(--accent) 8%, var(--surface)); border-color: var(--accent); }
+
+@media (max-width: 900px) {
+  .opening-preview { flex-basis: 108px; width: 108px; }
+  .opening-mini-board { width: 108px; }
+  .opening-preview figcaption { gap: 1px; }
+}
+
+@media (max-width: 560px) {
+  .opening-preview { display: none; }
+  .opening-quote { align-items: flex-start; display: grid; gap: 7px; }
+}

@@ -6,6 +6,18 @@
   "shortTitle": "La Española",
   "version": "2.3",
   "accent": "#8f4f3a",
+  "preview": {
+    "fen": "r1bqkbnr/pppp1ppp/2n5/1B2p3/4P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 3 3",
+    "line": "1.e4 e5 2.Cf3 Cc6 3.Ab5",
+    "lastMove": [
+      "f1",
+      "b5"
+    ]
+  },
+  "quote": {
+    "text": "El ajedrez, como el amor, como la música, tiene el poder de hacer felices a las personas.",
+    "author": "Siegbert Tarrasch"
+  },
   "storageNamespace": "repertorio:espanola:v1",
   "interactiveAvailable": true,
   "status": "available",

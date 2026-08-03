@@ -7,6 +7,18 @@
     "shortTitle": "La Italiana",
     "version": "2",
     "accent": "#bc3327",
+    "preview": {
+      "fen": "r1bqkbnr/pppp1ppp/2n5/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 3 3",
+      "line": "1.e4 e5 2.Cf3 Cc6 3.Ac4",
+      "lastMove": [
+        "f1",
+        "c4"
+      ]
+    },
+    "quote": {
+      "text": "El ajedrez, como el amor, como la música, tiene el poder de hacer felices a las personas.",
+      "author": "Siegbert Tarrasch"
+    },
     "storageNamespace": "repertorio:italiana:v1",
     "interactiveAvailable": true,
     "status": "available",
@@ -29,6 +41,18 @@
     "shortTitle": "La Española",
     "version": "2.3",
     "accent": "#8f4f3a",
+    "preview": {
+      "fen": "r1bqkbnr/pppp1ppp/2n5/1B2p3/4P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 3 3",
+      "line": "1.e4 e5 2.Cf3 Cc6 3.Ab5",
+      "lastMove": [
+        "f1",
+        "b5"
+      ]
+    },
+    "quote": {
+      "text": "El ajedrez, como el amor, como la música, tiene el poder de hacer felices a las personas.",
+      "author": "Siegbert Tarrasch"
+    },
     "storageNamespace": "repertorio:espanola:v1",
     "interactiveAvailable": true,
     "status": "available",
@@ -51,6 +75,18 @@
     "shortTitle": "La Escocesa",
     "version": "1.4",
     "accent": "#496b5c",
+    "preview": {
+      "fen": "r1bqkbnr/pppp1ppp/2n5/4p3/3PP3/5N2/PPP2PPP/RNBQKB1R b KQkq d3 0 3",
+      "line": "1.e4 e5 2.Cf3 Cc6 3.d4",
+      "lastMove": [
+        "d2",
+        "d4"
+      ]
+    },
+    "quote": {
+      "text": "El ajedrez, como el amor, como la música, tiene el poder de hacer felices a las personas.",
+      "author": "Siegbert Tarrasch"
+    },
     "storageNamespace": "repertorio:escocesa:v1",
     "interactiveAvailable": true,
     "status": "available",

@@ -6,6 +6,18 @@
   "shortTitle": "La Italiana",
   "version": "2",
   "accent": "#bc3327",
+  "preview": {
+    "fen": "r1bqkbnr/pppp1ppp/2n5/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 3 3",
+    "line": "1.e4 e5 2.Cf3 Cc6 3.Ac4",
+    "lastMove": [
+      "f1",
+      "c4"
+    ]
+  },
+  "quote": {
+    "text": "El ajedrez, como el amor, como la música, tiene el poder de hacer felices a las personas.",
+    "author": "Siegbert Tarrasch"
+  },
   "storageNamespace": "repertorio:italiana:v1",
   "interactiveAvailable": true,
   "status": "available",

@@ -6,6 +6,18 @@
   "shortTitle": "La Escocesa",
   "version": "1.4",
   "accent": "#496b5c",
+  "preview": {
+    "fen": "r1bqkbnr/pppp1ppp/2n5/4p3/3PP3/5N2/PPP2PPP/RNBQKB1R b KQkq d3 0 3",
+    "line": "1.e4 e5 2.Cf3 Cc6 3.d4",
+    "lastMove": [
+      "d2",
+      "d4"
+    ]
+  },
+  "quote": {
+    "text": "El ajedrez, como el amor, como la música, tiene el poder de hacer felices a las personas.",
+    "author": "Siegbert Tarrasch"
+  },
   "storageNamespace": "repertorio:escocesa:v1",
   "interactiveAvailable": true,
   "status": "available",
