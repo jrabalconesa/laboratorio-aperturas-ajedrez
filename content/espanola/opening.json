@@ -1,0 +1,36 @@
+{
+  "id": "espanola",
+  "code": "ESP",
+  "manualNumber": 2,
+  "title": "Apertura Española o Ruy López",
+  "shortTitle": "La Española",
+  "version": "2.3",
+  "accent": "#AA151B",
+  "preview": {
+    "fen": "r1bqkbnr/pppp1ppp/2n5/1B2p3/4P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 3 3",
+    "line": "1.e4 e5 2.Cf3 Cc6 3.Ab5",
+    "lastMove": [
+      "f1",
+      "b5"
+    ]
+  },
+  "quote": {
+    "text": "No creo en la psicología. Creo en las buenas jugadas.",
+    "author": "Bobby Fischer",
+    "years": "1943–2008",
+    "nationality": "USA"
+  },
+  "storageNamespace": "repertorio:espanola:v1",
+  "interactiveAvailable": true,
+  "status": "available",
+  "inventory": {
+    "position": 12,
+    "structure": 6,
+    "game_stop": 15,
+    "exercise": 40
+  },
+  "gameCount": 6,
+  "coreGameCount": 3,
+  "expansionGameCount": 3,
+  "atlasCount": 6
+}

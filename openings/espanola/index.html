@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#AA151B">
+  <meta name="application-name" content="La Española">
+  <title>La Española · Laboratorio de apertura</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="styles.css?v=20260803-responsive-audit-1">
+</head>
+<body style="--red:#AA151B;--orange:#D14A4F;">
+  <a class="collection-back" href="../../index.html#/aperturas/espanola">← Biblioteca de aperturas</a>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#inicio" aria-label="Ir al inicio">
+        <img class="brand-mark" src="assets/app-icon-192.png" alt="" width="34" height="34">
+        <span><strong>LA ESPAÑOLA</strong><small>Laboratorio de apertura</small></span>
+      </a>
+      <nav aria-label="Navegación principal">
+        <button class="nav-link active" data-view="inicio">Inicio</button>
+        <button class="nav-link" data-view="aprende">Aprende</button>
+        <button class="nav-link" data-view="practica">Practica</button>
+        <button class="nav-link" data-view="variantes">Estructuras</button>
+        <button class="nav-link" data-view="partidas">Partidas</button>
+        <button class="nav-link" data-view="ejercicios">Ejercicios</button>
+        <button class="nav-link" data-view="plan">Plan de estudio</button>
+      </nav>
+      <div class="progress-pill" aria-label="Progreso del curso">
+        <span id="headerProgress">0/12</span>
+        <span class="progress-track"><span id="headerProgressBar"></span></span>
+      </div>
+    </header>
+
+    <main>
+      <section id="inicio" class="view active">
+        <div class="hero">
+          <div class="hero-copy">
+            <p class="eyebrow">CURSO VISUAL · 800–1400 ELO</p>
+            <h1>Juega con un plan.<br><em>No con la memoria.</em></h1>
+            <p class="hero-lead">Domina la Apertura Española entendiendo la presión central, las maniobras y el momento de jugar d4.</p>
+            <div class="hero-actions">
+              <button class="button primary" data-go="aprende">Empezar el recorrido <span>→</span></button>
+              <button class="button ghost" data-go="practica">Ir a practicar</button>
+            </div>
+            <div class="principles">
+              <span><b>01</b> Centro</span><i></i>
+              <span><b>02</b> Desarrollo</span><i></i>
+              <span><b>03</b> Seguridad</span><i></i>
+              <span><b>04</b> Coordinación</span>
+            </div>
+          </div>
+          <div class="hero-board-wrap">
+            <div class="notation-tag">1.e4 e5 2.Cf3 Cc6 3.Ab5</div>
+            <div id="heroBoard" class="chessboard decorative" aria-label="Posición base de la Apertura Española"></div>
+            <div class="board-caption"><span>POSICIÓN BASE</span><strong>La presión española</strong></div>
+          </div>
+        </div>
+
+        <div class="home-grid">
+          <article class="manifesto">
+            <p class="eyebrow">TU MÉTODO</p>
+            <h2>Observar.<br>Comprender.<br>Decidir.</h2>
+            <p>Cada posición responde a una pregunta real de partida. Avanza a tu ritmo y vuelve cuando necesites reforzar una idea.</p>
+          </article>
+          <article class="route-card" data-go="aprende">
+            <span class="route-number">12</span>
+            <div><p>POSICIONES CLAVE</p><h3>Construye la Española jugada a jugada</h3></div>
+            <span class="route-arrow">↗</span>
+          </article>
+          <article class="route-card dark" data-go="practica">
+            <span class="route-number">∞</span>
+            <div><p>ENTRENAMIENTO</p><h3>Encuentra la siguiente jugada en el tablero</h3></div>
+            <span class="route-arrow">↗</span>
+          </article>
+          <article class="route-card" data-go="variantes">
+            <span class="route-number">06</span>
+            <div><p>MAPA DE VARIANTES</p><h3>Reconoce la respuesta rival y elige un plan</h3></div>
+            <span class="route-arrow">↗</span>
+          </article>
+          <article class="route-card" data-go="partidas">
+            <span class="route-number">06</span>
+            <div><p>PARTIDAS MODELO</p><h3>Descubre cómo el plan llega al medio juego</h3></div>
+            <span class="route-arrow">↗</span>
+          </article>
+          <article class="route-card dark" data-go="ejercicios">
+            <span class="route-number">40</span>
+            <div><p>EJERCICIOS</p><h3>Decide, justifica y contrasta tu solución</h3></div>
+            <span class="route-arrow">↗</span>
+          </article>
+          <article class="route-card" data-go="plan">
+            <span class="route-number">04</span>
+            <div><p>SEMANAS</p><h3>Convierte el contenido en un hábito de estudio</h3></div>
+            <span class="route-arrow">↗</span>
+          </article>
+        </div>
+      </section>
+
+      <section id="aprende" class="view">
+        <div class="section-intro">
+          <div><p class="eyebrow">RECORRIDO GUIADO</p><h1>Doce posiciones.<br><em>Un hilo conductor.</em></h1></div>
+          <p>Usa las flechas para recorrer la secuencia. Cuando puedas explicar la idea sin mirar, marca la posición como comprendida.</p>
+        </div>
+        <div class="lesson-layout">
+          <aside class="lesson-index" aria-label="Índice de posiciones">
+            <p>POSICIONES</p>
+            <div id="lessonList"></div>
+          </aside>
+          <div class="lesson-stage">
+            <div class="lesson-board-column">
+              <div id="lessonBoard" class="chessboard" aria-label="Tablero de la lección"></div>
+              <div class="board-controls">
+                <button id="lessonPrev" class="icon-button" aria-label="Jugada anterior">←</button>
+                <span><b id="lessonMoveCounter">0 / 0</b><small id="lessonTurnLabel">Posición inicial</small></span>
+                <button id="lessonNext" class="icon-button" aria-label="Jugada siguiente">→</button>
+              </div>
+            </div>
+            <article class="lesson-copy">
+              <div class="lesson-meta"><span id="lessonCode">ITA-P01</span><span id="lessonStageLabel">FUNDAMENTOS</span></div>
+              <h2 id="lessonTitle"></h2>
+              <div id="lessonNotation" class="notation lesson-sequence" aria-label="Secuencia de jugadas"></div>
+              <p id="lessonExplanation" class="lesson-explanation"></p>
+              <div class="idea-box">
+                <span id="lessonIdeaLabel">IDEA CLAVE</span>
+                <p id="lessonIdea"></p>
+              </div>
+              <button id="completeLesson" class="button primary">Marcar como comprendida</button>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="practica" class="view">
+        <div class="section-intro compact">
+          <div><p class="eyebrow">ENTRENAMIENTO ACTIVO</p><h1>Tu turno.<br><em>Encuentra el plan.</em></h1></div>
+          <p>Selecciona una pieza y después su casilla de destino. La pista te recuerda la idea, no la respuesta.</p>
+        </div>
+        <div class="practice-layout">
+          <div class="practice-board-panel">
+            <div class="practice-topline">
+              <span id="practiceCode">ITA-P01</span>
+              <span class="streak">RACHA <b id="streak">0</b></span>
+            </div>
+            <div id="practiceBoard" class="chessboard interactive" aria-label="Tablero de práctica"></div>
+          </div>
+          <article class="practice-copy">
+            <p class="eyebrow" id="practiceLevel">FUNDAMENTOS</p>
+            <h2 id="practiceQuestion">¿Cuál es la continuación?</h2>
+            <p id="practiceContext"></p>
+            <div id="practiceFeedback" class="feedback" aria-live="polite">
+              <span>PISTA</span><p id="practiceHint"></p>
+            </div>
+            <button id="showHint" class="button ghost">Mostrar una pista más clara</button>
+            <button id="nextChallenge" class="button primary" hidden>Siguiente posición →</button>
+            <div class="practice-progress">
+              <span>SESIÓN</span>
+              <div id="challengeDots"></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="variantes" class="view">
+        <div class="section-intro">
+          <div><p class="eyebrow">MAPA DE DECISIONES</p><h1>Reconoce la respuesta.<br><em>Elige el plan.</em></h1></div>
+          <p>Compara seis estructuras críticas y aprende qué plan corresponde a cada una.</p>
+        </div>
+
+        <div class="decision-map" aria-label="Estructuras principales">
+          <button class="decision-branch active" data-variant="0"><span>ESP-S01</span><b>Centro abierto</b><small>Reconocer planes de estructura</small></button>
+          <button class="decision-branch" data-variant="1"><span>ESP-S02</span><b>Centro tenso</b><small>Reconocer planes de estructura</small></button>
+          <button class="decision-branch" data-variant="2"><span>ESP-S03</span><b>Centro cerrado</b><small>Reconocer planes de estructura</small></button>
+          <button class="decision-branch" data-variant="3"><span>ESP-S04</span><b>Mayoría 4 contra 3</b><small>Reconocer planes de estructura</small></button>
+          <button class="decision-branch" data-variant="4"><span>ESP-S05</span><b>Cadena e4-d5</b><small>Reconocer planes de estructura</small></button>
+          <button class="decision-branch" data-variant="5"><span>ESP-S06</span><b>Peón aislado en d4</b><small>Reconocer planes de estructura</small></button>
+        </div>
+
+        <div class="variant-shell">
+          <aside class="variant-index" aria-label="Variantes del manual"><p>ITINERARIOS</p><div id="variantList"></div></aside>
+          <div class="variant-stage">
+            <div class="variant-board-column">
+              <div class="variant-toolbar"><span>PERSPECTIVA</span><button id="variantFlip">Ver desde negras</button></div>
+              <div id="variantBoard" class="chessboard" aria-label="Tablero de la variante"></div>
+              <div class="board-controls">
+                <button id="variantStart" class="icon-button" aria-label="Inicio de la variante">↤</button>
+                <button id="variantPrev" class="icon-button" aria-label="Jugada anterior de la variante">←</button>
+                <span><b id="variantMoveCounter">0 / 0</b><small id="variantTurnLabel">Posición inicial</small></span>
+                <button id="variantNext" class="icon-button" aria-label="Jugada siguiente de la variante">→</button>
+                <button id="variantEnd" class="icon-button" aria-label="Final de la variante">↦</button>
+              </div>
+            </div>
+            <article class="variant-copy">
+              <div class="lesson-meta"><span id="variantCode"></span><span id="variantLevel"></span></div>
+              <h2 id="variantTitle"></h2>
+              <p id="variantSummary" class="variant-summary"></p>
+              <div id="variantNotation" class="notation lesson-sequence" aria-label="Secuencia de la variante"></div>
+              <div class="variant-facts" id="variantFacts"></div>
+              <div class="review-card"><div><span>REPETICIÓN ESPACIADA</span><p id="nextReviewText"></p></div><button id="recordReview" class="button ghost">Registrar repaso</button></div>
+              <button class="mobile-disclosure" aria-expanded="false" aria-controls="variantPlans"><span>Planes de blancas y negras</span><b aria-hidden="true">+</b></button>
+              <div id="variantPlans" class="plan-columns mobile-collapsible">
+                <section><span>PLAN DE BLANCAS</span><ul id="whitePlans"></ul></section>
+                <section><span>PLAN DE NEGRAS</span><ul id="blackPlans"></ul></section>
+              </div>
+              <button class="mobile-disclosure" aria-expanded="false" aria-controls="variantTraining"><span>Pregunta de entrenamiento</span><b aria-hidden="true">+</b></button>
+              <div id="variantTraining" class="concept-check mobile-collapsible">
+                <span>PREGUNTA DE ENTRENAMIENTO</span><p id="variantQuestion"></p>
+                <div id="variantOptions" class="concept-options"></div>
+                <p id="variantFeedback" class="concept-feedback" aria-live="polite"></p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <button class="mobile-disclosure section-disclosure" aria-expanded="false" aria-controls="variantComparison"><span>Comparativa práctica</span><b aria-hidden="true">+</b></button>
+        <section id="variantComparison" class="comparison-section mobile-collapsible">
+          <div class="comparison-heading"><div><p class="eyebrow">COMPARATIVA PRÁCTICA</p><h2>Qué estudiar y cuándo</h2></div><p>El Pianissimo es la base. Las demás líneas se incorporan según su frecuencia, riesgo y utilidad formativa.</p></div>
+          <div class="comparison-wrap"><table class="comparison-table"><thead><tr><th>Variante</th><th>Riesgo</th><th>Teoría</th><th>Idea central</th><th>Recomendación</th></tr></thead><tbody id="comparisonBody"></tbody></table></div>
+        </section>
+      </section>
+      <section id="partidas" class="view">
+        <div class="section-intro compact">
+          <div><p class="eyebrow">APRENDER DEL EJEMPLO</p><h1>Seis historias.<br><em>Seis maneras de jugar.</em></h1></div>
+          <p>No memorices las jugadas. Observa cuándo cambia la estructura y por qué el plan debe cambiar con ella.</p>
+        </div>
+        <div id="gameTabs" class="game-tabs"></div>
+        <div class="game-layout">
+          <div>
+            <div id="gameBoard" class="chessboard" aria-label="Tablero de partida modelo"></div>
+            <div class="board-controls">
+              <button id="gameStart" class="icon-button" aria-label="Ir al inicio">↤</button>
+              <button id="gamePrev" class="icon-button" aria-label="Jugada anterior">←</button>
+              <span><b id="gameMoveCounter">0 / 0</b><small>Reproduce la partida</small></span>
+              <button id="gameNext" class="icon-button" aria-label="Jugada siguiente">→</button>
+              <button id="gameEnd" class="icon-button" aria-label="Ir al final">↦</button>
+            </div>
+          </div>
+          <article class="game-copy">
+            <p class="eyebrow" id="gameCode">ITA-M01</p>
+            <h2 id="gameTitle"></h2>
+            <p id="gameSubtitle"></p>
+            <div class="move-sheet" id="moveSheet"></div>
+            <div class="comment-box">
+              <span>LECTURA DE LA POSICIÓN</span>
+              <p id="gameComment">Avanza por la partida para descubrir las ideas clave.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="ejercicios" class="view">
+        <div class="section-intro compact">
+          <div><p class="eyebrow">40 DECISIONES SOBRE EL TABLERO</p><h1>Observa primero.<br><em>Responde después.</em></h1></div>
+          <p>Lee la posición, formula tu respuesta y muestra la solución sólo después de justificar el plan.</p>
+        </div>
+        <div class="exercise-layout">
+          <aside class="exercise-index" aria-label="Índice de ejercicios">
+            <p>EJERCICIOS</p>
+            <div id="exerciseList"></div>
+          </aside>
+          <div class="exercise-stage">
+            <div class="exercise-board-column">
+              <div id="exerciseBoard" class="chessboard" aria-label="Tablero del ejercicio"></div>
+              <div class="board-controls">
+                <button id="exercisePrev" class="icon-button" aria-label="Ejercicio anterior">←</button>
+                <span><b id="exerciseCounter">1 / 40</b><small id="exerciseTurn">Juegan blancas</small></span>
+                <button id="exerciseNext" class="icon-button" aria-label="Ejercicio siguiente">→</button>
+              </div>
+            </div>
+            <article class="exercise-copy">
+              <div class="lesson-meta"><span id="exerciseCode"></span><span id="exerciseLevel"></span></div>
+              <h2 id="exerciseTitle"></h2>
+              <p id="exerciseObjective" class="exercise-objective"></p>
+              <button id="exerciseReveal" class="button primary">Mostrar solución</button>
+              <div id="exerciseSolution" class="exercise-solution" hidden aria-live="polite">
+                <section><span>PLAN RECOMENDADO</span><p id="exerciseWhitePlan"></p></section>
+                <section><span>RESPUESTA Y CONTRASTE</span><p id="exerciseBlackPlan"></p></section>
+                <section><span>CONTINUACIÓN DIDÁCTICA</span><p id="exerciseContinuation"></p></section>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="plan" class="view">
+        <div class="section-intro compact">
+          <div><p class="eyebrow">PLAN DE ESTUDIO</p><h1>Cuatro semanas.<br><em>Un método repetible.</em></h1></div>
+          <p>Alterna comprensión, práctica y revisión para convertir las líneas en decisiones útiles durante la partida.</p>
+        </div>
+        <section class="study-section">
+          <div class="study-heading"><p class="eyebrow">ITINERARIO RECOMENDADO</p><h2>Cuatro semanas para convertir líneas en decisiones</h2></div>
+          <div class="study-grid">
+            <article><span>SEMANA 01</span><h3>12 posiciones clave</h3><p>Recorre las posiciones guiadas y explica en voz alta la idea central de cada una.</p></article>
+            <article><span>SEMANA 02</span><h3>Estructuras y planes</h3><p>Compara las estructuras críticas y distingue los planes de blancas y negras.</p></article>
+            <article><span>SEMANA 03</span><h3>40 ejercicios</h3><p>Resuelve diez ejercicios por sesión: primero decide, después contrasta la solución.</p></article>
+            <article><span>SEMANA 04</span><h3>6 partidas modelo</h3><p>Reproduce las partidas sin prisa y anota cuándo cambia el plan de la apertura.</p></article>
+          </div>
+          <div class="game-checklist"><span>LISTA DE CONTROL DURANTE LA PARTIDA</span><ul><li>¿Mi rey está seguro?</li><li>¿Qué amenaza directa tiene mi rival?</li><li>¿Puedo desarrollar una pieza con tempo?</li><li>¿Qué ruptura central está preparada?</li><li>¿Qué pieza está peor colocada?</li><li>¿Mi plan corresponde a la estructura actual?</li></ul></div>
+        </section>
+      </section>
+    </main>
+
+    <footer>
+      <span>MI REPERTORIO DE AJEDREZ · CUADERNO 2</span>
+      <span>Aprender por comprensión, no por memorización.</span>
+    </footer>
+  </div>
+  <script src="exercise-data.js"></script>
+  <script src="app.js?v=20260803-flag-colors-1"></script>
+</body>
+</html>
