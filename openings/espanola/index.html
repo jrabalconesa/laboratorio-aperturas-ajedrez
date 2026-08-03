@@ -9,7 +9,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
   <link rel="manifest" href="manifest.webmanifest">
-  <link rel="stylesheet" href="styles.css?v=20260802-tablet-layer-7">
+  <link rel="stylesheet" href="styles.css?v=20260803-seven-sections-1">
 </head>
 <body>
   <a class="collection-back" href="../../index.html#/aperturas/espanola">← Biblioteca de aperturas</a>
@@ -23,8 +23,10 @@
         <button class="nav-link active" data-view="inicio">Inicio</button>
         <button class="nav-link" data-view="aprende">Aprende</button>
         <button class="nav-link" data-view="practica">Practica</button>
-        <button class="nav-link" data-view="variantes">Variantes</button>
+        <button class="nav-link" data-view="variantes">Estructuras</button>
         <button class="nav-link" data-view="partidas">Partidas</button>
+        <button class="nav-link" data-view="ejercicios">Ejercicios</button>
+        <button class="nav-link" data-view="plan">Plan de estudio</button>
       </nav>
       <div class="progress-pill" aria-label="Progreso del curso">
         <span id="headerProgress">0/12</span>
@@ -81,6 +83,16 @@
           <article class="route-card" data-go="partidas">
             <span class="route-number">06</span>
             <div><p>PARTIDAS MODELO</p><h3>Descubre cómo el plan llega al medio juego</h3></div>
+            <span class="route-arrow">↗</span>
+          </article>
+          <article class="route-card dark" data-go="ejercicios">
+            <span class="route-number">40</span>
+            <div><p>EJERCICIOS</p><h3>Decide, justifica y contrasta tu solución</h3></div>
+            <span class="route-arrow">↗</span>
+          </article>
+          <article class="route-card" data-go="plan">
+            <span class="route-number">04</span>
+            <div><p>SEMANAS</p><h3>Convierte el contenido en un hábito de estudio</h3></div>
             <span class="route-arrow">↗</span>
           </article>
         </div>
@@ -206,18 +218,6 @@
           <div class="comparison-heading"><div><p class="eyebrow">COMPARATIVA PRÁCTICA</p><h2>Qué estudiar y cuándo</h2></div><p>El Pianissimo es la base. Las demás líneas se incorporan según su frecuencia, riesgo y utilidad formativa.</p></div>
           <div class="comparison-wrap"><table class="comparison-table"><thead><tr><th>Variante</th><th>Riesgo</th><th>Teoría</th><th>Idea central</th><th>Recomendación</th></tr></thead><tbody id="comparisonBody"></tbody></table></div>
         </section>
-
-        <button class="mobile-disclosure section-disclosure" aria-expanded="false" aria-controls="variantStudy"><span>Plan de estudio y lista de control</span><b aria-hidden="true">+</b></button>
-        <section id="variantStudy" class="study-section mobile-collapsible">
-          <div class="study-heading"><p class="eyebrow">PLAN DE ESTUDIO</p><h2>Cuatro semanas para convertir líneas en decisiones</h2></div>
-          <div class="study-grid">
-            <article><span>SEMANA 01</span><h3>Fundamentos + Pianissimo</h3><p>Reproduce la línea cinco veces y explica la maniobra Cb1–d2–f1–g3.</p></article>
-            <article><span>SEMANA 02</span><h3>Centro abierto</h3><p>Practica cuándo jugar d4 y por qué el enroque precede a la apertura del centro.</p></article>
-            <article><span>SEMANA 03</span><h3>Dos Caballos + Fegatello</h3><p>Resuelve posiciones buscando primero jaques, capturas y amenazas.</p></article>
-            <article><span>SEMANA 04</span><h3>Evans, Húngara y trampas</h3><p>Juega seis partidas lentas y analiza solamente los primeros quince movimientos.</p></article>
-          </div>
-          <div class="game-checklist"><span>LISTA DE CONTROL DURANTE LA PARTIDA</span><ul><li>¿Mi rey está seguro?</li><li>¿Qué amenaza directa tiene mi rival?</li><li>¿Puedo desarrollar una pieza con tempo?</li><li>¿Está preparado d4 o ...d5?</li><li>¿Qué pieza está peor colocada?</li><li>¿Ataco f7 por una razón concreta o por costumbre?</li></ul></div>
-        </section>
       </section>
       <section id="partidas" class="view">
         <div class="section-intro compact">
@@ -248,6 +248,57 @@
           </article>
         </div>
       </section>
+
+      <section id="ejercicios" class="view">
+        <div class="section-intro compact">
+          <div><p class="eyebrow">40 DECISIONES SOBRE EL TABLERO</p><h1>Observa primero.<br><em>Responde después.</em></h1></div>
+          <p>Lee la posición, formula tu respuesta y muestra la solución sólo después de justificar el plan.</p>
+        </div>
+        <div class="exercise-layout">
+          <aside class="exercise-index" aria-label="Índice de ejercicios">
+            <p>EJERCICIOS</p>
+            <div id="exerciseList"></div>
+          </aside>
+          <div class="exercise-stage">
+            <div class="exercise-board-column">
+              <div id="exerciseBoard" class="chessboard" aria-label="Tablero del ejercicio"></div>
+              <div class="board-controls">
+                <button id="exercisePrev" class="icon-button" aria-label="Ejercicio anterior">←</button>
+                <span><b id="exerciseCounter">1 / 40</b><small id="exerciseTurn">Juegan blancas</small></span>
+                <button id="exerciseNext" class="icon-button" aria-label="Ejercicio siguiente">→</button>
+              </div>
+            </div>
+            <article class="exercise-copy">
+              <div class="lesson-meta"><span id="exerciseCode"></span><span id="exerciseLevel"></span></div>
+              <h2 id="exerciseTitle"></h2>
+              <p id="exerciseObjective" class="exercise-objective"></p>
+              <button id="exerciseReveal" class="button primary">Mostrar solución</button>
+              <div id="exerciseSolution" class="exercise-solution" hidden aria-live="polite">
+                <section><span>PLAN RECOMENDADO</span><p id="exerciseWhitePlan"></p></section>
+                <section><span>RESPUESTA Y CONTRASTE</span><p id="exerciseBlackPlan"></p></section>
+                <section><span>CONTINUACIÓN DIDÁCTICA</span><p id="exerciseContinuation"></p></section>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="plan" class="view">
+        <div class="section-intro compact">
+          <div><p class="eyebrow">PLAN DE ESTUDIO</p><h1>Cuatro semanas.<br><em>Un método repetible.</em></h1></div>
+          <p>Alterna comprensión, práctica y revisión para convertir las líneas en decisiones útiles durante la partida.</p>
+        </div>
+        <section class="study-section">
+          <div class="study-heading"><p class="eyebrow">ITINERARIO RECOMENDADO</p><h2>Cuatro semanas para convertir líneas en decisiones</h2></div>
+          <div class="study-grid">
+            <article><span>SEMANA 01</span><h3>12 posiciones clave</h3><p>Recorre las posiciones guiadas y explica en voz alta la idea central de cada una.</p></article>
+            <article><span>SEMANA 02</span><h3>Estructuras y planes</h3><p>Compara las estructuras críticas y distingue los planes de blancas y negras.</p></article>
+            <article><span>SEMANA 03</span><h3>40 ejercicios</h3><p>Resuelve diez ejercicios por sesión: primero decide, después contrasta la solución.</p></article>
+            <article><span>SEMANA 04</span><h3>6 partidas modelo</h3><p>Reproduce las partidas sin prisa y anota cuándo cambia el plan de la apertura.</p></article>
+          </div>
+          <div class="game-checklist"><span>LISTA DE CONTROL DURANTE LA PARTIDA</span><ul><li>¿Mi rey está seguro?</li><li>¿Qué amenaza directa tiene mi rival?</li><li>¿Puedo desarrollar una pieza con tempo?</li><li>¿Qué ruptura central está preparada?</li><li>¿Qué pieza está peor colocada?</li><li>¿Mi plan corresponde a la estructura actual?</li></ul></div>
+        </section>
+      </section>
     </main>
 
     <footer>
@@ -255,6 +306,7 @@
       <span>Aprender por comprensión, no por memorización.</span>
     </footer>
   </div>
-  <script src="app.js?v=20260802-full-lab-1"></script>
+  <script src="exercise-data.js"></script>
+  <script src="app.js?v=20260803-seven-sections-1"></script>
 </body>
 </html>

@@ -180,12 +180,14 @@ function lessonMoveExplanation(lesson, move) {
   return `${technical} ${lessonMoveContexts[lesson.code]}`;
 }
 
+const exercises = window.OPENING_EXERCISES || [];
+
 const state = {
   completed: new Set(JSON.parse(localStorage.getItem("italiana-progress") || "[]")),
   lesson: 0, lessonPly: 0, challenge: 0, selected: null, streak: 0,
   variant: 0, variantPly: 0, variantFlipped: false,
   variantReviews: JSON.parse(localStorage.getItem("italiana-variant-reviews") || "{}"),
-  game: 0, gamePly: 0
+  game: 0, gamePly: 0, exercise: 0, exerciseRevealed: false
 };
 
 function parseFen(fen) {
@@ -663,6 +665,46 @@ function renderGame() {
   renderGameTabs();
 }
 
+function renderExerciseList() {
+  const list = document.getElementById("exerciseList");
+  list.innerHTML = "";
+  exercises.forEach((exercise, index) => {
+    const button = document.createElement("button");
+    button.className = `exercise-list-button ${index === state.exercise ? "active" : ""}`;
+    button.innerHTML = `<span>${String(index + 1).padStart(2, "0")}</span><b>${exercise.title}</b>`;
+    button.addEventListener("click", () => selectExercise(index));
+    list.appendChild(button);
+  });
+  list.querySelector(".active")?.scrollIntoView({block:"nearest", inline:"nearest"});
+}
+
+function selectExercise(index) {
+  state.exercise = Math.max(0, Math.min(index, exercises.length - 1));
+  state.exerciseRevealed = false;
+  renderExercise();
+}
+
+function renderExercise() {
+  if (!exercises.length) return;
+  const exercise = exercises[state.exercise];
+  const board = exercise.fen ? parseFen(exercise.fen) : boardAt(exercise.movesUci || [], (exercise.movesUci || []).length);
+  const last = exercise.movesUci?.at(-1) || "";
+  renderBoard(document.getElementById("exerciseBoard"), board, {lastMove:last ? [last.slice(0,2), last.slice(2,4)] : []});
+  document.getElementById("exerciseCode").textContent = exercise.id;
+  document.getElementById("exerciseLevel").textContent = exercise.level?.label || exercise.chapter || "ENTRENAMIENTO";
+  document.getElementById("exerciseTitle").textContent = exercise.title;
+  document.getElementById("exerciseObjective").textContent = exercise.objective;
+  document.getElementById("exerciseWhitePlan").textContent = exercise.whitePlan || "Formula el plan más activo sin descuidar el centro.";
+  document.getElementById("exerciseBlackPlan").textContent = exercise.blackPlan || "Anticipa la respuesta más enérgica del rival.";
+  document.getElementById("exerciseContinuation").textContent = exercise.teachingContinuation || "Compara tu decisión con la posición guiada relacionada.";
+  document.getElementById("exerciseCounter").textContent = `${state.exercise + 1} / ${exercises.length}`;
+  document.getElementById("exerciseTurn").textContent = exercise.sideToMove === "black" ? "Juegan negras" : "Juegan blancas";
+  document.getElementById("exercisePrev").disabled = state.exercise === 0;
+  document.getElementById("exerciseNext").disabled = state.exercise === exercises.length - 1;
+  document.getElementById("exerciseSolution").hidden = !state.exerciseRevealed;
+  document.getElementById("exerciseReveal").textContent = state.exerciseRevealed ? "Ocultar solución" : "Mostrar solución";
+  renderExerciseList();
+}
 document.querySelectorAll(".nav-link").forEach(button=>button.addEventListener("click",()=>showView(button.dataset.view)));
 document.querySelectorAll("[data-go]").forEach(button=>button.addEventListener("click",()=>showView(button.dataset.go)));
 document.getElementById("lessonPrev").addEventListener("click", previousLessonStep);
@@ -692,6 +734,9 @@ document.getElementById("gamePrev").addEventListener("click",()=>{state.gamePly-
 document.getElementById("gameNext").addEventListener("click",()=>{state.gamePly++;renderGame();});
 document.getElementById("gameStart").addEventListener("click",()=>{state.gamePly=0;renderGame();});
 document.getElementById("gameEnd").addEventListener("click",()=>{state.gamePly=games[state.game].moves.length;renderGame();});
+document.getElementById("exercisePrev").addEventListener("click",()=>selectExercise(state.exercise - 1));
+document.getElementById("exerciseNext").addEventListener("click",()=>selectExercise(state.exercise + 1));
+document.getElementById("exerciseReveal").addEventListener("click",()=>{state.exerciseRevealed=!state.exerciseRevealed;renderExercise();});
 document.addEventListener("keydown", event => {
   const active=document.querySelector(".view.active")?.id;
   if (active==="aprende" && event.key==="ArrowRight" && !document.getElementById("lessonNext").disabled) nextLessonStep();
@@ -700,6 +745,8 @@ document.addEventListener("keydown", event => {
   if (active==="variantes" && event.key==="ArrowLeft" && state.variantPly>0) {state.variantPly--;renderVariant();}
   if (active==="partidas" && event.key==="ArrowRight" && state.gamePly<games[state.game].moves.length) {state.gamePly++;renderGame();}
   if (active==="partidas" && event.key==="ArrowLeft" && state.gamePly>0) {state.gamePly--;renderGame();}
+  if (active==="ejercicios" && event.key==="ArrowRight" && state.exercise<exercises.length-1) selectExercise(state.exercise+1);
+  if (active==="ejercicios" && event.key==="ArrowLeft" && state.exercise>0) selectExercise(state.exercise-1);
 });
 
 renderBoard(document.getElementById("heroBoard"), boardAt(lessons[2].uci.split(" "),6));
@@ -708,9 +755,10 @@ renderPractice();
 renderVariant();
 renderComparison();
 renderGame();
+renderExercise();
 updateProgress();
 const initialView=location.hash.slice(1);
-if (["inicio","aprende","practica","variantes","partidas"].includes(initialView)) showView(initialView);
+if (["inicio","aprende","practica","variantes","partidas","ejercicios","plan"].includes(initialView)) showView(initialView);
 
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", async () => {

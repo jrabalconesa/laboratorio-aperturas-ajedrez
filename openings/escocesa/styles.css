@@ -231,8 +231,8 @@ footer { min-height: 64px; padding: 0 6vw; border-top: 1px solid var(--line); di
   .brand-mark { width: 42px; height: 42px; flex-basis: 42px; }
   .brand strong { font-size: 15px; }
   .brand small { margin-top: 4px; font-size: 11px; }
-  .nav-link { padding: 0 24px; font-size: clamp(14px, .9vw, 16px); font-weight: 500; }
-  .nav-link.active::after { left: 24px; right: 24px; height: 4px; }
+  .nav-link { padding: 0 12px; font-size: clamp(10px, .72vw, 12px); font-weight: 500; }
+  .nav-link.active::after { left: 12px; right: 12px; height: 4px; }
   .progress-pill { gap: 12px; font-size: 14px; font-weight: 500; }
   .progress-track { width: 76px; height: 4px; }
 
@@ -337,7 +337,7 @@ footer { min-height: 64px; padding: 0 6vw; border-top: 1px solid var(--line); di
 @media (max-width: 580px) {
   .lesson-index { scrollbar-width: none; }
   .lesson-index::-webkit-scrollbar { display: none; }
-  .topbar nav { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); width: 100%; overflow: visible; }
+  .topbar nav { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); width: 100%; overflow: visible; }
   .topbar .nav-link { min-width: 0; padding: 14px 4px; font-size: 9px; text-align: center; }
   .topbar .nav-link.active::after { left: 4px; right: 4px; }
   .practice-progress { align-items: flex-start; }
@@ -742,3 +742,74 @@ footer { min-height: 64px; padding: 0 6vw; border-top: 1px solid var(--line); di
 }
 .collection-back { position: fixed; left: 18px; bottom: 18px; z-index: 80; padding: 10px 14px; border-radius: 999px; background: var(--ink); color: var(--paper); text-decoration: none; font: 600 12px var(--sans); box-shadow: 0 8px 24px rgba(0,0,0,.18); }
 .collection-back:hover { background: var(--red); }
+
+/* SEVEN-SECTION NAVIGATION · EXERCISES · STUDY PLAN */
+.exercise-layout { display: grid; grid-template-columns: 250px minmax(0, 1fr); min-height: 690px; }
+.exercise-index { border-right: 1px solid var(--line); padding: 28px 0 48px 4vw; }
+.exercise-index > p { color: #777367; font-size: 9px; letter-spacing: .2em; }
+#exerciseList { max-height: 610px; overflow-y: auto; }
+.exercise-list-button { align-items: center; background: transparent; border: 0; border-bottom: 1px solid var(--line); color: #6e6a60; cursor: pointer; display: grid; font-size: 11px; gap: 10px; grid-template-columns: 30px minmax(0,1fr); padding: 12px 16px 12px 0; text-align: left; width: 100%; }
+.exercise-list-button span { color: var(--red); font-family: var(--serif); font-size: 16px; }
+.exercise-list-button b { font-family: var(--serif); font-size: 14px; }
+.exercise-list-button.active { background: var(--cream); color: var(--ink); padding-left: 10px; }
+.exercise-stage { align-items: start; display: grid; gap: clamp(40px,5vw,78px); grid-template-columns: minmax(340px,560px) minmax(300px,1fr); padding: 48px 5vw 72px; }
+.exercise-board-column { max-width: 560px; width: 100%; }
+.exercise-copy { min-width: 0; padding-top: 14px; }
+.exercise-copy h2 { font-family: var(--serif); font-size: clamp(36px,3.8vw,54px); line-height: 1.05; margin-bottom: 18px; }
+.exercise-objective { color: #4f4c43; font-family: var(--serif); font-size: clamp(19px,1.8vw,25px); line-height: 1.5; }
+.exercise-solution { display: grid; gap: 8px; margin-top: 20px; }
+.exercise-solution[hidden] { display: none; }
+.exercise-solution section { background: var(--cream); border-left: 3px solid var(--red); padding: 14px 17px; }
+.exercise-solution span { color: var(--red); font-size: 9px; font-weight: 600; letter-spacing: .16em; }
+.exercise-solution p { line-height: 1.5; margin: 7px 0 0; }
+#plan .study-section { padding-top: 36px; }
+
+@media (max-width: 1200px) and (min-width: 901px) {
+  .topbar { gap: 18px; padding-left: 28px; padding-right: 28px; }
+  .brand { min-width: 190px; }
+  .nav-link { font-size: 9px; padding-left: 8px; padding-right: 8px; }
+  .nav-link.active::after { left: 8px; right: 8px; }
+  .progress-track { width: 48px; }
+}
+
+@media (max-width: 900px) {
+  .exercise-layout { grid-template-columns: minmax(0,1fr); min-height: 0; }
+  .exercise-index { border-bottom: 1px solid var(--line); border-right: 0; overflow-x: auto; padding: 10px 6vw; scrollbar-width: none; }
+  .exercise-index::-webkit-scrollbar { display: none; }
+  .exercise-index > p { display: none; }
+  #exerciseList { display: flex; max-height: none; width: max-content; }
+  .exercise-list-button { border-bottom: 0; border-right: 1px solid var(--line); flex: 0 0 92px; padding: 9px; }
+  .exercise-list-button b { display: none; }
+  .exercise-stage { grid-template-columns: minmax(0,1fr); padding: 28px 8vw 50px; }
+  .exercise-board-column, .exercise-copy { margin: auto; max-width: 560px; width: 100%; }
+  .study-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+}
+
+@media (max-width: 580px) {
+  .topbar nav { grid-template-columns: repeat(4,minmax(0,1fr)); }
+  .topbar .nav-link:last-child { grid-column: span 2; }
+  #ejercicios .section-intro, #plan .section-intro { display: grid; gap: 10px; grid-template-columns: minmax(0,1fr) minmax(115px,.72fr); padding: 10px 5vw 9px; }
+  #ejercicios .section-intro .eyebrow, #plan .section-intro .eyebrow { font-size: 8px; margin-bottom: 4px; }
+  #ejercicios .section-intro h1, #plan .section-intro h1 { font-size: clamp(29px,8.2vw,34px); line-height: .96; }
+  #ejercicios .section-intro > p, #plan .section-intro > p { font-size: 10px; line-height: 1.3; margin: 0; }
+  .exercise-index { padding: 5px 5vw; }
+  .exercise-list-button { flex-basis: 58px; grid-template-columns: 1fr; padding: 7px; text-align: center; }
+  .exercise-stage { gap: 8px; padding: 7px 5vw 24px; }
+  .exercise-board-column { max-width: 330px; }
+  .exercise-copy { padding-top: 2px; }
+  .exercise-copy .lesson-meta { margin-bottom: 5px; }
+  .exercise-copy h2 { font-size: 29px; margin-bottom: 5px; }
+  .exercise-objective { font-size: 16px; line-height: 1.4; margin-bottom: 10px; }
+  .exercise-copy .button { min-height: 40px; width: 100%; }
+  .exercise-solution { margin-top: 8px; }
+  .exercise-solution section { padding: 9px 11px; }
+  .exercise-solution p { font-size: 12px; line-height: 1.35; }
+  #plan .study-section { padding: 18px 5vw 28px; }
+  #plan .study-heading { margin-bottom: 12px; }
+  #plan .study-heading h2 { font-size: 29px; }
+  #plan .study-grid { grid-template-columns: 1fr; gap: 6px; }
+  #plan .study-grid article { min-height: 0; padding: 12px; }
+  #plan .study-grid h3 { margin: 8px 0 5px; font-size: 18px; }
+  #plan .game-checklist { margin-top: 8px; padding: 12px; }
+  #plan .game-checklist ul { grid-template-columns: 1fr; gap: 5px; margin-top: 8px; }
+}

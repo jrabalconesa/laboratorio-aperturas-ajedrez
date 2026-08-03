@@ -62,6 +62,7 @@ function parseCoreGame(game, localizedNotation) {
 function buildData(id) {
   const directory = path.join(root, "content", id);
   const positions = JSON.parse(fs.readFileSync(path.join(directory, "positions.json"), "utf8"));
+  const exercises = JSON.parse(fs.readFileSync(path.join(directory, "exercises.json"), "utf8"));
   const structures = JSON.parse(fs.readFileSync(path.join(directory, "structures.json"), "utf8"));
   const coreGames = JSON.parse(fs.readFileSync(path.join(directory, "games.json"), "utf8")).map((game) => parseCoreGame(game, id === "espanola"));
   const expansionGames = JSON.parse(fs.readFileSync(path.join(directory, "expansion-games.json"), "utf8")).map((game) => ({
@@ -122,7 +123,7 @@ function buildData(id) {
     position.id,
     `${position.whitePlan || ""} ${position.blackPlan || ""}`.trim(),
   ]));
-  return { lessons, variants, games: [...coreGames, ...expansionGames], moveExplanations, lessonMoveContexts };
+  return { lessons, variants, exercises, games: [...coreGames, ...expansionGames], moveExplanations, lessonMoveContexts };
 }
 
 function buildHtml(id, config, structures) {
@@ -146,9 +147,11 @@ function buildHtml(id, config, structures) {
     .replace("CUADERNO 1", `CUADERNO ${config.manual}`)
     .replace(`../../index.html#/aperturas/${config.adjective.toLowerCase()}`, `../../index.html#/aperturas/${id}`)
     .replace(/\s*<script src="expansion-games\.js"><\/script>/, "")
-    .replace(/app\.js\?v=[^"]+/, "app.js?v=20260802-full-lab-1");
+    .replace(/app\.js\?v=[^"]+/, "app.js?v=20260803-seven-sections-1");
 }
 
+const italianaExercises = JSON.parse(fs.readFileSync(path.join(root, "content", "italiana", "exercises.json"), "utf8"));
+fs.writeFileSync(path.join(sourceLab, "exercise-data.js"), `window.OPENING_EXERCISES=${JSON.stringify(italianaExercises)};\n`, "utf8");
 for (const [id, config] of Object.entries(configurations)) {
   const data = buildData(id);
   const structures = JSON.parse(fs.readFileSync(path.join(root, "content", id, "structures.json"), "utf8"));
@@ -157,16 +160,18 @@ for (const [id, config] of Object.entries(configurations)) {
   fs.cpSync(path.join(sourceLab, "assets"), path.join(target, "assets"), { recursive: true, force: true });
   fs.copyFileSync(path.join(sourceLab, "styles.css"), path.join(target, "styles.css"));
   const serviceWorker = fs.readFileSync(path.join(sourceLab, "service-worker.js"), "utf8")
-    .replace("la-italiana-v11", `laboratorio-${id}-v1`)
-    .replace("./app.js?v=20260802-move-explanations-1", "./app.js?v=20260802-full-lab-1")
+    .replace("la-italiana-v12", `laboratorio-${id}-v2`)
+    .replace("./app.js?v=20260803-seven-sections-1", "./app.js?v=20260803-seven-sections-1")
     .replace(/\s*"\.\/expansion-games\.js",/, "");
   fs.writeFileSync(path.join(target, "service-worker.js"), serviceWorker, "utf8");
   fs.writeFileSync(path.join(target, "index.html"), buildHtml(id, config, structures), "utf8");
+  fs.writeFileSync(path.join(target, "exercise-data.js"), `window.OPENING_EXERCISES=${JSON.stringify(data.exercises)};\n`, "utf8");
 
   const prelude = `const PIECES=${JSON.stringify({P:"♙",N:"♘",B:"♗",R:"♖",Q:"♕",K:"♔",p:"♟",n:"♞",b:"♝",r:"♜",q:"♛",k:"♚"})};
 const INITIAL_FEN="rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1";
 const lessons=${JSON.stringify(data.lessons)};
 const variants=${JSON.stringify(data.variants)};
+const exercises=${JSON.stringify(data.exercises)};
 const games=${JSON.stringify(data.games)};
 const moveExplanations=${JSON.stringify(data.moveExplanations)};
 const lessonMoveContexts=${JSON.stringify(data.lessonMoveContexts)};
