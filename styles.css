@@ -19,4 +19,21 @@
   .opening-card h3{font-size:32px}
   .card-summary{margin-top:20px;padding-top:14px}
   .opening-card>a{margin-top:16px}
+  .opening-detail{padding:22px 4% 16px}
+  .opening-detail .back-link{font-size:13px}
+  .opening-header{align-items:center;margin:14px 0 12px;padding-bottom:12px}
+  .opening-header .eyebrow{font-size:10px;margin-bottom:8px}
+  .opening-header h1{font-size:clamp(44px,4.5vw,62px);line-height:.95}
+  .opening-header h1+p{font-size:15px;margin:8px 0 0}
+  .opening-header>span{font-size:38px}
+  .launch-module{margin-bottom:8px;padding:11px 17px}
+  .launch-module span{font-size:18px}
+  .module-nav{gap:7px;margin-bottom:10px}
+  .module-nav button,.module-nav a{font-size:14px;min-height:46px;padding:7px}
+  .inventory-grid{gap:7px}
+  .inventory-grid article{min-height:72px;padding:10px 12px}
+  .inventory-grid strong{font-size:30px;line-height:1}
+  .inventory-grid span{font-size:11px}
+  .module-note{font-size:13px;line-height:1.4;margin-top:10px;padding:9px 12px}
+  footer{padding:13px}
 }
