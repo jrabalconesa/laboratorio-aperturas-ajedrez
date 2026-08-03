@@ -42,7 +42,7 @@ async function loadCatalog() {
   if (location.protocol === "file:") {
     state.catalog = window.OPENING_CATALOG ?? [];
   } else {
-    const response = await fetch("content/catalog.json?v=20260803-flag-colors-1");
+    const response = await fetch("content/catalog.json?v=20260803-country-codes-1");
     if (!response.ok) throw new Error("No se pudo cargar el catálogo.");
     state.catalog = await response.json();
   }

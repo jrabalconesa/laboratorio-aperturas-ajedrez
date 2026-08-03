@@ -19,7 +19,7 @@ window.OPENING_CATALOG = [
       "text": "Ayuda a tus piezas para que ellas puedan ayudarte.",
       "author": "Paul Morphy",
       "years": "1837–1884",
-      "nationality": "estadounidense"
+      "nationality": "USA"
     },
     "storageNamespace": "repertorio:italiana:v1",
     "interactiveAvailable": true,
@@ -55,7 +55,7 @@ window.OPENING_CATALOG = [
       "text": "No creo en la psicología. Creo en las buenas jugadas.",
       "author": "Bobby Fischer",
       "years": "1943–2008",
-      "nationality": "estadounidense"
+      "nationality": "USA"
     },
     "storageNamespace": "repertorio:espanola:v1",
     "interactiveAvailable": true,
@@ -91,7 +91,7 @@ window.OPENING_CATALOG = [
       "text": "El ajedrez es la vida en miniatura. El ajedrez es lucha, el ajedrez es batalla.",
       "author": "Garry Kasparov",
       "years": "1963–",
-      "nationality": "ruso"
+      "nationality": "RUS"
     },
     "storageNamespace": "repertorio:escocesa:v1",
     "interactiveAvailable": true,
