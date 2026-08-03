@@ -15,8 +15,10 @@
     ]
   },
   "quote": {
-    "text": "El ajedrez, como el amor, como la música, tiene el poder de hacer felices a las personas.",
-    "author": "Siegbert Tarrasch"
+    "text": "Ayuda a tus piezas para que ellas puedan ayudarte.",
+    "author": "Paul Morphy",
+    "years": "1837–1884",
+    "nationality": "estadounidense"
   },
   "storageNamespace": "repertorio:italiana:v1",
   "interactiveAvailable": true,

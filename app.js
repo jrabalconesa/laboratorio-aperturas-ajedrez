@@ -32,7 +32,8 @@ function renderOpeningPreview(opening) {
 
 function renderCompletionMessage(opening) {
   if (opening.status === "available" && opening.interactiveAvailable && opening.quote) {
-    return `<blockquote class="opening-quote"><p>“${escapeHtml(opening.quote.text)}”</p><cite>— ${escapeHtml(opening.quote.author)}</cite></blockquote>`;
+    const attribution = `${opening.quote.author}${opening.quote.years ? ` (${opening.quote.years})` : ""}${opening.quote.nationality ? `, ${opening.quote.nationality}` : ""}`;
+    return `<blockquote class="opening-quote"><p>“${escapeHtml(opening.quote.text)}”</p><cite>— ${escapeHtml(attribution)}</cite></blockquote>`;
   }
   return `<p class="module-note">La integración de esta apertura continúa en revisión.</p>`;
 }
