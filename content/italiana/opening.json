@@ -5,7 +5,7 @@
   "title": "Apertura Italiana",
   "shortTitle": "La Italiana",
   "version": "2",
-  "accent": "#bc3327",
+  "accent": "#008C45",
   "preview": {
     "fen": "r1bqkbnr/pppp1ppp/2n5/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 3 3",
     "line": "1.e4 e5 2.Cf3 Cc6 3.Ac4",

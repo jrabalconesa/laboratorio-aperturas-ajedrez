@@ -6,7 +6,7 @@
     "title": "Apertura Italiana",
     "shortTitle": "La Italiana",
     "version": "2",
-    "accent": "#bc3327",
+    "accent": "#008C45",
     "preview": {
       "fen": "r1bqkbnr/pppp1ppp/2n5/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 3 3",
       "line": "1.e4 e5 2.Cf3 Cc6 3.Ac4",
@@ -42,7 +42,7 @@
     "title": "Apertura Española o Ruy López",
     "shortTitle": "La Española",
     "version": "2.3",
-    "accent": "#8f4f3a",
+    "accent": "#AA151B",
     "preview": {
       "fen": "r1bqkbnr/pppp1ppp/2n5/1B2p3/4P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 3 3",
       "line": "1.e4 e5 2.Cf3 Cc6 3.Ab5",
@@ -78,7 +78,7 @@
     "title": "Apertura Escocesa",
     "shortTitle": "La Escocesa",
     "version": "1.4",
-    "accent": "#496b5c",
+    "accent": "#0065BD",
     "preview": {
       "fen": "r1bqkbnr/pppp1ppp/2n5/4p3/3PP3/5N2/PPP2PPP/RNBQKB1R b KQkq d3 0 3",
       "line": "1.e4 e5 2.Cf3 Cc6 3.d4",

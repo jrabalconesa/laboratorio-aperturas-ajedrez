@@ -14,8 +14,8 @@ const configurations = {
     adjective: "Española",
     article: "La Española",
     code: "ESP",
-    accent: "#8f4f3a",
-    focus: "#bd765b",
+    accent: "#AA151B",
+    focus: "#D14A4F",
     manual: 2,
     notation: "1.e4 e5 2.Cf3 Cc6 3.Ab5",
     identity: "La presión española",
@@ -26,8 +26,8 @@ const configurations = {
     adjective: "Escocesa",
     article: "La Escocesa",
     code: "ESC",
-    accent: "#496b5c",
-    focus: "#6d9584",
+    accent: "#0065BD",
+    focus: "#3F8DCA",
     manual: 3,
     notation: "1.e4 e5 2.Cf3 Cc6 3.d4",
     identity: "La ruptura escocesa",
@@ -136,8 +136,8 @@ function buildHtml(id, config, structures) {
   ).join("\n          ");
 
   return sourceHtml
-    .replace('content="#bc3327"', `content="${config.accent}"`)
-    .replace('<body style="--red:#bc3327;--orange:#d86d39;">', `<body style="--red:${config.accent};--orange:${config.focus};">`)
+    .replace('content="#008C45"', `content="${config.accent}"`)
+    .replace('<body style="--red:#008C45;--orange:#38A76B;">', `<body style="--red:${config.accent};--orange:${config.focus};">`)
     .replaceAll("La Italiana", config.article)
     .replaceAll("LA ITALIANA", config.article.toUpperCase())
     .replaceAll("Apertura Italiana", `Apertura ${config.adjective}`)
@@ -153,7 +153,7 @@ function buildHtml(id, config, structures) {
     .replace("CUADERNO 1", `CUADERNO ${config.manual}`)
     .replace(`../../index.html#/aperturas/${config.adjective.toLowerCase()}`, `../../index.html#/aperturas/${id}`)
     .replace(/\s*<script src="expansion-games\.js"><\/script>/, "")
-    .replace(/app\.js\?v=[^"]+/, "app.js?v=20260803-opening-colors-compact-1");
+    .replace(/app\.js\?v=[^"]+/, "app.js?v=20260803-flag-colors-1");
 }
 
 const italianaExercises = JSON.parse(fs.readFileSync(path.join(root, "content", "italiana", "exercises.json"), "utf8"));
@@ -166,8 +166,7 @@ for (const [id, config] of Object.entries(configurations)) {
   fs.cpSync(path.join(sourceLab, "assets"), path.join(target, "assets"), { recursive: true, force: true });
   fs.copyFileSync(path.join(sourceLab, "styles.css"), path.join(target, "styles.css"));
   const serviceWorker = fs.readFileSync(path.join(sourceLab, "service-worker.js"), "utf8")
-    .replace("la-italiana-v13", `laboratorio-${id}-v3`)
-    .replace("./app.js?v=20260803-opening-colors-compact-1", "./app.js?v=20260803-opening-colors-compact-1")
+    .replace("la-italiana-v14", `laboratorio-${id}-v4`)
     .replace(/\s*"\.\/expansion-games\.js",/, "");
   fs.writeFileSync(path.join(target, "service-worker.js"), serviceWorker, "utf8");
   fs.writeFileSync(path.join(target, "index.html"), buildHtml(id, config, structures), "utf8");
