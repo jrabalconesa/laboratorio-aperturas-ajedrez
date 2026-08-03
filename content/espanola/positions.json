@@ -10,7 +10,7 @@
     ],
     "fen": "rnbqkbnr/pppp1ppp/8/4p3/4P3/8/PPPP1PPP/RNBQKBNR w KQkq e6 0 2",
     "sideToMove": "white",
-    "objective": "Reconocer la evolución de la Española",
+    "objective": "Comprender cómo 1.e4 ocupa el centro y por qué Cf3 es el desarrollo más activo.",
     "level": {
       "label": "800–1400",
       "minRating": 800,
@@ -37,7 +37,7 @@
     ],
     "fen": "r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3",
     "sideToMove": "white",
-    "objective": "Reconocer la evolución de la Española",
+    "objective": "Explicar cómo Ab5 aumenta la presión sobre e5 sin ganar todavía el peón.",
     "level": {
       "label": "800–1400",
       "minRating": 800,
@@ -66,7 +66,7 @@
     ],
     "fen": "r1bqkbnr/1ppp1ppp/p1n5/1B2p3/4P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 4",
     "sideToMove": "white",
-    "objective": "Reconocer la evolución de la Española",
+    "objective": "Reconocer la posición base española y la tensión entre Ab5, Cc6 y e5.",
     "level": {
       "label": "800–1400",
       "minRating": 800,
@@ -97,7 +97,7 @@
     ],
     "fen": "r1bqkb1r/1ppp1ppp/p1n2n2/4p3/B3P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 2 5",
     "sideToMove": "white",
-    "objective": "Reconocer la evolución de la Española",
+    "objective": "Priorizar el enroque y conservar el alfil antes de abrir el centro.",
     "level": {
       "label": "800–1400",
       "minRating": 800,
@@ -130,7 +130,7 @@
     ],
     "fen": "r1bqk2r/1pppbppp/p1n2n2/4p3/B3P3/5N2/PPPP1PPP/RNBQ1RK1 w kq - 4 6",
     "sideToMove": "white",
-    "objective": "Reconocer la evolución de la Española",
+    "objective": "Comprender cómo Te1 refuerza e4 y prepara una futura ruptura d4.",
     "level": {
       "label": "800–1400",
       "minRating": 800,
@@ -165,7 +165,7 @@
     ],
     "fen": "r1bqk2r/2ppbppp/p1n2n2/1p2p3/B3P3/5N2/PPPP1PPP/RNBQR1K1 w kq b6 0 7",
     "sideToMove": "white",
-    "objective": "Reconocer la evolución de la Española",
+    "objective": "Valorar el espacio negro del flanco de dama y la utilidad del alfil en b3.",
     "level": {
       "label": "800–1400",
       "minRating": 800,
@@ -202,7 +202,7 @@
     ],
     "fen": "r1bqk2r/2p1bppp/p1np1n2/1p2p3/4P3/1B3N2/PPPP1PPP/RNBQR1K1 w kq - 0 8",
     "sideToMove": "white",
-    "objective": "Reconocer la evolución de la Española",
+    "objective": "Explicar por qué c3 es una jugada de infraestructura para preparar d4.",
     "level": {
       "label": "800–1400",
       "minRating": 800,
@@ -241,7 +241,7 @@
     ],
     "fen": "r1bq1rk1/2p1bppp/p1np1n2/1p2p3/4P3/1BP2N2/PP1P1PPP/RNBQR1K1 w - - 1 9",
     "sideToMove": "white",
-    "objective": "Reconocer la evolución de la Española",
+    "objective": "Reconocer una jugada profiláctica útil y distinguirla de una pérdida de tiempo.",
     "level": {
       "label": "800–1400",
       "minRating": 800,
@@ -282,7 +282,7 @@
     ],
     "fen": "rnbq1rk1/2p1bppp/p2p1n2/1p2p3/4P3/1BP2N1P/PP1P1PP1/RNBQR1K1 w - - 1 10",
     "sideToMove": "white",
-    "objective": "Reconocer la evolución de la Española",
+    "objective": "Calcular la ruptura d4 y anticipar cómo cambia la estructura central.",
     "level": {
       "label": "800–1400",
       "minRating": 800,
@@ -325,7 +325,7 @@
     ],
     "fen": "r1bq1rk1/2pnbppp/p2p1n2/1p2p3/3PP3/1BP2N1P/PP3PP1/RNBQR1K1 w - - 1 11",
     "sideToMove": "white",
-    "objective": "Reconocer la evolución de la Española",
+    "objective": "Desarrollar el caballo por d2 sin bloquear el peón c ni abandonar e4.",
     "level": {
       "label": "800–1400",
       "minRating": 800,
@@ -370,7 +370,7 @@
     ],
     "fen": "r1bq1rk1/3nbppp/p2p1n2/1pp1p3/3PP3/1BP2N1P/PP1N1PP1/R1BQR1K1 w - c6 0 12",
     "sideToMove": "white",
-    "objective": "Reconocer la evolución de la Española",
+    "objective": "Decidir si conviene cerrar el centro con d5 o mantener la tensión.",
     "level": {
       "label": "800–1400",
       "minRating": 800,
@@ -420,7 +420,7 @@
     ],
     "fen": "r1b2rk1/2qnbp1p/p2p1np1/1ppPp3/4P3/1BP2NNP/PP3PP1/R1BQR1K1 b - - 1 14",
     "sideToMove": "black",
-    "objective": "Reconocer la evolución de la Española",
+    "objective": "Formular un plan de medio juego después de completar la maniobra Cf1-g3.",
     "level": {
       "label": "800–1400",
       "minRating": 800,

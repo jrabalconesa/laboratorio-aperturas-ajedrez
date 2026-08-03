@@ -2,7 +2,7 @@
   {
     "id": "ESP-E01",
     "kind": "exercise",
-    "title": "Ejercicio 1",
+    "title": "800–1400 · Cuál es la prioridad después de 1.e4 e5",
     "chapter": "Parte XIII / Ampliación D",
     "movesUci": [
       "e2e4",
@@ -27,7 +27,7 @@
   {
     "id": "ESP-E02",
     "kind": "exercise",
-    "title": "Ejercicio 2",
+    "title": "800–1400 · Tras 2.Cf3 Cc6, ¿por qué 3.Ab5",
     "chapter": "Parte XIII / Ampliación D",
     "movesUci": [
       "e2e4",
@@ -54,7 +54,7 @@
   {
     "id": "ESP-E03",
     "kind": "exercise",
-    "title": "Ejercicio 3",
+    "title": "800–1400 · Tras 3...a6, ¿conservar o cambiar",
     "chapter": "Parte XIII / Ampliación D",
     "movesUci": [
       "e2e4",
@@ -83,7 +83,7 @@
   {
     "id": "ESP-E04",
     "kind": "exercise",
-    "title": "Ejercicio 4",
+    "title": "800–1400 · Tras 4...Cf6, ¿cómo responder a la presión sobre e4",
     "chapter": "Parte XIII / Ampliación D",
     "movesUci": [
       "e2e4",
@@ -114,7 +114,7 @@
   {
     "id": "ESP-E05",
     "kind": "exercise",
-    "title": "Ejercicio 5",
+    "title": "800–1400 · Qué logra 6.Te1",
     "chapter": "Parte XIII / Ampliación D",
     "movesUci": [
       "e2e4",
@@ -147,7 +147,7 @@
   {
     "id": "ESP-E06",
     "kind": "exercise",
-    "title": "Ejercicio 6",
+    "title": "800–1400 · Tras ...b5, ¿dónde va el alfil",
     "chapter": "Parte XIII / Ampliación D",
     "movesUci": [
       "e2e4",
@@ -182,7 +182,7 @@
   {
     "id": "ESP-E07",
     "kind": "exercise",
-    "title": "Ejercicio 7",
+    "title": "800–1400 · Qué prepara c3",
     "chapter": "Parte XIII / Ampliación D",
     "movesUci": [
       "e2e4",
@@ -219,7 +219,7 @@
   {
     "id": "ESP-E08",
     "kind": "exercise",
-    "title": "Ejercicio 8",
+    "title": "800–1400 · Cuándo es útil h3",
     "chapter": "Parte XIII / Ampliación D",
     "movesUci": [
       "e2e4",
@@ -258,7 +258,7 @@
   {
     "id": "ESP-E09",
     "kind": "exercise",
-    "title": "Ejercicio 9",
+    "title": "800–1400 · Qué pretende ...Cb8",
     "chapter": "Parte XIII / Ampliación D",
     "movesUci": [
       "e2e4",
@@ -299,7 +299,7 @@
   {
     "id": "ESP-E10",
     "kind": "exercise",
-    "title": "Ejercicio 10",
+    "title": "800–1400 · Por qué d4 es la ruptura temática",
     "chapter": "Parte XIII / Ampliación D",
     "movesUci": [
       "e2e4",
@@ -342,7 +342,7 @@
   {
     "id": "ESP-E11",
     "kind": "exercise",
-    "title": "Ejercicio 11",
+    "title": "800–1400 · Por qué Cbd2 y no Cc3",
     "chapter": "Parte XIII / Ampliación D",
     "movesUci": [
       "e2e4",
@@ -387,7 +387,7 @@
   {
     "id": "ESP-E12",
     "kind": "exercise",
-    "title": "Ejercicio 12",
+    "title": "800–1400 · Tras ...c5, ¿qué debe evaluarse",
     "chapter": "Parte XIII / Ampliación D",
     "movesUci": [
       "e2e4",
@@ -437,7 +437,7 @@
   {
     "id": "ESP-E13",
     "kind": "exercise",
-    "title": "Ejercicio 13",
+    "title": "800–1400 · En centro cerrado, ¿qué pieza suele ganar valor",
     "chapter": "Parte XIII / Ampliación D",
     "movesUci": [
       "e2e4",
@@ -462,7 +462,7 @@
   {
     "id": "ESP-E14",
     "kind": "exercise",
-    "title": "Ejercicio 14",
+    "title": "800–1400 · Cuál es la ruptura liberadora negra",
     "chapter": "Parte XIII / Ampliación D",
     "movesUci": [
       "e2e4",
@@ -489,7 +489,7 @@
   {
     "id": "ESP-E15",
     "kind": "exercise",
-    "title": "Ejercicio 15",
+    "title": "800–1400 · Por qué no capturar e5 por reflejo",
     "chapter": "Parte XIII / Ampliación D",
     "movesUci": [
       "e2e4",
@@ -518,7 +518,7 @@
   {
     "id": "ESP-E16",
     "kind": "exercise",
-    "title": "Ejercicio 16",
+    "title": "800–1400 · Reconoce la peor pieza blanca en la línea cerrada.",
     "chapter": "Parte XIII / Ampliación D",
     "movesUci": [
       "e2e4",
@@ -549,7 +549,7 @@
   {
     "id": "ESP-E17",
     "kind": "exercise",
-    "title": "Ejercicio 17",
+    "title": "800–1400 · Qué cambia tras d5",
     "chapter": "Parte XIII / Ampliación D",
     "movesUci": [
       "e2e4",
@@ -582,7 +582,7 @@
   {
     "id": "ESP-E18",
     "kind": "exercise",
-    "title": "Ejercicio 18",
+    "title": "800–1400 · Cómo responde el negro al caballo g3",
     "chapter": "Parte XIII / Ampliación D",
     "movesUci": [
       "e2e4",
@@ -617,7 +617,7 @@
   {
     "id": "ESP-E19",
     "kind": "exercise",
-    "title": "Ejercicio 19",
+    "title": "800–1400 · Qué gana el negro con ...a6 y ...b5",
     "chapter": "Parte XIII / Ampliación D",
     "movesUci": [
       "e2e4",
@@ -654,7 +654,7 @@
   {
     "id": "ESP-E20",
     "kind": "exercise",
-    "title": "Ejercicio 20",
+    "title": "800–1400 · Cuándo cambiar Axc6",
     "chapter": "Parte XIII / Ampliación D",
     "movesUci": [
       "e2e4",
@@ -693,7 +693,7 @@
   {
     "id": "ESP-E21",
     "kind": "exercise",
-    "title": "Ejercicio 21",
+    "title": "800–1400 · En la Berlinesa, ¿qué idea práctica sigue a ...Cxe4",
     "chapter": "Parte XIII / Ampliación D",
     "movesUci": [
       "e2e4",
@@ -734,7 +734,7 @@
   {
     "id": "ESP-E22",
     "kind": "exercise",
-    "title": "Ejercicio 22",
+    "title": "800–1400 · Contra 3...f5, ¿qué enfoque es práctico",
     "chapter": "Parte XIII / Ampliación D",
     "movesUci": [
       "e2e4",
@@ -777,7 +777,7 @@
   {
     "id": "ESP-E23",
     "kind": "exercise",
-    "title": "Ejercicio 23",
+    "title": "800–1400 · Qué candidato priorizar si existe ...d5 inmediato",
     "chapter": "Parte XIII / Ampliación D",
     "movesUci": [
       "e2e4",
@@ -822,7 +822,7 @@
   {
     "id": "ESP-E24",
     "kind": "exercise",
-    "title": "Ejercicio 24",
+    "title": "800–1400 · Qué significa mantener tensión",
     "chapter": "Parte XIII / Ampliación D",
     "movesUci": [
       "e2e4",
@@ -872,7 +872,7 @@
   {
     "id": "ESP-E25",
     "kind": "exercise",
-    "title": "Ejercicio 25",
+    "title": "800–1400 · Cómo mejorar el alfil c1",
     "chapter": "Parte XIII / Ampliación D",
     "movesUci": [
       "e2e4",
@@ -897,7 +897,7 @@
   {
     "id": "ESP-E26",
     "kind": "exercise",
-    "title": "Ejercicio 26",
+    "title": "800–1400 · Qué piezas mejoran en centro abierto",
     "chapter": "Parte XIII / Ampliación D",
     "movesUci": [
       "e2e4",
@@ -924,7 +924,7 @@
   {
     "id": "ESP-E27",
     "kind": "exercise",
-    "title": "Ejercicio 27",
+    "title": "800–1400 · Qué piezas mejoran en centro cerrado",
     "chapter": "Parte XIII / Ampliación D",
     "movesUci": [
       "e2e4",
@@ -953,7 +953,7 @@
   {
     "id": "ESP-E28",
     "kind": "exercise",
-    "title": "Ejercicio 28",
+    "title": "800–1400 · En la Variante del Cambio, ¿qué compensa los peones doblados negros",
     "chapter": "Parte XIII / Ampliación D",
     "movesUci": [
       "e2e4",
@@ -984,7 +984,7 @@
   {
     "id": "ESP-E29",
     "kind": "exercise",
-    "title": "Ejercicio 29",
+    "title": "800–1400 · Cuándo simplificar en la Variante del Cambio",
     "chapter": "Parte XIII / Ampliación D",
     "movesUci": [
       "e2e4",
@@ -1017,7 +1017,7 @@
   {
     "id": "ESP-E30",
     "kind": "exercise",
-    "title": "Ejercicio 30",
+    "title": "800–1400 · Qué busca ...c5 contra d4",
     "chapter": "Parte XIII / Ampliación D",
     "movesUci": [
       "e2e4",
@@ -1052,7 +1052,7 @@
   {
     "id": "ESP-E31",
     "kind": "exercise",
-    "title": "Ejercicio 31",
+    "title": "800–1400 · Qué busca ...c4 en centro cerrado",
     "chapter": "Parte XIII / Ampliación D",
     "movesUci": [
       "e2e4",
@@ -1089,7 +1089,7 @@
   {
     "id": "ESP-E32",
     "kind": "exercise",
-    "title": "Ejercicio 32",
+    "title": "800–1400 · Qué busca ...f5",
     "chapter": "Parte XIII / Ampliación D",
     "movesUci": [
       "e2e4",
@@ -1128,7 +1128,7 @@
   {
     "id": "ESP-E33",
     "kind": "exercise",
-    "title": "Ejercicio 33",
+    "title": "800–1400 · Compara h3 y d4.",
     "chapter": "Parte XIII / Ampliación D",
     "movesUci": [
       "e2e4",
@@ -1169,7 +1169,7 @@
   {
     "id": "ESP-E34",
     "kind": "exercise",
-    "title": "Ejercicio 34",
+    "title": "800–1400 · Compara Cbd2 y a4.",
     "chapter": "Parte XIII / Ampliación D",
     "movesUci": [
       "e2e4",
@@ -1212,7 +1212,7 @@
   {
     "id": "ESP-E35",
     "kind": "exercise",
-    "title": "Ejercicio 35",
+    "title": "800–1400 · Compara d5 y dxe5.",
     "chapter": "Parte XIII / Ampliación D",
     "movesUci": [
       "e2e4",
@@ -1257,7 +1257,7 @@
   {
     "id": "ESP-E36",
     "kind": "exercise",
-    "title": "Ejercicio 36",
+    "title": "800–1400 · Tablero virtual: reproduce hasta 8.c3.",
     "chapter": "Parte XIII / Ampliación D",
     "movesUci": [
       "e2e4",
@@ -1307,7 +1307,7 @@
   {
     "id": "ESP-E37",
     "kind": "exercise",
-    "title": "Ejercicio 37",
+    "title": "800–1400 · Tablero virtual: reproduce la ruta Cbd2-f1-g3.",
     "chapter": "Parte XIII / Ampliación D",
     "movesUci": [
       "e2e4",
@@ -1332,7 +1332,7 @@
   {
     "id": "ESP-E38",
     "kind": "exercise",
-    "title": "Ejercicio 38",
+    "title": "800–1400 · Tablero virtual: practica la Berlinesa con 4.O-O.",
     "chapter": "Parte XIII / Ampliación D",
     "movesUci": [
       "e2e4",
@@ -1359,7 +1359,7 @@
   {
     "id": "ESP-E39",
     "kind": "exercise",
-    "title": "Ejercicio 39",
+    "title": "800–1400 · Tablero virtual: practica Axc6 dxc6.",
     "chapter": "Parte XIII / Ampliación D",
     "movesUci": [
       "e2e4",
@@ -1388,7 +1388,7 @@
   {
     "id": "ESP-E40",
     "kind": "exercise",
-    "title": "Ejercicio 40",
+    "title": "800–1400 · Revisión global: construye tu plan en una posición desconocida.",
     "chapter": "Parte XIII / Ampliación D",
     "movesUci": [
       "e2e4",

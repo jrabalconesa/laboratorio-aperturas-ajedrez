@@ -16,6 +16,20 @@ function parseSimpleCsv(text) {
 
 const basePositions = parseSimpleCsv(basicCsv);
 const positionsById = Object.fromEntries(basePositions.map((row) => [row.Código, row]));
+const positionPedagogy = {
+  "ITA-P01": { objective: "Comprender por qué 1.e4 ocupa el centro y abre líneas para las piezas.", whitePlan: "Sostener e4, desarrollar Cf3 y preparar un enroque rápido.", blackPlan: "Disputar e4 con ...e5 y desarrollar sin perder tiempos." },
+  "ITA-P02": { objective: "Reconocer el desarrollo de Cf3 como una jugada que mejora una pieza y ataca e5.", whitePlan: "Continuar con Ac4 y O-O sin apresurar una captura en e5.", blackPlan: "Defender e5 con ...Cc6 y completar el desarrollo del flanco de rey." },
+  "ITA-P03": { objective: "Identificar la posición base italiana y la presión del alfil sobre f7.", whitePlan: "Enrocar, jugar c3 y preparar d4 cuando el centro pueda abrirse con seguridad.", blackPlan: "Desarrollar ...Cf6, enrocar y disputar d4 antes de quedar restringido." },
+  "ITA-P04": { objective: "Priorizar la seguridad del rey antes de iniciar operaciones centrales.", whitePlan: "Enrocar y conectar la torre con el centro antes de asumir riesgos.", blackPlan: "Completar el desarrollo y vigilar la ruptura blanca d4." },
+  "ITA-P05": { objective: "Explicar cómo c3 prepara d4 sin comprometer todavía la estructura.", whitePlan: "Sostener d4, conservar flexibilidad y elegir el momento de la ruptura.", blackPlan: "Aumentar la presión sobre d4 y preparar ...d5 como respuesta liberadora." },
+  "ITA-P06": { objective: "Calcular la ruptura d4 y anticipar todas las recapturas centrales.", whitePlan: "Abrir líneas cuando el rey esté seguro y las piezas puedan ocuparlas.", blackPlan: "Resolver la tensión con ...exd4 o contragolpear con ...d5 según la coordinación." },
+  "ITA-P07": { objective: "Evaluar qué piezas mejoran cuando el centro queda abierto.", whitePlan: "Desarrollar Cc3, activar las torres y utilizar las diagonales de los alfiles.", blackPlan: "Disputar columnas y cambiar las piezas blancas más activas." },
+  "ITA-P08": { objective: "Coordinar las piezas antes de convertir una ventaja de desarrollo en ataque.", whitePlan: "Mejorar la peor pieza, centralizar las torres y comprobar las defensas de f7.", blackPlan: "Neutralizar la presión central y buscar cambios que reduzcan la iniciativa blanca." },
+  "ITA-P09": { objective: "Reconocer el centro cerrado y la necesidad de maniobrar antes de romper.", whitePlan: "Seguir la ruta Cbd2-f1-g3 y preparar d4 con todas las piezas coordinadas.", blackPlan: "Preparar ...d5 y crear contrajuego antes de que el blanco concentre sus piezas." },
+  "ITA-P10": { objective: "Comprender la ruta del caballo hacia g3 y su relación con e4 y f5.", whitePlan: "Completar Cbd2-f1-g3 sin perder de vista la ruptura central rival.", blackPlan: "Usar ...d5 para cambiar el carácter de la posición antes del ataque blanco." },
+  "ITA-P11": { objective: "Reevaluar la posición inmediatamente después de la ruptura negra ...d5.", whitePlan: "Calcular capturas, ocupar las líneas abiertas y abandonar planes que ya no encajen.", blackPlan: "Aprovechar la liberación central para activar torres y piezas menores." },
+  "ITA-P12": { objective: "Reconocer la transición de la apertura al medio juego y formular un plan nuevo.", whitePlan: "Completar el desarrollo, comparar piezas activas y elegir el sector de juego.", blackPlan: "Consolidar el centro, coordinar las torres y buscar contrajuego concreto." },
+};
 
 const games = [
   {
@@ -33,19 +47,19 @@ const games = [
   {
     id: "ITA-M02",
     title: "El precio de la precipitación",
-    moves: ["e2e4","e7e5","g1f3","b8c6","f1c4","f8c5","d1h5","g7g6","h5f3","g8f6","c2c3","e8g8","d2d3","d7d5","e4d5","e5e4","d3e4","f6e4","e1g1","c6e5","f3e4","f8e8"],
+    moves: ["e2e4","e7e5","f1c4","b8c6","d1h5","g7g6","h5f3","g8f6","c2c3","f8g7","d2d3","e8g8","g1e2","d7d5","c4b3","d5e4","d3e4","c8g4","f3e3","f6e4","e1g1","g4e2","e3e2"],
     stops: [
-      [7, "Tras 4.Dh5?!", "¿Qué gana y qué pierde la dama?", "Presiona f7, pero pierde tiempos y retrasa el desarrollo y el enroque."],
-      [14, "Tras 7...d5", "¿Por qué la ruptura es fuerte?", "Las negras tienen el rey seguro y mayor desarrollo; las rupturas castigan la falta de coordinación."],
-      [16, "Tras 8...e4!", "¿Qué cambió al abrirse el centro?", "El caballo y la dama blancos quedan expuestos a ataques con ganancia de tiempo."],
-      [20, "Tras 10...Ce5", "¿Qué pieza negra mejora?", "El caballo se centraliza atacando la dama y el alfil de c4."],
-      [22, "Tras 11...Te8", "¿Por qué la torre llega con fuerza?", "La columna e está abierta y las piezas blancas siguen descoordinadas."],
+      [5, "Tras 3.Dh5", "¿Qué gana y qué pierde la dama?", "Crea una amenaza visible, pero obliga a invertir más tiempos y retrasa el desarrollo."],
+      [8, "Tras 4...Cf6", "¿Quién ha aprovechado mejor los tiempos?", "Las negras desarrollan atacando e4 mientras la dama blanca ya se ha movido dos veces."],
+      [14, "Tras 7...d5", "¿Por qué la ruptura es fuerte?", "Las negras tienen el rey seguro y mayor coordinación; abrir el centro favorece a sus piezas."],
+      [20, "Tras 10...Cxe4", "¿Qué permite la captura central?", "La falta de coordinación blanca deja e4 vulnerable y obliga a resolver amenazas concretas."],
+      [23, "Tras 12.Dxe2", "¿Cuál es la lección de la secuencia?", "El desarrollo útil y la seguridad del rey pesan más que una amenaza aislada de dama."],
     ],
   },
   {
     id: "ITA-M03",
     title: "Centro cerrado y maniobra",
-    moves: ["e2e4","e7e5","g1f3","b8c6","f1c4","f8c5","d2d3","g8f6","e1g1","d7d6","c2c3","a7a6","c4b3","c5a7","f1e1","e8g8","h2h3","h7h6","b1d2","f8e8","d2f1","c8e6","f1g3","d8d7","c1c2","a8d8","d3d4","d6d5","e4d5","e6d5","f3e5","c6e5","e1e5"],
+    moves: ["e2e4","e7e5","g1f3","b8c6","f1c4","f8c5","d2d3","g8f6","e1g1","d7d6","c2c3","a7a6","c4b3","c5a7","f1e1","e8g8","h2h3","h7h6","b1d2","f8e8","d2f1","c8e6","f1g3","d8d7","b3c2","a8d8","d3d4","d6d5","e4d5","e6d5","f3e5","c6e5","e1e5"],
     stops: [
       [11, "Tras 6.c3", "¿Por qué c3 sigue siendo útil sin jugar d4 enseguida?", "Reserva la ruptura, controla d4 y mantiene abiertas varias opciones."],
       [19, "Tras 10.Cbd2", "¿Cuál es la ruta del caballo?", "Cbd2-f1-g3; desde g3 participa en el flanco de rey y apoya e4."],
@@ -151,10 +165,10 @@ const positionRows = basePositions.map((source) => ({
   secuencia: source["Secuencia UCI"],
   FEN: source.FEN,
   bando_que_mueve: source.FEN.split(/\s+/)[1] === "b" ? "negras" : "blancas",
-  objetivo: "Reconocer la evolución de la Apertura Italiana y elegir el siguiente paso lógico.",
+  objetivo: positionPedagogy[source.Código].objective,
   nivel: "800–1400",
-  comentario_blancas: "Aplicar desarrollo, seguridad del rey, ruptura central y mejora de la peor pieza según la estructura.",
-  comentario_negras: "Buscar presión sobre e4 y la ruptura liberadora ...d5 sin descuidar el desarrollo.",
+  comentario_blancas: positionPedagogy[source.Código].whitePlan,
+  comentario_negras: positionPedagogy[source.Código].blackPlan,
   continuidad_didactica: `Reproducir la secuencia, explicar el plan de ambos bandos y continuar sin memorizar desde ${source.Código}.`,
   referencia_en_manual: `Ficha ${source.Código}`,
 }));
@@ -175,7 +189,7 @@ const structureRows = structureSpecs.map(([id, title, positionId, objective, whi
       id, kind: "estructura", title, chapter: "Ampliación B · Estructuras de peones",
       moves: source["Secuencia UCI"].split(/\s+/), objective, level: "intermedio",
       whitePlan, blackPlan,
-      continuation: "Identificar la estructura, la peor pieza y la ruptura de cada bando antes de elegir una jugada.",
+      continuation: `En «${title}», identifica la peor pieza, compara ${whitePlan} con ${blackPlan} y solo entonces elige una jugada.`,
       reference: `${id} · Ampliación B`,
     }),
     FEN: source.FEN,
@@ -266,17 +280,47 @@ const exerciseSpecs = [
   ...advancedQuestions,
 ];
 
+const rivalPlansByReference = {
+  "ITA-P03": "Comprobar ...Cf6, ...d6 y cualquier recurso que neutralice la presión sobre f7.",
+  "ITA-P04": "Aumentar la presión sobre e4 y aprovechar cualquier demora en el enroque blanco.",
+  "ITA-P05": "Responder a c3-d4 con ...exd4 o preparar ...d5 en el momento oportuno.",
+  "ITA-P07": "Disputar las columnas abiertas y cambiar las piezas blancas más activas.",
+  "ITA-P08": "Reducir la coordinación blanca mediante cambios o contrajuego central.",
+  "ITA-P09": "Preparar ...d5 antes de que la maniobra Cbd2-f1-g3 produzca un ataque.",
+  "ITA-P10": "Buscar ...d5 y obligar al blanco a revisar su plan de maniobra.",
+  "ITA-P11": "Usar las líneas recién abiertas para activar torres y piezas menores.",
+  "ITA-P12": "Centralizar el rey o las torres según queden o no las damas en el tablero.",
+  "ITA-S01": "Ocupar las líneas abiertas antes de quedar reducido a una defensa pasiva.",
+  "ITA-S02": "Mantener o resolver la tensión cuando la captura mejore la actividad negra.",
+  "ITA-S04": "Atacar la base d4 y cuestionar la cadena blanca con presión de piezas.",
+  "ITA-S05": "Bloquear el peón aislado y cambiar las piezas que sostienen su dinamismo.",
+  "ITA-S06": "Bloquear el peón pasado y crear contrajuego en el flanco contrario.",
+};
+
+function exerciseTitle(question, level) {
+  const cleaned = question.replace(/^¿/, "").replace(/\?$/, "");
+  const compact = cleaned.length > 78 ? `${cleaned.slice(0, 75).trim()}…` : cleaned;
+  return `${level || "Básico"} · ${compact}`;
+}
+
+function rivalPlan(reference) {
+  const direct = rivalPlansByReference[reference];
+  if (direct) return direct;
+  const baseReference = reference.match(/^ITA-[PS]\d\d/)?.[0];
+  return rivalPlansByReference[baseReference] || "Generar una respuesta activa en el centro y comprobar cómo cambia la coordinación de ambos bandos.";
+}
+
 const exerciseRows = exerciseSpecs.map(([question, answer, reference, level], index) => {
   const id = `ITA-E${String(index + 1).padStart(2, "0")}`;
   const source = sourceForReference(reference);
   return {
     ...commonRow({
-      id, kind: "ejercicio", title: `Ejercicio ${index + 1}`,
+      id, kind: "ejercicio", title: exerciseTitle(question, level),
       chapter: index < 15 ? "Parte XIII" : "Ampliación D",
       moves: source.moves, objective: question, level,
       whitePlan: answer,
-      blackPlan: "Comparar al menos dos candidatas y anticipar la respuesta más activa del rival.",
-      continuation: `Resolver sin mover, justificar la elección y revisar ${reference}.`,
+      blackPlan: rivalPlan(reference),
+      continuation: `Resuelve sin mover, compara dos candidatas, anticipa ${rivalPlan(reference).toLowerCase()} y revisa ${reference}.`,
       reference: `${id} · ${index < 15 ? "Parte XIII" : "Ampliación D"}`,
     }),
     FEN: source.fen,

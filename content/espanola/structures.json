@@ -20,7 +20,7 @@
     ],
     "fen": "r1bqk2r/2ppbppp/p1n2n2/1p2p3/B3P3/5N2/PPPP1PPP/RNBQR1K1 w kq b6 0 7",
     "sideToMove": "white",
-    "objective": "Reconocer planes de estructura",
+    "objective": "Coordinar torres y alfiles cuando el centro se abre y cada tiempo cuenta.",
     "level": {
       "label": "900–1400",
       "minRating": 900,
@@ -63,7 +63,7 @@
     ],
     "fen": "r1bq1rk1/2pnbppp/p2p1n2/1p2p3/3PP3/1BP2N1P/PP3PP1/RNBQR1K1 w - - 1 11",
     "sideToMove": "white",
-    "objective": "Reconocer planes de estructura",
+    "objective": "Mantener o resolver la tensión central según la actividad de las piezas.",
     "level": {
       "label": "900–1400",
       "minRating": 900,
@@ -113,7 +113,7 @@
     ],
     "fen": "r1b2rk1/2qnbp1p/p2p1np1/1ppPp3/4P3/1BP2NNP/PP3PP1/R1BQR1K1 b - - 1 14",
     "sideToMove": "black",
-    "objective": "Reconocer planes de estructura",
+    "objective": "Maniobrar en un centro cerrado sin permitir el contrajuego liberador rival.",
     "level": {
       "label": "900–1400",
       "minRating": 900,
@@ -144,7 +144,7 @@
     ],
     "fen": "r1bqkb1r/1ppp1ppp/p1n2n2/4p3/B3P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 2 5",
     "sideToMove": "white",
-    "objective": "Reconocer planes de estructura",
+    "objective": "Convertir la mayoría 4 contra 3 sin entregar la actividad de los alfiles negros.",
     "level": {
       "label": "900–1400",
       "minRating": 900,
@@ -194,7 +194,7 @@
     ],
     "fen": "r1b2rk1/2qnbp1p/p2p1np1/1ppPp3/4P3/1BP2NNP/PP3PP1/R1BQR1K1 b - - 1 14",
     "sideToMove": "black",
-    "objective": "Reconocer planes de estructura",
+    "objective": "Sostener la cadena e4-d5 y reconocer qué ruptura ataca su base.",
     "level": {
       "label": "900–1400",
       "minRating": 900,
@@ -231,7 +231,7 @@
     ],
     "fen": "r1bqk2r/2p1bppp/p1np1n2/1p2p3/4P3/1B3N2/PPPP1PPP/RNBQR1K1 w kq - 0 8",
     "sideToMove": "white",
-    "objective": "Reconocer planes de estructura",
+    "objective": "Compensar el peón aislado en d4 con actividad antes de simplificar.",
     "level": {
       "label": "900–1400",
       "minRating": 900,

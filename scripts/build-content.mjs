@@ -2,6 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 import process from "node:process";
 import { fileURLToPath } from "node:url";
+import { Chess } from "chess.js";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const checkOnly = process.argv.includes("--check");
@@ -66,6 +67,41 @@ const openings = [
   },
 ];
 
+const editorialObjectives = {
+  "ESP-P01": "Comprender cómo 1.e4 ocupa el centro y por qué Cf3 es el desarrollo más activo.",
+  "ESP-P02": "Explicar cómo Ab5 aumenta la presión sobre e5 sin ganar todavía el peón.",
+  "ESP-P03": "Reconocer la posición base española y la tensión entre Ab5, Cc6 y e5.",
+  "ESP-P04": "Priorizar el enroque y conservar el alfil antes de abrir el centro.",
+  "ESP-P05": "Comprender cómo Te1 refuerza e4 y prepara una futura ruptura d4.",
+  "ESP-P06": "Valorar el espacio negro del flanco de dama y la utilidad del alfil en b3.",
+  "ESP-P07": "Explicar por qué c3 es una jugada de infraestructura para preparar d4.",
+  "ESP-P08": "Reconocer una jugada profiláctica útil y distinguirla de una pérdida de tiempo.",
+  "ESP-P09": "Calcular la ruptura d4 y anticipar cómo cambia la estructura central.",
+  "ESP-P10": "Desarrollar el caballo por d2 sin bloquear el peón c ni abandonar e4.",
+  "ESP-P11": "Decidir si conviene cerrar el centro con d5 o mantener la tensión.",
+  "ESP-P12": "Formular un plan de medio juego después de completar la maniobra Cf1-g3.",
+  "ESP-S01": "Coordinar torres y alfiles cuando el centro se abre y cada tiempo cuenta.",
+  "ESP-S02": "Mantener o resolver la tensión central según la actividad de las piezas.",
+  "ESP-S03": "Maniobrar en un centro cerrado sin permitir el contrajuego liberador rival.",
+  "ESP-S04": "Convertir la mayoría 4 contra 3 sin entregar la actividad de los alfiles negros.",
+  "ESP-S05": "Sostener la cadena e4-d5 y reconocer qué ruptura ataca su base.",
+  "ESP-S06": "Compensar el peón aislado en d4 con actividad antes de simplificar.",
+};
+
+function descriptiveExerciseTitle(record) {
+  const label = record.level?.label || "Ejercicio";
+  const cleaned = record.objective.replace(/^¿/, "").replace(/\?$/, "");
+  const compact = cleaned.length > 78 ? `${cleaned.slice(0, 75).trim()}…` : cleaned;
+  return `${label} · ${compact}`;
+}
+
+function refineRecord(record) {
+  if (editorialObjectives[record.id]) record.objective = editorialObjectives[record.id];
+  if (record.kind === "exercise" && /^Ejercicio \d+$/.test(record.title)) {
+    record.title = descriptiveExerciseTitle(record);
+  }
+  return record;
+}
 const kindMap = new Map([
   ["posición", "position"],
   ["ficha_posicion", "position"],
@@ -209,6 +245,33 @@ function parsePgnGames(text, opening) {
   });
 }
 
+function translateLocalizedPgn(pgn) {
+  const comments = [];
+  const protectedPgn = pgn.replace(/\{[^}]*\}/gs, (comment) => {
+    const token = `__PGN_COMMENT_${comments.length}__`;
+    comments.push(comment);
+    return token;
+  });
+  const translated = protectedPgn
+    .replace(/\bR(?=[a-h1-8x])/g, "K")
+    .replace(/\bC(?=[a-h1-8x])/g, "N")
+    .replace(/\bA(?=[a-h1-8x])/g, "B")
+    .replace(/\bT(?=[a-h1-8x])/g, "R")
+    .replace(/\bD(?=[a-h1-8x])/g, "Q");
+  return translated.replace(/__PGN_COMMENT_(\d+)__/g, (_, index) => comments[Number(index)]);
+}
+
+function replayRecord(record) {
+  const chess = new Chess();
+  for (const [index, uci] of record.movesUci.entries()) {
+    try {
+      chess.move({ from: uci.slice(0, 2), to: uci.slice(2, 4), promotion: uci[4] });
+    } catch {
+      throw new Error(`${record.id}: jugada ilegal ${uci} en ply ${index + 1}`);
+    }
+  }
+  return chess.fen();
+}
 function validate(opening, records, games) {
   const errors = [];
   const warnings = [];
@@ -229,6 +292,15 @@ function validate(opening, records, games) {
     if (fenSide(record.fen) !== record.sideToMove) {
       errors.push(`El bando que mueve no coincide con la FEN: ${record.id}`);
     }
+    try {
+      const replayed = replayRecord(record).split(" ");
+      const expected = record.fen.split(" ");
+      if (replayed.slice(0, 3).join(" ") !== expected.slice(0, 3).join(" ")) {
+        errors.push(`La secuencia no reproduce la posición o los enroques de la FEN: ${record.id}`);
+      }
+    } catch (error) {
+      errors.push(error.message);
+    }
   }
 
   const counts = Object.fromEntries(
@@ -246,6 +318,14 @@ function validate(opening, records, games) {
     }
   }
   if (games.length !== 3) errors.push(`Partidas PGN: ${games.length} de 3`);
+  for (const game of games) {
+    const chess = new Chess();
+    try {
+      chess.loadPgn(opening.id === "espanola" ? translateLocalizedPgn(game.pgn) : game.pgn);
+    } catch (error) {
+      errors.push(`${game.id}: PGN ilegal (${error.message.split("\n")[0]})`);
+    }
+  }
 
   return { errors, warnings, counts, gameCount: games.length };
 }
@@ -263,7 +343,7 @@ for (const opening of openings) {
   const source = path.join(root, "sources", opening.sourceDir);
   const csvText = fs.readFileSync(path.join(source, opening.csv), "utf8");
   const pgnText = fs.readFileSync(path.join(source, opening.pgn), "utf8").replace(/^\uFEFF/, "");
-  const records = parseCsv(csvText).map((row) => normalizeRow(row, opening));
+  const records = parseCsv(csvText).map((row) => refineRecord(normalizeRow(row, opening)));
   const games = parsePgnGames(pgnText, opening);
   const expansionPath = path.join(source, "ampliacion_partidas.json");
   const expansion = fs.existsSync(expansionPath)

@@ -17,7 +17,8 @@ const configurations = {
     accent: "#AA151B",
     focus: "#D14A4F",
     manual: 2,
-    notation: "1.e4 e5 2.Cf3 Cc6 3.Ab5",
+    notation: "1.e4 e5 2.Cf3 Cc6 3.Ab5 a6",
+    principles: ["Presión e5", "Alfil español", "Maniobras", "Ruptura d4"],
     identity: "La presión española",
     lead: "Domina la Apertura Española entendiendo la presión central, las maniobras y el momento de jugar d4.",
     baseIndex: 2,
@@ -29,7 +30,8 @@ const configurations = {
     accent: "#0065BD",
     focus: "#3F8DCA",
     manual: 3,
-    notation: "1.e4 e5 2.Cf3 Cc6 3.d4",
+    notation: "1.e4 e5 2.Cf3 Cc6 3.d4 exd4",
+    principles: ["Ruptura d4", "Recaptura", "Líneas abiertas", "Iniciativa"],
     identity: "La ruptura escocesa",
     lead: "Domina la Apertura Escocesa entendiendo el centro abierto, el desarrollo con tiempo y la iniciativa.",
     baseIndex: 2,
@@ -40,22 +42,37 @@ function splitIdeas(text = "") {
   return text.split(/(?<=[.!?])\s+/).filter(Boolean).slice(0, 3);
 }
 
+const coreGameTitles = {
+  "ESC-M01": "Estructura 4...Cf6 · presión sobre d5",
+  "ESC-M02": "Salida prematura de dama · iniciativa y desarrollo",
+  "ESC-M03": "Jaque ...Ab4+ · estructura y ruptura ...d5",
+};
+
+function translateLocalizedPgn(pgn) {
+  const comments = [];
+  const protectedPgn = pgn.replace(/\{[^}]*\}/gs, (comment) => {
+    const token = `__PGN_COMMENT_${comments.length}__`;
+    comments.push(comment);
+    return token;
+  });
+  const translated = protectedPgn
+    .replace(/\bR(?=[a-h1-8x])/g, "K")
+    .replace(/\bC(?=[a-h1-8x])/g, "N")
+    .replace(/\bA(?=[a-h1-8x])/g, "B")
+    .replace(/\bT(?=[a-h1-8x])/g, "R")
+    .replace(/\bD(?=[a-h1-8x])/g, "Q");
+  return translated.replace(/__PGN_COMMENT_(\d+)__/g, (_, index) => comments[Number(index)]);
+}
+
 function parseCoreGame(game, localizedNotation) {
   const chess = new Chess();
-  const pgn = localizedNotation
-    ? game.pgn
-      .replace(/\bR(?=[a-h1-8x])/g, "K")
-      .replace(/\bC(?=[a-h1-8x])/g, "N")
-      .replace(/\bA(?=[a-h1-8x])/g, "B")
-      .replace(/\bT(?=[a-h1-8x])/g, "R")
-      .replace(/\bD(?=[a-h1-8x])/g, "Q")
-    : game.pgn;
+  const pgn = localizedNotation ? translateLocalizedPgn(game.pgn) : game.pgn;
   chess.loadPgn(pgn);
   const history = chess.history({ verbose: true });
   const commentsByFen = new Map(chess.getComments().map(({ fen, comment }) => [fen, comment]));
   return {
     code: game.id,
-    title: game.title.replace(`${game.id} · `, "").replace("Mi Repertorio de Ajedrez - ", ""),
+    title: coreGameTitles[game.id] || game.title.replace(`${game.id} · `, "").replace("Mi Repertorio de Ajedrez - ", ""),
     subtitle: `${game.headers.White ?? "Blancas"} — ${game.headers.Black ?? "Negras"}`,
     moves: history.map((move) => `${move.from}${move.to}${move.promotion ?? ""}`),
     san: history.map((move) => move.san),
@@ -131,6 +148,9 @@ function buildData(id) {
 }
 
 function buildHtml(id, config, structures) {
+  const principleItems = config.principles.map((principle, index) =>
+    `<span><b>0${index + 1}</b> ${principle}</span>${index < config.principles.length - 1 ? "<i></i>" : ""}`
+  ).join("\n              ");
   const decisionButtons = structures.map((structure, index) =>
     `<button class="decision-branch${index === 0 ? " active" : ""}" data-variant="${index}"><span>${structure.id}</span><b>${structure.title}</b><small>${structure.objective}</small></button>`
   ).join("\n          ");
@@ -143,9 +163,12 @@ function buildHtml(id, config, structures) {
     .replaceAll("Apertura Italiana", `Apertura ${config.adjective}`)
     .replaceAll("Italiana", config.adjective)
     .replaceAll("italiana", config.adjective.toLowerCase())
-    .replace("1.e4 e5 2.Cf3 Cc6 3.Ac4", config.notation)
+    .replace("1.e4 e5 2.Cf3 Cc6 3.Ac4 Ac5", config.notation)
     .replace("Domina la Apertura " + config.adjective + " entendiendo el centro, la seguridad del rey y la coordinación de tus piezas.", config.lead)
     .replace("La diagonal " + config.adjective.toLowerCase(), config.identity)
+    .replace(/<div class="principles">[\s\S]*?<\/div>\s*<\/div>\s*<div class="hero-board-wrap">/, `<div class="principles">\n              ${principleItems}\n            </div>\n          </div>\n          <div class="hero-board-wrap">`)
+    .replaceAll("ITA-P01", `${config.code}-P01`)
+    .replaceAll("ITA-M01", `${config.code}-M01`)
     .replace('<span class="route-number">03</span>', '<span class="route-number">06</span>')
     .replace('<span class="route-number">07</span>', '<span class="route-number">06</span>')
     .replace(/<div class="decision-map"[\s\S]*?<\/div>\s*\n\s*<div class="variant-shell">/, `<div class="decision-map" aria-label="Estructuras principales">\n          ${decisionButtons}\n        </div>\n\n        <div class="variant-shell">`)
@@ -153,7 +176,7 @@ function buildHtml(id, config, structures) {
     .replace("CUADERNO 1", `CUADERNO ${config.manual}`)
     .replace(`../../index.html#/aperturas/${config.adjective.toLowerCase()}`, `../../index.html#/aperturas/${id}`)
     .replace(/\s*<script src="expansion-games\.js"><\/script>/, "")
-    .replace(/app\.js\?v=[^"]+/, "app.js?v=20260803-flag-colors-1");
+    .replace(/app\.js\?v=[^"]+/, "app.js?v=20260803-content-coherence-1");
 }
 
 const italianaExercises = JSON.parse(fs.readFileSync(path.join(root, "content", "italiana", "exercises.json"), "utf8"));
@@ -166,7 +189,7 @@ for (const [id, config] of Object.entries(configurations)) {
   fs.cpSync(path.join(sourceLab, "assets"), path.join(target, "assets"), { recursive: true, force: true });
   fs.copyFileSync(path.join(sourceLab, "styles.css"), path.join(target, "styles.css"));
   const serviceWorker = fs.readFileSync(path.join(sourceLab, "service-worker.js"), "utf8")
-    .replace("la-italiana-v15", `laboratorio-${id}-v5`)
+    .replace("la-italiana-v16", `laboratorio-${id}-v6`)
     .replace(/\s*"\.\/expansion-games\.js",/, "");
   fs.writeFileSync(path.join(target, "service-worker.js"), serviceWorker, "utf8");
   fs.writeFileSync(path.join(target, "index.html"), buildHtml(id, config, structures), "utf8");
