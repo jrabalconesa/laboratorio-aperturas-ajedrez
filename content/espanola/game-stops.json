@@ -197,10 +197,10 @@
       "c7c5",
       "d4d5",
       "c5c4",
-      "c2e3",
+      "c1e3",
       "d7c5"
     ],
-    "fen": "r2qrbk1/1b3p1p/p2p1np1/1pnPp3/P1p1P3/2P1BNNP/1P3PP1/R1BQR1K1 w - - 2 18",
+    "fen": "r2qrbk1/1b3p1p/p2p1np1/1pnPp3/P1p1P3/2P1BNNP/1PB2PP1/R2QR1K1 w - - 2 18",
     "sideToMove": "white",
     "objective": "Parada didáctica 5: interpretar la posición real de la partida",
     "level": {

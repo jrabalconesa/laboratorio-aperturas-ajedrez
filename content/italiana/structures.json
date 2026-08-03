@@ -31,7 +31,7 @@
     },
     "whitePlan": "Desarrollar Cc3, activar torres y aprovechar las líneas.",
     "blackPlan": "Completar desarrollo y disputar las columnas antes de quedar restringido.",
-    "teachingContinuation": "Identificar la estructura, la peor pieza y la ruptura de cada bando antes de elegir una jugada.",
+    "teachingContinuation": "En «Centro abierto», identifica la peor pieza, compara Desarrollar Cc3, activar torres y aprovechar las líneas. con Completar desarrollo y disputar las columnas antes de quedar restringido. y solo entonces elige una jugada.",
     "manualReference": "ITA-S01 · Ampliación B",
     "tags": [],
     "openingId": "italiana"
@@ -65,7 +65,7 @@
     },
     "whitePlan": "Conservar opciones y calcular dxe5 o e5 solo con beneficio concreto.",
     "blackPlan": "Preparar ...exd4 o ...d5 según la colocación de las piezas.",
-    "teachingContinuation": "Identificar la estructura, la peor pieza y la ruptura de cada bando antes de elegir una jugada.",
+    "teachingContinuation": "En «Centro con tensión», identifica la peor pieza, compara Conservar opciones y calcular dxe5 o e5 solo con beneficio concreto. con Preparar ...exd4 o ...d5 según la colocación de las piezas. y solo entonces elige una jugada.",
     "manualReference": "ITA-S02 · Ampliación B",
     "tags": [],
     "openingId": "italiana"
@@ -99,7 +99,7 @@
     },
     "whitePlan": "Jugar Te1, Cbd2-f1-g3 y preparar d4.",
     "blackPlan": "Preparar ...d5 y generar contrajuego antes del ataque blanco.",
-    "teachingContinuation": "Identificar la estructura, la peor pieza y la ruptura de cada bando antes de elegir una jugada.",
+    "teachingContinuation": "En «Centro cerrado», identifica la peor pieza, compara Jugar Te1, Cbd2-f1-g3 y preparar d4. con Preparar ...d5 y generar contrajuego antes del ataque blanco. y solo entonces elige una jugada.",
     "manualReference": "ITA-S03 · Ampliación B",
     "tags": [],
     "openingId": "italiana"
@@ -133,7 +133,7 @@
     },
     "whitePlan": "Desarrollar Cc3 y utilizar el espacio para activar las piezas.",
     "blackPlan": "Presionar d4 mediante ...Cc6, ...Ag4 y ...Te8.",
-    "teachingContinuation": "Identificar la estructura, la peor pieza y la ruptura de cada bando antes de elegir una jugada.",
+    "teachingContinuation": "En «Cadena c3-d4-e4», identifica la peor pieza, compara Desarrollar Cc3 y utilizar el espacio para activar las piezas. con Presionar d4 mediante ...Cc6, ...Ag4 y ...Te8. y solo entonces elige una jugada.",
     "manualReference": "ITA-S04 · Ampliación B",
     "tags": [],
     "openingId": "italiana"
@@ -170,7 +170,7 @@
     },
     "whitePlan": "Buscar e5, columnas abiertas y ataque antes de simplificar.",
     "blackPlan": "Bloquear d4 y cambiar las piezas activas blancas.",
-    "teachingContinuation": "Identificar la estructura, la peor pieza y la ruptura de cada bando antes de elegir una jugada.",
+    "teachingContinuation": "En «Peón aislado en d4», identifica la peor pieza, compara Buscar e5, columnas abiertas y ataque antes de simplificar. con Bloquear d4 y cambiar las piezas activas blancas. y solo entonces elige una jugada.",
     "manualReference": "ITA-S05 · Ampliación B",
     "tags": [],
     "openingId": "italiana"
@@ -205,7 +205,7 @@
       "c8e6",
       "f1g3",
       "d8d7",
-      "c1c2",
+      "b3c2",
       "a8d8",
       "d3d4",
       "d6d5",
@@ -215,7 +215,7 @@
       "c6e5",
       "e1e5"
     ],
-    "fen": "3rr1k1/bppq1pp1/p3b2p/3nR3/3P4/1BP3NP/PPB2PP1/R2Q2K1 b - - 0 17",
+    "fen": "3rr1k1/bppq1pp1/p3b2p/3nR3/3P4/2P3NP/PPB2PP1/R1BQ2K1 b - - 0 17",
     "sideToMove": "black",
     "objective": "Transformar la mayoría de peones en un peón pasado.",
     "level": {
@@ -226,7 +226,7 @@
     },
     "whitePlan": "Activar el rey y avanzar de forma coordinada.",
     "blackPlan": "Bloquear la mayoría y crear contrajuego en el otro flanco.",
-    "teachingContinuation": "Identificar la estructura, la peor pieza y la ruptura de cada bando antes de elegir una jugada.",
+    "teachingContinuation": "En «Mayoría central», identifica la peor pieza, compara Activar el rey y avanzar de forma coordinada. con Bloquear la mayoría y crear contrajuego en el otro flanco. y solo entonces elige una jugada.",
     "manualReference": "ITA-S06 · Ampliación B",
     "tags": [],
     "openingId": "italiana"
