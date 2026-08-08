@@ -48,7 +48,7 @@ async function loadCatalog() {
   }
   document.querySelector("#availableCount").textContent = state.catalog.length;
   document.querySelector("#openingGrid").innerHTML = state.catalog.map((opening) => `
-    <a class="opening-card" style="--accent:${opening.accent}" href="#/aperturas/${opening.id}" aria-label="Ver presentación de ${escapeHtml(opening.shortTitle)}">
+    <a class="opening-card" style="--accent:${opening.accent};--board-dark:${opening.boardDark || opening.accent}" href="#/aperturas/${opening.id}" aria-label="Ver presentación de ${escapeHtml(opening.shortTitle)}">
       <div class="card-topline"><span>CUADERNO ${String(opening.manualNumber).padStart(2, "0")}</span><span>v${escapeHtml(opening.version)}</span></div>
       <div><p class="opening-code">${escapeHtml(opening.code)}</p><h3>${escapeHtml(opening.shortTitle)}</h3><p>${escapeHtml(opening.title)}</p></div>
       <div class="card-summary"><span><strong>${opening.inventory.position}</strong> posiciones</span><span><strong>${opening.gameCount}</strong> partidas</span></div>
@@ -70,6 +70,7 @@ function route() {
   }
   detail.hidden = false;
   detail.style.setProperty("--accent", opening.accent);
+  detail.style.setProperty("--board-dark", opening.boardDark || opening.accent);
   document.title = `${opening.shortTitle} · Laboratorio de Aperturas`;
   detail.innerHTML = `
     <a class="back-link" href="#/">← Todas las aperturas</a>

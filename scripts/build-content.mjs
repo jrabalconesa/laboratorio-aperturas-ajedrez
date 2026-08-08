@@ -16,6 +16,7 @@ const openings = [
     shortTitle: "La Italiana",
     version: "2",
     accent: "#008C45",
+    boardDark: "#6F9278",
     preview: {
       fen: "r1bqkbnr/pppp1ppp/2n5/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 3 3",
       line: "1.e4 e5 2.Cf3 Cc6 3.Ac4",
@@ -35,6 +36,7 @@ const openings = [
     shortTitle: "La Española",
     version: "2.3",
     accent: "#AA151B",
+    boardDark: "#B66A67",
     preview: {
       fen: "r1bqkbnr/pppp1ppp/2n5/1B2p3/4P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 3 3",
       line: "1.e4 e5 2.Cf3 Cc6 3.Ab5",
@@ -54,6 +56,7 @@ const openings = [
     shortTitle: "La Escocesa",
     version: "1.4",
     accent: "#0065BD",
+    boardDark: "#6C8FB2",
     preview: {
       fen: "r1bqkbnr/pppp1ppp/2n5/4p3/3PP3/5N2/PPP2PPP/RNBQKB1R b KQkq d3 0 3",
       line: "1.e4 e5 2.Cf3 Cc6 3.d4",
@@ -360,6 +363,7 @@ for (const opening of openings) {
     shortTitle: opening.shortTitle,
     version: opening.version,
     accent: opening.accent,
+    boardDark: opening.boardDark,
     preview: opening.preview,
     quote: opening.quote,
     storageNamespace: `repertorio:${opening.id}:v1`,
@@ -397,4 +401,3 @@ if (!checkOnly) {
   fs.writeFileSync(path.join(root, "content", "catalog.js"), `window.OPENING_CATALOG = ${JSON.stringify(catalog, null, 2)};\n`, "utf8");
 }
 if (failureCount) process.exitCode = 1;
-

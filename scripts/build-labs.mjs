@@ -16,6 +16,7 @@ const configurations = {
     code: "ESP",
     accent: "#AA151B",
     focus: "#D14A4F",
+    boardDark: "#B66A67",
     manual: 2,
     notation: "1.e4 e5 2.Cf3 Cc6 3.Ab5 a6",
     principles: ["Presión e5", "Alfil español", "Maniobras", "Ruptura d4"],
@@ -29,6 +30,7 @@ const configurations = {
     code: "ESC",
     accent: "#0065BD",
     focus: "#3F8DCA",
+    boardDark: "#6C8FB2",
     manual: 3,
     notation: "1.e4 e5 2.Cf3 Cc6 3.d4 exd4",
     principles: ["Ruptura d4", "Recaptura", "Líneas abiertas", "Iniciativa"],
@@ -157,7 +159,7 @@ function buildHtml(id, config, structures) {
 
   return sourceHtml
     .replace('content="#008C45"', `content="${config.accent}"`)
-    .replace('<body style="--red:#008C45;--orange:#38A76B;">', `<body style="--red:${config.accent};--orange:${config.focus};">`)
+    .replace('<body style="--red:#008C45;--orange:#38A76B;--dark-square:#6F9278;">', `<body style="--red:${config.accent};--orange:${config.focus};--dark-square:${config.boardDark};">`)
     .replaceAll("La Italiana", config.article)
     .replaceAll("LA ITALIANA", config.article.toUpperCase())
     .replaceAll("Apertura Italiana", `Apertura ${config.adjective}`)
@@ -176,6 +178,7 @@ function buildHtml(id, config, structures) {
     .replace("CUADERNO 1", `CUADERNO ${config.manual}`)
     .replace(`../../index.html#/aperturas/${config.adjective.toLowerCase()}`, `../../index.html#/aperturas/${id}`)
     .replace(/\s*<script src="expansion-games\.js"><\/script>/, "")
+    .replace(/styles\.css\?v=[^"]+/, "styles.css?v=20260808-opening-board-colors-1")
     .replace(/app\.js\?v=[^"]+/, "app.js?v=20260803-content-coherence-1");
 }
 
@@ -189,7 +192,7 @@ for (const [id, config] of Object.entries(configurations)) {
   fs.cpSync(path.join(sourceLab, "assets"), path.join(target, "assets"), { recursive: true, force: true });
   fs.copyFileSync(path.join(sourceLab, "styles.css"), path.join(target, "styles.css"));
   const serviceWorker = fs.readFileSync(path.join(sourceLab, "service-worker.js"), "utf8")
-    .replace("la-italiana-v16", `laboratorio-${id}-v6`)
+    .replace("la-italiana-v17", `laboratorio-${id}-v7`)
     .replace(/\s*"\.\/expansion-games\.js",/, "");
   fs.writeFileSync(path.join(target, "service-worker.js"), serviceWorker, "utf8");
   fs.writeFileSync(path.join(target, "index.html"), buildHtml(id, config, structures), "utf8");
