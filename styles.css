@@ -103,3 +103,46 @@
   .inventory-grid strong { font-size: 34px; }
   .opening-quote { margin-top: 12px; padding: 12px; }
 }
+
+/* GLOBAL DENSITY PASS */
+@media (min-width: 901px) {
+  .site-header { padding-block: 13px; }
+  .hero { min-height: 248px; padding-block: 22px 19px; }
+  .hero h1 { font-size: clamp(44px, 4.25vw, 62px); }
+  .opening-card { min-height: 232px; }
+  .opening-card h3 { font-size: 30px; }
+  .opening-detail { padding-top: 17px; }
+  .opening-header { margin-top: 10px; }
+}
+
+@media (min-width: 561px) and (max-width: 900px) {
+  .site-header { padding-block: 15px; }
+  .hero { padding-block: 28px 22px; }
+  .section-heading { margin-bottom: 15px; }
+  .opening-card { min-height: 220px; }
+  .opening-detail { padding-top: 22px; }
+  .opening-header { margin-block: 18px 14px; }
+  .opening-header h1 { font-size: clamp(42px, 7vw, 54px); }
+}
+
+@media (max-width: 560px) {
+  .site-header { padding-block: 13px; }
+  .hero { padding-block: 23px 18px; }
+  .hero h1 { font-size: 38px; line-height: .96; }
+  .hero h1 + p { margin-bottom: 0; font-size: 15px; line-height: 1.4; }
+  .section-heading { margin-bottom: 10px; }
+  .section-heading h2 { font-size: 29px; }
+  .opening-card { min-height: 198px; padding: 16px; }
+  .opening-card h3 { font-size: 29px; }
+  .card-summary { margin-top: 18px; padding-top: 12px; }
+  .card-link-label { margin-top: 13px; }
+  .opening-detail { padding-top: 16px; }
+  .opening-header { margin-block: 12px; padding-bottom: 12px; }
+  .opening-header h1 { font-size: 38px; }
+  .opening-header h1 + p { font-size: 15px; margin-block: 6px 0; }
+  .launch-module { margin-bottom: 7px; padding-block: 11px; }
+  .module-nav { margin-bottom: 9px; }
+  .inventory-grid article { min-height: 72px; padding: 11px; }
+  .inventory-grid strong { font-size: 30px; }
+  .opening-quote { margin-top: 8px; padding: 10px; }
+}

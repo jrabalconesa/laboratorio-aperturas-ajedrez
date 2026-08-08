@@ -178,8 +178,8 @@ function buildHtml(id, config, structures) {
     .replace("CUADERNO 1", `CUADERNO ${config.manual}`)
     .replace(`../../index.html#/aperturas/${config.adjective.toLowerCase()}`, `../../index.html#/aperturas/${id}`)
     .replace(/\s*<script src="expansion-games\.js"><\/script>/, "")
-    .replace(/styles\.css\?v=[^"]+/, "styles.css?v=20260808-mobile-home-density-1")
-    .replace(/app\.js\?v=[^"]+/, "app.js?v=20260809-inline-piece-sprite-1");
+    .replace(/styles\.css\?v=[^"]+/, "styles.css?v=20260809-global-density-1")
+    .replace(/app\.js\?v=[^"]+/, "app.js?v=20260809-global-density-1");
 }
 
 const italianaExercises = JSON.parse(fs.readFileSync(path.join(root, "content", "italiana", "exercises.json"), "utf8"));
@@ -192,7 +192,7 @@ for (const [id, config] of Object.entries(configurations)) {
   fs.cpSync(path.join(sourceLab, "assets"), path.join(target, "assets"), { recursive: true, force: true });
   fs.copyFileSync(path.join(sourceLab, "styles.css"), path.join(target, "styles.css"));
   const serviceWorker = fs.readFileSync(path.join(sourceLab, "service-worker.js"), "utf8")
-    .replace("la-italiana-v20", `laboratorio-${id}-v10`)
+    .replace("la-italiana-v21", `laboratorio-${id}-v11`)
     .replace(/\s*"\.\/expansion-games\.js",/, "");
   fs.writeFileSync(path.join(target, "service-worker.js"), serviceWorker, "utf8");
   fs.writeFileSync(path.join(target, "index.html"), buildHtml(id, config, structures), "utf8");
@@ -217,8 +217,9 @@ function lessonMoveExplanation(lesson,move){return [moveExplanations[move]||less
   fs.writeFileSync(path.join(target, "app.js"), prelude + tailoredEngine, "utf8");
 
   const manifest = {
-    name: `${config.article} · Laboratorio de apertura`,
-    short_name: config.article,
+    name: "Laboratorio de Aperturas",
+    short_name: "Aperturas",
+    description: "Mi Repertorio de Ajedrez",
     start_url: "./",
     display: "standalone",
     background_color: "#f4f0e7",

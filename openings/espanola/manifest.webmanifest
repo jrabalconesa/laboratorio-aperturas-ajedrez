@@ -1,6 +1,7 @@
 {
-  "name": "La Española · Laboratorio de apertura",
-  "short_name": "La Española",
+  "name": "Laboratorio de Aperturas",
+  "short_name": "Aperturas",
+  "description": "Mi Repertorio de Ajedrez",
   "start_url": "./",
   "display": "standalone",
   "background_color": "#f4f0e7",
