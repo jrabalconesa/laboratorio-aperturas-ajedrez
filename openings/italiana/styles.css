@@ -63,6 +63,7 @@ h1 em, h2 em { color: var(--red); font-weight: 600; }
 .board-caption strong { font-family: var(--serif); font-size: 18px; }
 .chessboard { --board-size: min(100%, 600px); width: var(--board-size); aspect-ratio: 1; display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); grid-template-rows: repeat(8, minmax(0, 1fr)); border: 1px solid #21211d; user-select: none; overflow: hidden; }
 .square { position: relative; min-width: 0; min-height: 0; display: grid; place-items: center; font-family: "Segoe UI Symbol", "Arial Unicode MS", sans-serif; font-size: clamp(29px, 5vw, 58px); line-height: 1; }
+.chessboard button.square { appearance: none; border: 0; border-radius: 0; color: inherit; cursor: pointer; padding: 0; }
 .square.light { background: var(--light-square); }
 .square.dark { background: var(--dark-square); }
 .square .piece { width: 82%; height: 82%; display: grid; place-items: center; filter: drop-shadow(0 2px 0 rgba(0,0,0,.18)); transform: translateY(-2%); }

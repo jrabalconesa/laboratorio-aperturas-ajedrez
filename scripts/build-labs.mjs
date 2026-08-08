@@ -178,7 +178,7 @@ function buildHtml(id, config, structures) {
     .replace("CUADERNO 1", `CUADERNO ${config.manual}`)
     .replace(`../../index.html#/aperturas/${config.adjective.toLowerCase()}`, `../../index.html#/aperturas/${id}`)
     .replace(/\s*<script src="expansion-games\.js"><\/script>/, "")
-    .replace(/styles\.css\?v=[^"]+/, "styles.css?v=20260808-opening-board-colors-1")
+    .replace(/styles\.css\?v=[^"]+/, "styles.css?v=20260808-practice-piece-scale-1")
     .replace(/app\.js\?v=[^"]+/, "app.js?v=20260803-content-coherence-1");
 }
 
@@ -192,7 +192,7 @@ for (const [id, config] of Object.entries(configurations)) {
   fs.cpSync(path.join(sourceLab, "assets"), path.join(target, "assets"), { recursive: true, force: true });
   fs.copyFileSync(path.join(sourceLab, "styles.css"), path.join(target, "styles.css"));
   const serviceWorker = fs.readFileSync(path.join(sourceLab, "service-worker.js"), "utf8")
-    .replace("la-italiana-v17", `laboratorio-${id}-v7`)
+    .replace("la-italiana-v18", `laboratorio-${id}-v8`)
     .replace(/\s*"\.\/expansion-games\.js",/, "");
   fs.writeFileSync(path.join(target, "service-worker.js"), serviceWorker, "utf8");
   fs.writeFileSync(path.join(target, "index.html"), buildHtml(id, config, structures), "utf8");
