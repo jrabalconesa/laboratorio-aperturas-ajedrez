@@ -65,13 +65,13 @@ function route() {
   const detail = document.querySelector("#openingDetail");
   if (!opening) {
     detail.hidden = true;
-    document.title = "Laboratorio de Aperturas de Ajedrez";
+    document.title = "Laboratorio de Aperturas";
     return;
   }
   detail.hidden = false;
   detail.style.setProperty("--accent", opening.accent);
   detail.style.setProperty("--board-dark", opening.boardDark || opening.accent);
-  document.title = `${opening.shortTitle} · Laboratorio de Aperturas`;
+  document.title = "Laboratorio de Aperturas";
   detail.innerHTML = `
     <a class="back-link" href="#/">← Todas las aperturas</a>
     <div class="opening-header"><div><p class="eyebrow">CUADERNO ${String(opening.manualNumber).padStart(2, "0")} · VERSIÓN ${escapeHtml(opening.version)}</p><h1>${escapeHtml(opening.shortTitle)}</h1><p>${escapeHtml(opening.title)}</p></div>${renderOpeningPreview(opening)}</div>
