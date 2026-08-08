@@ -244,7 +244,9 @@ function renderBoard(element, board, options={}) {
         icon.setAttribute("viewBox", "0 0 100 100");
         icon.setAttribute("aria-hidden", "true");
         icon.setAttribute("focusable", "false");
-        use.setAttribute("href", `assets/chess-pieces-modern.svg#piece-${board[squareName].toUpperCase()}`);
+        const pieceRef = `#piece-${board[squareName].toUpperCase()}`;
+        use.setAttribute("href", pieceRef);
+        use.setAttributeNS("http://www.w3.org/1999/xlink", "xlink:href", pieceRef);
         icon.appendChild(use);
         piece.appendChild(icon);
         square.appendChild(piece);

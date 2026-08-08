@@ -1,9 +1,9 @@
-const CACHE_NAME = "laboratorio-escocesa-v9";
+const CACHE_NAME = "laboratorio-escocesa-v10";
 const APP_SHELL = [
   "./",
   "./index.html",
   "./styles.css?v=20260808-mobile-home-density-1",
-  "./app.js?v=20260803-content-coherence-1",
+  "./app.js?v=20260809-inline-piece-sprite-1",
   "./exercise-data.js",
   "./manifest.webmanifest",
   "./assets/chess-pieces-modern.svg",
