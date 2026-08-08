@@ -414,22 +414,24 @@ footer { min-height: 64px; padding: 0 6vw; border-top: 1px solid var(--line); di
 
   /* Inicio */
   #inicio .hero { min-height: 0; }
-  #inicio .hero-copy { padding: 15px 5vw 12px; }
-  #inicio .hero-copy .eyebrow { margin-bottom: 5px; font-size: 8px; }
-  #inicio .hero-copy h1 { margin-bottom: 6px; font-size: clamp(30px, 8.2vw, 34px); line-height: .97; }
-  #inicio .hero-lead { margin-bottom: 0; font-size: 13px; line-height: 1.32; }
-  #inicio .hero-actions { gap: 5px; margin-top: 8px; }
-  #inicio .hero-actions .button { min-height: 38px; }
-  #inicio .principles { gap: 8px; margin-top: 9px; font-size: 8px; }
-  #inicio .hero-board-wrap { min-height: 340px; }
-  #inicio .notation-tag { top: 14px; right: 18px; }
-  #inicio .board-caption { left: 18px; bottom: 15px; }
-  #inicio .home-grid { gap: 7px; padding: 18px 5vw 24px; }
-  #inicio .manifesto { padding: 0 0 8px; }
-  #inicio .manifesto .eyebrow { margin-bottom: 6px; }
-  #inicio .manifesto h2 { margin-bottom: 8px; font-size: 31px; line-height: 1; }
-  #inicio .manifesto > p:last-child { margin-bottom: 0; font-size: 12px; line-height: 1.4; }
-  #inicio .route-card { min-height: 116px; gap: 12px; padding: 14px; }
+  #inicio .hero-copy { padding: 10px 5vw 8px; }
+  #inicio .hero-copy .eyebrow { margin-bottom: 3px; font-size: 8px; }
+  #inicio .hero-copy h1 { margin-bottom: 4px; font-size: clamp(30px, 8.2vw, 34px); line-height: .95; }
+  #inicio .hero-lead { margin-bottom: 0; font-size: 12px; line-height: 1.26; }
+  #inicio .hero-actions { flex-direction: row; gap: 5px; margin-top: 6px; }
+  #inicio .hero-actions .button { flex: 1 1 0; min-height: 38px; width: auto; padding-inline: 8px; font-size: 8px; }
+  #inicio .hero-actions .button.primary span { margin-left: 8px; }
+  #inicio .principles { gap: 7px; margin-top: 7px; font-size: 8px; }
+  #inicio .hero-board-wrap { min-height: 310px; }
+  #inicio .hero-board-wrap .chessboard { width: min(78%, 304px); }
+  #inicio .notation-tag { top: 10px; right: 14px; }
+  #inicio .board-caption { left: 14px; bottom: 10px; }
+  #inicio .home-grid { gap: 5px; padding: 13px 5vw 20px; }
+  #inicio .manifesto { padding: 0 0 5px; }
+  #inicio .manifesto .eyebrow { margin-bottom: 4px; }
+  #inicio .manifesto h2 { margin-bottom: 5px; font-size: 29px; line-height: .96; }
+  #inicio .manifesto > p:last-child { margin-bottom: 0; font-size: 12px; line-height: 1.32; }
+  #inicio .route-card { min-height: 108px; gap: 10px; padding: 12px; }
   #inicio .route-card p { margin-bottom: 4px; font-size: 8px; }
   #inicio .route-card h3 { font-size: 18px; line-height: 1.12; }
   #inicio .route-number { font-size: 20px; }
