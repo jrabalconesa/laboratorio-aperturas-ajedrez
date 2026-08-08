@@ -43,7 +43,7 @@
 .opening-mini-board { aspect-ratio: 1; border: 1px solid var(--ink); box-shadow: 7px 8px 0 color-mix(in srgb, var(--accent) 24%, transparent); display: grid; grid-template-columns: repeat(8, 1fr); overflow: hidden; transform: rotate(1deg); width: 118px; }
 .opening-mini-square { align-items: center; display: flex; justify-content: center; min-height: 0; min-width: 0; position: relative; }
 .opening-mini-square.light { background: #d8d2c0; }
-.opening-mini-square.dark { background: #77795c; }
+.opening-mini-square.dark { background: var(--board-dark, #77795c); }
 .opening-mini-square.last-move::after { border: 2px solid var(--accent); content: ""; inset: 8%; position: absolute; }
 .opening-mini-square i { font-family: "Segoe UI Symbol", "Arial Unicode MS", sans-serif; font-size: 13px; font-style: normal; line-height: 1; position: relative; z-index: 1; }
 .opening-mini-square i.white { color: #f5f1e5; text-shadow: 0 0 1px #171713, 1px 1px 0 #171713; }
