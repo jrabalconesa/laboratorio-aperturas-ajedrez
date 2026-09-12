@@ -195,8 +195,8 @@ function buildHtml(id, config, structures, data, cardNames) {
     .replace("CUADERNO 1", `CUADERNO ${config.manual}`)
     .replace(`../../index.html#/aperturas/${config.adjective.toLowerCase()}`, `../../index.html#/aperturas/${id}`)
     .replace(/\s*<script src="expansion-games\.js"><\/script>/, "")
-    .replace(/styles\.css\?v=[^"]+/, "styles.css?v=20260809-global-density-1")
-    .replace(/app\.js\?v=[^"]+/, "app.js?v=20260809-global-density-1");
+    .replace(/styles\.css\?v=[^"]+/, "styles.css?v=20260913-structure-cards-1")
+    .replace(/app\.js\?v=[^"]+/, "app.js?v=20260913-structure-cards-1");
 }
 
 const italianaExercises = JSON.parse(fs.readFileSync(path.join(root, "content", "italiana", "exercises.json"), "utf8"));
@@ -214,7 +214,7 @@ for (const [id, config] of Object.entries(configurations)) {
     : [];
   if (cardNames.length) fs.cpSync(cardsSource, path.join(target, "assets", "tarjetas"), { recursive: true, force: true });
   const serviceWorker = fs.readFileSync(path.join(sourceLab, "service-worker.js"), "utf8")
-    .replace("la-italiana-v21", `laboratorio-${id}-v12`)
+    .replace("la-italiana-v21", `laboratorio-${id}-v13`)
     .replace(/\s*"\.\/expansion-games\.js",/, "");
   fs.writeFileSync(path.join(target, "service-worker.js"), serviceWorker, "utf8");
   fs.writeFileSync(path.join(target, "index.html"), buildHtml(id, config, structures, data, cardNames), "utf8");
