@@ -214,7 +214,7 @@ for (const [id, config] of Object.entries(configurations)) {
     : [];
   if (cardNames.length) fs.cpSync(cardsSource, path.join(target, "assets", "tarjetas"), { recursive: true, force: true });
   const serviceWorker = fs.readFileSync(path.join(sourceLab, "service-worker.js"), "utf8")
-    .replace("la-italiana-v21", `laboratorio-${id}-v13`)
+    .replace("la-italiana-v21", `laboratorio-${id}-v14`)
     .replace(/\s*"\.\/expansion-games\.js",/, "");
   fs.writeFileSync(path.join(target, "service-worker.js"), serviceWorker, "utf8");
   fs.writeFileSync(path.join(target, "index.html"), buildHtml(id, config, structures, data, cardNames), "utf8");
