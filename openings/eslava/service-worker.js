@@ -1,4 +1,4 @@
-const CACHE_NAME = "laboratorio-eslava-v12";
+const CACHE_NAME = "laboratorio-eslava-v13";
 const APP_SHELL = [
   "./",
   "./index.html",
