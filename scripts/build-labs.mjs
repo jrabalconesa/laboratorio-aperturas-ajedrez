@@ -31,11 +31,11 @@ function splitIdeas(text = "") {
   return text.split(/(?<=[.!?])\s+/).filter(Boolean).slice(0, 3);
 }
 
-function editorialText(value, fallback) {
+function editorialText(value, fallback, maxLength = 180) {
   const text = String(value ?? "").trim();
   // Algunos CSV de origen concentran toda la ficha tras el rótulo. Esa ficha
   // sirve como respaldo, pero no debe convertirse en un título o una tarjeta.
-  return !text || text.length > 260 || text.includes("/ FEN:") ? fallback : text;
+  return !text || text.length > maxLength || text.includes("/ FEN:") ? fallback : text;
 }
 
 const coreGameTitles = {
@@ -105,7 +105,7 @@ function buildData(id, config) {
   }));
 
   const variants = structures.map((structure, index) => {
-    const title = editorialText(structure.title, `Estructura crítica ${index + 1}`);
+    const title = editorialText(structure.title, `Estructura crítica ${index + 1}`, 80);
     const central = editorialText(structure.objective, "Compara el centro, la actividad de las piezas y la ruptura disponible.");
     const summary = editorialText(structure.teachingContinuation, "Identifica la tensión central antes de elegir un plan.");
     const whitePlan = editorialText(structure.whitePlan, "Completar el desarrollo, asegurar el rey y preparar la ruptura central.");
@@ -195,8 +195,8 @@ function buildHtml(id, config, structures, data, cardNames) {
     .replace("CUADERNO 1", `CUADERNO ${config.manual}`)
     .replace(`../../index.html#/aperturas/${config.adjective.toLowerCase()}`, `../../index.html#/aperturas/${id}`)
     .replace(/\s*<script src="expansion-games\.js"><\/script>/, "")
-    .replace(/styles\.css\?v=[^"]+/, "styles.css?v=20260913-structure-cards-1")
-    .replace(/app\.js\?v=[^"]+/, "app.js?v=20260913-structure-cards-1");
+    .replace(/styles\.css\?v=[^"]+/, "styles.css?v=20260913-structure-cards-2")
+    .replace(/app\.js\?v=[^"]+/, "app.js?v=20260913-structure-cards-2");
 }
 
 const italianaExercises = JSON.parse(fs.readFileSync(path.join(root, "content", "italiana", "exercises.json"), "utf8"));
@@ -214,7 +214,7 @@ for (const [id, config] of Object.entries(configurations)) {
     : [];
   if (cardNames.length) fs.cpSync(cardsSource, path.join(target, "assets", "tarjetas"), { recursive: true, force: true });
   const serviceWorker = fs.readFileSync(path.join(sourceLab, "service-worker.js"), "utf8")
-    .replace("la-italiana-v21", `laboratorio-${id}-v14`)
+    .replace("la-italiana-v21", `laboratorio-${id}-v15`)
     .replace(/\s*"\.\/expansion-games\.js",/, "");
   fs.writeFileSync(path.join(target, "service-worker.js"), serviceWorker, "utf8");
   fs.writeFileSync(path.join(target, "index.html"), buildHtml(id, config, structures, data, cardNames), "utf8");

@@ -1,4 +1,4 @@
-const CACHE_NAME = "laboratorio-carokann-negras-v14";
+const CACHE_NAME = "laboratorio-carokann-negras-v15";
 const APP_SHELL = [
   "./",
   "./index.html",
