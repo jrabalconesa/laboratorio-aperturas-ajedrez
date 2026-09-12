@@ -31,6 +31,13 @@ function splitIdeas(text = "") {
   return text.split(/(?<=[.!?])\s+/).filter(Boolean).slice(0, 3);
 }
 
+function editorialText(value, fallback) {
+  const text = String(value ?? "").trim();
+  // Algunos CSV de origen concentran toda la ficha tras el rótulo. Esa ficha
+  // sirve como respaldo, pero no debe convertirse en un título o una tarjeta.
+  return !text || text.length > 260 || text.includes("/ FEN:") ? fallback : text;
+}
+
 const coreGameTitles = {
   "ESC-M01": "Estructura 4...Cf6 · presión sobre d5",
   "ESC-M02": "Salida prematura de dama · iniciativa y desarrollo",
@@ -98,30 +105,35 @@ function buildData(id, config) {
   }));
 
   const variants = structures.map((structure, index) => {
-    const whitePlans = splitIdeas(structure.whitePlan);
-    const blackPlans = splitIdeas(structure.blackPlan);
+    const title = editorialText(structure.title, `Estructura crítica ${index + 1}`);
+    const central = editorialText(structure.objective, "Compara el centro, la actividad de las piezas y la ruptura disponible.");
+    const summary = editorialText(structure.teachingContinuation, "Identifica la tensión central antes de elegir un plan.");
+    const whitePlan = editorialText(structure.whitePlan, "Completar el desarrollo, asegurar el rey y preparar la ruptura central.");
+    const blackPlan = editorialText(structure.blackPlan, "Coordinar las piezas y buscar contrajuego sin debilitar el centro.");
+    const whitePlans = splitIdeas(whitePlan);
+    const blackPlans = splitIdeas(blackPlan);
     return {
       code: structure.id,
-      title: structure.title,
+      title,
       level: structure.level?.label || "ESTRUCTURA",
       response: `Estructura ${index + 1}`,
       risk: index < 2 ? "Medio" : "Variable",
       theory: index < 2 ? "Media" : "Práctica",
-      central: structure.objective,
+      central,
       recommendation: index < 2 ? "Estudiar primero" : "Incorporar después",
-      summary: structure.teachingContinuation,
+      summary,
       moves: structure.movesUci.join(" "),
       fen: structure.fen,
       whitePlans: whitePlans.length ? whitePlans : ["Mejorar la peor pieza y preparar la ruptura central."],
       blackPlans: blackPlans.length ? blackPlans : ["Buscar contrajuego antes de defender pasivamente."],
-      question: `¿Qué plan describe mejor la estructura «${structure.title}»?`,
+      question: `¿Qué plan describe mejor «${title}»?`,
       options: [
-        whitePlans[0] || structure.objective,
+        whitePlans[0] || central,
         "Mover la dama repetidamente sin completar el desarrollo.",
         "Atacar en un flanco sin comprobar el centro ni la seguridad del rey.",
       ],
       correct: 0,
-      feedback: whitePlans[0] || structure.objective,
+      feedback: whitePlans[0] || central,
     };
   });
 
@@ -142,8 +154,8 @@ function buildHtml(id, config, structures, data, cardNames) {
   const principleItems = config.principles.map((principle, index) =>
     `<span><b>0${index + 1}</b> ${principle}</span>${index < config.principles.length - 1 ? "<i></i>" : ""}`
   ).join("\n              ");
-  const decisionButtons = structures.map((structure, index) =>
-    `<button class="decision-branch${index === 0 ? " active" : ""}" data-variant="${index}"><span>${structure.id}</span><b>${structure.title}</b><small>${structure.objective}</small></button>`
+  const decisionButtons = data.variants.map((variant, index) =>
+    `<button class="decision-branch${index === 0 ? " active" : ""}" data-variant="${index}"><span>${variant.code}</span><b>${variant.title}</b><small>${variant.central}</small></button>`
   ).join("\n          ");
   const cardGallery = cardNames.length ? `<section class="study-cards" aria-labelledby="study-cards-title">
             <div class="study-heading"><p class="eyebrow">TARJETAS DE REPASO</p><h2 id="study-cards-title">Cuatro recordatorios visuales</h2></div>
