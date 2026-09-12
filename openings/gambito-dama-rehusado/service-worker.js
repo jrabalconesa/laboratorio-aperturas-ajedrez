@@ -1,4 +1,4 @@
-const CACHE_NAME = "laboratorio-gambito-dama-rehusado-v13";
+const CACHE_NAME = "laboratorio-gambito-dama-rehusado-v14";
 const APP_SHELL = [
   "./",
   "./index.html",
