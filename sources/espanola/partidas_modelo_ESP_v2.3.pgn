@@ -1,0 +1,87 @@
+[Event "ESP-M01 · Construcción clásica en la Morphy"]
+[Site "Mi Repertorio de Ajedrez"]
+[Date "2026.07.26"]
+[Round "-"]
+[White "Blancas didácticas"]
+[Black "Negras didácticas"]
+[Result "*"]
+[ECO "C84"]
+[Opening "Apertura Española o Ruy López"]
+[Annotator "Edición v2.3 · bilateral ampliada"]
+
+1. e4 {Ocupa el centro, controla d5 y f5 y abre líneas para dama y alfil.} e5 {Las negras responden en el centro y reclaman las mismas casillas.}
+2. Cf3 {Desarrolla con amenaza sobre e5 y acerca el enroque.} Cc6 {Defiende e5 desarrollando, controla d4 y obliga a las blancas a justificar cualquier captura temprana en el centro.}
+3. Ab5 {Presiona indirectamente e5 al atacar el caballo que lo sostiene. No gana un peón de inmediato, pero sí condiciona la estructura negra.} a6 {Pregunta al alfil y prepara ...b5, ganando espacio en el flanco de dama.}
+4. Aa4 {Conserva el alfil de casillas blancas y mantiene la presión estratégica.} Cf6 {Desarrolla atacando e4, acelera el enroque y pregunta a las blancas cómo sostendrán el centro sin perder tiempos.}
+5. O-O {El rey queda seguro y la torre se activa antes de discutir el centro.} Ae7 {Desarrolla con modestia, prepara el enroque y evita que una futura clavada sobre f6 condicione la defensa de e5.}
+6. Te1 {Refuerza e4 y prepara d4 en mejores condiciones.} b5 {Gana espacio y obliga al alfil a una casilla nueva.}
+7. Ab3 {Sigue apuntando a f7 y deja libre la casilla a4 para una posible torre o dama.} d6 {Sostiene e5, abre el alfil c8 y deja ...d5 como ruptura liberadora que todavía requiere preparación.}
+8. c3 {Prepara d4 y construye una base central más sólida.} O-O {El negro completa su seguridad y puede maniobrar con libertad.}
+9. h3 {Evita ...Ag4 y da al rey una casilla de aire.} Cb8 {Recoloca el caballo para apoyar ...Cbd7 y ...c5 o ...d5.}
+10. d4 {La ruptura temática se produce cuando el blanco ya está coordinado.} Cbd7 {Desarrolla la pieza peor colocada y refuerza e5.}
+11. Cbd2 {Apoya e4, mantiene flexible el peón c y abre la ruta del caballo hacia f1-g3.} Ab7 {El alfil entra en juego por la gran diagonal, aumenta la presión sobre e4 y conecta mejor las piezas negras.}
+12. Ac2 {Reubica el alfil hacia b1-h7, donde puede apoyar un ataque futuro sin estorbar la maniobra del caballo.} Te8 {Apoya e5, mejora la torre y prepara respuestas centrales contra d4 o una apertura de la columna e.}
+13. Cf1 {La maniobra típica comienza. El caballo sale de d2 para buscar g3.} Af8 {Reorganiza el alfil hacia una función defensiva, despeja e7 y prepara una coordinación más flexible.}
+14. Cg3 {El caballo ya influye en e4, f5 y h5; su mejora solo es útil si las blancas siguen vigilando el centro.} g6 {Controla f5, limita el caballo blanco y prepara un esquema sólido sin renunciar al contrajuego central.}
+15. a4 {Pregunta al flanco de dama negro y limita ...b4.} c5 {Busca contrajuego central y en el flanco de dama, atacando la base d4 y cuestionando el espacio blanco.}
+16. d5 {Gana espacio y fija la estructura, pero también define casillas que ambos bandos podrán atacar más tarde.} c4 {Cierra el ala de dama y crea una casilla para el caballo en c5.}
+17. Ae3 {Desarrolla el alfil con idea de Dd2 y Ah6, conectando el plan de piezas con la seguridad del rey negro.} Cc5 {El caballo se activa en c5, ataca e4 y b3 y muestra cómo negras convierten su contrajuego en actividad concreta.}
+18. Dd2 {Conecta las torres, prepara Ah6 o Ch2-g4 y obliga a negras a cuidar las casillas oscuras del rey.} Dc7 {Defiende el flanco de rey, sostiene el caballo c5 y mantiene opciones de contrajuego en ambos sectores.}
+19. Ah6 {Cambia un defensor del rey negro y refuerza el control de las casillas oscuras.} *
+
+[Event "ESP-M02 · Variante del Cambio y final comprensible"]
+[Site "Mi Repertorio de Ajedrez"]
+[Date "2026.07.26"]
+[Round "-"]
+[White "Blancas didácticas"]
+[Black "Negras didácticas"]
+[Result "*"]
+[ECO "C68"]
+[Opening "Apertura Española o Ruy López"]
+[Annotator "Edición v2.3 · bilateral ampliada"]
+
+1. e4 {Ocupa el centro, controla d5 y f5 y abre líneas para la dama y el alfil de f1. La jugada también asume la responsabilidad de sostener e4.} e5 {Responde en el mismo sector, controla d4 y libera el alfil de f8. La simetría no es pasiva: las negras disputan inmediatamente las casillas centrales.}
+2. Cf3 {Desarrolla el caballo hacia su casilla natural, ataca e5 y facilita el enroque. Antes de capturar, las blancas deben comprobar cómo recuperaría el rival.} Cc6 {Defiende e5 desarrollando una pieza, controla d4 y evita que las blancas ocupen el centro sin oposición.}
+3. Ab5 {Desarrolla el alfil con una presión indirecta sobre e5: el objetivo inmediato es el caballo c6, no el peón. También deja preparado el enroque.} a6 {Obliga al alfil a decidir su futuro y prepara ...b5. A cambio, las negras invierten un tiempo de peón y crean casillas que deberán vigilar.}
+4. Axc6 {El blanco elige una decisión estructural: cambia la pareja de alfiles por una mayoría potencial en el flanco de rey.} dxc6 {Las negras aceptan peones doblados a cambio de pareja de alfiles y columnas abiertas.}
+5. O-O {Pone el rey a salvo y activa la torre de f1 antes de abrir más líneas. La seguridad del rey permite considerar simplificaciones sin riesgos tácticos inmediatos.} f6 {Sostiene e5 y prepara un desarrollo sin tácticas inmediatas sobre e5.}
+6. d4 {El blanco usa su libertad central antes de que las negras se organicen por completo.} exd4 {Abre líneas y evita quedar restringido; a cambio, las negras deben demostrar que su actividad compensa la estructura.}
+7. Dxd4 {Recupera el peón, centraliza la dama y propone cambios.} Dxd4 {Aceptan el cambio de damas porque confían en la pareja de alfiles y en la actividad de sus piezas para compensar la estructura dañada.}
+8. Cxd4 {Recaptura desarrollando, centraliza el caballo y orienta la partida hacia un final donde la estructura importa.} Ad7 {Desarrolla el alfil, conecta con el enroque largo y prepara una coordinación activa antes de defender peones.}
+9. Cc3 {Apoya e4, controla d5 y b5 y reduce la libertad de los alfiles negros.} O-O-O {Las negras colocan el rey de forma activa y las torres se coordinan.}
+10. Ae3 {Desarrolla con idea de Tad1 y control central.} Ad6 {El alfil negro usa la diagonal larga y prepara Ce7-g6.}
+11. Cb3 {Reubica el caballo hacia c5 o a5, buscando una casilla activa en lugar de defender pasivamente.} Ce7 {Desarrolla el caballo, conecta las piezas y prepara Cg6 para aumentar la actividad sobre e5 y f4.}
+12. Tad1 {La torre se activa en la columna d, presiona d6 y coordina con las piezas centrales. En un final, la actividad concreta vale más que una ventaja estructural abstracta.} The8 {Las negras responden con actividad: la torre ocupa una columna útil, apoya e5 y evita quedar reducidas a una defensa pasiva de los peones doblados.}
+13. f3 {Sostiene e4 y prepara un avance del flanco de rey en el final.} Cg6 {El caballo se dirige a e5, f4 o h4 y crea contrajuego contra la mayoría blanca. Las negras deben activar piezas antes de que el final favorezca la estructura blanca.}
+14. Cc5 {Aprovecha una casilla fuerte en c5 y obliga a negras a decidir si toleran la pieza o la cambian.} Ae6 {Expulsa una pieza activa y coordina los alfiles.}
+15. Cxe6 {Cambia una pieza activa enemiga y clarifica la posición.} Txe6 {La torre recupera con actividad, ocupa una columna útil y evita que la recaptura sea meramente defensiva.}
+16. g3 {Plan de final: rey seguro, casillas para piezas y mayoría lista para avanzar.} Ce5 {Centraliza el caballo, ataca casillas del flanco de rey y obliga al blanco a vigilar recursos tácticos antes de avanzar su mayoría.}
+17. Rg2 {El rey se acerca al centro en previsión del final.} *
+
+[Event "ESP-M03 · Repertorio práctico contra la Berlinesa"]
+[Site "Mi Repertorio de Ajedrez"]
+[Date "2026.07.26"]
+[Round "-"]
+[White "Blancas didácticas"]
+[Black "Negras didácticas"]
+[Result "*"]
+[ECO "C65"]
+[Opening "Apertura Española o Ruy López"]
+[Annotator "Edición v2.3 · bilateral ampliada"]
+
+1. e4 {Ocupa el centro, abre la dama y el alfil y prepara un desarrollo rápido. La estructura aún es simétrica, pero el blanco marca el ritmo.} e5 {Las negras responden en el centro, controlan d4 y liberan el alfil de f8. La posición sigue equilibrada y ambos bandos deben desarrollar con precisión.}
+2. Cf3 {Desarrolla el caballo hacia su casilla natural, ataca e5 y facilita el enroque. Antes de capturar, las blancas deben comprobar cómo recuperaría el rival.} Cc6 {Defiende e5 con desarrollo, controla d4 y prepara ...Cf6 o ...a6 según el esquema elegido.}
+3. Ab5 {El alfil vuelve a presionar indirectamente e5. La defensa cambiará, pero la relación entre Ab5, Cc6 y el peón e5 sigue siendo el hilo conductor.} Cf6 {La Berlinesa ataca e4, acelera el desarrollo y busca una estructura sólida con pocas debilidades.}
+4. d3 {Repertorio práctico del cuaderno: mantiene el centro, evita teoría excesiva y prepara desarrollo armonioso.} Ac5 {El negro desarrolla el alfil a una diagonal activa.}
+5. O-O {El blanco enroca antes de abrir el centro. La torre de f1 entra en juego y el rey deja de ser un objetivo táctico.} O-O {Las negras completan la seguridad del rey y quedan listas para jugar ...d6, ...Te8 o ...a6 sin temor a una apertura inmediata del centro.}
+6. c3 {Sostiene d4 y da una casilla de retirada al alfil si hiciera falta.} d6 {Refuerza e5 y anuncia una estructura más estable.}
+7. Te1 {Apoya e4 y recuerda a los esquemas cerrados de la Morphy.} a6 {Gana espacio, pregunta al alfil y prepara ...b5; la expansión es útil porque está conectada con el desarrollo.}
+8. Aa4 {Mantiene el alfil de casillas blancas, conserva la presión estratégica y obliga a las negras a gastar otro tiempo si quieren ganar espacio con ...b5.} b5 {Gana espacio y obliga al alfil a retirarse. La expansión es útil, pero deja casillas como a6 y c6 que pueden convertirse en objetivos si el centro se abre.}
+9. Ab3 {El alfil se conserva en una diagonal útil, mira f7 y puede retirarse a c2 si la estructura se cierra.} Ab6 {El alfil conserva su diagonal, protege puntos centrales y evita ser cambiado sin necesidad. Las negras mantienen una pieza activa para el futuro medio juego.}
+10. h3 {Evita ...Ag4, da aire al rey y reduce una posible clavada sobre el caballo f3.} h6 {Evita Ag5 y da una casilla de escape al rey, pero también crea un punto de contacto en g6. La jugada es útil porque responde a un motivo concreto.}
+11. Cbd2 {Desarrolla la peor pieza y abre la ruta hacia f1-g3.} Te8 {Refuerza e5, mejora la torre y prepara respuestas centrales cuando las blancas jueguen d4.}
+12. Cf1 {El caballo abandona una casilla pasiva y se dirige a g3, desde donde apoyará e4 y controlará f5 y h5.} Ae6 {Desarrolla con idea de cambiar el alfil español o controlar c4.}
+13. Cg3 {La maniobra culmina: el caballo sostiene e4, presiona f5 y puede colaborar en un ataque solo si el centro está controlado.} Dd7 {Conecta torres y prepara ...d5 si la posición lo permite.}
+14. d4 {El blanco abre el centro después de completar desarrollo, proteger e4 y mejorar el caballo. Esa preparación convierte d4 en una ruptura sana, no en un gesto automático.} Axb3 {Las negras cambian una pieza activa antes de abrir más líneas.}
+15. axb3 {Recaptura manteniendo mayoría central y columna a potencial.} exd4 {Reduce la tensión, abre líneas y obliga a ambos bandos a pasar de la maniobra al cálculo concreto.}
+16. cxd4 {El blanco obtiene un centro claro y piezas coordinadas para el medio juego.} *

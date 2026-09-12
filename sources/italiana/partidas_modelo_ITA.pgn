@@ -1,0 +1,29 @@
+[Event "Mi Repertorio de Ajedrez - ITA-M01"]
+[Site "Material didáctico"]
+[Date "2026.07.26"]
+[Round "1"]
+[White "Modelo: construcción sólida"]
+[Black "Modelo: centro abierto"]
+[Result "*"]
+
+1. e4 {Ocupa el centro y abre líneas.} e5 2. Nf3 Nc6 3. Bc4 Bc5 4. O-O {Primero, el rey seguro.} Nf6 5. c3 {Prepara d4.} O-O 6. d4 {La ruptura temática.} exd4 7. cxd4 Bb6 8. Nc3 d6 9. Be3 Bg4 10. Re1 {Refuerza e4 y ocupa la columna central.} Re8 11. Qd2 Nxe4 12. Nxe4 Rxe4 13. Bxf7+ Kxf7 14. Ng5+ Kg8 15. Nxe4 {La táctica funciona porque las piezas están desarrolladas y el centro se ha abierto.} *
+
+[Event "Mi Repertorio de Ajedrez - ITA-M02"]
+[Site "Material didáctico"]
+[Date "2026.07.26"]
+[Round "2"]
+[White "Modelo: ataque prematuro"]
+[Black "Modelo: desarrollo con tiempos"]
+[Result "*"]
+
+1. e4 e5 2. Bc4 Nc6 3. Qh5 {La dama crea una amenaza visible, pero obliga a invertir más tiempos con ella.} g6 4. Qf3 Nf6 {Las negras desarrollan atacando e4 mientras la dama blanca todavía debe justificar su salida.} 5. c3 Bg7 6. d3 O-O 7. Ne2 d5 {La ruptura central llega porque las negras han coordinado sus piezas con más rapidez.} 8. Bb3 dxe4 9. dxe4 Bg4 10. Qe3 Nxe4 {El caballo aprovecha la falta de coordinación blanca.} 11. O-O Bxe2 12. Qxe2 {El desarrollo útil ha valido más que una amenaza aislada.} *
+
+[Event "Mi Repertorio de Ajedrez - ITA-M03"]
+[Site "Material didáctico"]
+[Date "2026.07.26"]
+[Round "3"]
+[White "Modelo: centro cerrado"]
+[Black "Modelo: ruptura liberadora"]
+[Result "*"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bc4 Bc5 4. d3 Nf6 5. O-O d6 6. c3 {Mantiene la opción de d4.} a6 7. Bb3 Ba7 8. Re1 O-O 9. h3 h6 10. Nbd2 {Comienza la ruta d2-f1-g3.} Re8 11. Nf1 Be6 12. Ng3 Qd7 13. Bc2 Rad8 14. d4 d5 {El plan negro obliga a recalcular.} 15. exd5 Bxd5 16. Nxe5 Nxe5 17. Rxe5 {La partida ha pasado de la maniobra al juego abierto.} *

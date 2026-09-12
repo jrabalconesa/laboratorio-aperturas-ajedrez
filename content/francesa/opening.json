@@ -1,0 +1,36 @@
+{
+  "id": "francesa",
+  "code": "FRA",
+  "manualNumber": 5,
+  "title": "Cómo jugar contra la Defensa Francesa",
+  "shortTitle": "Contra la Francesa",
+  "version": "1.2.3",
+  "accent": "#174A7E",
+  "boardDark": "#587A98",
+  "preview": {
+    "fen": "rnbqkbnr/pp3ppp/4p3/2pp4/3PP3/8/PPPN1PPP/R1BQKBNR w KQkq - 0 4",
+    "line": "1.e4 e6 2.d4 d5 3.Cd2 c5",
+    "lastMove": [
+      "c7",
+      "c5"
+    ]
+  },
+  "quote": {
+    "text": "La cadena de peones indica dónde buscar la ruptura.",
+    "author": "Mi Repertorio de Ajedrez"
+  },
+  "storageNamespace": "repertorio:francesa:v1",
+  "interactiveAvailable": true,
+  "status": "partial",
+  "inventory": {
+    "position": 12,
+    "structure": 6,
+    "game_stop": 15,
+    "exercise": 26
+  },
+  "gameCount": 3,
+  "coreGameCount": 3,
+  "expansionGameCount": 0,
+  "atlasCount": 0,
+  "validationWarnings": 3
+}

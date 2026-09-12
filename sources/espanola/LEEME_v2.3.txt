@@ -1,0 +1,36 @@
+MI REPERTORIO DE AJEDREZ · CUADERNO 2 · APERTURA ESPAÑOLA O RUY LÓPEZ
+PAQUETE DIGITAL v2.3 · ÚLTIMA REVISIÓN TEMPORAL
+
+CONTENIDO
+1. Manual Word editable v2.3.
+2. Manual PDF v2.3 revisado visualmente.
+3. partidas_modelo_ESP_v2.3.pgn: tres partidas didácticas con comentarios bilaterales ampliados.
+4. posiciones_ESP_v2.3.csv: 12 posiciones, 6 estructuras, 15 paradas y 40 ejercicios.
+5. Este archivo LEEME.
+
+CAMBIOS DE ESTA REVISIÓN
+- Eliminación de fórmulas repetidas en las soluciones.
+- Comparación específica de candidatas y errores en los 40 ejercicios.
+- Ampliación de los comentarios breves del PGN.
+- Planes blancos y negros individualizados en las 15 paradas didácticas.
+- Revisión de coherencia entre manual, PGN, CSV, FEN y diagramas.
+- Actualización de versión y control editorial.
+
+USO EN LICHESS
+- Estudiar > Nuevo estudio > Añadir capítulos > Importar PGN.
+- Herramientas > Editor de tablero > pegar el FEN del CSV.
+- Antes de continuar una secuencia, explica qué pretende cada bando y qué cambia en la estructura.
+
+RUTINA RECOMENDADA
+1. Observa la amenaza rival.
+2. Clasifica el centro.
+3. Localiza la peor pieza.
+4. Compara dos candidatas.
+5. Imagina la mejor respuesta rival.
+6. Comprueba la solución.
+7. Repite la posición a las 24 horas, 3 días, 1 semana y 1 mes.
+
+NOTACIÓN
+Notación algebraica española: R, D, T, A y C; sin letra para peones; O-O/O-O-O; x para captura; + para jaque y # para mate.
+
+Las partidas ESP-M01 a ESP-M03 son construcciones didácticas y no se atribuyen a jugadores reales.

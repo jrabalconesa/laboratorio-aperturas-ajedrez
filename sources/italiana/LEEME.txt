@@ -1,0 +1,25 @@
+MI REPERTORIO DE AJEDREZ · CUADERNO 1 · APERTURA ITALIANA
+PAQUETE DIGITAL v2.0
+
+CONTENIDO
+1. partidas_modelo_ITA.pgn
+   Tres secuencias comentadas, importables en un estudio de Lichess.
+
+2. posiciones_ITA.csv
+   Catálogo de las posiciones ITA-P01 a ITA-P12 con FEN y secuencia UCI.
+
+USO EN LICHESS
+- Para las partidas: Estudiar > Nuevo estudio > Añadir capítulos > Importar PGN.
+- Para una posición: Herramientas > Editor de tablero > pegar el FEN.
+- Juega primero desde el lado indicado en el manual y después cambia de color.
+
+RUTINA RECOMENDADA
+1. Lee la ficha correspondiente.
+2. Reproduce la secuencia sin mirar.
+3. Detente en la posición codificada.
+4. Explica el plan de ambos bandos.
+5. Juega entre cinco y diez movimientos.
+6. Compara la partida con el manual y anota una mejora.
+
+NOTA
+Las partidas son modelos didácticos sin resultado competitivo. Su finalidad es practicar las transiciones entre apertura y medio juego.

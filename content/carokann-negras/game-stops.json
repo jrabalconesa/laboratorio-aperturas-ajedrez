@@ -1,0 +1,156 @@
+[
+  {
+    "id": "CKN-M01-P4",
+    "kind": "game_stop",
+    "title": "En CKN-M01-P4, negras acaba de jugar ...De4+. ¿Cuál es la respuesta blanca más precisa y qué obtiene negras después?",
+    "chapter": "Parte X/XI/XIII",
+    "movesUci": [],
+    "fen": "r4rk1/pp2bpp1/2p1pn1p/4N2P/2PPq3/6N1/PP1BQPP1/1K1R3R w - - 0 18",
+    "sideToMove": "white",
+    "objective": "Reconocer la decisión crítica y conectar apertura, estructura y plan.",
+    "level": {
+      "label": "800-1400 Elo",
+      "minRating": 800,
+      "maxRating": 1400,
+      "stage": null
+    },
+    "whitePlan": "Consulta la lectura bilateral y las candidatas específicas de esta posición en el manual.",
+    "blackPlan": "Consulta la respuesta activa del rival y la ruptura asociada en el manual.",
+    "teachingContinuation": "Reproducir la posición, elegir dos candidatas y comparar con la continuación del manual.",
+    "manualReference": "CKN-M01-P4",
+    "tags": [],
+    "openingId": "carokann-negras"
+  },
+  {
+    "id": "CKN-M01-P1",
+    "kind": "game_stop",
+    "title": "Vuelve a CKN-M01-P1: tras 4...Af5, las blancas juegan 5.Cg3. ¿Por qué 5...Ag6 es superior al retroceso 5...Ac8 desde el punto de vista del repertorio?",
+    "chapter": "Parte X/XI/XIII",
+    "movesUci": [],
+    "fen": "rn1qkbnr/pp2pppp/2p5/5b2/3PN3/8/PPP2PPP/R1BQKBNR w KQkq - 0 5",
+    "sideToMove": "white",
+    "objective": "Reconocer la decisión crítica y conectar apertura, estructura y plan.",
+    "level": {
+      "label": "800-1400 Elo",
+      "minRating": 800,
+      "maxRating": 1400,
+      "stage": null
+    },
+    "whitePlan": "Consulta la lectura bilateral y las candidatas específicas de esta posición en el manual.",
+    "blackPlan": "Consulta la respuesta activa del rival y la ruptura asociada en el manual.",
+    "teachingContinuation": "Reproducir la posición, elegir dos candidatas y comparar con la continuación del manual.",
+    "manualReference": "CKN-M01-P1",
+    "tags": [],
+    "openingId": "carokann-negras"
+  },
+  {
+    "id": "CKN-M01-P2",
+    "kind": "game_stop",
+    "title": "En CKN-M01-P2, las blancas juegan 9.Ad3. ¿Deben las negras preservar el alfil con ...Ag8 o cambiar con ...Axd3?",
+    "chapter": "Parte X/XI/XIII",
+    "movesUci": [],
+    "fen": "r2qkbnr/pp1npppb/2p4p/7P/3P4/5NN1/PPP2PP1/R1BQKB1R w KQkq - 0 9",
+    "sideToMove": "white",
+    "objective": "Reconocer la decisión crítica y conectar apertura, estructura y plan.",
+    "level": {
+      "label": "800-1400 Elo",
+      "minRating": 800,
+      "maxRating": 1400,
+      "stage": null
+    },
+    "whitePlan": "Consulta la lectura bilateral y las candidatas específicas de esta posición en el manual.",
+    "blackPlan": "Consulta la respuesta activa del rival y la ruptura asociada en el manual.",
+    "teachingContinuation": "Reproducir la posición, elegir dos candidatas y comparar con la continuación del manual.",
+    "manualReference": "CKN-M01-P2",
+    "tags": [],
+    "openingId": "carokann-negras"
+  },
+  {
+    "id": "CKN-M01-P3",
+    "kind": "game_stop",
+    "title": "En CKN-M01-P3, las blancas han enrocado largo y juega 13.Rb1. Compara ...O-O con ...h5 como respuesta negra.",
+    "chapter": "Parte X/XI/XIII",
+    "movesUci": [],
+    "fen": "r2qk2r/pp1nbpp1/2p1pn1p/7P/3P4/3Q1NN1/PPPB1PP1/2KR3R w kq - 0 13",
+    "sideToMove": "white",
+    "objective": "Reconocer la decisión crítica y conectar apertura, estructura y plan.",
+    "level": {
+      "label": "800-1400 Elo",
+      "minRating": 800,
+      "maxRating": 1400,
+      "stage": null
+    },
+    "whitePlan": "Consulta la lectura bilateral y las candidatas específicas de esta posición en el manual.",
+    "blackPlan": "Consulta la respuesta activa del rival y la ruptura asociada en el manual.",
+    "teachingContinuation": "Reproducir la posición, elegir dos candidatas y comparar con la continuación del manual.",
+    "manualReference": "CKN-M01-P3",
+    "tags": [],
+    "openingId": "carokann-negras"
+  },
+  {
+    "id": "CKN-M01-P5",
+    "kind": "game_stop",
+    "title": "En CKN-M01-P5, compara 23.b3 con un cambio inmediato Cxe4. ¿Qué plan negro aparece después de la jugada tranquila?",
+    "chapter": "Parte X/XI/XIII",
+    "movesUci": [],
+    "fen": "r5k1/pp1r2p1/2p1pb1p/4Np1P/2PPnP2/4B1N1/PPK3P1/3RR3 w - - 0 23",
+    "sideToMove": "white",
+    "objective": "Reconocer la decisión crítica y conectar apertura, estructura y plan.",
+    "level": {
+      "label": "800-1400 Elo",
+      "minRating": 800,
+      "maxRating": 1400,
+      "stage": null
+    },
+    "whitePlan": "Consulta la lectura bilateral y las candidatas específicas de esta posición en el manual.",
+    "blackPlan": "Consulta la respuesta activa del rival y la ruptura asociada en el manual.",
+    "teachingContinuation": "Reproducir la posición, elegir dos candidatas y comparar con la continuación del manual.",
+    "manualReference": "CKN-M01-P5",
+    "tags": [],
+    "openingId": "carokann-negras"
+  },
+  {
+    "id": "CKN-M02-P1",
+    "kind": "game_stop",
+    "title": "En CKN-M02-P1, compara 4.Cf3 y 4.h4 desde la perspectiva de negras. Da una respuesta específica a cada una.",
+    "chapter": "Parte X/XI/XIII",
+    "movesUci": [],
+    "fen": "rn1qkbnr/pp2pppp/2p5/3pPb2/3P4/8/PPP2PPP/RNBQKBNR w KQkq - 0 4",
+    "sideToMove": "white",
+    "objective": "Reconocer la decisión crítica y conectar apertura, estructura y plan.",
+    "level": {
+      "label": "800-1400 Elo",
+      "minRating": 800,
+      "maxRating": 1400,
+      "stage": null
+    },
+    "whitePlan": "Consulta la lectura bilateral y las candidatas específicas de esta posición en el manual.",
+    "blackPlan": "Consulta la respuesta activa del rival y la ruptura asociada en el manual.",
+    "teachingContinuation": "Reproducir la posición, elegir dos candidatas y comparar con la continuación del manual.",
+    "manualReference": "CKN-M02-P1",
+    "tags": [],
+    "openingId": "carokann-negras"
+  },
+  {
+    "id": "CKN-M02-P2",
+    "kind": "game_stop",
+    "title": "En CKN-M02-P2, después de 7...cxd4, compara las recapturas 8.cxd4 y 8.Cxd4. ¿Cuál conserva mejor la estructura blanca y qué maniobra negra sigue en el modelo?",
+    "chapter": "Parte X/XI/XIII",
+    "movesUci": [],
+    "fen": "r2qkbnr/pp3ppp/2n1p3/3pPb2/3p4/2P2N2/PP2BPPP/RNBQ1RK1 w kq - 0 8",
+    "sideToMove": "white",
+    "objective": "Reconocer la decisión crítica y conectar apertura, estructura y plan.",
+    "level": {
+      "label": "800-1400 Elo",
+      "minRating": 800,
+      "maxRating": 1400,
+      "stage": null
+    },
+    "whitePlan": "Consulta la lectura bilateral y las candidatas específicas de esta posición en el manual.",
+    "blackPlan": "Consulta la respuesta activa del rival y la ruptura asociada en el manual.",
+    "teachingContinuation": "Reproducir la posición, elegir dos candidatas y comparar con la continuación del manual.",
+    "manualReference": "CKN-M02-P2",
+    "tags": [],
+    "openingId": "carokann-negras"
+  }
+]

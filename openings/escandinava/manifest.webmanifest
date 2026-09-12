@@ -1,0 +1,22 @@
+{
+  "name": "Defensa Escandinava contra 1.e4 · Mi Repertorio de Ajedrez",
+  "short_name": "La Escandinava",
+  "description": "Defiende con la Escandinava haciendo que la actividad temprana de la dama sirva al desarrollo.",
+  "lang": "es",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f4f0e7",
+  "theme_color": "#8B1E3F",
+  "icons": [
+    {
+      "src": "assets/app-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/app-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

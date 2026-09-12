@@ -1,0 +1,46 @@
+[
+  {
+    "id": "GDR-F02",
+    "kind": "supplemental_position",
+    "title": "Final derivado del IQP",
+    "chapter": "Parte X/XI/XIII",
+    "movesUci": [],
+    "fen": "3r2k1/pp2bppp/2n2n2/q3p3/2B3b1/P1N1PNB1/1PQ2PPP/5RK1 w - - 0 1",
+    "sideToMove": "white",
+    "objective": "Reconocer la decisión crítica y conectar apertura, estructura y plan.",
+    "level": {
+      "label": "800-1400 Elo",
+      "minRating": 800,
+      "maxRating": 1400,
+      "stage": null
+    },
+    "whitePlan": "la liberación con ...c5/...e5 puede dejar un peón d aislado o un centro abierto. Plan negro: mantener piezas activas, ocupar e4/c4 y considerar ...d4 cuando el avance gane un tiempo. Plan blanco: bloquear d4/d5 y cambiar la pieza que sostiene el avance.",
+    "blackPlan": "la liberación con ...c5/...e5 puede dejar un peón d aislado o un centro abierto. Plan negro: mantener piezas activas, ocupar e4/c4 y considerar ...d4 cuando el avance gane un tiempo. Plan blanco: bloquear d4/d5 y cambiar la pieza que sostiene el avance.",
+    "teachingContinuation": "Reproducir la posición, elegir dos candidatas y comparar con la continuación del manual.",
+    "manualReference": "GDR-F02",
+    "tags": [],
+    "openingId": "gambito-dama-rehusado"
+  },
+  {
+    "id": "GDR-F01",
+    "kind": "supplemental_position",
+    "title": "Final derivado de la Carlsbad",
+    "chapter": "Parte X/XI/XIII",
+    "movesUci": [],
+    "fen": "r2qr1k1/3b1pp1/2p2b1p/3p4/3P3n/2NBP1N1/2Q2PPP/1R2R1K1 w - - 0 1",
+    "sideToMove": "white",
+    "objective": "una pareja de torres puede cambiarse si la torre restante entra activa; cambiar ambas sin rey centralizado convierte c6 en un objetivo estático.",
+    "level": {
+      "label": "800-1400 Elo",
+      "minRating": 800,
+      "maxRating": 1400,
+      "stage": null
+    },
+    "whitePlan": "la liberación con ...c5/...e5 puede dejar un peón d aislado o un centro abierto. Plan negro: mantener piezas activas, ocupar e4/c4 y considerar ...d4 cuando el avance gane un tiempo. Plan blanco: bloquear d4/d5 y cambiar la pieza que sostiene el avance.",
+    "blackPlan": "la liberación con ...c5/...e5 puede dejar un peón d aislado o un centro abierto. Plan negro: mantener piezas activas, ocupar e4/c4 y considerar ...d4 cuando el avance gane un tiempo. Plan blanco: bloquear d4/d5 y cambiar la pieza que sostiene el avance.",
+    "teachingContinuation": "Reproducir la posición, elegir dos candidatas y comparar con la continuación del manual.",
+    "manualReference": "GDR-F01",
+    "tags": [],
+    "openingId": "gambito-dama-rehusado"
+  }
+]

@@ -1,0 +1,367 @@
+[
+  {
+    "id": "SIC-P01",
+    "kind": "position",
+    "title": "Punto de partida del repertorio. 1...c5 no ocupa e5: ataca d4 con un peón de flanco y crea una lucha asimétrica desde la primera jugada.",
+    "chapter": "Ampliación A",
+    "movesUci": [
+      "e2e4",
+      "c7c5"
+    ],
+    "fen": "rnbqkbnr/pp1ppppp/8/2p5/4P3/8/PPPP1PPP/RNBQKBNR w KQkq c6 0 2",
+    "sideToMove": "white",
+    "objective": "2.c3 para preparar d4, reducir la teoría de la Siciliana Abierta y llegar a estructuras repetibles.",
+    "level": {
+      "label": "800–1400",
+      "minRating": 800,
+      "maxRating": 1400,
+      "stage": null
+    },
+    "whitePlan": "2.c3 para preparar d4, reducir la teoría de la Siciliana Abierta y llegar a estructuras repetibles.",
+    "blackPlan": "Responder con ...Cf6 o ...d5 antes de que e4-d4 se estabilice; si el blanco juega lento, golpear el centro.",
+    "teachingContinuation": "SIC-P02, SIC-P03, SIC-P05 · SIC-E01, SIC-E02 · Repertorio práctico de la Parte XII.",
+    "manualReference": "SIC-P01",
+    "tags": [],
+    "openingId": "siciliana"
+  },
+  {
+    "id": "SIC-P02",
+    "kind": "position",
+    "title": "Las blancas han jugado 2.c3. Ahora d4 está preparado, pero c3 queda ocupado y el caballo b1 no puede desarrollarse por su casilla natural.",
+    "chapter": "Ampliación A",
+    "movesUci": [
+      "e2e4",
+      "c7c5",
+      "c2c3"
+    ],
+    "fen": "rnbqkbnr/pp1ppppp/8/2p5/4P3/2P5/PP1P1PPP/RNBQKBNR b KQkq - 0 2",
+    "sideToMove": "black",
+    "objective": "Jugar d4 en cuanto el negro no lo impida; contra ...Cf6 responder con e5 y contra ...d5 aclarar el centro con exd5.",
+    "level": {
+      "label": "800–1400",
+      "minRating": 800,
+      "maxRating": 1400,
+      "stage": null
+    },
+    "whitePlan": "Jugar d4 en cuanto el negro no lo impida; contra ...Cf6 responder con e5 y contra ...d5 aclarar el centro con exd5.",
+    "blackPlan": "2...Cf6 ataca e4 con desarrollo; 2...d5 rompe de inmediato. 2...Cc6 es jugable, pero permite al blanco ocupar d4 con comodidad.",
+    "teachingContinuation": "SIC-P03, SIC-P05, SIC-P07 · SIC-E02, SIC-E03, SIC-E04.",
+    "manualReference": "SIC-P02",
+    "tags": [],
+    "openingId": "siciliana"
+  },
+  {
+    "id": "SIC-P03",
+    "kind": "position",
+    "title": "2...Cf6 desarrolla una pieza y ataca e4 antes de que el blanco haya jugado d4. El negro usa el pequeño retraso creado por c3.",
+    "chapter": "Ampliación A",
+    "movesUci": [
+      "e2e4",
+      "c7c5",
+      "c2c3",
+      "g8f6"
+    ],
+    "fen": "rnbqkb1r/pp1ppppp/5n2/2p5/4P3/2P5/PP1P1PPP/RNBQKBNR w KQkq - 1 3",
+    "sideToMove": "white",
+    "objective": "3.e5, después d4, Cf3 y desarrollo. No perseguir al caballo d5 con peones hasta asegurar la base de la cadena.",
+    "level": {
+      "label": "800–1400",
+      "minRating": 800,
+      "maxRating": 1400,
+      "stage": null
+    },
+    "whitePlan": "3.e5, después d4, Cf3 y desarrollo. No perseguir al caballo d5 con peones hasta asegurar la base de la cadena.",
+    "blackPlan": "Tras 3.e5 Cd5, preparar ...d6 para atacar la cadena e5-d4 y abrir el alfil c8.",
+    "teachingContinuation": "SIC-P04 · SIC-S01 · SIC-M01-P1 · SIC-E03, SIC-E16.",
+    "manualReference": "SIC-P03",
+    "tags": [],
+    "openingId": "siciliana"
+  },
+  {
+    "id": "SIC-P04",
+    "kind": "position",
+    "title": "El blanco ya ha ganado espacio con e5 y ha jugado d4; las negras han cambiado en d4. El peón negro en d4 ocupa temporalmente el centro.",
+    "chapter": "Ampliación A",
+    "movesUci": [
+      "e2e4",
+      "c7c5",
+      "c2c3",
+      "g8f6",
+      "e4e5",
+      "f6d5",
+      "d2d4",
+      "c5d4",
+      "g1f3"
+    ],
+    "fen": "rnbqkb1r/pp1ppppp/8/3nP3/3p4/2P2N2/PP3PPP/RNBQKB1R b KQkq - 1 5",
+    "sideToMove": "black",
+    "objective": "Recapturar cxd4 cuando corresponda, desarrollar Ac4/Ae2, enrocar y sostener d4 antes de pensar en c4 o f4.",
+    "level": {
+      "label": "800–1400",
+      "minRating": 800,
+      "maxRating": 1400,
+      "stage": null
+    },
+    "whitePlan": "Recapturar cxd4 cuando corresponda, desarrollar Ac4/Ae2, enrocar y sostener d4 antes de pensar en c4 o f4.",
+    "blackPlan": "...Cc6 aumenta presión sobre d4/e5; ...d6 ataca la cadena; ...e6 prepara desarrollo y apoyo central.",
+    "teachingContinuation": "SIC-S01 · SIC-M01-P2 · SIC-E06, SIC-E17.",
+    "manualReference": "SIC-P04",
+    "tags": [],
+    "openingId": "siciliana"
+  },
+  {
+    "id": "SIC-P05",
+    "kind": "position",
+    "title": "Las negras han respondido 2...d5 y, tras exd5, recuperan con la dama en d5. La tensión central se aclara antes de que el blanco construya d4",
+    "chapter": "Ampliación A",
+    "movesUci": [
+      "e2e4",
+      "c7c5",
+      "c2c3",
+      "d7d5",
+      "e4d5",
+      "d8d5"
+    ],
+    "fen": "rnb1kbnr/pp2pppp/8/2pq4/8/2P5/PP1P1PPP/RNBQKBNR w KQkq - 0 4",
+    "sideToMove": "white",
+    "objective": "4.d4, seguido de Cf3, Ae2 y O-O. c4 solo cuando gane espacio sin crear debilidades mayores.",
+    "level": {
+      "label": "800–1400",
+      "minRating": 800,
+      "maxRating": 1400,
+      "stage": null
+    },
+    "whitePlan": "4.d4, seguido de Cf3, Ae2 y O-O. c4 solo cuando gane espacio sin crear debilidades mayores.",
+    "blackPlan": "Desarrollar ...Cf6 y ...e6; retirar la dama si c4 la ataca, sin gastar más tiempos de los necesarios.",
+    "teachingContinuation": "SIC-P06 · SIC-S02 · SIC-M02-P1/P2 · SIC-E04, SIC-E20.",
+    "manualReference": "SIC-P05",
+    "tags": [],
+    "openingId": "siciliana"
+  },
+  {
+    "id": "SIC-P06",
+    "kind": "position",
+    "title": "Blancas ya tienen d4 y Cf3; negras han desarrollado Cf6 y reforzado el centro con ...e6. La apertura entra en una fase de desarrollo normal.",
+    "chapter": "Ampliación A",
+    "movesUci": [
+      "e2e4",
+      "c7c5",
+      "c2c3",
+      "d7d5",
+      "e4d5",
+      "d8d5",
+      "d2d4",
+      "g8f6",
+      "g1f3",
+      "e7e6"
+    ],
+    "fen": "rnb1kb1r/pp3ppp/4pn2/2pq4/3P4/2P2N2/PP3PPP/RNBQKB1R w KQkq - 0 6",
+    "sideToMove": "white",
+    "objective": "Ae2, O-O, y después c4 o Ae3 según la colocación negra. Si c4 gana un tiempo, preparar Cc3 y torres centrales.",
+    "level": {
+      "label": "800–1400",
+      "minRating": 800,
+      "maxRating": 1400,
+      "stage": null
+    },
+    "whitePlan": "Ae2, O-O, y después c4 o Ae3 según la colocación negra. Si c4 gana un tiempo, preparar Cc3 y torres centrales.",
+    "blackPlan": "...Ae7, ...O-O y ...Cc6; presionar d4 y aprovechar d5 si el centro blanco se fija.",
+    "teachingContinuation": "SIC-S02, SIC-S04 · SIC-M02-P3 · SIC-E12, SIC-E22.",
+    "manualReference": "SIC-P06",
+    "tags": [],
+    "openingId": "siciliana"
+  },
+  {
+    "id": "SIC-P07",
+    "kind": "position",
+    "title": "Las negras eligieron ...Cc6 en vez de ...Cf6 o ...d5. El blanco aprovechó el tiempo con d4 y, tras ...cxd4, cxd4 construyó e4-d4.",
+    "chapter": "Ampliación A",
+    "movesUci": [
+      "e2e4",
+      "c7c5",
+      "c2c3",
+      "b8c6",
+      "d2d4",
+      "c5d4",
+      "c3d4"
+    ],
+    "fen": "r1bqkbnr/pp1ppppp/2n5/8/3PP3/8/PP3PPP/RNBQKBNR b KQkq - 0 4",
+    "sideToMove": "black",
+    "objective": "Cf3, Cc3, Ae3/Ac4 y O-O; responder a ...d5 con cálculo, no con defensa pasiva.",
+    "level": {
+      "label": "800–1400",
+      "minRating": 800,
+      "maxRating": 1400,
+      "stage": null
+    },
+    "whitePlan": "Cf3, Cc3, Ae3/Ac4 y O-O; responder a ...d5 con cálculo, no con defensa pasiva.",
+    "blackPlan": "4...d5 es el golpe principal; ...Nf6 también aumenta presión. ...e5 gana espacio pero deja d5 como casilla.",
+    "teachingContinuation": "SIC-M03-P1/P2 · SIC-E05, SIC-E20 · Parte V, Plan A.",
+    "manualReference": "SIC-P07",
+    "tags": [],
+    "openingId": "siciliana"
+  },
+  {
+    "id": "SIC-P08",
+    "kind": "position",
+    "title": "Las negras adoptan ...d6 y ...g6. El centro blanco e4-d4 está construido y el fianchetto negro prepara presión sobre d4 por la diagonal g7-a",
+    "chapter": "Ampliación A",
+    "movesUci": [
+      "e2e4",
+      "c7c5",
+      "c2c3",
+      "d7d6",
+      "d2d4",
+      "c5d4",
+      "c3d4",
+      "g8f6",
+      "b1c3",
+      "g7g6"
+    ],
+    "fen": "rnbqkb1r/pp2pp1p/3p1np1/8/3PP3/2N5/PP3PPP/R1BQKBNR w KQkq - 0 6",
+    "sideToMove": "white",
+    "objective": "Cf3, Ae3/Ae2, O-O y decidir entre f3 o d5 solo después de neutralizar la ruptura ...d5.",
+    "level": {
+      "label": "800–1400",
+      "minRating": 800,
+      "maxRating": 1400,
+      "stage": null
+    },
+    "whitePlan": "Cf3, Ae3/Ae2, O-O y decidir entre f3 o d5 solo después de neutralizar la ruptura ...d5.",
+    "blackPlan": "...Ag7, ...O-O y ...d5. La presión central es más importante que una expansión de peones en el flanco de dama.",
+    "teachingContinuation": "SIC-E10, SIC-E21 · Parte IV, esquema ...d6/...g6 · Plan D.",
+    "manualReference": "SIC-P08",
+    "tags": [],
+    "openingId": "siciliana"
+  },
+  {
+    "id": "SIC-P09",
+    "kind": "position",
+    "title": "La estructura se ha cerrado con e5-d4 contra e6-d5. El carácter de la partida deja de ser abierto y se aproxima a una Francesa con c3.",
+    "chapter": "Ampliación A",
+    "movesUci": [
+      "e2e4",
+      "c7c5",
+      "c2c3",
+      "e7e6",
+      "d2d4",
+      "d7d5",
+      "e4e5",
+      "b8c6",
+      "g1f3"
+    ],
+    "fen": "r1bqkbnr/pp3ppp/2n1p3/2ppP3/3P4/2P2N2/PP3PPP/RNBQKB1R b KQkq - 2 5",
+    "sideToMove": "black",
+    "objective": "Desarrollar, enrocar y preparar c4 contra d5. Ab5 puede aumentar presión sobre c6 antes de resolver el centro.",
+    "level": {
+      "label": "800–1400",
+      "minRating": 800,
+      "maxRating": 1400,
+      "stage": null
+    },
+    "whitePlan": "Desarrollar, enrocar y preparar c4 contra d5. Ab5 puede aumentar presión sobre c6 antes de resolver el centro.",
+    "blackPlan": "...Nge7, ...Bd7 y luego ...f6 o ...cxd4 según la colocación blanca. El objetivo es atacar la cadena, no defender pasivamente.",
+    "teachingContinuation": "SIC-S05 · SIC-E09, SIC-E23 · Parte V, Plan D.",
+    "manualReference": "SIC-P09",
+    "tags": [],
+    "openingId": "siciliana"
+  },
+  {
+    "id": "SIC-P10",
+    "kind": "position",
+    "title": "Tras ...g6 y la liquidación central, el blanco tiene un peón avanzado en d5; negras desarrollan Cf6 y preparan ...Ag7.",
+    "chapter": "Ampliación A",
+    "movesUci": [
+      "e2e4",
+      "c7c5",
+      "c2c3",
+      "g7g6",
+      "d2d4",
+      "c5d4",
+      "c3d4",
+      "d7d5",
+      "e4d5",
+      "g8f6"
+    ],
+    "fen": "rnbqkb1r/pp2pp1p/5np1/3P4/3P4/8/PP3PPP/RNBQKBNR w KQkq - 1 6",
+    "sideToMove": "white",
+    "objective": "Cf3, Cc3 y desarrollo rápido. Si el peón d5 cae, usar el tiempo para activar piezas y ocupar columnas.",
+    "level": {
+      "label": "800–1400",
+      "minRating": 800,
+      "maxRating": 1400,
+      "stage": null
+    },
+    "whitePlan": "Cf3, Cc3 y desarrollo rápido. Si el peón d5 cae, usar el tiempo para activar piezas y ocupar columnas.",
+    "blackPlan": "...Ag7, O-O y presión sobre d5/d4. La prioridad es actividad, no bloquear el peón con demasiadas piezas.",
+    "teachingContinuation": "SIC-E08, SIC-E24 · Parte IV, 2...g6 · Finales de peón aislado.",
+    "manualReference": "SIC-P10",
+    "tags": [],
+    "openingId": "siciliana"
+  },
+  {
+    "id": "SIC-P11",
+    "kind": "position",
+    "title": "Las negras jugaron ...e5 y han cerrado el centro. El blanco enrocó y colocó el alfil en b5; d5 queda como casilla estratégica.",
+    "chapter": "Ampliación A",
+    "movesUci": [
+      "e2e4",
+      "c7c5",
+      "c2c3",
+      "e7e5",
+      "g1f3",
+      "b8c6",
+      "f1b5",
+      "g8e7",
+      "e1g1"
+    ],
+    "fen": "r1bqkb1r/pp1pnppp/2n5/1Bp1p3/4P3/2P2N2/PP1P1PPP/RNBQ1RK1 b kq - 5 5",
+    "sideToMove": "black",
+    "objective": "Mantener la presión, completar Te1/d3 o d4 según la respuesta negra y usar d5 como casilla de entrada.",
+    "level": {
+      "label": "800–1400",
+      "minRating": 800,
+      "maxRating": 1400,
+      "stage": null
+    },
+    "whitePlan": "Mantener la presión, completar Te1/d3 o d4 según la respuesta negra y usar d5 como casilla de entrada.",
+    "blackPlan": "...d6, ...g6 o ...a6 para completar desarrollo y reducir presión. Evitar abrir el centro con el rey todavía en e8.",
+    "teachingContinuation": "SIC-E14, SIC-E25 · Parte IV, 2...e5 · Método O.P.E.R.A.",
+    "manualReference": "SIC-P11",
+    "tags": [],
+    "openingId": "siciliana"
+  },
+  {
+    "id": "SIC-P12",
+    "kind": "position",
+    "title": "Las negras invirtieron un tiempo en ...a6; el blanco respondió ocupando d4. Tras los cambios y ...Cf6, el peón d5 blanco gana espacio.",
+    "chapter": "Ampliación A",
+    "movesUci": [
+      "e2e4",
+      "c7c5",
+      "c2c3",
+      "a7a6",
+      "d2d4",
+      "c5d4",
+      "c3d4",
+      "d7d5",
+      "e4d5",
+      "g8f6"
+    ],
+    "fen": "rnbqkb1r/1p2pppp/p4n2/3P4/3P4/8/PP3PPP/RNBQKBNR w KQkq - 1 6",
+    "sideToMove": "white",
+    "objective": "Cf3, Cc3 y Ae2/Ac4; aceptar devolver d5 si el negro gana demasiados tiempos atacándolo.",
+    "level": {
+      "label": "800–1400",
+      "minRating": 800,
+      "maxRating": 1400,
+      "stage": null
+    },
+    "whitePlan": "Cf3, Cc3 y Ae2/Ac4; aceptar devolver d5 si el negro gana demasiados tiempos atacándolo.",
+    "blackPlan": "...e6 o ...g6, seguido de desarrollo y presión sobre d5. ...b5 solo cuando el centro ya no requiera atención inmediata.",
+    "teachingContinuation": "SIC-E15, SIC-E25 · Parte IV, 2...a6 · Parte XII, mapa de memoria.",
+    "manualReference": "SIC-P12",
+    "tags": [],
+    "openingId": "siciliana"
+  }
+]

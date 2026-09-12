@@ -1,7 +1,8 @@
 {
-  "name": "Laboratorio de Aperturas",
-  "short_name": "Aperturas",
-  "description": "Mi Repertorio de Ajedrez",
+  "name": "Apertura Española o Ruy López · Mi Repertorio de Ajedrez",
+  "short_name": "La Española",
+  "description": "Domina la Apertura Española entendiendo la presión central, las maniobras y el momento de jugar d4.",
+  "lang": "es",
   "start_url": "./",
   "display": "standalone",
   "background_color": "#f4f0e7",

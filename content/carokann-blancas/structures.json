@@ -1,0 +1,134 @@
+[
+  {
+    "id": "CKB-S01",
+    "kind": "structure",
+    "title": "Ruptura ...f6",
+    "chapter": "Parte VIII",
+    "movesUci": [],
+    "fen": "r1bq1rk1/2b5/2n1ppp1/2P5/N2p4/5N2/3B1PPP/1R1QR1K1 w - - 0 21",
+    "sideToMove": "white",
+    "objective": "ocupar e5 transforma una antigua casilla de peón en puesto avanzado. La pieza central debe estar sostenida y no convertirse en blanco de f4 o cambios favorables. El objetivo es convertir la actividad central en simplificaciones o presión sobre c/d, no mantener la pieza por orgullo.",
+    "level": {
+      "label": "800-1400 Elo",
+      "minRating": 800,
+      "maxRating": 1400,
+      "stage": null
+    },
+    "whitePlan": "Consulta la lectura bilateral y las candidatas específicas de esta posición en el manual.",
+    "blackPlan": "Consulta la respuesta activa del rival y la ruptura asociada en el manual.",
+    "teachingContinuation": "Reproducir la posición, elegir dos candidatas y comparar con la continuación del manual.",
+    "manualReference": "CKB-S01",
+    "tags": [],
+    "openingId": "carokann-blancas"
+  },
+  {
+    "id": "CKB-S02",
+    "kind": "structure",
+    "title": "Pieza activa en e5",
+    "chapter": "Parte VIII",
+    "movesUci": [],
+    "fen": "r1bq1rk1/2b3p1/2n1ppp1/2P1P3/N2p4/5N2/3B1PPP/1R1QR1K1 w - - 0 20",
+    "sideToMove": "white",
+    "objective": "ocupar e5 transforma una antigua casilla de peón en puesto avanzado. La pieza central debe estar sostenida y no convertirse en blanco de f4 o cambios favorables. El objetivo es convertir la actividad central en simplificaciones o presión sobre c/d, no mantener la pieza por orgullo.",
+    "level": {
+      "label": "800-1400 Elo",
+      "minRating": 800,
+      "maxRating": 1400,
+      "stage": null
+    },
+    "whitePlan": "Consulta la lectura bilateral y las candidatas específicas de esta posición en el manual.",
+    "blackPlan": "Consulta la respuesta activa del rival y la ruptura asociada en el manual.",
+    "teachingContinuation": "Reproducir la posición, elegir dos candidatas y comparar con la continuación del manual.",
+    "manualReference": "CKB-S02",
+    "tags": [],
+    "openingId": "carokann-blancas"
+  },
+  {
+    "id": "CKB-S03",
+    "kind": "structure",
+    "title": "Presión sobre casillas oscuras",
+    "chapter": "Parte VIII",
+    "movesUci": [],
+    "fen": "r1bq1rk1/2b2pp1/2n1p1p1/2P1P3/N2p4/5N2/3B1PPP/1R1QR1K1 b - - 2 19",
+    "sideToMove": "black",
+    "objective": "señala una casilla oscura vulnerable y luego una ruta real de una pieza hacia ella. Si no existe ruta en dos o tres tiempos, el «objetivo» todavía no es práctico.",
+    "level": {
+      "label": "800-1400 Elo",
+      "minRating": 800,
+      "maxRating": 1400,
+      "stage": null
+    },
+    "whitePlan": "Consulta la lectura bilateral y las candidatas específicas de esta posición en el manual.",
+    "blackPlan": "Consulta la respuesta activa del rival y la ruptura asociada en el manual.",
+    "teachingContinuation": "Reproducir la posición, elegir dos candidatas y comparar con la continuación del manual.",
+    "manualReference": "CKB-S03",
+    "tags": [],
+    "openingId": "carokann-blancas"
+  },
+  {
+    "id": "CKB-S04",
+    "kind": "structure",
+    "title": "Transformación tras Af4",
+    "chapter": "Parte VIII",
+    "movesUci": [],
+    "fen": "r1bq1rk1/2b2pp1/2n1p1p1/2P1P3/N2p4/5N2/3B1PPP/R2QR1K1 w - - 1 19",
+    "sideToMove": "white",
+    "objective": "el caballo central funciona si no puede ser expulsado con ganancia de tiempo y si coordina con torres/alfil. Su función puede ser bloquear, atacar f/c o facilitar simplificaciones. Si necesita demasiadas piezas para sostenerlo, deja de ser una fortaleza y se convierte en objetivo.",
+    "level": {
+      "label": "800-1400 Elo",
+      "minRating": 800,
+      "maxRating": 1400,
+      "stage": null
+    },
+    "whitePlan": "Consulta la lectura bilateral y las candidatas específicas de esta posición en el manual.",
+    "blackPlan": "Consulta la respuesta activa del rival y la ruptura asociada en el manual.",
+    "teachingContinuation": "Reproducir la posición, elegir dos candidatas y comparar con la continuación del manual.",
+    "manualReference": "CKB-S04",
+    "tags": [],
+    "openingId": "carokann-blancas"
+  },
+  {
+    "id": "CKB-S05",
+    "kind": "structure",
+    "title": "Caballo centralizado",
+    "chapter": "Parte VIII",
+    "movesUci": [],
+    "fen": "rbbq1rk1/5pp1/2n1p1p1/2P1P3/N2p4/5N2/3B1PPP/R2QR1K1 b - - 0 18",
+    "sideToMove": "black",
+    "objective": "un peón avanzado en b/c puede ganar espacio y fijar objetivos, pero necesita apoyo. La columna detrás del peón puede ser una vía de entrada para la torre. Antes de avanzar más, comprueba si la base del peón queda vulnerable a ...b6 o a una presión de piezas.",
+    "level": {
+      "label": "800-1400 Elo",
+      "minRating": 800,
+      "maxRating": 1400,
+      "stage": null
+    },
+    "whitePlan": "Consulta la lectura bilateral y las candidatas específicas de esta posición en el manual.",
+    "blackPlan": "Consulta la respuesta activa del rival y la ruptura asociada en el manual.",
+    "teachingContinuation": "Reproducir la posición, elegir dos candidatas y comparar con la continuación del manual.",
+    "manualReference": "CKB-S05",
+    "tags": [],
+    "openingId": "carokann-blancas"
+  },
+  {
+    "id": "CKB-S06",
+    "kind": "structure",
+    "title": "Ala de dama expandida",
+    "chapter": "Parte VIII",
+    "movesUci": [],
+    "fen": "rbbq1rk1/5pp1/2n1p1p1/2p1P3/NP1p4/5N2/3B1PPP/R2QR1K1 w - - 0 18",
+    "sideToMove": "white",
+    "objective": "un peón avanzado en b/c puede ganar espacio y fijar objetivos, pero necesita apoyo. La columna detrás del peón puede ser una vía de entrada para la torre. Antes de avanzar más, comprueba si la base del peón queda vulnerable a ...b6 o a una presión de piezas.",
+    "level": {
+      "label": "800-1400 Elo",
+      "minRating": 800,
+      "maxRating": 1400,
+      "stage": null
+    },
+    "whitePlan": "Consulta la lectura bilateral y las candidatas específicas de esta posición en el manual.",
+    "blackPlan": "Consulta la respuesta activa del rival y la ruptura asociada en el manual.",
+    "teachingContinuation": "Reproducir la posición, elegir dos candidatas y comparar con la continuación del manual.",
+    "manualReference": "CKB-S06",
+    "tags": [],
+    "openingId": "carokann-blancas"
+  }
+]

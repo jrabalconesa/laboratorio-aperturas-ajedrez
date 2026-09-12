@@ -1,0 +1,134 @@
+[
+  {
+    "id": "FRA-S01",
+    "kind": "structure",
+    "title": "Cadena francesa d4-e5",
+    "chapter": "Parte VIII",
+    "movesUci": [],
+    "fen": "r1bqkb1r/pp1n2pp/2n1pp2/3pP3/3P4/3B4/PP1NNPPP/R1BQK2R w KQkq - 0 9",
+    "sideToMove": "white",
+    "objective": "la cadena blanca d4-e5 da espacio, pero también fija dos objetivos. d4 es la base que las negras atacan con ...c5; e5 es la cabeza que intentan minar con ...f6. El alfil blanco de c1 suele necesitar d3, f4 o g5; el caballo g1 puede ir e2-f4/g3 porque c3 pertenece al peón. Para las negras, el alfil c8 es la pieza difícil mientras e6-d5 siga bloqueado.",
+    "level": {
+      "label": "800-1400 Elo",
+      "minRating": 800,
+      "maxRating": 1400,
+      "stage": null
+    },
+    "whitePlan": "Consulta la lectura bilateral y las candidatas específicas de esta posición en el manual.",
+    "blackPlan": "Consulta la respuesta activa del rival y la ruptura asociada en el manual.",
+    "teachingContinuation": "Reproducir la posición, elegir dos candidatas y comparar con la continuación del manual.",
+    "manualReference": "FRA-S01",
+    "tags": [],
+    "openingId": "francesa"
+  },
+  {
+    "id": "FRA-S02",
+    "kind": "structure",
+    "title": "Centro con peón negro aislado en d5",
+    "chapter": "Parte VIII",
+    "movesUci": [],
+    "fen": "rnbqkbnr/pp3ppp/8/2pp4/3P4/8/PPPN1PPP/R1BQKBNR w KQkq - 0 5",
+    "sideToMove": "white",
+    "objective": "Reconocer la decisión crítica y conectar apertura, estructura y plan.",
+    "level": {
+      "label": "800-1400 Elo",
+      "minRating": 800,
+      "maxRating": 1400,
+      "stage": null
+    },
+    "whitePlan": "Consulta la lectura bilateral y las candidatas específicas de esta posición en el manual.",
+    "blackPlan": "Consulta la respuesta activa del rival y la ruptura asociada en el manual.",
+    "teachingContinuation": "Reproducir la posición, elegir dos candidatas y comparar con la continuación del manual.",
+    "manualReference": "FRA-S02",
+    "tags": [],
+    "openingId": "francesa"
+  },
+  {
+    "id": "FRA-S03",
+    "kind": "structure",
+    "title": "Rubinstein: centro abierto temprano",
+    "chapter": "Parte VIII",
+    "movesUci": [],
+    "fen": "r1bqkbnr/pppn1ppp/4p3/8/3PN3/8/PPP2PPP/R1BQKBNR w KQkq - 0 5",
+    "sideToMove": "white",
+    "objective": "Reconocer la decisión crítica y conectar apertura, estructura y plan.",
+    "level": {
+      "label": "800-1400 Elo",
+      "minRating": 800,
+      "maxRating": 1400,
+      "stage": null
+    },
+    "whitePlan": "Consulta la lectura bilateral y las candidatas específicas de esta posición en el manual.",
+    "blackPlan": "Consulta la respuesta activa del rival y la ruptura asociada en el manual.",
+    "teachingContinuation": "Reproducir la posición, elegir dos candidatas y comparar con la continuación del manual.",
+    "manualReference": "FRA-S03",
+    "tags": [],
+    "openingId": "francesa"
+  },
+  {
+    "id": "FRA-S04",
+    "kind": "structure",
+    "title": "Centro tras ...f6 y exf6",
+    "chapter": "Parte VIII",
+    "movesUci": [],
+    "fen": "r1bqkb1r/pp4pp/2n1pn2/3p4/3P4/3B4/PP1NNPPP/R1BQK2R w KQkq - 0 10",
+    "sideToMove": "white",
+    "objective": "Reconocer la decisión crítica y conectar apertura, estructura y plan.",
+    "level": {
+      "label": "800-1400 Elo",
+      "minRating": 800,
+      "maxRating": 1400,
+      "stage": null
+    },
+    "whitePlan": "Consulta la lectura bilateral y las candidatas específicas de esta posición en el manual.",
+    "blackPlan": "Consulta la respuesta activa del rival y la ruptura asociada en el manual.",
+    "teachingContinuation": "Reproducir la posición, elegir dos candidatas y comparar con la continuación del manual.",
+    "manualReference": "FRA-S04",
+    "tags": [],
+    "openingId": "francesa"
+  },
+  {
+    "id": "FRA-S05",
+    "kind": "structure",
+    "title": "Peón d5 dinámico tras Tarrasch ...c5",
+    "chapter": "Parte VIII",
+    "movesUci": [],
+    "fen": "r1bqk2r/pp2nppp/2n5/1Bbp4/8/5N2/PPPN1PPP/R1BQ1RK1 w kq - 0 9",
+    "sideToMove": "white",
+    "objective": "Blancas buscan fijar d5, colocar una torre en e1/d1 y cambiar la pieza negra que mejor defiende el centro. Negras compensan el posible objetivo d5 con desarrollo rápido, ...0-0, ...f6 o ...Ag4 y, si pueden, ...d4 para evitar un bloqueo permanente. Mini ejercicio: compara 8.dxc5 con 8.c3; la primera transforma la estructura, la segunda mantiene tensión pero permite al negro elegir cuándo aclararla.",
+    "level": {
+      "label": "800-1400 Elo",
+      "minRating": 800,
+      "maxRating": 1400,
+      "stage": null
+    },
+    "whitePlan": "Consulta la lectura bilateral y las candidatas específicas de esta posición en el manual.",
+    "blackPlan": "Consulta la respuesta activa del rival y la ruptura asociada en el manual.",
+    "teachingContinuation": "Reproducir la posición, elegir dos candidatas y comparar con la continuación del manual.",
+    "manualReference": "FRA-S05",
+    "tags": [],
+    "openingId": "francesa"
+  },
+  {
+    "id": "FRA-S06",
+    "kind": "structure",
+    "title": "Centro sin peones e y d",
+    "chapter": "Parte VIII",
+    "movesUci": [],
+    "fen": "r1bqkb1r/pp3ppp/4pn2/8/3p4/3B1N2/PPP2PPP/R1BQ1RK1 w kq - 0 9",
+    "sideToMove": "white",
+    "objective": "Reconocer la decisión crítica y conectar apertura, estructura y plan.",
+    "level": {
+      "label": "800-1400 Elo",
+      "minRating": 800,
+      "maxRating": 1400,
+      "stage": null
+    },
+    "whitePlan": "Consulta la lectura bilateral y las candidatas específicas de esta posición en el manual.",
+    "blackPlan": "Consulta la respuesta activa del rival y la ruptura asociada en el manual.",
+    "teachingContinuation": "Reproducir la posición, elegir dos candidatas y comparar con la continuación del manual.",
+    "manualReference": "FRA-S06",
+    "tags": [],
+    "openingId": "francesa"
+  }
+]

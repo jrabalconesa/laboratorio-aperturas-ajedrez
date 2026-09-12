@@ -1,0 +1,46 @@
+[
+  {
+    "id": "SIC-F01",
+    "kind": "supplemental_position",
+    "title": "Final sin damas: fijar c6 antes de atacar",
+    "chapter": "Parte XI",
+    "movesUci": [],
+    "fen": "r1b1k2r/p4ppp/2p5/4P3/4p3/2B5/PP3PPP/R2K3R w kq - 0 15",
+    "sideToMove": "white",
+    "objective": "Convertir una ventaja estructural en un plan de actividad del rey y creación de una segunda debilidad.",
+    "level": {
+      "label": "1000–1400",
+      "minRating": 1000,
+      "maxRating": 1400,
+      "stage": null
+    },
+    "whitePlan": "Centralizar el rey, fijar c6 y crear una segunda debilidad antes de atacar material.",
+    "blackPlan": "Buscar actividad del rey y del alfil; mantener ...c5 o ...f6 como recurso liberador.",
+    "teachingContinuation": "SIC-S06 · SIC-M03-P4/P5",
+    "manualReference": "SIC-F01",
+    "tags": [],
+    "openingId": "siciliana"
+  },
+  {
+    "id": "SIC-F02",
+    "kind": "supplemental_position",
+    "title": "Final de piezas menores: actividad contra peones doblados",
+    "chapter": "Parte XI",
+    "movesUci": [],
+    "fen": "3k4/p4ppp/2p1b3/4P3/4p3/1PB5/P3KPPP/8 w - - 0 20",
+    "sideToMove": "white",
+    "objective": "Convertir una ventaja estructural en un plan de actividad del rey y creación de una segunda debilidad.",
+    "level": {
+      "label": "1000–1400",
+      "minRating": 1000,
+      "maxRating": 1400,
+      "stage": null
+    },
+    "whitePlan": "Centralizar el rey, fijar c6 y crear una segunda debilidad antes de atacar material.",
+    "blackPlan": "Buscar actividad del rey y del alfil; mantener ...c5 o ...f6 como recurso liberador.",
+    "teachingContinuation": "SIC-S06 · SIC-M03-P4/P5",
+    "manualReference": "SIC-F02",
+    "tags": [],
+    "openingId": "siciliana"
+  }
+]

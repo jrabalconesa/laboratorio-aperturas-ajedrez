@@ -1,0 +1,328 @@
+[
+  {
+    "id": "LON-P01",
+    "kind": "position",
+    "title": "El negro iguala el centro",
+    "chapter": "Ampliación A",
+    "movesUci": [
+      "d2d4",
+      "d7d5"
+    ],
+    "fen": "rnbqkbnr/ppp1pppp/8/3p4/3P4/8/PPP1PPPP/RNBQKBNR w KQkq d6 0 2",
+    "sideToMove": "white",
+    "objective": "1.d4 d5 2.Cf3 Cf6 3.Af4 c5 4.e3 Cc6 5.c3 Db6 / FEN: r1b1kb1r/pp2pppp/1qn2n2/2pp4/3P1B2/2P1PN2/PP3PPP/RN1QKB1R w KQkq - 1 6 / Mueve: Blancas / Qué cambió: c3 sostiene d4 pero cierra la casilla natural del caballo b1; ...Db6 aprovecha ese tiempo atacando b2 y aumentando la presión sobre d4. / Evaluación: equilibrio con una pregunta concreta para el blanco: defender b2 sin perder la coordinación. / Desarrollo: la dama negra sale porque crea dos objetivos; después debe volver la prioridad a ...e6/...Ae7. / Reyes: el negro todavía no debe abrir el centro si la dama se convierte en objetivo. / Centro y espacio: d4 tiene más defensores, pero b2 obliga a repartir recursos. / Plan negro: aceptar Db3, decidir entre cambio de damas o ...c4 y completar desarrollo. / Plan blanco: Db3 es la respuesta más directa; Cbd2 también desarrolla pero debe resolver b2. / Peor pieza: alfil f8; ...e6 lo libera y acerca el enroque. / Candidatas: Db3, Cbd2; el negro compara ...c4 con un cambio de damas. / Error típico: capturar b2 sin calcular Tb1 y el coste de rescatar la dama. / Referencias: LON-S02; LON-M01; E02/E17/E32.",
+    "level": {
+      "label": "800-1400 Elo",
+      "minRating": 800,
+      "maxRating": 1400,
+      "stage": null
+    },
+    "whitePlan": "1.d4 d5 2.Cf3 Cf6 3.Af4 c5 4.e3 Cc6 5.c3 Db6 / FEN: r1b1kb1r/pp2pppp/1qn2n2/2pp4/3P1B2/2P1PN2/PP3PPP/RN1QKB1R w KQkq - 1 6 / Mueve: Blancas / Qué cambió: c3 sostiene d4 pero cierra la casilla natural del caballo b1; ...Db6 aprovecha ese tiempo atacando b2 y aumentando la presión sobre d4. / Evaluación: equilibrio con una pregunta concreta para el blanco: defender b2 sin perder la coordinación. / Desarrollo: la dama negra sale porque crea dos objetivos; después debe volver la prioridad a ...e6/...Ae7. / Reyes: el negro todavía no debe abrir el centro si la dama se convierte en objetivo. / Centro y espacio: d4 tiene más defensores, pero b2 obliga a repartir recursos. / Plan negro: aceptar Db3, decidir entre cambio de damas o ...c4 y completar desarrollo. / Plan blanco: Db3 es la respuesta más directa; Cbd2 también desarrolla pero debe resolver b2. / Peor pieza: alfil f8; ...e6 lo libera y acerca el enroque. / Candidatas: Db3, Cbd2; el negro compara ...c4 con un cambio de damas. / Error típico: capturar b2 sin calcular Tb1 y el coste de rescatar la dama. / Referencias: LON-S02; LON-M01; E02/E17/E32.",
+    "blackPlan": "1.d4 d5 2.Cf3 Cf6 3.Af4 c5 4.e3 Cc6 5.c3 Db6 / FEN: r1b1kb1r/pp2pppp/1qn2n2/2pp4/3P1B2/2P1PN2/PP3PPP/RN1QKB1R w KQkq - 1 6 / Mueve: Blancas / Qué cambió: c3 sostiene d4 pero cierra la casilla natural del caballo b1; ...Db6 aprovecha ese tiempo atacando b2 y aumentando la presión sobre d4. / Evaluación: equilibrio con una pregunta concreta para el blanco: defender b2 sin perder la coordinación. / Desarrollo: la dama negra sale porque crea dos objetivos; después debe volver la prioridad a ...e6/...Ae7. / Reyes: el negro todavía no debe abrir el centro si la dama se convierte en objetivo. / Centro y espacio: d4 tiene más defensores, pero b2 obliga a repartir recursos. / Plan negro: aceptar Db3, decidir entre cambio de damas o ...c4 y completar desarrollo. / Plan blanco: Db3 es la respuesta más directa; Cbd2 también desarrolla pero debe resolver b2. / Peor pieza: alfil f8; ...e6 lo libera y acerca el enroque. / Candidatas: Db3, Cbd2; el negro compara ...c4 con un cambio de damas. / Error típico: capturar b2 sin calcular Tb1 y el coste de rescatar la dama. / Referencias: LON-S02; LON-M01; E02/E17/E32.",
+    "teachingContinuation": "Reproducir la posición, elegir dos candidatas y comparar con la continuación del manual.",
+    "manualReference": "LON-P01",
+    "tags": [],
+    "openingId": "londres"
+  },
+  {
+    "id": "LON-P02",
+    "kind": "position",
+    "title": "Desarrollo natural antes de golpear",
+    "chapter": "Ampliación A",
+    "movesUci": [
+      "d2d4",
+      "d7d5"
+    ],
+    "fen": "rnbqkbnr/ppp1pppp/8/3p4/3P4/8/PPP1PPPP/RNBQKBNR w KQkq d6 0 2",
+    "sideToMove": "white",
+    "objective": "1.d4 d5 2.Cf3 Cf6 3.Af4 c5 4.e3 Cc6 5.c3 Db6 / FEN: r1b1kb1r/pp2pppp/1qn2n2/2pp4/3P1B2/2P1PN2/PP3PPP/RN1QKB1R w KQkq - 1 6 / Mueve: Blancas / Qué cambió: c3 sostiene d4 pero cierra la casilla natural del caballo b1; ...Db6 aprovecha ese tiempo atacando b2 y aumentando la presión sobre d4. / Evaluación: equilibrio con una pregunta concreta para el blanco: defender b2 sin perder la coordinación. / Desarrollo: la dama negra sale porque crea dos objetivos; después debe volver la prioridad a ...e6/...Ae7. / Reyes: el negro todavía no debe abrir el centro si la dama se convierte en objetivo. / Centro y espacio: d4 tiene más defensores, pero b2 obliga a repartir recursos. / Plan negro: aceptar Db3, decidir entre cambio de damas o ...c4 y completar desarrollo. / Plan blanco: Db3 es la respuesta más directa; Cbd2 también desarrolla pero debe resolver b2. / Peor pieza: alfil f8; ...e6 lo libera y acerca el enroque. / Candidatas: Db3, Cbd2; el negro compara ...c4 con un cambio de damas. / Error típico: capturar b2 sin calcular Tb1 y el coste de rescatar la dama. / Referencias: LON-S02; LON-M01; E02/E17/E32.",
+    "level": {
+      "label": "800-1400 Elo",
+      "minRating": 800,
+      "maxRating": 1400,
+      "stage": null
+    },
+    "whitePlan": "1.d4 d5 2.Cf3 Cf6 3.Af4 c5 4.e3 Cc6 5.c3 Db6 6.Db3 c4 / FEN: r1b1kb1r/pp2pppp/1qn2n2/3p4/2pP1B2/1QP1PN2/PP3PPP/RN2KB1R w KQkq - 0 7 / Mueve: Blancas / Qué cambió: ...c4 gana espacio y fija c3, pero ya no presiona d4 con el peón c. La lucha se desplaza a e4 y al ala de dama. / Evaluación: estructura cerrada y jugable; el negro debe justificar el espacio desarrollando con rapidez. / Desarrollo: ...Af5 y ...e6 son más urgentes que nuevos movimientos de dama. / Reyes: con el centro cerrado hay algo más de tiempo, pero el enroque sigue siendo prioridad. / Centro y espacio: el blanco puede preparar e4; el negro dispone de ...b5 para sostener c4. / Plan negro: ...Af5, ...e6, ...b5 y responder a e4 con ...dxe4 cuando convenga. / Plan blanco: Dxb6 para simplificar o Cbd2/e4 para romper la cadena. / Peor pieza: alfil c8; en f5 ayuda a vigilar e4. / Candidatas: Dxb6, Cbd2; para negras, desarrollo antes de expandir. / Error típico: ...b5 demasiado pronto y permitir a4/b3 atacar la cadena sin piezas. / Referencias: LON-S02; LON-F01; E12/E27.",
+    "blackPlan": "1.d4 d5 2.Cf3 Cf6 3.Af4 c5 4.e3 Cc6 5.c3 Db6 6.Db3 c4 / FEN: r1b1kb1r/pp2pppp/1qn2n2/3p4/2pP1B2/1QP1PN2/PP3PPP/RN2KB1R w KQkq - 0 7 / Mueve: Blancas / Qué cambió: ...c4 gana espacio y fija c3, pero ya no presiona d4 con el peón c. La lucha se desplaza a e4 y al ala de dama. / Evaluación: estructura cerrada y jugable; el negro debe justificar el espacio desarrollando con rapidez. / Desarrollo: ...Af5 y ...e6 son más urgentes que nuevos movimientos de dama. / Reyes: con el centro cerrado hay algo más de tiempo, pero el enroque sigue siendo prioridad. / Centro y espacio: el blanco puede preparar e4; el negro dispone de ...b5 para sostener c4. / Plan negro: ...Af5, ...e6, ...b5 y responder a e4 con ...dxe4 cuando convenga. / Plan blanco: Dxb6 para simplificar o Cbd2/e4 para romper la cadena. / Peor pieza: alfil c8; en f5 ayuda a vigilar e4. / Candidatas: Dxb6, Cbd2; para negras, desarrollo antes de expandir. / Error típico: ...b5 demasiado pronto y permitir a4/b3 atacar la cadena sin piezas. / Referencias: LON-S02; LON-F01; E12/E27.",
+    "teachingContinuation": "Reproducir la posición, elegir dos candidatas y comparar con la continuación del manual.",
+    "manualReference": "LON-P02",
+    "tags": [],
+    "openingId": "londres"
+  },
+  {
+    "id": "LON-P03",
+    "kind": "position",
+    "title": "El alfil londinense sale fuera de la cadena",
+    "chapter": "Ampliación A",
+    "movesUci": [
+      "d2d4",
+      "d7d5",
+      "g1f3",
+      "g8f6",
+      "c1f4",
+      "c7c5"
+    ],
+    "fen": "rnbqkb1r/pp2pppp/5n2/2pp4/3P1B2/5N2/PPP1PPPP/RN1QKB1R w KQkq c6 0 4",
+    "sideToMove": "white",
+    "objective": "1.d4 d5 2.Cf3 Cf6 3.Af4 c5 4.e3 Cc6 5.c3 Db6 / FEN: r1b1kb1r/pp2pppp/1qn2n2/2pp4/3P1B2/2P1PN2/PP3PPP/RN1QKB1R w KQkq - 1 6 / Mueve: Blancas / Qué cambió: c3 sostiene d4 pero cierra la casilla natural del caballo b1; ...Db6 aprovecha ese tiempo atacando b2 y aumentando la presión sobre d4. / Evaluación: equilibrio con una pregunta concreta para el blanco: defender b2 sin perder la coordinación. / Desarrollo: la dama negra sale porque crea dos objetivos; después debe volver la prioridad a ...e6/...Ae7. / Reyes: el negro todavía no debe abrir el centro si la dama se convierte en objetivo. / Centro y espacio: d4 tiene más defensores, pero b2 obliga a repartir recursos. / Plan negro: aceptar Db3, decidir entre cambio de damas o ...c4 y completar desarrollo. / Plan blanco: Db3 es la respuesta más directa; Cbd2 también desarrolla pero debe resolver b2. / Peor pieza: alfil f8; ...e6 lo libera y acerca el enroque. / Candidatas: Db3, Cbd2; el negro compara ...c4 con un cambio de damas. / Error típico: capturar b2 sin calcular Tb1 y el coste de rescatar la dama. / Referencias: LON-S02; LON-M01; E02/E17/E32.",
+    "level": {
+      "label": "800-1400 Elo",
+      "minRating": 800,
+      "maxRating": 1400,
+      "stage": null
+    },
+    "whitePlan": "1.d4 d5 2.Cf3 Cf6 3.Af4 c5 4.e3 Cc6 5.c3 Db6 6.Db3 c4 7.Dxb6 axb6 / FEN: r1b1kb1r/1p2pppp/1pn2n2/3p4/2pP1B2/2P1PN2/PP3PPP/RN2KB1R w KQkq - 0 8 / Mueve: Blancas / Qué cambió: el cambio de damas elimina la presión táctica sobre b2 y abre la columna a para la torre negra. / Evaluación: el negro acepta una estructura poco estética a cambio de actividad y espacio. / Desarrollo: ...Af5 y ...e6 deben salir antes de usar la columna a. / Reyes: sin damas, los reyes pueden centralizarse antes, pero las torres aún necesitan conexión. / Centro y espacio: c4 fija c3; e4 será el principal intento blanco de liberación. / Plan negro: ...Af5, ...e6, ...b5 y torre a5/a8 según la posición. / Plan blanco: Cbd2, Ae2 y e4; también b3 para atacar c4. / Peor pieza: alfil c8, aún encerrado. / Candidatas: Cbd2 y a3; negras responden desarrollando, no defendiendo peones por reflejo. / Error típico: considerar ...axb6 una debilidad pura y jugar pasivo en vez de usar la columna a. / Referencias: LON-S03; LON-F01; E03/E18/E33.",
+    "blackPlan": "1.d4 d5 2.Cf3 Cf6 3.Af4 c5 4.e3 Cc6 5.c3 Db6 6.Db3 c4 7.Dxb6 axb6 / FEN: r1b1kb1r/1p2pppp/1pn2n2/3p4/2pP1B2/2P1PN2/PP3PPP/RN2KB1R w KQkq - 0 8 / Mueve: Blancas / Qué cambió: el cambio de damas elimina la presión táctica sobre b2 y abre la columna a para la torre negra. / Evaluación: el negro acepta una estructura poco estética a cambio de actividad y espacio. / Desarrollo: ...Af5 y ...e6 deben salir antes de usar la columna a. / Reyes: sin damas, los reyes pueden centralizarse antes, pero las torres aún necesitan conexión. / Centro y espacio: c4 fija c3; e4 será el principal intento blanco de liberación. / Plan negro: ...Af5, ...e6, ...b5 y torre a5/a8 según la posición. / Plan blanco: Cbd2, Ae2 y e4; también b3 para atacar c4. / Peor pieza: alfil c8, aún encerrado. / Candidatas: Cbd2 y a3; negras responden desarrollando, no defendiendo peones por reflejo. / Error típico: considerar ...axb6 una debilidad pura y jugar pasivo en vez de usar la columna a. / Referencias: LON-S03; LON-F01; E03/E18/E33.",
+    "teachingContinuation": "Reproducir la posición, elegir dos candidatas y comparar con la continuación del manual.",
+    "manualReference": "LON-P03",
+    "tags": [],
+    "openingId": "londres"
+  },
+  {
+    "id": "LON-P04",
+    "kind": "position",
+    "title": "...c5 cuestiona d4",
+    "chapter": "Ampliación A",
+    "movesUci": [
+      "d2d4",
+      "d7d5",
+      "g1f3",
+      "g8f6",
+      "c1f4",
+      "c7c5"
+    ],
+    "fen": "rnbqkb1r/pp2pppp/5n2/2pp4/3P1B2/5N2/PPP1PPPP/RN1QKB1R w KQkq c6 0 4",
+    "sideToMove": "white",
+    "objective": "1.d4 d5 2.Cf3 Cf6 3.Af4 c5 4.e3 Cc6 5.c3 Db6 / FEN: r1b1kb1r/pp2pppp/1qn2n2/2pp4/3P1B2/2P1PN2/PP3PPP/RN1QKB1R w KQkq - 1 6 / Mueve: Blancas / Qué cambió: c3 sostiene d4 pero cierra la casilla natural del caballo b1; ...Db6 aprovecha ese tiempo atacando b2 y aumentando la presión sobre d4. / Evaluación: equilibrio con una pregunta concreta para el blanco: defender b2 sin perder la coordinación. / Desarrollo: la dama negra sale porque crea dos objetivos; después debe volver la prioridad a ...e6/...Ae7. / Reyes: el negro todavía no debe abrir el centro si la dama se convierte en objetivo. / Centro y espacio: d4 tiene más defensores, pero b2 obliga a repartir recursos. / Plan negro: aceptar Db3, decidir entre cambio de damas o ...c4 y completar desarrollo. / Plan blanco: Db3 es la respuesta más directa; Cbd2 también desarrolla pero debe resolver b2. / Peor pieza: alfil f8; ...e6 lo libera y acerca el enroque. / Candidatas: Db3, Cbd2; el negro compara ...c4 con un cambio de damas. / Error típico: capturar b2 sin calcular Tb1 y el coste de rescatar la dama. / Referencias: LON-S02; LON-M01; E02/E17/E32.",
+    "level": {
+      "label": "800-1400 Elo",
+      "minRating": 800,
+      "maxRating": 1400,
+      "stage": null
+    },
+    "whitePlan": "...8.Cd2 Af5 / FEN: r3kb1r/1p2pppp/1pn2n2/3p1b2/2pP1B2/2P1PN2/PP1N1PPP/R3KB1R w KQkq - 2 9 / Mueve: Blancas / Qué cambió: ...Af5 desarrolla el alfil fuera de la cadena e6 y aumenta el control de e4. / Evaluación: el negro ha resuelto su peor pieza y puede completar el desarrollo con ...e6. / Desarrollo: faltan ...e6, ...Ae7 y enroque; no hay razón para iniciar operaciones tácticas antes. / Reyes: ambos siguen en e1/e8; el centro cerrado reduce el peligro, pero e4 puede abrirlo. / Centro y espacio: el blanco prepara e4; el negro sostiene d5 y c4. / Plan negro: ...e6, ...Ae7 y ...b5 cuando el centro esté bajo control. / Plan blanco: a3, Ae2 y O-O antes de e4. / Peor pieza: alfil f8, que necesita e7. / Candidatas: a3/Ae2; para negras ...e6. / Error típico: ...Ch5 para ganar el alfil y perder tiempos cuando e4 es la ruptura real. / Referencias: LON-S02/S03; LON-M01; E03/E13/E28.",
+    "blackPlan": "...8.Cd2 Af5 / FEN: r3kb1r/1p2pppp/1pn2n2/3p1b2/2pP1B2/2P1PN2/PP1N1PPP/R3KB1R w KQkq - 2 9 / Mueve: Blancas / Qué cambió: ...Af5 desarrolla el alfil fuera de la cadena e6 y aumenta el control de e4. / Evaluación: el negro ha resuelto su peor pieza y puede completar el desarrollo con ...e6. / Desarrollo: faltan ...e6, ...Ae7 y enroque; no hay razón para iniciar operaciones tácticas antes. / Reyes: ambos siguen en e1/e8; el centro cerrado reduce el peligro, pero e4 puede abrirlo. / Centro y espacio: el blanco prepara e4; el negro sostiene d5 y c4. / Plan negro: ...e6, ...Ae7 y ...b5 cuando el centro esté bajo control. / Plan blanco: a3, Ae2 y O-O antes de e4. / Peor pieza: alfil f8, que necesita e7. / Candidatas: a3/Ae2; para negras ...e6. / Error típico: ...Ch5 para ganar el alfil y perder tiempos cuando e4 es la ruptura real. / Referencias: LON-S02/S03; LON-M01; E03/E13/E28.",
+    "teachingContinuation": "Reproducir la posición, elegir dos candidatas y comparar con la continuación del manual.",
+    "manualReference": "LON-P04",
+    "tags": [],
+    "openingId": "londres"
+  },
+  {
+    "id": "LON-P05",
+    "kind": "position",
+    "title": "...Cc6 aumenta la presión central",
+    "chapter": "Ampliación A",
+    "movesUci": [
+      "d2d4",
+      "d7d5",
+      "g1f3",
+      "g8f6",
+      "c1f4",
+      "c7c5",
+      "e2e3",
+      "b8c6",
+      "c2c3",
+      "d8b6"
+    ],
+    "fen": "r1b1kb1r/pp2pppp/1qn2n2/2pp4/3P1B2/2P1PN2/PP3PPP/RN1QKB1R w KQkq - 1 6",
+    "sideToMove": "white",
+    "objective": "1.d4 d5 2.Cf3 Cf6 3.Af4 c5 4.e3 Cc6 5.c3 Db6 / FEN: r1b1kb1r/pp2pppp/1qn2n2/2pp4/3P1B2/2P1PN2/PP3PPP/RN1QKB1R w KQkq - 1 6 / Mueve: Blancas / Qué cambió: c3 sostiene d4 pero cierra la casilla natural del caballo b1; ...Db6 aprovecha ese tiempo atacando b2 y aumentando la presión sobre d4. / Evaluación: equilibrio con una pregunta concreta para el blanco: defender b2 sin perder la coordinación. / Desarrollo: la dama negra sale porque crea dos objetivos; después debe volver la prioridad a ...e6/...Ae7. / Reyes: el negro todavía no debe abrir el centro si la dama se convierte en objetivo. / Centro y espacio: d4 tiene más defensores, pero b2 obliga a repartir recursos. / Plan negro: aceptar Db3, decidir entre cambio de damas o ...c4 y completar desarrollo. / Plan blanco: Db3 es la respuesta más directa; Cbd2 también desarrolla pero debe resolver b2. / Peor pieza: alfil f8; ...e6 lo libera y acerca el enroque. / Candidatas: Db3, Cbd2; el negro compara ...c4 con un cambio de damas. / Error típico: capturar b2 sin calcular Tb1 y el coste de rescatar la dama. / Referencias: LON-S02; LON-M01; E02/E17/E32.",
+    "level": {
+      "label": "800-1400 Elo",
+      "minRating": 800,
+      "maxRating": 1400,
+      "stage": null
+    },
+    "whitePlan": "...9.a3 e6 10.Ae2 Ae7 / FEN: r3k2r/1p2bppp/1pn1pn2/3p1b2/2pP1B2/P1P1PN2/1P1NBPPP/R3K2R w KQkq - 2 11 / Mueve: Blancas / Qué cambió: el negro ha completado sus piezas menores y está a un movimiento del enroque; el blanco también puede asegurar el rey. / Evaluación: estructura equilibrada; la próxima fase depende de e4 y de la expansión ...b5. / Desarrollo: las torres aún no están conectadas; enrocar tiene prioridad sobre ...b5. / Reyes: O-O de ambos bandos permite abrir el centro con menor riesgo. / Centro y espacio: c4 da espacio negro; d4 sigue siendo el ancla blanca. / Plan negro: O-O, ...h6 si evita una molestia concreta y ...b5 con apoyo. / Plan blanco: O-O, h3 y Te1 para e4. / Peor pieza: torre a8, que ganará función tras el cambio de damas. / Candidatas: O-O/h3 para blancas; ...O-O para negras. / Error típico: buscar ...b5-b4 antes de terminar el desarrollo. / Referencias: LON-S03/S04; LON-M01; E04/E19/E34.",
+    "blackPlan": "...9.a3 e6 10.Ae2 Ae7 / FEN: r3k2r/1p2bppp/1pn1pn2/3p1b2/2pP1B2/P1P1PN2/1P1NBPPP/R3K2R w KQkq - 2 11 / Mueve: Blancas / Qué cambió: el negro ha completado sus piezas menores y está a un movimiento del enroque; el blanco también puede asegurar el rey. / Evaluación: estructura equilibrada; la próxima fase depende de e4 y de la expansión ...b5. / Desarrollo: las torres aún no están conectadas; enrocar tiene prioridad sobre ...b5. / Reyes: O-O de ambos bandos permite abrir el centro con menor riesgo. / Centro y espacio: c4 da espacio negro; d4 sigue siendo el ancla blanca. / Plan negro: O-O, ...h6 si evita una molestia concreta y ...b5 con apoyo. / Plan blanco: O-O, h3 y Te1 para e4. / Peor pieza: torre a8, que ganará función tras el cambio de damas. / Candidatas: O-O/h3 para blancas; ...O-O para negras. / Error típico: buscar ...b5-b4 antes de terminar el desarrollo. / Referencias: LON-S03/S04; LON-M01; E04/E19/E34.",
+    "teachingContinuation": "Reproducir la posición, elegir dos candidatas y comparar con la continuación del manual.",
+    "manualReference": "LON-P05",
+    "tags": [],
+    "openingId": "londres"
+  },
+  {
+    "id": "LON-P06",
+    "kind": "position",
+    "title": "...Db6 obliga a mirar b2 y d4",
+    "chapter": "Ampliación A",
+    "movesUci": [
+      "d2d4",
+      "d7d5",
+      "g1f3",
+      "g8f6",
+      "c1f4",
+      "c7c5",
+      "e2e3",
+      "b8c6",
+      "c2c3",
+      "d8b6"
+    ],
+    "fen": "r1b1kb1r/pp2pppp/1qn2n2/2pp4/3P1B2/2P1PN2/PP3PPP/RN1QKB1R w KQkq - 1 6",
+    "sideToMove": "white",
+    "objective": "1.d4 d5 2.Cf3 Cf6 3.Af4 c5 4.e3 Cc6 5.c3 Db6 / FEN: r1b1kb1r/pp2pppp/1qn2n2/2pp4/3P1B2/2P1PN2/PP3PPP/RN1QKB1R w KQkq - 1 6 / Mueve: Blancas / Qué cambió: c3 sostiene d4 pero cierra la casilla natural del caballo b1; ...Db6 aprovecha ese tiempo atacando b2 y aumentando la presión sobre d4. / Evaluación: equilibrio con una pregunta concreta para el blanco: defender b2 sin perder la coordinación. / Desarrollo: la dama negra sale porque crea dos objetivos; después debe volver la prioridad a ...e6/...Ae7. / Reyes: el negro todavía no debe abrir el centro si la dama se convierte en objetivo. / Centro y espacio: d4 tiene más defensores, pero b2 obliga a repartir recursos. / Plan negro: aceptar Db3, decidir entre cambio de damas o ...c4 y completar desarrollo. / Plan blanco: Db3 es la respuesta más directa; Cbd2 también desarrolla pero debe resolver b2. / Peor pieza: alfil f8; ...e6 lo libera y acerca el enroque. / Candidatas: Db3, Cbd2; el negro compara ...c4 con un cambio de damas. / Error típico: capturar b2 sin calcular Tb1 y el coste de rescatar la dama. / Referencias: LON-S02; LON-M01; E02/E17/E32.",
+    "level": {
+      "label": "800-1400 Elo",
+      "minRating": 800,
+      "maxRating": 1400,
+      "stage": null
+    },
+    "whitePlan": "...11.O-O O-O 12.h3 h6 / FEN: r4rk1/1p2bpp1/1pn1pn1p/3p1b2/2pP1B2/P1P1PN1P/1P1NBPP1/R4RK1 w - - 0 13 / Mueve: Blancas / Qué cambió: los dos reyes están seguros y ya puede evaluarse la ruptura e4 sin el factor rey en el centro. / Evaluación: equilibrio; el negro tiene espacio en c4 y el blanco puede cuestionarlo desde el centro. / Desarrollo: las torres necesitan columnas; Te1 y ...b5/...Td8 preparan la transición. / Reyes: la seguridad permite calcular cambios centrales con más libertad. / Centro y espacio: e4 es ahora la ruptura blanca; ...dxe4 es una respuesta concreta. / Plan negro: ...b5, ...Cd7 y capturar en e4 si la secuencia deja piezas activas. / Plan blanco: Te1, Af1 y e4. / Peor pieza: caballo f6 puede reubicarse a d7 para controlar e5/c5. / Candidatas: Te1; negras ...b5 o ...Cd7 según el orden. / Error típico: mantener d5 por orgullo cuando ...dxe4 libera piezas y elimina el centro blanco. / Referencias: LON-S04; LON-M01; E04/E14/E29.",
+    "blackPlan": "...11.O-O O-O 12.h3 h6 / FEN: r4rk1/1p2bpp1/1pn1pn1p/3p1b2/2pP1B2/P1P1PN1P/1P1NBPP1/R4RK1 w - - 0 13 / Mueve: Blancas / Qué cambió: los dos reyes están seguros y ya puede evaluarse la ruptura e4 sin el factor rey en el centro. / Evaluación: equilibrio; el negro tiene espacio en c4 y el blanco puede cuestionarlo desde el centro. / Desarrollo: las torres necesitan columnas; Te1 y ...b5/...Td8 preparan la transición. / Reyes: la seguridad permite calcular cambios centrales con más libertad. / Centro y espacio: e4 es ahora la ruptura blanca; ...dxe4 es una respuesta concreta. / Plan negro: ...b5, ...Cd7 y capturar en e4 si la secuencia deja piezas activas. / Plan blanco: Te1, Af1 y e4. / Peor pieza: caballo f6 puede reubicarse a d7 para controlar e5/c5. / Candidatas: Te1; negras ...b5 o ...Cd7 según el orden. / Error típico: mantener d5 por orgullo cuando ...dxe4 libera piezas y elimina el centro blanco. / Referencias: LON-S04; LON-M01; E04/E14/E29.",
+    "teachingContinuation": "Reproducir la posición, elegir dos candidatas y comparar con la continuación del manual.",
+    "manualReference": "LON-P06",
+    "tags": [],
+    "openingId": "londres"
+  },
+  {
+    "id": "LON-P07",
+    "kind": "position",
+    "title": "El cambio de damas transforma la partida",
+    "chapter": "Ampliación A",
+    "movesUci": [
+      "d2d4",
+      "d7d5",
+      "g1f3",
+      "g8f6",
+      "c1f4",
+      "c7c5",
+      "e2e3",
+      "b8c6",
+      "c2c3",
+      "d8b6",
+      "d1b3",
+      "c5c4",
+      "b3b6",
+      "a7b6"
+    ],
+    "fen": "r1b1kb1r/1p2pppp/1pn2n2/3p4/2pP1B2/2P1PN2/PP3PPP/RN2KB1R w KQkq - 0 8",
+    "sideToMove": "white",
+    "objective": "Reconocer la decisión crítica y conectar apertura, estructura y plan.",
+    "level": {
+      "label": "800-1400 Elo",
+      "minRating": 800,
+      "maxRating": 1400,
+      "stage": null
+    },
+    "whitePlan": "...13.Te1 b5 14.Af1 Cd7 15.e4 dxe4 / FEN: r4rk1/1p1nbpp1/2n1p2p/1p3b2/2pPpB2/P1P2N1P/1P1N1PP1/R3RBK1 w - - 0 16 / Mueve: Blancas / Qué cambió: e4 ha roto la estructura y ...dxe4 ha cedido d5 para eliminar el peón e4. El caballo blanco puede recuperar en e4. / Evaluación: transición al medio juego; la actividad de piezas vale más que conservar cada peón. / Desarrollo: todas las piezas menores están activas; las torres ya tienen columnas centrales. / Reyes: ambos seguros; la táctica gira sobre e4 y d4. / Centro y espacio: desaparece el peón e blanco y d4 queda más expuesto. / Plan negro: después de Cxe4, cambiar la pieza activa con ...Axe4 y reubicar el caballo hacia d5. / Plan blanco: Cxe4 y usar la torre e para recuperar actividad. / Peor pieza: caballo c6 puede saltar a e7/d5 según los cambios. / Candidatas: Cxe4; negras ...Axe4. / Error típico: defender e4 con una pieza pasiva y permitir que el negro mantenga el peón extra de espacio. / Referencias: LON-S05; LON-M01; E05/E20/E35.",
+    "blackPlan": "...13.Te1 b5 14.Af1 Cd7 15.e4 dxe4 / FEN: r4rk1/1p1nbpp1/2n1p2p/1p3b2/2pPpB2/P1P2N1P/1P1N1PP1/R3RBK1 w - - 0 16 / Mueve: Blancas / Qué cambió: e4 ha roto la estructura y ...dxe4 ha cedido d5 para eliminar el peón e4. El caballo blanco puede recuperar en e4. / Evaluación: transición al medio juego; la actividad de piezas vale más que conservar cada peón. / Desarrollo: todas las piezas menores están activas; las torres ya tienen columnas centrales. / Reyes: ambos seguros; la táctica gira sobre e4 y d4. / Centro y espacio: desaparece el peón e blanco y d4 queda más expuesto. / Plan negro: después de Cxe4, cambiar la pieza activa con ...Axe4 y reubicar el caballo hacia d5. / Plan blanco: Cxe4 y usar la torre e para recuperar actividad. / Peor pieza: caballo c6 puede saltar a e7/d5 según los cambios. / Candidatas: Cxe4; negras ...Axe4. / Error típico: defender e4 con una pieza pasiva y permitir que el negro mantenga el peón extra de espacio. / Referencias: LON-S05; LON-M01; E05/E20/E35.",
+    "teachingContinuation": "Reproducir la posición, elegir dos candidatas y comparar con la continuación del manual.",
+    "manualReference": "LON-P07",
+    "tags": [],
+    "openingId": "londres"
+  },
+  {
+    "id": "LON-P08",
+    "kind": "position",
+    "title": "Columna a abierta y peón b6 como activo",
+    "chapter": "Ampliación A",
+    "movesUci": [],
+    "fen": "r1b1kb1r/1p2pppp/1pn2n2/3p4/2pP1B2/2P1PN2/PP3PPP/RN2KB1R w KQkq - 0 8",
+    "sideToMove": "white",
+    "objective": "...16.Cxe4 Axe4 17.Txe4 Cf6 18.Te1 Cd5 19.Ag3 Td8 20.Ce5 / FEN: r2r2k1/1p2bpp1/2n1p2p/1p1nN3/2pP4/P1P3BP/1P3PP1/R3RBK1 b - - 6 20 / Mueve: Negras / Qué cambió: el centro se ha simplificado; el caballo blanco ocupa e5 y las torres negras ya tienen una columna d útil. / Evaluación: medio juego igualado con tareas claras: negro presiona d4; blanco usa e5. / Desarrollo: ya no queda desarrollo de apertura; cada movimiento debe mejorar una pieza concreta. / Reyes: seguros; las torres pueden operar activamente. / Centro y espacio: d4 es objetivo fijo y e5 puesto avanzado. / Plan negro: cambiar o desafiar el caballo e5, doblar presión en d4 y activar la torre por d. / Plan blanco: sostener Ce5, evitar pasividad sobre d4 y buscar f4 o b3 según la posición. / Peor pieza: caballo c6 si no encuentra d4/e7; debe coordinarse con la torre. / Candidatas: ...Cxe5 si es tácticamente correcto, ...Tac8 o ...Af6 según la posición. / Error típico: empujar peones del ala de rey y abandonar la presión central que justifica la apertura. / Referencias: LON-S05/S06; LON-F02; E06/E21/E36.",
+    "level": {
+      "label": "800-1400 Elo",
+      "minRating": 800,
+      "maxRating": 1400,
+      "stage": null
+    },
+    "whitePlan": "...16.Cxe4 Axe4 17.Txe4 Cf6 18.Te1 Cd5 19.Ag3 Td8 20.Ce5 / FEN: r2r2k1/1p2bpp1/2n1p2p/1p1nN3/2pP4/P1P3BP/1P3PP1/R3RBK1 b - - 6 20 / Mueve: Negras / Qué cambió: el centro se ha simplificado; el caballo blanco ocupa e5 y las torres negras ya tienen una columna d útil. / Evaluación: medio juego igualado con tareas claras: negro presiona d4; blanco usa e5. / Desarrollo: ya no queda desarrollo de apertura; cada movimiento debe mejorar una pieza concreta. / Reyes: seguros; las torres pueden operar activamente. / Centro y espacio: d4 es objetivo fijo y e5 puesto avanzado. / Plan negro: cambiar o desafiar el caballo e5, doblar presión en d4 y activar la torre por d. / Plan blanco: sostener Ce5, evitar pasividad sobre d4 y buscar f4 o b3 según la posición. / Peor pieza: caballo c6 si no encuentra d4/e7; debe coordinarse con la torre. / Candidatas: ...Cxe5 si es tácticamente correcto, ...Tac8 o ...Af6 según la posición. / Error típico: empujar peones del ala de rey y abandonar la presión central que justifica la apertura. / Referencias: LON-S05/S06; LON-F02; E06/E21/E36.",
+    "blackPlan": "...16.Cxe4 Axe4 17.Txe4 Cf6 18.Te1 Cd5 19.Ag3 Td8 20.Ce5 / FEN: r2r2k1/1p2bpp1/2n1p2p/1p1nN3/2pP4/P1P3BP/1P3PP1/R3RBK1 b - - 6 20 / Mueve: Negras / Qué cambió: el centro se ha simplificado; el caballo blanco ocupa e5 y las torres negras ya tienen una columna d útil. / Evaluación: medio juego igualado con tareas claras: negro presiona d4; blanco usa e5. / Desarrollo: ya no queda desarrollo de apertura; cada movimiento debe mejorar una pieza concreta. / Reyes: seguros; las torres pueden operar activamente. / Centro y espacio: d4 es objetivo fijo y e5 puesto avanzado. / Plan negro: cambiar o desafiar el caballo e5, doblar presión en d4 y activar la torre por d. / Plan blanco: sostener Ce5, evitar pasividad sobre d4 y buscar f4 o b3 según la posición. / Peor pieza: caballo c6 si no encuentra d4/e7; debe coordinarse con la torre. / Candidatas: ...Cxe5 si es tácticamente correcto, ...Tac8 o ...Af6 según la posición. / Error típico: empujar peones del ala de rey y abandonar la presión central que justifica la apertura. / Referencias: LON-S05/S06; LON-F02; E06/E21/E36.",
+    "teachingContinuation": "Reproducir la posición, elegir dos candidatas y comparar con la continuación del manual.",
+    "manualReference": "LON-P08",
+    "tags": [],
+    "openingId": "londres",
+    "sequenceIssue": "jugada no reconocida: ...8.Cd2"
+  },
+  {
+    "id": "LON-P09",
+    "kind": "position",
+    "title": "Desarrollo coordinado sin perseguir el alfil",
+    "chapter": "Ampliación A",
+    "movesUci": [],
+    "fen": "r3k2r/1p2bppp/1pn1pn2/3p1b2/2pP1B2/P1P1PN2/1P1NBPPP/R3K2R w KQkq - 2 11",
+    "sideToMove": "white",
+    "objective": "...16.Cxe4 Axe4 17.Txe4 Cf6 18.Te1 Cd5 19.Ag3 Td8 20.Ce5 / FEN: r2r2k1/1p2bpp1/2n1p2p/1p1nN3/2pP4/P1P3BP/1P3PP1/R3RBK1 b - - 6 20 / Mueve: Negras / Qué cambió: el centro se ha simplificado; el caballo blanco ocupa e5 y las torres negras ya tienen una columna d útil. / Evaluación: medio juego igualado con tareas claras: negro presiona d4; blanco usa e5. / Desarrollo: ya no queda desarrollo de apertura; cada movimiento debe mejorar una pieza concreta. / Reyes: seguros; las torres pueden operar activamente. / Centro y espacio: d4 es objetivo fijo y e5 puesto avanzado. / Plan negro: cambiar o desafiar el caballo e5, doblar presión en d4 y activar la torre por d. / Plan blanco: sostener Ce5, evitar pasividad sobre d4 y buscar f4 o b3 según la posición. / Peor pieza: caballo c6 si no encuentra d4/e7; debe coordinarse con la torre. / Candidatas: ...Cxe5 si es tácticamente correcto, ...Tac8 o ...Af6 según la posición. / Error típico: empujar peones del ala de rey y abandonar la presión central que justifica la apertura. / Referencias: LON-S05/S06; LON-F02; E06/E21/E36.",
+    "level": {
+      "label": "800-1400 Elo",
+      "minRating": 800,
+      "maxRating": 1400,
+      "stage": null
+    },
+    "whitePlan": "...16.Cxe4 Axe4 17.Txe4 Cf6 18.Te1 Cd5 19.Ag3 Td8 20.Ce5 / FEN: r2r2k1/1p2bpp1/2n1p2p/1p1nN3/2pP4/P1P3BP/1P3PP1/R3RBK1 b - - 6 20 / Mueve: Negras / Qué cambió: el centro se ha simplificado; el caballo blanco ocupa e5 y las torres negras ya tienen una columna d útil. / Evaluación: medio juego igualado con tareas claras: negro presiona d4; blanco usa e5. / Desarrollo: ya no queda desarrollo de apertura; cada movimiento debe mejorar una pieza concreta. / Reyes: seguros; las torres pueden operar activamente. / Centro y espacio: d4 es objetivo fijo y e5 puesto avanzado. / Plan negro: cambiar o desafiar el caballo e5, doblar presión en d4 y activar la torre por d. / Plan blanco: sostener Ce5, evitar pasividad sobre d4 y buscar f4 o b3 según la posición. / Peor pieza: caballo c6 si no encuentra d4/e7; debe coordinarse con la torre. / Candidatas: ...Cxe5 si es tácticamente correcto, ...Tac8 o ...Af6 según la posición. / Error típico: empujar peones del ala de rey y abandonar la presión central que justifica la apertura. / Referencias: LON-S05/S06; LON-F02; E06/E21/E36.",
+    "blackPlan": "...16.Cxe4 Axe4 17.Txe4 Cf6 18.Te1 Cd5 19.Ag3 Td8 20.Ce5 / FEN: r2r2k1/1p2bpp1/2n1p2p/1p1nN3/2pP4/P1P3BP/1P3PP1/R3RBK1 b - - 6 20 / Mueve: Negras / Qué cambió: el centro se ha simplificado; el caballo blanco ocupa e5 y las torres negras ya tienen una columna d útil. / Evaluación: medio juego igualado con tareas claras: negro presiona d4; blanco usa e5. / Desarrollo: ya no queda desarrollo de apertura; cada movimiento debe mejorar una pieza concreta. / Reyes: seguros; las torres pueden operar activamente. / Centro y espacio: d4 es objetivo fijo y e5 puesto avanzado. / Plan negro: cambiar o desafiar el caballo e5, doblar presión en d4 y activar la torre por d. / Plan blanco: sostener Ce5, evitar pasividad sobre d4 y buscar f4 o b3 según la posición. / Peor pieza: caballo c6 si no encuentra d4/e7; debe coordinarse con la torre. / Candidatas: ...Cxe5 si es tácticamente correcto, ...Tac8 o ...Af6 según la posición. / Error típico: empujar peones del ala de rey y abandonar la presión central que justifica la apertura. / Referencias: LON-S05/S06; LON-F02; E06/E21/E36.",
+    "teachingContinuation": "Reproducir la posición, elegir dos candidatas y comparar con la continuación del manual.",
+    "manualReference": "LON-P09",
+    "tags": [],
+    "openingId": "londres",
+    "sequenceIssue": "jugada no reconocida: 10.Ae2"
+  },
+  {
+    "id": "LON-P10",
+    "kind": "position",
+    "title": "Reyes seguros antes de abrir el centro",
+    "chapter": "Ampliación A",
+    "movesUci": [],
+    "fen": "r3k2r/1p2bppp/1pn1pn2/3p1b2/2pP1B2/P1P1PN2/1P1NBPPP/R3K2R w KQkq - 2 11",
+    "sideToMove": "white",
+    "objective": "...16.Cxe4 Axe4 17.Txe4 Cf6 18.Te1 Cd5 19.Ag3 Td8 20.Ce5 / FEN: r2r2k1/1p2bpp1/2n1p2p/1p1nN3/2pP4/P1P3BP/1P3PP1/R3RBK1 b - - 6 20 / Mueve: Negras / Qué cambió: el centro se ha simplificado; el caballo blanco ocupa e5 y las torres negras ya tienen una columna d útil. / Evaluación: medio juego igualado con tareas claras: negro presiona d4; blanco usa e5. / Desarrollo: ya no queda desarrollo de apertura; cada movimiento debe mejorar una pieza concreta. / Reyes: seguros; las torres pueden operar activamente. / Centro y espacio: d4 es objetivo fijo y e5 puesto avanzado. / Plan negro: cambiar o desafiar el caballo e5, doblar presión en d4 y activar la torre por d. / Plan blanco: sostener Ce5, evitar pasividad sobre d4 y buscar f4 o b3 según la posición. / Peor pieza: caballo c6 si no encuentra d4/e7; debe coordinarse con la torre. / Candidatas: ...Cxe5 si es tácticamente correcto, ...Tac8 o ...Af6 según la posición. / Error típico: empujar peones del ala de rey y abandonar la presión central que justifica la apertura. / Referencias: LON-S05/S06; LON-F02; E06/E21/E36.",
+    "level": {
+      "label": "800-1400 Elo",
+      "minRating": 800,
+      "maxRating": 1400,
+      "stage": null
+    },
+    "whitePlan": "...16.Cxe4 Axe4 17.Txe4 Cf6 18.Te1 Cd5 19.Ag3 Td8 20.Ce5 / FEN: r2r2k1/1p2bpp1/2n1p2p/1p1nN3/2pP4/P1P3BP/1P3PP1/R3RBK1 b - - 6 20 / Mueve: Negras / Qué cambió: el centro se ha simplificado; el caballo blanco ocupa e5 y las torres negras ya tienen una columna d útil. / Evaluación: medio juego igualado con tareas claras: negro presiona d4; blanco usa e5. / Desarrollo: ya no queda desarrollo de apertura; cada movimiento debe mejorar una pieza concreta. / Reyes: seguros; las torres pueden operar activamente. / Centro y espacio: d4 es objetivo fijo y e5 puesto avanzado. / Plan negro: cambiar o desafiar el caballo e5, doblar presión en d4 y activar la torre por d. / Plan blanco: sostener Ce5, evitar pasividad sobre d4 y buscar f4 o b3 según la posición. / Peor pieza: caballo c6 si no encuentra d4/e7; debe coordinarse con la torre. / Candidatas: ...Cxe5 si es tácticamente correcto, ...Tac8 o ...Af6 según la posición. / Error típico: empujar peones del ala de rey y abandonar la presión central que justifica la apertura. / Referencias: LON-S05/S06; LON-F02; E06/E21/E36.",
+    "blackPlan": "...16.Cxe4 Axe4 17.Txe4 Cf6 18.Te1 Cd5 19.Ag3 Td8 20.Ce5 / FEN: r2r2k1/1p2bpp1/2n1p2p/1p1nN3/2pP4/P1P3BP/1P3PP1/R3RBK1 b - - 6 20 / Mueve: Negras / Qué cambió: el centro se ha simplificado; el caballo blanco ocupa e5 y las torres negras ya tienen una columna d útil. / Evaluación: medio juego igualado con tareas claras: negro presiona d4; blanco usa e5. / Desarrollo: ya no queda desarrollo de apertura; cada movimiento debe mejorar una pieza concreta. / Reyes: seguros; las torres pueden operar activamente. / Centro y espacio: d4 es objetivo fijo y e5 puesto avanzado. / Plan negro: cambiar o desafiar el caballo e5, doblar presión en d4 y activar la torre por d. / Plan blanco: sostener Ce5, evitar pasividad sobre d4 y buscar f4 o b3 según la posición. / Peor pieza: caballo c6 si no encuentra d4/e7; debe coordinarse con la torre. / Candidatas: ...Cxe5 si es tácticamente correcto, ...Tac8 o ...Af6 según la posición. / Error típico: empujar peones del ala de rey y abandonar la presión central que justifica la apertura. / Referencias: LON-S05/S06; LON-F02; E06/E21/E36.",
+    "teachingContinuation": "Reproducir la posición, elegir dos candidatas y comparar con la continuación del manual.",
+    "manualReference": "LON-P10",
+    "tags": [],
+    "openingId": "londres",
+    "sequenceIssue": "jugada no reconocida: ...11.O-O"
+  },
+  {
+    "id": "LON-P11",
+    "kind": "position",
+    "title": "La ruptura e4 exige una respuesta concreta",
+    "chapter": "Ampliación A",
+    "movesUci": [],
+    "fen": "r4rk1/1p1nbpp1/2n1p2p/1p3b2/2pPpB2/P1P2N1P/1P1N1PP1/R3RBK1 w - - 0 16",
+    "sideToMove": "white",
+    "objective": "...16.Cxe4 Axe4 17.Txe4 Cf6 18.Te1 Cd5 19.Ag3 Td8 20.Ce5 / FEN: r2r2k1/1p2bpp1/2n1p2p/1p1nN3/2pP4/P1P3BP/1P3PP1/R3RBK1 b - - 6 20 / Mueve: Negras / Qué cambió: el centro se ha simplificado; el caballo blanco ocupa e5 y las torres negras ya tienen una columna d útil. / Evaluación: medio juego igualado con tareas claras: negro presiona d4; blanco usa e5. / Desarrollo: ya no queda desarrollo de apertura; cada movimiento debe mejorar una pieza concreta. / Reyes: seguros; las torres pueden operar activamente. / Centro y espacio: d4 es objetivo fijo y e5 puesto avanzado. / Plan negro: cambiar o desafiar el caballo e5, doblar presión en d4 y activar la torre por d. / Plan blanco: sostener Ce5, evitar pasividad sobre d4 y buscar f4 o b3 según la posición. / Peor pieza: caballo c6 si no encuentra d4/e7; debe coordinarse con la torre. / Candidatas: ...Cxe5 si es tácticamente correcto, ...Tac8 o ...Af6 según la posición. / Error típico: empujar peones del ala de rey y abandonar la presión central que justifica la apertura. / Referencias: LON-S05/S06; LON-F02; E06/E21/E36.",
+    "level": {
+      "label": "800-1400 Elo",
+      "minRating": 800,
+      "maxRating": 1400,
+      "stage": null
+    },
+    "whitePlan": "...16.Cxe4 Axe4 17.Txe4 Cf6 18.Te1 Cd5 19.Ag3 Td8 20.Ce5 / FEN: r2r2k1/1p2bpp1/2n1p2p/1p1nN3/2pP4/P1P3BP/1P3PP1/R3RBK1 b - - 6 20 / Mueve: Negras / Qué cambió: el centro se ha simplificado; el caballo blanco ocupa e5 y las torres negras ya tienen una columna d útil. / Evaluación: medio juego igualado con tareas claras: negro presiona d4; blanco usa e5. / Desarrollo: ya no queda desarrollo de apertura; cada movimiento debe mejorar una pieza concreta. / Reyes: seguros; las torres pueden operar activamente. / Centro y espacio: d4 es objetivo fijo y e5 puesto avanzado. / Plan negro: cambiar o desafiar el caballo e5, doblar presión en d4 y activar la torre por d. / Plan blanco: sostener Ce5, evitar pasividad sobre d4 y buscar f4 o b3 según la posición. / Peor pieza: caballo c6 si no encuentra d4/e7; debe coordinarse con la torre. / Candidatas: ...Cxe5 si es tácticamente correcto, ...Tac8 o ...Af6 según la posición. / Error típico: empujar peones del ala de rey y abandonar la presión central que justifica la apertura. / Referencias: LON-S05/S06; LON-F02; E06/E21/E36.",
+    "blackPlan": "...16.Cxe4 Axe4 17.Txe4 Cf6 18.Te1 Cd5 19.Ag3 Td8 20.Ce5 / FEN: r2r2k1/1p2bpp1/2n1p2p/1p1nN3/2pP4/P1P3BP/1P3PP1/R3RBK1 b - - 6 20 / Mueve: Negras / Qué cambió: el centro se ha simplificado; el caballo blanco ocupa e5 y las torres negras ya tienen una columna d útil. / Evaluación: medio juego igualado con tareas claras: negro presiona d4; blanco usa e5. / Desarrollo: ya no queda desarrollo de apertura; cada movimiento debe mejorar una pieza concreta. / Reyes: seguros; las torres pueden operar activamente. / Centro y espacio: d4 es objetivo fijo y e5 puesto avanzado. / Plan negro: cambiar o desafiar el caballo e5, doblar presión en d4 y activar la torre por d. / Plan blanco: sostener Ce5, evitar pasividad sobre d4 y buscar f4 o b3 según la posición. / Peor pieza: caballo c6 si no encuentra d4/e7; debe coordinarse con la torre. / Candidatas: ...Cxe5 si es tácticamente correcto, ...Tac8 o ...Af6 según la posición. / Error típico: empujar peones del ala de rey y abandonar la presión central que justifica la apertura. / Referencias: LON-S05/S06; LON-F02; E06/E21/E36.",
+    "teachingContinuation": "Reproducir la posición, elegir dos candidatas y comparar con la continuación del manual.",
+    "manualReference": "LON-P11",
+    "tags": [],
+    "openingId": "londres",
+    "sequenceIssue": "jugada no reconocida: ...13.Te1"
+  },
+  {
+    "id": "LON-P12",
+    "kind": "position",
+    "title": "Piezas negras activas tras la simplificación",
+    "chapter": "Ampliación A",
+    "movesUci": [],
+    "fen": "r4rk1/1p1nbpp1/2n1p2p/1p3b2/2pPpB2/P1P2N1P/1P1N1PP1/R3RBK1 w - - 0 16",
+    "sideToMove": "white",
+    "objective": "...16.Cxe4 Axe4 17.Txe4 Cf6 18.Te1 Cd5 19.Ag3 Td8 20.Ce5 / FEN: r2r2k1/1p2bpp1/2n1p2p/1p1nN3/2pP4/P1P3BP/1P3PP1/R3RBK1 b - - 6 20 / Mueve: Negras / Qué cambió: el centro se ha simplificado; el caballo blanco ocupa e5 y las torres negras ya tienen una columna d útil. / Evaluación: medio juego igualado con tareas claras: negro presiona d4; blanco usa e5. / Desarrollo: ya no queda desarrollo de apertura; cada movimiento debe mejorar una pieza concreta. / Reyes: seguros; las torres pueden operar activamente. / Centro y espacio: d4 es objetivo fijo y e5 puesto avanzado. / Plan negro: cambiar o desafiar el caballo e5, doblar presión en d4 y activar la torre por d. / Plan blanco: sostener Ce5, evitar pasividad sobre d4 y buscar f4 o b3 según la posición. / Peor pieza: caballo c6 si no encuentra d4/e7; debe coordinarse con la torre. / Candidatas: ...Cxe5 si es tácticamente correcto, ...Tac8 o ...Af6 según la posición. / Error típico: empujar peones del ala de rey y abandonar la presión central que justifica la apertura. / Referencias: LON-S05/S06; LON-F02; E06/E21/E36.",
+    "level": {
+      "label": "800-1400 Elo",
+      "minRating": 800,
+      "maxRating": 1400,
+      "stage": null
+    },
+    "whitePlan": "...16.Cxe4 Axe4 17.Txe4 Cf6 18.Te1 Cd5 19.Ag3 Td8 20.Ce5 / FEN: r2r2k1/1p2bpp1/2n1p2p/1p1nN3/2pP4/P1P3BP/1P3PP1/R3RBK1 b - - 6 20 / Mueve: Negras / Qué cambió: el centro se ha simplificado; el caballo blanco ocupa e5 y las torres negras ya tienen una columna d útil. / Evaluación: medio juego igualado con tareas claras: negro presiona d4; blanco usa e5. / Desarrollo: ya no queda desarrollo de apertura; cada movimiento debe mejorar una pieza concreta. / Reyes: seguros; las torres pueden operar activamente. / Centro y espacio: d4 es objetivo fijo y e5 puesto avanzado. / Plan negro: cambiar o desafiar el caballo e5, doblar presión en d4 y activar la torre por d. / Plan blanco: sostener Ce5, evitar pasividad sobre d4 y buscar f4 o b3 según la posición. / Peor pieza: caballo c6 si no encuentra d4/e7; debe coordinarse con la torre. / Candidatas: ...Cxe5 si es tácticamente correcto, ...Tac8 o ...Af6 según la posición. / Error típico: empujar peones del ala de rey y abandonar la presión central que justifica la apertura. / Referencias: LON-S05/S06; LON-F02; E06/E21/E36.",
+    "blackPlan": "...16.Cxe4 Axe4 17.Txe4 Cf6 18.Te1 Cd5 19.Ag3 Td8 20.Ce5 / FEN: r2r2k1/1p2bpp1/2n1p2p/1p1nN3/2pP4/P1P3BP/1P3PP1/R3RBK1 b - - 6 20 / Mueve: Negras / Qué cambió: el centro se ha simplificado; el caballo blanco ocupa e5 y las torres negras ya tienen una columna d útil. / Evaluación: medio juego igualado con tareas claras: negro presiona d4; blanco usa e5. / Desarrollo: ya no queda desarrollo de apertura; cada movimiento debe mejorar una pieza concreta. / Reyes: seguros; las torres pueden operar activamente. / Centro y espacio: d4 es objetivo fijo y e5 puesto avanzado. / Plan negro: cambiar o desafiar el caballo e5, doblar presión en d4 y activar la torre por d. / Plan blanco: sostener Ce5, evitar pasividad sobre d4 y buscar f4 o b3 según la posición. / Peor pieza: caballo c6 si no encuentra d4/e7; debe coordinarse con la torre. / Candidatas: ...Cxe5 si es tácticamente correcto, ...Tac8 o ...Af6 según la posición. / Error típico: empujar peones del ala de rey y abandonar la presión central que justifica la apertura. / Referencias: LON-S05/S06; LON-F02; E06/E21/E36.",
+    "teachingContinuation": "Reproducir la posición, elegir dos candidatas y comparar con la continuación del manual.",
+    "manualReference": "LON-P12",
+    "tags": [],
+    "openingId": "londres",
+    "sequenceIssue": "jugada no reconocida: ...16.Cxe4"
+  }
+]

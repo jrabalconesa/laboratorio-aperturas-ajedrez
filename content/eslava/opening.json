@@ -1,0 +1,36 @@
+{
+  "id": "eslava",
+  "code": "SLA",
+  "manualNumber": 9,
+  "title": "Defensa Eslava contra 1.d4",
+  "shortTitle": "La Eslava",
+  "version": "1.2",
+  "accent": "#955700",
+  "boardDark": "#8B7048",
+  "preview": {
+    "fen": "rnbqkbnr/pp2pppp/2p5/3p4/2PP4/8/PP2PPPP/RNBQKBNR w KQkq - 0 3",
+    "line": "1.d4 d5 2.c4 c6",
+    "lastMove": [
+      "c7",
+      "c6"
+    ]
+  },
+  "quote": {
+    "text": "Sostén el centro sin encerrar el desarrollo.",
+    "author": "Mi Repertorio de Ajedrez"
+  },
+  "storageNamespace": "repertorio:eslava:v1",
+  "interactiveAvailable": true,
+  "status": "partial",
+  "inventory": {
+    "position": 12,
+    "structure": 6,
+    "game_stop": 15,
+    "exercise": 29
+  },
+  "gameCount": 3,
+  "coreGameCount": 3,
+  "expansionGameCount": 0,
+  "atlasCount": 2,
+  "validationWarnings": 13
+}

@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#00796B">
+  <meta name="application-name" content="La Caro-Kann">
+  <meta name="description" content="Defiende con la Caro-Kann coordinando el desarrollo con los golpes ...c5 y ...e5.">
+  <meta property="og:title" content="Defensa Caro-Kann contra 1.e4">
+  <meta property="og:description" content="Defiende con la Caro-Kann coordinando el desarrollo con los golpes ...c5 y ...e5.">
+  <meta property="og:type" content="website">
+  <title>La Caro-Kann · Laboratorio de Aperturas</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="styles.css?v=20260809-global-density-1">
+</head>
+<body style="--red:#00796B;--orange:#2AA493;--dark-square:#548A82;">
+  <svg class="piece-sprite" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="piece-K" viewBox="0 0 100 100">
+      <path d="M46 6h8v10h10v8H54v11l-4 8-4-8V24H36v-8h10V6Z"/>
+      <path fill-rule="evenodd" d="M18 43 31 29h11l8 14 8-14h11l13 14-11 24H29L18 43Zm13 2 7-8 12 20 12-20 7 8-7 14H38l-7-14Z"/>
+      <path d="m34 63-5 14h42l-5-14H34ZM24 80h52v7H24zM18 90h64v8H18z"/>
+    </symbol>
+    <symbol id="piece-Q" viewBox="0 0 100 100">
+      <path fill-rule="evenodd" d="m20 24 12 12 7-22 11 18 11-18 7 22 12-12-9 42H29L20 24Zm13 16 9 9 8-12 8 12 9-9-4 18H37l-4-18Z"/>
+      <path d="m34 63-5 14h42l-5-14H34ZM24 80h52v7H24zM18 90h64v8H18z"/>
+      <path d="m16 19 4-6 6 4-4 7-6-5Zm29-9 5-7 5 7-5 7-5-7Zm29 7 6-4 4 6-6 5-4-7Z"/>
+    </symbol>
+    <symbol id="piece-R" viewBox="0 0 100 100">
+      <path fill-rule="evenodd" d="M22 13h15v10h8V13h10v10h8V13h15v29l-8 8 1 27H29l1-27-8-8V13Zm10 9v14h36V22h-5v9H53v-9h-6v9H37v-9h-5Zm7 30-1 17h24l-1-17H39Z"/>
+      <path d="M24 80h52v7H24zM18 90h64v8H18z"/>
+    </symbol>
+    <symbol id="piece-B" viewBox="0 0 100 100">
+      <path fill-rule="evenodd" d="m50 8 16 17 6 19-12 17 6 16H34l6-16-12-17 6-19L50 8Zm0 11-8 9-5 16 10 10-5 15h16l-6-17 11-12-4-12-9-9Z"/>
+      <path d="m58 26 6 7-23 24-6-7 23-24ZM24 80h52v7H24zM18 90h64v8H18z"/>
+    </symbol>
+    <symbol id="piece-N" viewBox="0 0 100 100">
+      <path fill-rule="evenodd" d="m32 19 12 6 9-14 5 17 12 9 8 35-12 5H31l7-22-17-5-3-13 14-18Zm8 16-8-4-6 8 2 5 17 4 4 8-4 13h23l-6-25-11-8-11-1Zm10-6 4 4-5 4-4-5 5-3Z"/>
+      <path d="M24 80h52v7H24zM18 90h64v8H18z"/>
+    </symbol>
+    <symbol id="piece-P" viewBox="0 0 100 100">
+      <path fill-rule="evenodd" d="m42 12-8 8v15l8 8-4 9-9 25h42l-9-25-4-9 8-8V20l-8-8H42Zm3 8-4 4v7l4 4h10l4-4v-7l-4-4H45Zm1 25-8 24h24l-8-24h-8Z"/>
+      <path d="M24 80h52v7H24zM18 90h64v8H18z"/>
+    </symbol>
+  </svg>
+  <a class="collection-back" href="../../index.html#/aperturas/carokann-negras">← Biblioteca de aperturas</a>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#inicio" aria-label="Ir al inicio">
+        <img class="brand-mark" src="assets/app-icon-192.png" alt="" width="34" height="34">
+        <span><strong>Laboratorio de Aperturas</strong><small>Mi Repertorio de Ajedrez</small></span>
+      </a>
+      <nav aria-label="Navegación principal">
+        <button class="nav-link active" data-view="inicio">Inicio</button>
+        <button class="nav-link" data-view="aprende">Aprende</button>
+        <button class="nav-link" data-view="practica">Practica</button>
+        <button class="nav-link" data-view="variantes">Estructuras</button>
+        <button class="nav-link" data-view="partidas">Partidas</button>
+        <button class="nav-link" data-view="ejercicios">Ejercicios</button>
+        <button class="nav-link" data-view="plan">Plan de estudio</button>
+      </nav>
+      <div class="progress-pill" aria-label="Progreso del curso">
+        <span id="headerProgress">0/12</span>
+        <span class="progress-track"><span id="headerProgressBar"></span></span>
+      </div>
+    </header>
+
+    <main>
+      <section id="inicio" class="view active">
+        <div class="hero">
+          <div class="hero-copy">
+            <p class="eyebrow">CURSO VISUAL · 800–1400 ELO</p>
+            <h1>Juega con un plan.<br><em>No con la memoria.</em></h1>
+            <p class="hero-lead">Defiende con la Caro-Kann coordinando el desarrollo con los golpes ...c5 y ...e5.</p>
+            <div class="hero-actions">
+              <button class="button primary" data-go="aprende">Empezar el recorrido <span>→</span></button>
+              <button class="button ghost" data-go="practica">Ir a practicar</button>
+            </div>
+            <div class="principles">
+              <span><b>01</b> Centro estable</span><i></i>
+              <span><b>02</b> Alfil c8</span><i></i>
+              <span><b>03</b> Ruptura c5</span><i></i>
+              <span><b>04</b> Final sano</span>
+            </div>
+          </div>
+          <div class="hero-board-wrap">
+            <div class="notation-tag">1.e4 c6 2.d4 d5</div>
+            <div id="heroBoard" class="chessboard decorative" aria-label="Posición base de la Defensa Caro-Kann con negras"></div>
+            <div class="board-caption"><span>POSICIÓN BASE</span><strong>La solidez activa</strong></div>
+          </div>
+        </div>
+
+        <div class="home-grid">
+          <article class="manifesto">
+            <p class="eyebrow">TU MÉTODO</p>
+            <h2>Observar.<br>Comprender.<br>Decidir.</h2>
+            <p>Cada posición responde a una pregunta real de partida. Avanza a tu ritmo y vuelve cuando necesites reforzar una idea.</p>
+          </article>
+          <article class="route-card" data-go="aprende">
+            <span class="route-number">12</span>
+            <div><p>POSICIONES CLAVE</p><h3>Construye la Defensa Caro-Kann jugada a jugada</h3></div>
+            <span class="route-arrow">↗</span>
+          </article>
+          <article class="route-card dark" data-go="practica">
+            <span class="route-number">∞</span>
+            <div><p>ENTRENAMIENTO</p><h3>Encuentra la siguiente jugada en el tablero</h3></div>
+            <span class="route-arrow">↗</span>
+          </article>
+          <article class="route-card" data-go="variantes">
+            <span class="route-number">06</span>
+            <div><p>MAPA DE VARIANTES</p><h3>Reconoce la respuesta rival y elige un plan</h3></div>
+            <span class="route-arrow">↗</span>
+          </article>
+          <article class="route-card" data-go="partidas">
+            <span class="route-number">03</span>
+            <div><p>PARTIDAS MODELO</p><h3>Descubre cómo el plan llega al medio juego</h3></div>
+            <span class="route-arrow">↗</span>
+          </article>
+          <article class="route-card dark" data-go="ejercicios">
+            <span class="route-number">00</span>
+            <div><p>EJERCICIOS</p><h3>Decide, justifica y contrasta tu solución</h3></div>
+            <span class="route-arrow">↗</span>
+          </article>
+          <article class="route-card" data-go="plan">
+            <span class="route-number">04</span>
+            <div><p>SEMANAS</p><h3>Convierte el contenido en un hábito de estudio</h3></div>
+            <span class="route-arrow">↗</span>
+          </article>
+        </div>
+      </section>
+
+      <section id="aprende" class="view">
+        <div class="section-intro">
+          <div><p class="eyebrow">RECORRIDO GUIADO</p><h1>Doce posiciones.<br><em>Un hilo conductor.</em></h1></div>
+          <p>Usa las flechas para recorrer la secuencia. Cuando puedas explicar la idea sin mirar, marca la posición como comprendida.</p>
+        </div>
+        <div class="lesson-layout">
+          <aside class="lesson-index" aria-label="Índice de posiciones">
+            <p>POSICIONES</p>
+            <div id="lessonList"></div>
+          </aside>
+          <div class="lesson-stage">
+            <div class="lesson-board-column">
+              <div id="lessonBoard" class="chessboard" aria-label="Tablero de la lección"></div>
+              <div class="board-controls">
+                <button id="lessonPrev" class="icon-button" aria-label="Jugada anterior">←</button>
+                <span><b id="lessonMoveCounter">0 / 0</b><small id="lessonTurnLabel">Posición inicial</small></span>
+                <button id="lessonNext" class="icon-button" aria-label="Jugada siguiente">→</button>
+              </div>
+            </div>
+            <article class="lesson-copy">
+              <div class="lesson-meta"><span id="lessonCode">CKN-P01</span><span id="lessonStageLabel">FUNDAMENTOS</span></div>
+              <h2 id="lessonTitle"></h2>
+              <div id="lessonNotation" class="notation lesson-sequence" aria-label="Secuencia de jugadas"></div>
+              <p id="lessonExplanation" class="lesson-explanation"></p>
+              <div class="idea-box">
+                <span id="lessonIdeaLabel">IDEA CLAVE</span>
+                <p id="lessonIdea"></p>
+              </div>
+              <button id="completeLesson" class="button primary">Marcar como comprendida</button>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="practica" class="view">
+        <div class="section-intro compact">
+          <div><p class="eyebrow">ENTRENAMIENTO ACTIVO</p><h1>Tu turno.<br><em>Encuentra el plan.</em></h1></div>
+          <p>Selecciona una pieza y después su casilla de destino. La pista te recuerda la idea, no la respuesta.</p>
+        </div>
+        <div class="practice-layout">
+          <div class="practice-board-panel">
+            <div class="practice-topline">
+              <span id="practiceCode">CKN-P01</span>
+              <span class="streak">RACHA <b id="streak">0</b></span>
+            </div>
+            <div id="practiceBoard" class="chessboard interactive" aria-label="Tablero de práctica"></div>
+          </div>
+          <article class="practice-copy">
+            <p class="eyebrow" id="practiceLevel">FUNDAMENTOS</p>
+            <h2 id="practiceQuestion">¿Cuál es la continuación?</h2>
+            <p id="practiceContext"></p>
+            <div id="practiceFeedback" class="feedback" aria-live="polite">
+              <span>PISTA</span><p id="practiceHint"></p>
+            </div>
+            <button id="showHint" class="button ghost">Mostrar una pista más clara</button>
+            <button id="nextChallenge" class="button primary" hidden>Siguiente posición →</button>
+            <div class="practice-progress">
+              <span>SESIÓN</span>
+              <div id="challengeDots"></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="variantes" class="view">
+        <div class="section-intro">
+          <div><p class="eyebrow">MAPA DE DECISIONES</p><h1>Reconoce la respuesta.<br><em>Elige el plan.</em></h1></div>
+          <p>Compara seis estructuras críticas y aprende qué plan corresponde a cada una.</p>
+        </div>
+
+        <div class="decision-map" aria-label="Estructuras principales">
+          <button class="decision-branch active" data-variant="0"><span>CKN-S01</span><b>En CKN-S01, tras el cambio de damas y con un caballo negro instalado en e4, compara el plan blanco 19.Ae3 con 19.Cxe4. ¿Qué quiere conservar negras?</b><small>Reconocer la decisión crítica y conectar apertura, estructura y plan.</small></button>
+          <button class="decision-branch" data-variant="1"><span>CKN-S02</span><b>En CKN-S02, el caballo g8 no puede ir cómodamente a f6. Elige entre ...Cge7 y ...Ch6 como plan de desarrollo y justifica la ruta posterior.</b><small>11.a3 Ae7 conserva el alfil y completa desarrollo. El peón d4 solo será un objetivo estable si las blancas pierden actividad. Atacarlo antes con ...Db6 puede permitir Ae3 y d5 con tiempos; primero se bloquea y se termina el desarrollo.</small></button>
+          <button class="decision-branch" data-variant="2"><span>CKN-S03</span><b>En CKN-S03, con la columna c abierta y ambas coronas seguras, compara 16.Dd2 y 16.a3 para blancas. ¿Qué respuesta negra coordina mejor las piezas?</b><small>11.a3 Ae7 conserva el alfil y completa desarrollo. El peón d4 solo será un objetivo estable si las blancas pierden actividad. Atacarlo antes con ...Db6 puede permitir Ae3 y d5 con tiempos; primero se bloquea y se termina el desarrollo.</small></button>
+          <button class="decision-branch" data-variant="3"><span>CKN-S04</span><b>En CKN-S04, después de 10...Cf6, compara 11.a3 y 11.Ae3. ¿Por qué el modelo acepta 11.a3 Ae7 sin intentar ganar d4 ya?</b><small>11.a3 Ae7 conserva el alfil y completa desarrollo. El peón d4 solo será un objetivo estable si las blancas pierden actividad. Atacarlo antes con ...Db6 puede permitir Ae3 y d5 con tiempos; primero se bloquea y se termina el desarrollo.</small></button>
+          <button class="decision-branch" data-variant="4"><span>CKN-S05</span><b>En la Variante del Cambio CKN-S05, blancas dispone de 6.Cf3 y 6.Af4. Propón un desarrollo negro que cree desequilibrio sin alterar la estructura de peones.</b><small>Reconocer la decisión crítica y conectar apertura, estructura y plan.</small></button>
+          <button class="decision-branch" data-variant="5"><span>CKN-S06</span><b>En CKN-S06, la cadena blanca e5-d4 ya está fijada. ¿Por qué ...c5 es una candidata más urgente que ...f6?</b><small>Reconocer la decisión crítica y conectar apertura, estructura y plan.</small></button>
+        </div>
+
+        <div class="variant-shell">
+          <aside class="variant-index" aria-label="Variantes del manual"><p>ITINERARIOS</p><div id="variantList"></div></aside>
+          <div class="variant-stage">
+            <div class="variant-board-column">
+              <div class="variant-toolbar"><span>PERSPECTIVA</span><button id="variantFlip">Ver desde negras</button></div>
+              <div id="variantBoard" class="chessboard" aria-label="Tablero de la variante"></div>
+              <div class="board-controls">
+                <button id="variantStart" class="icon-button" aria-label="Inicio de la variante">↤</button>
+                <button id="variantPrev" class="icon-button" aria-label="Jugada anterior de la variante">←</button>
+                <span><b id="variantMoveCounter">0 / 0</b><small id="variantTurnLabel">Posición inicial</small></span>
+                <button id="variantNext" class="icon-button" aria-label="Jugada siguiente de la variante">→</button>
+                <button id="variantEnd" class="icon-button" aria-label="Final de la variante">↦</button>
+              </div>
+            </div>
+            <article class="variant-copy">
+              <div class="lesson-meta"><span id="variantCode"></span><span id="variantLevel"></span></div>
+              <h2 id="variantTitle"></h2>
+              <p id="variantSummary" class="variant-summary"></p>
+              <div id="variantNotation" class="notation lesson-sequence" aria-label="Secuencia de la variante"></div>
+              <div class="variant-facts" id="variantFacts"></div>
+              <div class="review-card"><div><span>REPETICIÓN ESPACIADA</span><p id="nextReviewText"></p></div><button id="recordReview" class="button ghost">Registrar repaso</button></div>
+              <button class="mobile-disclosure" aria-expanded="false" aria-controls="variantPlans"><span>Planes de blancas y negras</span><b aria-hidden="true">+</b></button>
+              <div id="variantPlans" class="plan-columns mobile-collapsible">
+                <section><span>PLAN DE BLANCAS</span><ul id="whitePlans"></ul></section>
+                <section><span>PLAN DE NEGRAS</span><ul id="blackPlans"></ul></section>
+              </div>
+              <button class="mobile-disclosure" aria-expanded="false" aria-controls="variantTraining"><span>Pregunta de entrenamiento</span><b aria-hidden="true">+</b></button>
+              <div id="variantTraining" class="concept-check mobile-collapsible">
+                <span>PREGUNTA DE ENTRENAMIENTO</span><p id="variantQuestion"></p>
+                <div id="variantOptions" class="concept-options"></div>
+                <p id="variantFeedback" class="concept-feedback" aria-live="polite"></p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <button class="mobile-disclosure section-disclosure" aria-expanded="false" aria-controls="variantComparison"><span>Comparativa práctica</span><b aria-hidden="true">+</b></button>
+        <section id="variantComparison" class="comparison-section mobile-collapsible">
+          <div class="comparison-heading"><div><p class="eyebrow">COMPARATIVA PRÁCTICA</p><h2>Qué estudiar y cuándo</h2></div><p>El Pianissimo es la base. Las demás líneas se incorporan según su frecuencia, riesgo y utilidad formativa.</p></div>
+          <div class="comparison-wrap"><table class="comparison-table"><thead><tr><th>Variante</th><th>Riesgo</th><th>Teoría</th><th>Idea central</th><th>Recomendación</th></tr></thead><tbody id="comparisonBody"></tbody></table></div>
+        </section>
+      </section>
+      <section id="partidas" class="view">
+        <div class="section-intro compact">
+          <div><p class="eyebrow">APRENDER DEL EJEMPLO</p><h1>Seis historias.<br><em>Seis maneras de jugar.</em></h1></div>
+          <p>No memorices las jugadas. Observa cuándo cambia la estructura y por qué el plan debe cambiar con ella.</p>
+        </div>
+        <div id="gameTabs" class="game-tabs"></div>
+        <div class="game-layout">
+          <div>
+            <div id="gameBoard" class="chessboard" aria-label="Tablero de partida modelo"></div>
+            <div class="board-controls">
+              <button id="gameStart" class="icon-button" aria-label="Ir al inicio">↤</button>
+              <button id="gamePrev" class="icon-button" aria-label="Jugada anterior">←</button>
+              <span><b id="gameMoveCounter">0 / 0</b><small>Reproduce la partida</small></span>
+              <button id="gameNext" class="icon-button" aria-label="Jugada siguiente">→</button>
+              <button id="gameEnd" class="icon-button" aria-label="Ir al final">↦</button>
+            </div>
+          </div>
+          <article class="game-copy">
+            <p class="eyebrow" id="gameCode">CKN-M01</p>
+            <h2 id="gameTitle"></h2>
+            <p id="gameSubtitle"></p>
+            <div class="move-sheet" id="moveSheet"></div>
+            <div class="comment-box">
+              <span>LECTURA DE LA POSICIÓN</span>
+              <p id="gameComment">Avanza por la partida para descubrir las ideas clave.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="ejercicios" class="view">
+        <div class="section-intro compact">
+          <div><p class="eyebrow">40 DECISIONES SOBRE EL TABLERO</p><h1>Observa primero.<br><em>Responde después.</em></h1></div>
+          <p>Lee la posición, formula tu respuesta y muestra la solución sólo después de justificar el plan.</p>
+        </div>
+        <div class="exercise-layout">
+          <aside class="exercise-index" aria-label="Índice de ejercicios">
+            <p>EJERCICIOS</p>
+            <div id="exerciseList"></div>
+          </aside>
+          <div class="exercise-stage">
+            <div class="exercise-board-column">
+              <div id="exerciseBoard" class="chessboard" aria-label="Tablero del ejercicio"></div>
+              <div class="board-controls">
+                <button id="exercisePrev" class="icon-button" aria-label="Ejercicio anterior">←</button>
+                <span><b id="exerciseCounter">1 / 40</b><small id="exerciseTurn">Juegan blancas</small></span>
+                <button id="exerciseNext" class="icon-button" aria-label="Ejercicio siguiente">→</button>
+              </div>
+            </div>
+            <article class="exercise-copy">
+              <div class="lesson-meta"><span id="exerciseCode"></span><span id="exerciseLevel"></span></div>
+              <h2 id="exerciseTitle"></h2>
+              <p id="exerciseObjective" class="exercise-objective"></p>
+              <button id="exerciseReveal" class="button primary">Mostrar solución</button>
+              <div id="exerciseSolution" class="exercise-solution" hidden aria-live="polite">
+                <section><span>PLAN RECOMENDADO</span><p id="exerciseWhitePlan"></p></section>
+                <section><span>RESPUESTA Y CONTRASTE</span><p id="exerciseBlackPlan"></p></section>
+                <section><span>CONTINUACIÓN DIDÁCTICA</span><p id="exerciseContinuation"></p></section>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="plan" class="view">
+        <div class="section-intro compact">
+          <div><p class="eyebrow">PLAN DE ESTUDIO</p><h1>Cuatro semanas.<br><em>Un método repetible.</em></h1></div>
+          <p>Alterna comprensión, práctica y revisión para convertir las líneas en decisiones útiles durante la partida.</p>
+        </div>
+        <section class="study-section">
+          <div class="study-heading"><p class="eyebrow">ITINERARIO RECOMENDADO</p><h2>Cuatro semanas para convertir líneas en decisiones</h2></div>
+          <div class="study-grid">
+            <article><span>SEMANA 01</span><h3>12 posiciones clave</h3><p>Recorre las posiciones guiadas y explica en voz alta la idea central de cada una.</p></article>
+            <article><span>SEMANA 02</span><h3>Estructuras y planes</h3><p>Compara las estructuras críticas y distingue los planes de blancas y negras.</p></article>
+            <article><span>SEMANA 03</span><h3>Ejercicios guiados</h3><p>Resuelve diez ejercicios por sesión: primero decide, después contrasta la solución.</p></article>
+            <article><span>SEMANA 04</span><h3>3 partidas modelo</h3><p>Reproduce las partidas sin prisa y anota cuándo cambia el plan de la apertura.</p></article>
+          </div>
+          <section class="study-cards" aria-labelledby="study-cards-title">
+            <div class="study-heading"><p class="eyebrow">TARJETAS DE REPASO</p><h2 id="study-cards-title">Cuatro recordatorios visuales</h2></div>
+            <div class="study-card-grid"><figure><img src="assets/tarjetas/CKN_T01.png" alt="Tarjeta de repaso 1 de La Caro-Kann" loading="lazy"><figcaption>Tarjeta 01</figcaption></figure><figure><img src="assets/tarjetas/CKN_T02.png" alt="Tarjeta de repaso 2 de La Caro-Kann" loading="lazy"><figcaption>Tarjeta 02</figcaption></figure><figure><img src="assets/tarjetas/CKN_T03.png" alt="Tarjeta de repaso 3 de La Caro-Kann" loading="lazy"><figcaption>Tarjeta 03</figcaption></figure><figure><img src="assets/tarjetas/CKN_T04.png" alt="Tarjeta de repaso 4 de La Caro-Kann" loading="lazy"><figcaption>Tarjeta 04</figcaption></figure></div>
+          </section><div class="game-checklist"><span>LISTA DE CONTROL DURANTE LA PARTIDA</span><ul><li>¿Mi rey está seguro?</li><li>¿Qué amenaza directa tiene mi rival?</li><li>¿Puedo desarrollar una pieza con tempo?</li><li>¿Qué ruptura central está preparada?</li><li>¿Qué pieza está peor colocada?</li><li>¿Mi plan corresponde a la estructura actual?</li></ul></div>
+        </section>
+      </section>
+    </main>
+
+    <footer>
+      <span>MI REPERTORIO DE AJEDREZ · CUADERNO 7</span>
+      <span>Aprender por comprensión, no por memorización.</span>
+    </footer>
+  </div>
+  <script src="exercise-data.js"></script>
+  <script src="app.js?v=20260809-global-density-1"></script>
+</body>
+</html>

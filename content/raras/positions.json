@@ -1,0 +1,370 @@
+[
+  {
+    "id": "RAR-P01",
+    "kind": "position",
+    "title": "Inglesa · 1.c4 e5",
+    "chapter": "Ampliación A",
+    "movesUci": [
+      "c2c4",
+      "e7e5"
+    ],
+    "fen": "rnbqkbnr/pppp1ppp/8/4p3/2P5/8/PP1PPPPP/RNBQKBNR w KQkq e6 0 2",
+    "sideToMove": "white",
+    "objective": "Comprender la decisión concreta de la posición",
+    "level": {
+      "label": "base",
+      "minRating": null,
+      "maxRating": null,
+      "stage": "base"
+    },
+    "whitePlan": "Cc3, g3, Ag2 y presión sobre d5/e5.",
+    "blackPlan": "...Cf6, ...Cc6 y ...d5; si cambia cxd5, recapturar con caballo.",
+    "teachingContinuation": "1.c4 e5 2.Cc3 Cf6 3.g3 d5 4.cxd5 Cxd5. | Perseguir c4 con ...b5 sin completar desarrollo.",
+    "manualReference": "RAR-P01",
+    "tags": [],
+    "openingId": "raras"
+  },
+  {
+    "id": "RAR-P02",
+    "kind": "position",
+    "title": "Inglesa · desarrollo y ...d5",
+    "chapter": "Ampliación A",
+    "movesUci": [
+      "c2c4",
+      "e7e5",
+      "b1c3",
+      "g8f6",
+      "g2g3",
+      "d7d5",
+      "c4d5",
+      "f6d5",
+      "f1g2",
+      "d5b6",
+      "g1f3",
+      "b8c6"
+    ],
+    "fen": "r1bqkb1r/ppp2ppp/1nn5/4p3/8/2N2NP1/PP1PPPBP/R1BQK2R w KQkq - 4 7",
+    "sideToMove": "white",
+    "objective": "Comprender la decisión concreta de la posición",
+    "level": {
+      "label": "base",
+      "minRating": null,
+      "maxRating": null,
+      "stage": "base"
+    },
+    "whitePlan": "d3, Ae3, Tc1 y Ce4-c5/d6.",
+    "blackPlan": "Enrocar, ...Te8, ...Af8 y, si hace falta, ...c6.",
+    "teachingContinuation": "6...Cc6 7.O-O Ae7 8.d3 O-O 9.Ae3 Te8. | Dejar un caballo blanco en d5 sin posibilidad de cambio.",
+    "manualReference": "RAR-P02",
+    "tags": [],
+    "openingId": "raras"
+  },
+  {
+    "id": "RAR-P03",
+    "kind": "position",
+    "title": "Réti · 1.Cf3 d5",
+    "chapter": "Ampliación A",
+    "movesUci": [
+      "g1f3",
+      "d7d5"
+    ],
+    "fen": "rnbqkbnr/ppp1pppp/8/3p4/8/5N2/PPPPPPPP/RNBQKB1R w KQkq d6 0 2",
+    "sideToMove": "white",
+    "objective": "Comprender la decisión concreta de la posición",
+    "level": {
+      "label": "base",
+      "minRating": null,
+      "maxRating": null,
+      "stage": "base"
+    },
+    "whitePlan": "g3/Ag2, c4 o d4, retrasando compromisos.",
+    "blackPlan": "...d5, ...Cf6, enroque; adaptar ...c5/e5 a la transposición.",
+    "teachingContinuation": "1.Cf3 d5 2.g3 Cf6 3.Ag2 g6 4.O-O Ag7. | Forzar ...e5 cuando Cf3 ya controla e5 y el peón queda atacado.",
+    "manualReference": "RAR-P03",
+    "tags": [],
+    "openingId": "raras"
+  },
+  {
+    "id": "RAR-P04",
+    "kind": "position",
+    "title": "Réti · centro flexible",
+    "chapter": "Ampliación A",
+    "movesUci": [
+      "g1f3",
+      "d7d5",
+      "g2g3",
+      "g8f6",
+      "f1g2",
+      "g7g6",
+      "e1g1",
+      "f8g7",
+      "d2d3",
+      "e8g8",
+      "b1d2",
+      "c7c5",
+      "e2e4",
+      "b8c6"
+    ],
+    "fen": "r1bq1rk1/pp2ppbp/2n2np1/2pp4/4P3/3P1NP1/PPPN1PBP/R1BQ1RK1 w - - 1 8",
+    "sideToMove": "white",
+    "objective": "Comprender la decisión concreta de la posición",
+    "level": {
+      "label": "base",
+      "minRating": null,
+      "maxRating": null,
+      "stage": "base"
+    },
+    "whitePlan": "c3, d4 o Cc4; presionar d6/e5.",
+    "blackPlan": "...e5, ...d4 si c3, y ...Ce8-d6.",
+    "teachingContinuation": "8...e5 9.c3 d4 10.cxd4 cxd4 11.Cc4 Ce8. | Jugar ...d4 demasiado pronto y regalar c4 a un caballo estable.",
+    "manualReference": "RAR-P04",
+    "tags": [],
+    "openingId": "raras"
+  },
+  {
+    "id": "RAR-P05",
+    "kind": "position",
+    "title": "Bird · 1.f4 d5",
+    "chapter": "Ampliación A",
+    "movesUci": [
+      "f2f4",
+      "d7d5"
+    ],
+    "fen": "rnbqkbnr/ppp1pppp/8/3p4/5P2/8/PPPPP1PP/RNBQKBNR w KQkq d6 0 2",
+    "sideToMove": "white",
+    "objective": "Comprender la decisión concreta de la posición",
+    "level": {
+      "label": "base",
+      "minRating": null,
+      "maxRating": null,
+      "stage": "base"
+    },
+    "whitePlan": "Cf3, e3, b3, Ab2, Ae2, O-O y Ce5.",
+    "blackPlan": "...d5, ...Cf6, ...g6, ...Ag7, ...O-O y ...c5.",
+    "teachingContinuation": "1.f4 d5 2.Cf3 Cf6 3.e3 g6 4.b3 Ag7. | Intentar explotar f4 con ...Dh4+ sin comprobar g3/Cf3.",
+    "manualReference": "RAR-P05",
+    "tags": [],
+    "openingId": "raras"
+  },
+  {
+    "id": "RAR-P06",
+    "kind": "position",
+    "title": "Bird · ...c5 contra d4",
+    "chapter": "Ampliación A",
+    "movesUci": [
+      "f2f4",
+      "d7d5",
+      "g1f3",
+      "g8f6",
+      "e2e3",
+      "g7g6",
+      "b2b3",
+      "f8g7",
+      "c1b2",
+      "e8g8",
+      "f1e2",
+      "c7c5",
+      "e1g1",
+      "b8c6"
+    ],
+    "fen": "r1bq1rk1/pp2ppbp/2n2np1/2pp4/5P2/1P2PN2/PBPPB1PP/RN1Q1RK1 w - - 2 8",
+    "sideToMove": "white",
+    "objective": "Comprender la decisión concreta de la posición",
+    "level": {
+      "label": "base",
+      "minRating": null,
+      "maxRating": null,
+      "stage": "base"
+    },
+    "whitePlan": "Ce5, Af3, d3 y f5 cuando el centro esté estable.",
+    "blackPlan": "...Ad7, ...Tc8 y ...d4; cambiar Ce5 si favorece la estructura.",
+    "teachingContinuation": "8.Ce5 Ad7 9.Af3 Tc8 10.d3 d4. | Jugar ...d4 sin tener Tc8/Ad7 y permitir Cxc6 seguido de exd4.",
+    "manualReference": "RAR-P06",
+    "tags": [],
+    "openingId": "raras"
+  },
+  {
+    "id": "RAR-P07",
+    "kind": "position",
+    "title": "Larsen · 1.b3 e5",
+    "chapter": "Ampliación A",
+    "movesUci": [
+      "b2b3",
+      "e7e5"
+    ],
+    "fen": "rnbqkbnr/pppp1ppp/8/4p3/8/1P6/P1PPPPPP/RNBQKBNR w KQkq e6 0 2",
+    "sideToMove": "white",
+    "objective": "Comprender la decisión concreta de la posición",
+    "level": {
+      "label": "base",
+      "minRating": null,
+      "maxRating": null,
+      "stage": "base"
+    },
+    "whitePlan": "Ab2, e3, Cf3, Ab5 y d4.",
+    "blackPlan": "...Cc6, ...Cf6, ...Ad6, O-O, ...Te8.",
+    "teachingContinuation": "1.b3 e5 2.Ab2 Cc6 3.e3 Cf6 4.Ab5 Ad6. | Avanzar ...e4 para 'cerrar' el alfil y ceder d4 sin ganar tiempo.",
+    "manualReference": "RAR-P07",
+    "tags": [],
+    "openingId": "raras"
+  },
+  {
+    "id": "RAR-P08",
+    "kind": "position",
+    "title": "Larsen · ...e4 con apoyo",
+    "chapter": "Ampliación A",
+    "movesUci": [
+      "b2b3",
+      "e7e5",
+      "c1b2",
+      "b8c6",
+      "e2e3",
+      "g8f6",
+      "f1b5",
+      "f8d6",
+      "g1f3",
+      "e8g8",
+      "e1g1",
+      "f8e8",
+      "d2d4",
+      "e5e4"
+    ],
+    "fen": "r1bqr1k1/pppp1ppp/2nb1n2/1B6/3Pp3/1P2PN2/PBP2PPP/RN1Q1RK1 w - - 0 8",
+    "sideToMove": "white",
+    "objective": "Comprender la decisión concreta de la posición",
+    "level": {
+      "label": "base",
+      "minRating": null,
+      "maxRating": null,
+      "stage": "base"
+    },
+    "whitePlan": "Cfd2, c4 y ataque a e4/d5.",
+    "blackPlan": "...d5, ...Af5 y sostener e4; cambiar en d4 si abre líneas favorables.",
+    "teachingContinuation": "7.d4 e4 8.Cfd2 d5 9.c4 Af5. | Defender e4 con ...f5 y debilitar el rey cuando ...d5 basta.",
+    "manualReference": "RAR-P08",
+    "tags": [],
+    "openingId": "raras"
+  },
+  {
+    "id": "RAR-P09",
+    "kind": "position",
+    "title": "Sokolsky · 1.b4 e5",
+    "chapter": "Ampliación A",
+    "movesUci": [
+      "b2b4",
+      "e7e5"
+    ],
+    "fen": "rnbqkbnr/pppp1ppp/8/4p3/1P6/8/P1PPPPPP/RNBQKBNR w KQkq e6 0 2",
+    "sideToMove": "white",
+    "objective": "Comprender la decisión concreta de la posición",
+    "level": {
+      "label": "base",
+      "minRating": null,
+      "maxRating": null,
+      "stage": "base"
+    },
+    "whitePlan": "Ab2, e3, Cf3, d4 y a3 para ganar tiempo al alfil.",
+    "blackPlan": "...e5, posible ...Axb4, ...d6, ...Cf6, O-O.",
+    "teachingContinuation": "1.b4 e5 2.Ab2 Axb4 3.e3 d6 4.Cf3 Cf6. | Perseguir el peón con ...a5/...b6 y abandonar el centro.",
+    "manualReference": "RAR-P09",
+    "tags": [],
+    "openingId": "raras"
+  },
+  {
+    "id": "RAR-P10",
+    "kind": "position",
+    "title": "Sokolsky · centro y desarrollo",
+    "chapter": "Ampliación A",
+    "movesUci": [
+      "b2b4",
+      "e7e5",
+      "c1b2",
+      "f8b4",
+      "e2e3",
+      "d7d6",
+      "g1f3",
+      "g8f6",
+      "f1e2",
+      "e8g8",
+      "e1g1",
+      "b8c6",
+      "a2a3",
+      "b4a5",
+      "d2d4",
+      "e5d4"
+    ],
+    "fen": "r1bq1rk1/ppp2ppp/2np1n2/b7/3p4/P3PN2/1BP1BPPP/RN1Q1RK1 w - - 0 9",
+    "sideToMove": "white",
+    "objective": "Comprender la decisión concreta de la posición",
+    "level": {
+      "label": "base",
+      "minRating": null,
+      "maxRating": null,
+      "stage": "base"
+    },
+    "whitePlan": "Cxd4, Af3 y c4; ganar tiempos al alfil.",
+    "blackPlan": "...Te8, ...Ab6 y presión sobre d4/e3.",
+    "teachingContinuation": "8.d4 exd4 9.Cxd4 Te8 10.c4 Ab6. | Conservar el peón de más a costa de una pieza fuera de juego.",
+    "manualReference": "RAR-P10",
+    "tags": [],
+    "openingId": "raras"
+  },
+  {
+    "id": "RAR-P11",
+    "kind": "position",
+    "title": "Nimzowitsch · 1.Cc3 d5",
+    "chapter": "Ampliación A",
+    "movesUci": [
+      "b1c3",
+      "d7d5"
+    ],
+    "fen": "rnbqkbnr/ppp1pppp/8/3p4/8/2N5/PPPPPPPP/R1BQKBNR w KQkq d6 0 2",
+    "sideToMove": "white",
+    "objective": "Comprender la decisión concreta de la posición",
+    "level": {
+      "label": "base",
+      "minRating": null,
+      "maxRating": null,
+      "stage": "base"
+    },
+    "whitePlan": "d4/e4 y desarrollo rápido.",
+    "blackPlan": "...d5, ...Cf6, ...e6/c5 según centro.",
+    "teachingContinuation": "1.Cc3 d5 2.d4 Cf6 3.Af4 c5. | Tratar Cc3 como una pieza que debe expulsarse en vez de completar desarrollo.",
+    "manualReference": "RAR-P11",
+    "tags": [],
+    "openingId": "raras"
+  },
+  {
+    "id": "RAR-P12",
+    "kind": "position",
+    "title": "Fianchetto · 1.g3 e5",
+    "chapter": "Ampliación A",
+    "movesUci": [
+      "g2g3",
+      "e7e5",
+      "f1g2",
+      "d7d5",
+      "d2d3",
+      "g8f6",
+      "g1f3",
+      "b8c6",
+      "e1g1",
+      "f8e7"
+    ],
+    "fen": "r1bqk2r/ppp1bppp/2n2n2/3pp3/8/3P1NP1/PPP1PPBP/RNBQ1RK1 w kq - 5 6",
+    "sideToMove": "white",
+    "objective": "Comprender la decisión concreta de la posición",
+    "level": {
+      "label": "base",
+      "minRating": null,
+      "maxRating": null,
+      "stage": "base"
+    },
+    "whitePlan": "Ag2, d3, Cf3, O-O y c4/e4.",
+    "blackPlan": "...e5, ...d5, ...Cf6, ...Cc6, ...Ae7, O-O.",
+    "teachingContinuation": "1.g3 e5 2.Ag2 d5 3.d3 Cf6 4.Cf3 Cc6 5.O-O Ae7. | Creer que el centro grande justifica un ataque antes de enrocar.",
+    "manualReference": "RAR-P12",
+    "tags": [],
+    "openingId": "raras"
+  }
+]
