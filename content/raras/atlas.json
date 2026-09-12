@@ -1,0 +1,46 @@
+[
+  {
+    "id": "RAR-F01",
+    "kind": "supplemental_position",
+    "title": "Final derivado de la Inglesa",
+    "chapter": "Parte XI",
+    "movesUci": [],
+    "fen": "4r1k1/5ppp/1p6/p1pn4/4N3/P2PP1P1/1P3P1P/2R3K1 b - - 0 25",
+    "sideToMove": "black",
+    "objective": "Final de entrenamiento directamente derivado de RAR-M01 / RAR-S01",
+    "level": {
+      "label": "intermedio",
+      "minRating": null,
+      "maxRating": null,
+      "stage": "intermedio"
+    },
+    "whitePlan": "Usar Tc1-c5 o Ce4-d6/c5 para atacar b6/a5; el rey debe acercarse por f1-e2 antes de crear un peón pasado.",
+    "blackPlan": "Activar el rey hacia f7/e6 y mantener la torre detrás del centro. El caballo d5 es un bloqueador: no debe abandonar d5 salvo que gane un peón o cambie el caballo e4.",
+    "teachingContinuation": "El final nace de la estructura M01: tras cambios de damas y alfiles, el peón negro d avanzado desaparece y queda una mayoría de ala de dama contra mayoría blanca central. La lucha cambia de ruptura a actividad de rey y torre. | Juegan negras. Compara ...Rf8, ...f5 y ...a4. Solución: primero ...Rf8 (o ...Kf8 según táctica) para activar el rey/torre; solo después decide qué peón avanzar. El principio es mejorar la pieza peor situada antes de fijar la estructura.",
+    "manualReference": "RAR-F01",
+    "tags": [],
+    "openingId": "raras"
+  },
+  {
+    "id": "RAR-F02",
+    "kind": "supplemental_position",
+    "title": "Final derivado de Bird",
+    "chapter": "Parte XI",
+    "movesUci": [],
+    "fen": "4r1k1/pp2Pp1p/6p1/8/8/PP1P4/2P3PP/5R1K w - - 0 25",
+    "sideToMove": "white",
+    "objective": "Final de entrenamiento directamente derivado de RAR-M03 / RAR-S03",
+    "level": {
+      "label": "intermedio",
+      "minRating": null,
+      "maxRating": null,
+      "stage": "intermedio"
+    },
+    "whitePlan": "Apoyar e7 con la torre desde e1/f1 o cortar al rey negro por la séptima; si el peón no puede avanzar, usarlo para ganar tiempos y activar el rey.",
+    "blackPlan": "Bloquear el peón e7 con la torre en e8, mantener el rey fuera de jaques laterales y atacar d3/a3 cuando el peón pasado quede neutralizado.",
+    "teachingContinuation": "Deriva de M03: el avance f5-f6-fxe7 crea un peón pasado en e7. Tras el cambio de damas y piezas menores, la partida se reduce a un final de torres donde la técnica de bloqueo sustituye al ataque al rey. | Juegan blancas. Compara 1.Re1, 1.Rf3 y 1.Kg1. Solución: 1.Re1 es la candidata más coherente: apoya e7 y obliga a la torre negra a mantener el bloqueo. Si negras cambian torres en e-file, el rey debe entrar inmediatamente para controlar la casilla de coronación.",
+    "manualReference": "RAR-F02",
+    "tags": [],
+    "openingId": "raras"
+  }
+]

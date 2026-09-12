@@ -1,0 +1,288 @@
+[
+  {
+    "id": "SLA-P01",
+    "kind": "position",
+    "title": "La identidad de la Eslava",
+    "chapter": "Ampliación A",
+    "movesUci": [
+      "d2d4",
+      "d7d5",
+      "c2c4",
+      "c7c6"
+    ],
+    "fen": "rnbqkbnr/pp2pppp/2p5/3p4/2PP4/8/PP2PPPP/RNBQKBNR w KQkq - 0 3",
+    "sideToMove": "white",
+    "objective": "Reconocer la decisión crítica y conectar apertura, estructura y plan.",
+    "level": {
+      "label": "800-1400 Elo",
+      "minRating": 800,
+      "maxRating": 1400,
+      "stage": null
+    },
+    "whitePlan": "Consulta la lectura bilateral y las candidatas específicas de esta posición en el manual.",
+    "blackPlan": "Consulta la respuesta activa del rival y la ruptura asociada en el manual.",
+    "teachingContinuation": "Reproducir la posición, elegir dos candidatas y comparar con la continuación del manual.",
+    "manualReference": "SLA-P01",
+    "tags": [],
+    "openingId": "eslava"
+  },
+  {
+    "id": "SLA-P02",
+    "kind": "position",
+    "title": "Desarrollar antes de decidir el centro",
+    "chapter": "Ampliación A",
+    "movesUci": [
+      "g1f3",
+      "g8f6"
+    ],
+    "fen": "rnbqkb1r/pppppppp/5n2/8/8/5N2/PPPPPPPP/RNBQKB1R w KQkq - 2 2",
+    "sideToMove": "white",
+    "objective": "Reconocer la decisión crítica y conectar apertura, estructura y plan.",
+    "level": {
+      "label": "800-1400 Elo",
+      "minRating": 800,
+      "maxRating": 1400,
+      "stage": null
+    },
+    "whitePlan": "Consulta la lectura bilateral y las candidatas específicas de esta posición en el manual.",
+    "blackPlan": "Consulta la respuesta activa del rival y la ruptura asociada en el manual.",
+    "teachingContinuation": "SLA-E01, E20 y E35.",
+    "manualReference": "SLA-P02",
+    "tags": [],
+    "openingId": "eslava"
+  },
+  {
+    "id": "SLA-P03",
+    "kind": "position",
+    "title": "La captura en c4 cambia la estructura",
+    "chapter": "Ampliación A",
+    "movesUci": [],
+    "fen": "rnbqkb1r/pp2pppp/2p2n2/8/2pP4/2N2N2/PP2PPPP/R1BQKB1R w KQkq - 0 5",
+    "sideToMove": "white",
+    "objective": "Reconocer la decisión crítica y conectar apertura, estructura y plan.",
+    "level": {
+      "label": "800-1400 Elo",
+      "minRating": 800,
+      "maxRating": 1400,
+      "stage": null
+    },
+    "whitePlan": "Consulta la lectura bilateral y las candidatas específicas de esta posición en el manual.",
+    "blackPlan": "Consulta la respuesta activa del rival y la ruptura asociada en el manual.",
+    "teachingContinuation": "Reproducir la posición, elegir dos candidatas y comparar con la continuación del manual.",
+    "manualReference": "SLA-P03",
+    "tags": [],
+    "openingId": "eslava",
+    "sequenceIssue": "jugada no reconocida: dxc4"
+  },
+  {
+    "id": "SLA-P04",
+    "kind": "position",
+    "title": "5.a4 impide la expansión fácil",
+    "chapter": "Ampliación A",
+    "movesUci": [],
+    "fen": "rn1qkb1r/pp2pppp/2p2n2/5b2/P1pP4/2N2N2/1P2PPPP/R1BQKB1R w KQkq - 1 6",
+    "sideToMove": "white",
+    "objective": "Reconocer la decisión crítica y conectar apertura, estructura y plan.",
+    "level": {
+      "label": "800-1400 Elo",
+      "minRating": 800,
+      "maxRating": 1400,
+      "stage": null
+    },
+    "whitePlan": "Consulta la lectura bilateral y las candidatas específicas de esta posición en el manual.",
+    "blackPlan": "Consulta la respuesta activa del rival y la ruptura asociada en el manual.",
+    "teachingContinuation": "SLA-M01-P1. Ejercicios E03, E16 y E31.",
+    "manualReference": "SLA-P04",
+    "tags": [],
+    "openingId": "eslava",
+    "sequenceIssue": "jugada no reconocida: Af5"
+  },
+  {
+    "id": "SLA-P05",
+    "kind": "position",
+    "title": "Centro estable, rey aún en el centro",
+    "chapter": "Ampliación A",
+    "movesUci": [
+      "e2e3",
+      "e7e6"
+    ],
+    "fen": "rnbqkbnr/pppp1ppp/4p3/8/8/4P3/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
+    "sideToMove": "white",
+    "objective": "estructura negra sana; ligera iniciativa blanca por el primer movimiento, sin objetivo fijo.",
+    "level": {
+      "label": "800-1400 Elo",
+      "minRating": 800,
+      "maxRating": 1400,
+      "stage": null
+    },
+    "whitePlan": "Consulta la lectura bilateral y las candidatas específicas de esta posición en el manual.",
+    "blackPlan": "Consulta la respuesta activa del rival y la ruptura asociada en el manual.",
+    "teachingContinuation": "Reproducir la posición, elegir dos candidatas y comparar con la continuación del manual.",
+    "manualReference": "SLA-P05",
+    "tags": [],
+    "openingId": "eslava"
+  },
+  {
+    "id": "SLA-P06",
+    "kind": "position",
+    "title": "La clavada ...Ab4",
+    "chapter": "Ampliación A",
+    "movesUci": [],
+    "fen": "rn1qk2r/pp3ppp/2p1pn2/5b2/PbBP4/2N1PN2/1P3PPP/R1BQK2R w KQkq - 1 8",
+    "sideToMove": "white",
+    "objective": "Reconocer la decisión crítica y conectar apertura, estructura y plan.",
+    "level": {
+      "label": "800-1400 Elo",
+      "minRating": 800,
+      "maxRating": 1400,
+      "stage": null
+    },
+    "whitePlan": "Consulta la lectura bilateral y las candidatas específicas de esta posición en el manual.",
+    "blackPlan": "Consulta la respuesta activa del rival y la ruptura asociada en el manual.",
+    "teachingContinuation": "Reproducir la posición, elegir dos candidatas y comparar con la continuación del manual.",
+    "manualReference": "SLA-P06",
+    "tags": [],
+    "openingId": "eslava",
+    "sequenceIssue": "jugada no reconocida: 7.Axc4"
+  },
+  {
+    "id": "SLA-P07",
+    "kind": "position",
+    "title": "Enroque y transición",
+    "chapter": "Ampliación A",
+    "movesUci": [],
+    "fen": "rnbq1rk1/pppppppp/8/8/8/8/PPPPPPPP/RNBQ1RK1 w - - 2 2",
+    "sideToMove": "white",
+    "objective": "Reconocer la decisión crítica y conectar apertura, estructura y plan.",
+    "level": {
+      "label": "800-1400 Elo",
+      "minRating": 800,
+      "maxRating": 1400,
+      "stage": null
+    },
+    "whitePlan": "Consulta la lectura bilateral y las candidatas específicas de esta posición en el manual.",
+    "blackPlan": "Consulta la respuesta activa del rival y la ruptura asociada en el manual.",
+    "teachingContinuation": "Reproducir la posición, elegir dos candidatas y comparar con la continuación del manual.",
+    "manualReference": "SLA-P07",
+    "tags": [],
+    "openingId": "eslava",
+    "sequenceIssue": "jugada no reconocida: 8.O-O"
+  },
+  {
+    "id": "SLA-P08",
+    "kind": "position",
+    "title": "Cambio simétrico: crear diferencias con piezas",
+    "chapter": "Ampliación A",
+    "movesUci": [
+      "b1c3",
+      "g8f6"
+    ],
+    "fen": "rnbqkb1r/pppppppp/5n2/8/8/2N5/PPPPPPPP/R1BQKBNR w KQkq - 2 2",
+    "sideToMove": "white",
+    "objective": "Reconocer la decisión crítica y conectar apertura, estructura y plan.",
+    "level": {
+      "label": "800-1400 Elo",
+      "minRating": 800,
+      "maxRating": 1400,
+      "stage": null
+    },
+    "whitePlan": "Consulta la lectura bilateral y las candidatas específicas de esta posición en el manual.",
+    "blackPlan": "Consulta la respuesta activa del rival y la ruptura asociada en el manual.",
+    "teachingContinuation": "Reproducir la posición, elegir dos candidatas y comparar con la continuación del manual.",
+    "manualReference": "SLA-P08",
+    "tags": [],
+    "openingId": "eslava"
+  },
+  {
+    "id": "SLA-P09",
+    "kind": "position",
+    "title": "Alfiles activos en la Variante del Cambio",
+    "chapter": "Ampliación A",
+    "movesUci": [],
+    "fen": "r2qkb1r/pp2pppp/2n2n2/3p1b2/3P1B2/2N2N2/PP2PPPP/R2QKB1R w KQkq - 6 7",
+    "sideToMove": "white",
+    "objective": "Reconocer la decisión crítica y conectar apertura, estructura y plan.",
+    "level": {
+      "label": "800-1400 Elo",
+      "minRating": 800,
+      "maxRating": 1400,
+      "stage": null
+    },
+    "whitePlan": "Consulta la lectura bilateral y las candidatas específicas de esta posición en el manual.",
+    "blackPlan": "Consulta la respuesta activa del rival y la ruptura asociada en el manual.",
+    "teachingContinuation": "Reproducir la posición, elegir dos candidatas y comparar con la continuación del manual.",
+    "manualReference": "SLA-P09",
+    "tags": [],
+    "openingId": "eslava",
+    "sequenceIssue": "jugada no reconocida: 6.Af4"
+  },
+  {
+    "id": "SLA-P10",
+    "kind": "position",
+    "title": "Sistema tranquilo con e3",
+    "chapter": "Ampliación A",
+    "movesUci": [],
+    "fen": "rn1qkb1r/pp2pppp/2p2n2/3p1b2/2PP4/4PN2/PP3PPP/RNBQKB1R w KQkq - 1 5",
+    "sideToMove": "white",
+    "objective": "Reconocer la decisión crítica y conectar apertura, estructura y plan.",
+    "level": {
+      "label": "800-1400 Elo",
+      "minRating": 800,
+      "maxRating": 1400,
+      "stage": null
+    },
+    "whitePlan": "Consulta la lectura bilateral y las candidatas específicas de esta posición en el manual.",
+    "blackPlan": "Consulta la respuesta activa del rival y la ruptura asociada en el manual.",
+    "teachingContinuation": "Reproducir la posición, elegir dos candidatas y comparar con la continuación del manual.",
+    "manualReference": "SLA-P10",
+    "tags": [],
+    "openingId": "eslava",
+    "sequenceIssue": "jugada no reconocida: Af5"
+  },
+  {
+    "id": "SLA-P11",
+    "kind": "position",
+    "title": "Peón g6 tras Cxg6 hxg6",
+    "chapter": "Ampliación A",
+    "movesUci": [],
+    "fen": "rn1qkb1r/pp3pp1/2p1pnp1/3p4/2PP4/2N1P3/PP3PPP/R1BQKB1R w KQkq - 0 8",
+    "sideToMove": "white",
+    "objective": "Reconocer la decisión crítica y conectar apertura, estructura y plan.",
+    "level": {
+      "label": "800-1400 Elo",
+      "minRating": 800,
+      "maxRating": 1400,
+      "stage": null
+    },
+    "whitePlan": "Consulta la lectura bilateral y las candidatas específicas de esta posición en el manual.",
+    "blackPlan": "Consulta la respuesta activa del rival y la ruptura asociada en el manual.",
+    "teachingContinuation": "Reproducir la posición, elegir dos candidatas y comparar con la continuación del manual.",
+    "manualReference": "SLA-P11",
+    "tags": [],
+    "openingId": "eslava",
+    "sequenceIssue": "jugada no reconocida: 7.Cxg6"
+  },
+  {
+    "id": "SLA-P12",
+    "kind": "position",
+    "title": "La ruptura ...e5",
+    "chapter": "Ampliación A",
+    "movesUci": [],
+    "fen": "r4rk1/pp1nqpp1/2pb1np1/3pp3/2PP4/1PNBP2P/PB3PP1/R2Q1RK1 w - - 0 13",
+    "sideToMove": "white",
+    "objective": "Reconocer la decisión crítica y conectar apertura, estructura y plan.",
+    "level": {
+      "label": "800-1400 Elo",
+      "minRating": 800,
+      "maxRating": 1400,
+      "stage": null
+    },
+    "whitePlan": "Consulta la lectura bilateral y las candidatas específicas de esta posición en el manual.",
+    "blackPlan": "Consulta la respuesta activa del rival y la ruptura asociada en el manual.",
+    "teachingContinuation": "Reproducir la posición, elegir dos candidatas y comparar con la continuación del manual.",
+    "manualReference": "SLA-P12",
+    "tags": [],
+    "openingId": "eslava",
+    "sequenceIssue": "jugada no reconocida: 12.Ab2"
+  }
+]

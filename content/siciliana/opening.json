@@ -1,0 +1,36 @@
+{
+  "id": "siciliana",
+  "code": "SIC",
+  "manualNumber": 4,
+  "title": "Cómo jugar contra la Defensa Siciliana",
+  "shortTitle": "Contra la Siciliana",
+  "version": "1.3",
+  "accent": "#6F2DA8",
+  "boardDark": "#8669A0",
+  "preview": {
+    "fen": "rnbqkbnr/pp1ppppp/8/2p5/4P3/2P5/PP1P1PPP/RNBQKBNR b KQkq - 0 2",
+    "line": "1.e4 c5 2.c3",
+    "lastMove": [
+      "c2",
+      "c3"
+    ]
+  },
+  "quote": {
+    "text": "Construye el centro antes de iniciar planes de flanco.",
+    "author": "Mi Repertorio de Ajedrez"
+  },
+  "storageNamespace": "repertorio:siciliana:v1",
+  "interactiveAvailable": true,
+  "status": "available",
+  "inventory": {
+    "position": 12,
+    "structure": 6,
+    "game_stop": 15,
+    "exercise": 40
+  },
+  "gameCount": 3,
+  "coreGameCount": 3,
+  "expansionGameCount": 0,
+  "atlasCount": 2,
+  "validationWarnings": 0
+}

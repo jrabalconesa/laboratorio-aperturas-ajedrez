@@ -23,7 +23,7 @@
   },
   "storageNamespace": "repertorio:espanola:v1",
   "interactiveAvailable": true,
-  "status": "available",
+  "status": "partial",
   "inventory": {
     "position": 12,
     "structure": 6,
@@ -33,5 +33,6 @@
   "gameCount": 6,
   "coreGameCount": 3,
   "expansionGameCount": 3,
-  "atlasCount": 6
+  "atlasCount": 6,
+  "validationWarnings": 1
 }

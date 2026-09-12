@@ -339,3 +339,16 @@ Tras la migración, añadir una nueva apertura debe consistir principalmente en:
 
 No deberá ser necesario duplicar ni modificar el tablero, el visor de partidas,
 el sistema de progreso o las vistas principales.
+
+## 11. Estado de la serie completa
+
+La plataforma incorpora ya los cuadernos 1 a 12 mediante una configuración
+central en `scripts/openings.mjs`. El generador crea el catálogo, el contenido
+normalizado y un laboratorio por apertura. Los cuadernos 4 a 12 conservan
+además sus tarjetas de repaso dentro del laboratorio.
+
+Cada apertura define un color propio. El importador admite coma o punto y coma,
+secuencias UCI y SAN en castellano o inglés, y posiciones autónomas basadas en
+FEN. Cuando el inventario editorial es incompleto o una secuencia no reproduce
+exactamente su FEN, el módulo se publica como parcial y mantiene la FEN como
+fuente visual, sin fabricar contenido para completar el recuento.

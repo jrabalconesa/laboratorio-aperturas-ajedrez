@@ -1,0 +1,36 @@
+{
+  "id": "carokann-blancas",
+  "code": "CKB",
+  "manualNumber": 6,
+  "title": "Cómo jugar contra la Defensa Caro-Kann",
+  "shortTitle": "Contra la Caro-Kann",
+  "version": "1.1",
+  "accent": "#C45112",
+  "boardDark": "#A86F4F",
+  "preview": {
+    "fen": "rnbqkbnr/pp2pppp/2p5/3p4/3PP3/8/PPP2PPP/RNBQKBNR w KQkq d6 0 3",
+    "line": "1.e4 c6 2.d4 d5",
+    "lastMove": [
+      "d7",
+      "d5"
+    ]
+  },
+  "quote": {
+    "text": "El espacio también implica responsabilidad.",
+    "author": "Mi Repertorio de Ajedrez"
+  },
+  "storageNamespace": "repertorio:carokann-blancas:v1",
+  "interactiveAvailable": true,
+  "status": "partial",
+  "inventory": {
+    "position": 12,
+    "structure": 6,
+    "game_stop": 0,
+    "exercise": 0
+  },
+  "gameCount": 3,
+  "coreGameCount": 3,
+  "expansionGameCount": 0,
+  "atlasCount": 0,
+  "validationWarnings": 3
+}

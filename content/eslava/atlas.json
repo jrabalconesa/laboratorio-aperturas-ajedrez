@@ -1,0 +1,46 @@
+[
+  {
+    "id": "SLA-F01",
+    "kind": "supplemental_position",
+    "title": "Juegan las blancas",
+    "chapter": "Parte X/XI/XIII",
+    "movesUci": [],
+    "fen": "2rr2k1/p4p1p/4p3/3p4/3P4/3QP3/P4P1P/5RK1 w - - 0 30",
+    "sideToMove": "white",
+    "objective": "Reconocer la decisión crítica y conectar apertura, estructura y plan.",
+    "level": {
+      "label": "800-1400 Elo",
+      "minRating": 800,
+      "maxRating": 1400,
+      "stage": null
+    },
+    "whitePlan": "Consulta la lectura bilateral y las candidatas específicas de esta posición en el manual.",
+    "blackPlan": "Consulta la respuesta activa del rival y la ruptura asociada en el manual.",
+    "teachingContinuation": "Reproducir la posición, elegir dos candidatas y comparar con la continuación del manual.",
+    "manualReference": "SLA-F01",
+    "tags": [],
+    "openingId": "eslava"
+  },
+  {
+    "id": "SLA-F02",
+    "kind": "supplemental_position",
+    "title": "Juegan las blancas",
+    "chapter": "Parte X/XI/XIII",
+    "movesUci": [],
+    "fen": "rb4k1/p4p2/6p1/1N1p4/3Pp3/1P1BP2P/P4P2/5RK1 w - - 0 30",
+    "sideToMove": "white",
+    "objective": "SLA-P12 → SLA-S06 → SLA-M03-P5 → SLA-F02. Pregunta de partida real: ¿el peón avanzado es espacio o un objetivo para el rey?",
+    "level": {
+      "label": "800-1400 Elo",
+      "minRating": 800,
+      "maxRating": 1400,
+      "stage": null
+    },
+    "whitePlan": "Consulta la lectura bilateral y las candidatas específicas de esta posición en el manual.",
+    "blackPlan": "Consulta la respuesta activa del rival y la ruptura asociada en el manual.",
+    "teachingContinuation": "Reproducir la posición, elegir dos candidatas y comparar con la continuación del manual.",
+    "manualReference": "SLA-F02",
+    "tags": [],
+    "openingId": "eslava"
+  }
+]

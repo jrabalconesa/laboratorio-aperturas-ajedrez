@@ -1,0 +1,202 @@
+[
+  {
+    "id": "SCA-E10",
+    "kind": "exercise",
+    "title": "800-1400 Elo · Tras c6, juegan las blancas. Compara Ac4 con Ad2: ¿qué candidata responde m…",
+    "chapter": "Parte X/XI/XIII",
+    "movesUci": [
+      "e2e4",
+      "d7d5"
+    ],
+    "fen": "rnbqkbnr/ppp1pppp/8/3p4/4P3/8/PPPP1PPP/RNBQKBNR w KQkq d6 0 2",
+    "sideToMove": "white",
+    "objective": "Tras c6, juegan las blancas. Compara Ac4 con Ad2: ¿qué candidata responde mejor a la prioridad de peor pieza y qué réplica rival debes prever?",
+    "level": {
+      "label": "800-1400 Elo",
+      "minRating": 800,
+      "maxRating": 1400,
+      "stage": null
+    },
+    "whitePlan": "Consulta la lectura bilateral y las candidatas específicas de esta posición en el manual.",
+    "blackPlan": "Consulta la respuesta activa del rival y la ruptura asociada en el manual.",
+    "teachingContinuation": "Ac4. La jugada activa o cambia el alfil en c4; la decisión afecta a la presión sobre c3, e5 y el rey. Prevé Af5: es el recurso rival que debe entrar en el cálculo. Ad2 también es legal, pero aquí pospone peor pieza; por eso el orden concreto favorece Ac4.",
+    "manualReference": "SCA-E10",
+    "tags": [],
+    "openingId": "escandinava"
+  },
+  {
+    "id": "SCA-E08",
+    "kind": "exercise",
+    "title": "800-1400 Elo · Tras Cf6, juegan las blancas. Compara Cf3 con Ac4: ¿qué candidata responde…",
+    "chapter": "Parte X/XI/XIII",
+    "movesUci": [
+      "e2e4",
+      "d7d5"
+    ],
+    "fen": "rnbqkbnr/ppp1pppp/8/3p4/4P3/8/PPPP1PPP/RNBQKBNR w KQkq d6 0 2",
+    "sideToMove": "white",
+    "objective": "Tras Cf6, juegan las blancas. Compara Cf3 con Ac4: ¿qué candidata responde mejor a la prioridad de cambio de piezas y qué réplica rival debes prever?",
+    "level": {
+      "label": "800-1400 Elo",
+      "minRating": 800,
+      "maxRating": 1400,
+      "stage": null
+    },
+    "whitePlan": "Consulta la lectura bilateral y las candidatas específicas de esta posición en el manual.",
+    "blackPlan": "Consulta la respuesta activa del rival y la ruptura asociada en el manual.",
+    "teachingContinuation": "Cf3. La jugada desarrolla el caballo hacia f3; además controla casillas centrales sin debilitar la estructura. Prevé c6: es el recurso rival que debe entrar en el cálculo. Ac4 también es legal, pero aquí pospone cambio de piezas; por eso el orden concreto favorece Cf3.",
+    "manualReference": "SCA-E08",
+    "tags": [],
+    "openingId": "escandinava"
+  },
+  {
+    "id": "SCA-E09",
+    "kind": "exercise",
+    "title": "800-1400 Elo · Tras Cf3, juegan las negras. Compara c6 con Af5: ¿qué candidata responde me…",
+    "chapter": "Parte X/XI/XIII",
+    "movesUci": [
+      "e2e4",
+      "d7d5"
+    ],
+    "fen": "rnbqkbnr/ppp1pppp/8/3p4/4P3/8/PPPP1PPP/RNBQKBNR w KQkq d6 0 2",
+    "sideToMove": "white",
+    "objective": "Tras Cf3, juegan las negras. Compara c6 con Af5: ¿qué candidata responde mejor a la prioridad de ruptura central y qué réplica rival debes prever?",
+    "level": {
+      "label": "800-1400 Elo",
+      "minRating": 800,
+      "maxRating": 1400,
+      "stage": null
+    },
+    "whitePlan": "Consulta la lectura bilateral y las candidatas específicas de esta posición en el manual.",
+    "blackPlan": "Consulta la respuesta activa del rival y la ruptura asociada en el manual.",
+    "teachingContinuation": "c6. La jugada usa el peón c para sostener o atacar d5 y controlar b5; es una jugada estructural, no un simple movimiento de espera. Prevé Ac4: es el recurso rival que debe entrar en el cálculo. Af5 también es legal, pero aquí pospone ruptura central; por eso el orden concreto favorece c6.",
+    "manualReference": "SCA-E09",
+    "tags": [],
+    "openingId": "escandinava"
+  },
+  {
+    "id": "SCA-E11",
+    "kind": "exercise",
+    "title": "800-1400 Elo · Tras Ac4, juegan las negras. Compara Af5 con e6: ¿qué candidata responde me…",
+    "chapter": "Parte X/XI/XIII",
+    "movesUci": [
+      "e2e4",
+      "d7d5"
+    ],
+    "fen": "rnbqkbnr/ppp1pppp/8/3p4/4P3/8/PPPP1PPP/RNBQKBNR w KQkq d6 0 2",
+    "sideToMove": "white",
+    "objective": "Tras Ac4, juegan las negras. Compara Af5 con e6: ¿qué candidata responde mejor a la prioridad de tiempo de desarrollo y qué réplica rival debes prever?",
+    "level": {
+      "label": "800-1400 Elo",
+      "minRating": 800,
+      "maxRating": 1400,
+      "stage": null
+    },
+    "whitePlan": "Consulta la lectura bilateral y las candidatas específicas de esta posición en el manual.",
+    "blackPlan": "Consulta la respuesta activa del rival y la ruptura asociada en el manual.",
+    "teachingContinuation": "Af5. La jugada resuelve el problema del alfil de c8 antes de ...e6 y lo activa en la diagonal que pasa por f5. Prevé Ad2: es el recurso rival que debe entrar en el cálculo. e6 también es legal, pero aquí pospone tiempo de desarrollo; por eso el orden concreto favorece Af5.",
+    "manualReference": "SCA-E11",
+    "tags": [],
+    "openingId": "escandinava"
+  },
+  {
+    "id": "SCA-E15",
+    "kind": "exercise",
+    "title": "800-1400 Elo · Tras De2, juegan las negras. Compara Ab4 con Cbd7: ¿qué candidata responde…",
+    "chapter": "Parte X/XI/XIII",
+    "movesUci": [
+      "e2e4",
+      "d7d5"
+    ],
+    "fen": "rnbqkbnr/ppp1pppp/8/3p4/4P3/8/PPPP1PPP/RNBQKBNR w KQkq d6 0 2",
+    "sideToMove": "white",
+    "objective": "Tras De2, juegan las negras. Compara Ab4 con Cbd7: ¿qué candidata responde mejor a la prioridad de casilla e5 y qué réplica rival debes prever?",
+    "level": {
+      "label": "800-1400 Elo",
+      "minRating": 800,
+      "maxRating": 1400,
+      "stage": null
+    },
+    "whitePlan": "Consulta la lectura bilateral y las candidatas específicas de esta posición en el manual.",
+    "blackPlan": "Consulta la respuesta activa del rival y la ruptura asociada en el manual.",
+    "teachingContinuation": "Ab4. La jugada activa o cambia el alfil en b4; la decisión afecta a la presión sobre c3, e5 y el rey. Prevé O-O-O: es el recurso rival que debe entrar en el cálculo. Cbd7 también es legal, pero aquí pospone casilla e5; por eso el orden concreto favorece Ab4.",
+    "manualReference": "SCA-E15",
+    "tags": [],
+    "openingId": "escandinava"
+  },
+  {
+    "id": "SCA-E12",
+    "kind": "exercise",
+    "title": "800-1400 Elo · Tras Af5, juegan las blancas. Compara Ad2 con De2: ¿qué candidata responde…",
+    "chapter": "Parte X/XI/XIII",
+    "movesUci": [
+      "e2e4",
+      "d7d5"
+    ],
+    "fen": "rnbqkbnr/ppp1pppp/8/3p4/4P3/8/PPPP1PPP/RNBQKBNR w KQkq d6 0 2",
+    "sideToMove": "white",
+    "objective": "Tras Af5, juegan las blancas. Compara Ad2 con De2: ¿qué candidata responde mejor a la prioridad de seguridad del rey y qué réplica rival debes prever?",
+    "level": {
+      "label": "800-1400 Elo",
+      "minRating": 800,
+      "maxRating": 1400,
+      "stage": null
+    },
+    "whitePlan": "Consulta la lectura bilateral y las candidatas específicas de esta posición en el manual.",
+    "blackPlan": "Consulta la respuesta activa del rival y la ruptura asociada en el manual.",
+    "teachingContinuation": "Ad2. La jugada activa o cambia el alfil en d2; la decisión afecta a la presión sobre c3, e5 y el rey. Prevé e6: es el recurso rival que debe entrar en el cálculo. De2 también es legal, pero aquí pospone seguridad del rey; por eso el orden concreto favorece Ad2.",
+    "manualReference": "SCA-E12",
+    "tags": [],
+    "openingId": "escandinava"
+  },
+  {
+    "id": "SCA-E13",
+    "kind": "exercise",
+    "title": "800-1400 Elo · Tras Ad2, juegan las negras. Compara e6 con Cbd7: ¿qué candidata responde m…",
+    "chapter": "Parte X/XI/XIII",
+    "movesUci": [
+      "e2e4",
+      "d7d5"
+    ],
+    "fen": "rnbqkbnr/ppp1pppp/8/3p4/4P3/8/PPPP1PPP/RNBQKBNR w KQkq d6 0 2",
+    "sideToMove": "white",
+    "objective": "Tras Ad2, juegan las negras. Compara e6 con Cbd7: ¿qué candidata responde mejor a la prioridad de alfil de c8 y qué réplica rival debes prever?",
+    "level": {
+      "label": "800-1400 Elo",
+      "minRating": 800,
+      "maxRating": 1400,
+      "stage": null
+    },
+    "whitePlan": "Consulta la lectura bilateral y las candidatas específicas de esta posición en el manual.",
+    "blackPlan": "Consulta la respuesta activa del rival y la ruptura asociada en el manual.",
+    "teachingContinuation": "e6. La jugada modifica directamente el centro con el peón de la columna e, por lo que hay que calcular las líneas que se abren. Prevé De2: es el recurso rival que debe entrar en el cálculo. Cbd7 también es legal, pero aquí pospone alfil de c8; por eso el orden concreto favorece e6.",
+    "manualReference": "SCA-E13",
+    "tags": [],
+    "openingId": "escandinava"
+  },
+  {
+    "id": "SCA-E14",
+    "kind": "exercise",
+    "title": "800-1400 Elo · Tras e6, juegan las blancas. Compara De2 con O-O: ¿qué candidata responde m…",
+    "chapter": "Parte X/XI/XIII",
+    "movesUci": [
+      "e2e4",
+      "d7d5"
+    ],
+    "fen": "rnbqkbnr/ppp1pppp/8/3p4/4P3/8/PPPP1PPP/RNBQKBNR w KQkq d6 0 2",
+    "sideToMove": "white",
+    "objective": "Tras e6, juegan las blancas. Compara De2 con O-O: ¿qué candidata responde mejor a la prioridad de presión sobre d5 y qué réplica rival debes prever?",
+    "level": {
+      "label": "800-1400 Elo",
+      "minRating": 800,
+      "maxRating": 1400,
+      "stage": null
+    },
+    "whitePlan": "Consulta la lectura bilateral y las candidatas específicas de esta posición en el manual.",
+    "blackPlan": "Consulta la respuesta activa del rival y la ruptura asociada en el manual.",
+    "teachingContinuation": "De2. La jugada lleva la dama a e2, donde deja de conceder un nuevo tiempo de desarrollo y mantiene contacto con el centro. Prevé Ab4: es el recurso rival que debe entrar en el cálculo. O-O también es legal, pero aquí pospone presión sobre d5; por eso el orden concreto favorece De2.",
+    "manualReference": "SCA-E14",
+    "tags": [],
+    "openingId": "escandinava"
+  }
+]

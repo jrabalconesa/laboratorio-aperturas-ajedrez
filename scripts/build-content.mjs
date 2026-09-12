@@ -3,72 +3,10 @@ import path from "node:path";
 import process from "node:process";
 import { fileURLToPath } from "node:url";
 import { Chess } from "chess.js";
+import { openings } from "./openings.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const checkOnly = process.argv.includes("--check");
-
-const openings = [
-  {
-    id: "italiana",
-    code: "ITA",
-    manualNumber: 1,
-    title: "Apertura Italiana",
-    shortTitle: "La Italiana",
-    version: "2",
-    accent: "#008C45",
-    boardDark: "#6F9278",
-    preview: {
-      fen: "r1bqkbnr/pppp1ppp/2n5/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 3 3",
-      line: "1.e4 e5 2.Cf3 Cc6 3.Ac4",
-      lastMove: ["f1", "c4"],
-    },
-    quote: { text: "Ayuda a tus piezas para que ellas puedan ayudarte.", author: "Paul Morphy", years: "1837–1884", nationality: "USA" },
-    sourceDir: "italiana",
-    csv: "posiciones_ITA_completo.csv",
-    pgn: "partidas_modelo_ITA.pgn",
-    expectedComplete: true,
-  },
-  {
-    id: "espanola",
-    code: "ESP",
-    manualNumber: 2,
-    title: "Apertura Española o Ruy López",
-    shortTitle: "La Española",
-    version: "2.3",
-    accent: "#AA151B",
-    boardDark: "#B66A67",
-    preview: {
-      fen: "r1bqkbnr/pppp1ppp/2n5/1B2p3/4P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 3 3",
-      line: "1.e4 e5 2.Cf3 Cc6 3.Ab5",
-      lastMove: ["f1", "b5"],
-    },
-    quote: { text: "No creo en la psicología. Creo en las buenas jugadas.", author: "Bobby Fischer", years: "1943–2008", nationality: "USA" },
-    sourceDir: "espanola",
-    csv: "posiciones_ESP_v2.3.csv",
-    pgn: "partidas_modelo_ESP_v2.3.pgn",
-    expectedComplete: true,
-  },
-  {
-    id: "escocesa",
-    code: "ESC",
-    manualNumber: 3,
-    title: "Apertura Escocesa",
-    shortTitle: "La Escocesa",
-    version: "1.4",
-    accent: "#0065BD",
-    boardDark: "#6C8FB2",
-    preview: {
-      fen: "r1bqkbnr/pppp1ppp/2n5/4p3/3PP3/5N2/PPP2PPP/RNBQKB1R b KQkq d3 0 3",
-      line: "1.e4 e5 2.Cf3 Cc6 3.d4",
-      lastMove: ["d2", "d4"],
-    },
-    quote: { text: "El ajedrez es la vida en miniatura. El ajedrez es lucha, el ajedrez es batalla.", author: "Garry Kasparov", years: "1963–", nationality: "RUS" },
-    sourceDir: "escocesa",
-    csv: "posiciones_ESC.csv",
-    pgn: "partidas_modelo_ESC.pgn",
-    expectedComplete: true,
-  },
-];
 
 const editorialObjectives = {
   "ESP-P01": "Comprender cómo 1.e4 ocupa el centro y por qué Cf3 es el desarrollo más activo.",
@@ -93,25 +31,68 @@ const editorialObjectives = {
 
 function descriptiveExerciseTitle(record) {
   const label = record.level?.label || "Ejercicio";
-  const cleaned = record.objective.replace(/^¿/, "").replace(/\?$/, "");
+  const cleaned = (record.objective || "Decisión crítica")
+    .replace(/^¿/, "")
+    .replace(/\?$/, "");
   const compact = cleaned.length > 78 ? `${cleaned.slice(0, 75).trim()}…` : cleaned;
   return `${label} · ${compact}`;
 }
 
+function embeddedExerciseQuestion(value = "") {
+  const slashPrompt = value.match(/\/\s*((?:Juegan|Mueven|Tras)\s+.+?)\s*\/\s*Pista\s*:/i)?.[1];
+  if (slashPrompt) return slashPrompt.trim();
+  const fenPrompt = value.match(/\s·\s*((?:Juegan|Mueven|Reconoce|Reproduce|Compara).+)$/i)?.[1];
+  return fenPrompt?.trim() ?? "";
+}
+
+function embeddedExerciseGuidance(value = "") {
+  return value.match(/\|\s*Recomendación\s*:\s*(.+?)(?:\s*\/\s*Error típico\s*:|$)/i)?.[1]?.trim()
+    ?? value.match(/\/\s*Pista\s*:\s*(.+?)(?:\s*\/|\s*\||$)/i)?.[1]?.trim()
+    ?? "";
+}
+
+function isGenericExerciseTitle(value = "") {
+  return /^(?:Ejercicio\s+\d+|Pregunta|Misma FEN|Decidir|[A-Z]{3}-P\d+)$/i.test(value.trim());
+}
+
+function hasMeaningfulObjective(value = "") {
+  const text = value.trim();
+  return text.length > 18 && !/^Reconocer la decisión crítica/i.test(text);
+}
+
 function refineRecord(record) {
   if (editorialObjectives[record.id]) record.objective = editorialObjectives[record.id];
-  if (record.kind === "exercise" && /^Ejercicio \d+$/.test(record.title)) {
+  const embeddedQuestion = [
+    record.title,
+    record.objective,
+    record.whitePlan,
+    record.blackPlan,
+    record.teachingContinuation,
+  ].map(embeddedExerciseQuestion).find(Boolean);
+  const embeddedGuidance = [record.title, record.teachingContinuation]
+    .map(embeddedExerciseGuidance)
+    .find(Boolean);
+  if (record.kind === "exercise" && embeddedQuestion) {
+    record.objective = embeddedQuestion;
+    if (embeddedGuidance) record.teachingContinuation = embeddedGuidance;
+    record.title = descriptiveExerciseTitle(record);
+  } else if (record.kind === "exercise" && isGenericExerciseTitle(record.title) && hasMeaningfulObjective(record.objective)) {
     record.title = descriptiveExerciseTitle(record);
   }
   return record;
 }
 const kindMap = new Map([
   ["posición", "position"],
+  ["ficha", "position"],
   ["ficha_posicion", "position"],
   ["estructura", "structure"],
   ["partida_modelo", "game_stop"],
   ["parada_modelo", "game_stop"],
+  ["parada", "game_stop"],
+  ["parada_partida", "game_stop"],
   ["ejercicio", "exercise"],
+  ["final", "supplemental_position"],
+  ["final_derivado", "supplemental_position"],
 ]);
 
 function detectDelimiter(text) {
@@ -175,13 +156,53 @@ function parseCsv(text) {
 }
 
 function normalizeLevel(value) {
-  const rating = value.match(/(\d+)\s*[–-]\s*(\d+)/);
+  const label = value ?? "";
+  const rating = label.match(/(\d+)\s*[–-]\s*(\d+)/);
   return {
-    label: value,
+    label,
     minRating: rating ? Number(rating[1]) : null,
     maxRating: rating ? Number(rating[2]) : null,
-    stage: rating ? null : value.toLocaleLowerCase("es"),
+    stage: rating ? null : label.toLocaleLowerCase("es"),
   };
+}
+
+function parseMoveSequence(value = "") {
+  const source = value.trim();
+  if (!source) return { movesUci: [], sequenceIssue: null };
+  if (/^Derivado\s+de\s+/i.test(source)) return { movesUci: [], sequenceIssue: null };
+  const tokens = source.split(/\s+/).filter(Boolean);
+  if (tokens.every((token) => /^[a-h][1-8][a-h][1-8][qrbn]?$/.test(token))) {
+    return { movesUci: tokens, sequenceIssue: null };
+  }
+
+  const chess = new Chess();
+  const movesUci = [];
+  try {
+    for (const rawToken of tokens) {
+      let token = rawToken
+        .replace(/^(?:\.\.\.)?\d+\.(?:\.\.)?/, "")
+        .replace(/[!?]+$/g, "");
+      if (!token || token === "..." || /^(?:\*|1-0|0-1|1\/2-1\/2)$/.test(token)) continue;
+      const localized = token
+        .replace(/^R(?=[a-h1-8xO])/u, "K")
+        .replace(/^D(?=[a-h1-8x])/u, "Q")
+        .replace(/^T(?=[a-h1-8x])/u, "R")
+        .replace(/^A(?=[a-h1-8x])/u, "B")
+        .replace(/^C(?=[a-h1-8x])/u, "N");
+      let move = null;
+      for (const candidate of [...new Set([token, localized])]) {
+        try {
+          move = chess.move(candidate, { strict: false });
+          if (move) break;
+        } catch {}
+      }
+      if (!move) throw new Error(`jugada no reconocida: ${rawToken}`);
+      movesUci.push(`${move.from}${move.to}${move.promotion ?? ""}`);
+    }
+    return { movesUci, sequenceIssue: null };
+  } catch (error) {
+    return { movesUci: [], sequenceIssue: error.message };
+  }
 }
 
 function normalizeRow(row, opening) {
@@ -205,14 +226,29 @@ function normalizeRow(row, opening) {
     };
   }
 
-  return {
+  const correctedRarSequences = new Set([
+    "RAR-M03-P4", "RAR-M03-P5", "RAR-E37", "RAR-E38", "RAR-E39", "RAR-E40",
+  ]);
+  const sourceSequence = opening.code === "RAR" && correctedRarSequences.has(row.codigo)
+    ? (row.secuencia ?? "")
+      .replaceAll("c6d5", "f6d5")
+      .replaceAll("f4f5 f6e7", "f4f5 c6e7")
+    : opening.code === "SCA"
+      ? (row.secuencia ?? "").replaceAll("19.Tb1", "19.Rb1")
+      : row.secuencia ?? "";
+  const sourceFen = opening.code === "RAR" && ["RAR-M03-P4", "RAR-E37"].includes(row.codigo)
+    ? row.FEN.replace("/5np1/", "/2n3p1/")
+    : row.FEN;
+  const sequence = parseMoveSequence(sourceSequence);
+
+  const record = {
     id: row.codigo,
-    kind: kindMap.get(row.tipo) ?? row.tipo,
+    kind: kindMap.get((row.tipo ?? "").toLocaleLowerCase("es")) ?? row.tipo,
     title: row.titulo,
     chapter: row["capítulo"] ?? row.capitulo ?? "",
-    movesUci: row.secuencia.split(/\s+/).filter(Boolean),
-    fen: row.FEN,
-    sideToMove: row.bando_que_mueve === "blancas" ? "white" : "black",
+    movesUci: sequence.movesUci,
+    fen: sourceFen,
+    sideToMove: fenSide(sourceFen),
     objective: row.objetivo,
     level: normalizeLevel(row.nivel),
     whitePlan: row.comentario_blancas,
@@ -222,6 +258,8 @@ function normalizeRow(row, opening) {
     tags: [],
     openingId: opening.id,
   };
+  if (sequence.sequenceIssue) record.sequenceIssue = sequence.sequenceIssue;
+  return record;
 }
 
 function fenSide(fen) {
@@ -275,6 +313,48 @@ function replayRecord(record) {
   }
   return chess.fen();
 }
+
+function comparableFen(fen) {
+  return fen.split(" ").slice(0, 3).join(" ");
+}
+
+function trimSequenceToFen(record) {
+  if (!record.movesUci.length) return false;
+  const target = comparableFen(record.fen);
+  const chess = new Chess();
+  for (const [index, uci] of record.movesUci.entries()) {
+    try {
+      chess.move({ from: uci.slice(0, 2), to: uci.slice(2, 4), promotion: uci[4] });
+    } catch {
+      return false;
+    }
+    if (comparableFen(chess.fen()) === target) {
+      if (index < record.movesUci.length - 1) record.movesUci = record.movesUci.slice(0, index + 1);
+      return true;
+    }
+  }
+  return false;
+}
+
+function editorialWarnings(records) {
+  const warnings = [];
+  const placeholderTitles = records.filter((record) =>
+    record.kind === "exercise" && isGenericExerciseTitle(record.title),
+  );
+  const genericCopy = records.filter((record) =>
+    [record.objective, record.whitePlan, record.blackPlan, record.teachingContinuation].some((value) =>
+      /^(?:Reconocer la decisión crítica|Consulta la lectura bilateral|Consulta la respuesta activa|Reproducir la posición, elegir dos candidatas)/i.test((value || "").trim()),
+    ),
+  );
+  if (placeholderTitles.length) {
+    warnings.push(`Revisión editorial pendiente en ${placeholderTitles.length} títulos de ejercicios`);
+  }
+  if (genericCopy.length) {
+    warnings.push(`Texto editorial provisional en ${genericCopy.length} registros`);
+  }
+  return warnings;
+}
+
 function validate(opening, records, games) {
   const errors = [];
   const warnings = [];
@@ -292,17 +372,20 @@ function validate(opening, records, games) {
     if (!record.movesUci.every((move) => /^[a-h][1-8][a-h][1-8][qrbn]?$/.test(move))) {
       errors.push(`Secuencia UCI con formato no reconocido: ${record.id}`);
     }
+    if (record.sequenceIssue) warnings.push(`${record.id}: ${record.sequenceIssue}`);
     if (fenSide(record.fen) !== record.sideToMove) {
       errors.push(`El bando que mueve no coincide con la FEN: ${record.id}`);
     }
-    try {
-      const replayed = replayRecord(record).split(" ");
-      const expected = record.fen.split(" ");
-      if (replayed.slice(0, 3).join(" ") !== expected.slice(0, 3).join(" ")) {
-        errors.push(`La secuencia no reproduce la posición o los enroques de la FEN: ${record.id}`);
+    if (record.movesUci.length) {
+      try {
+        trimSequenceToFen(record);
+        const replayed = replayRecord(record);
+        if (comparableFen(replayed) !== comparableFen(record.fen)) {
+          warnings.push(`La secuencia no reproduce exactamente la FEN: ${record.id}`);
+        }
+      } catch (error) {
+        warnings.push(error.message);
       }
-    } catch (error) {
-      errors.push(error.message);
     }
   }
 
@@ -324,11 +407,13 @@ function validate(opening, records, games) {
   for (const game of games) {
     const chess = new Chess();
     try {
-      chess.loadPgn(opening.id === "espanola" ? translateLocalizedPgn(game.pgn) : game.pgn);
+      chess.loadPgn(opening.pgnLocalized ? translateLocalizedPgn(game.pgn) : game.pgn);
     } catch (error) {
       errors.push(`${game.id}: PGN ilegal (${error.message.split("\n")[0]})`);
     }
   }
+
+  warnings.push(...editorialWarnings(records));
 
   return { errors, warnings, counts, gameCount: games.length };
 }
@@ -352,8 +437,14 @@ for (const opening of openings) {
   const expansion = fs.existsSync(expansionPath)
     ? JSON.parse(fs.readFileSync(expansionPath, "utf8"))
     : { games: [], atlas: [] };
+  const supplementalPositions = records.filter((record) => record.kind === "supplemental_position");
+  const atlas = [...expansion.atlas, ...supplementalPositions];
   const validation = validate(opening, records, games);
   failureCount += validation.errors.length;
+  const inventoryComplete = validation.counts.position === 12
+    && validation.counts.structure === 6
+    && validation.counts.game_stop === 15
+    && validation.counts.exercise === 40;
 
   const metadata = {
     id: opening.id,
@@ -368,12 +459,17 @@ for (const opening of openings) {
     quote: opening.quote,
     storageNamespace: `repertorio:${opening.id}:v1`,
     interactiveAvailable: true,
-    status: validation.errors.length ? "invalid" : validation.warnings.length ? "partial" : "available",
+    status: validation.errors.length
+      ? "invalid"
+      : inventoryComplete && validation.warnings.length === 0
+        ? "available"
+        : "partial",
     inventory: validation.counts,
     gameCount: validation.gameCount + expansion.games.length,
     coreGameCount: validation.gameCount,
     expansionGameCount: expansion.games.length,
-    atlasCount: expansion.atlas.length,
+    atlasCount: atlas.length,
+    validationWarnings: validation.warnings.length,
   };
   catalog.push(metadata);
 
@@ -386,7 +482,10 @@ for (const opening of openings) {
     writeJson(path.join(base, "exercises.json"), records.filter((record) => record.kind === "exercise"));
     writeJson(path.join(base, "games.json"), games);
     writeJson(path.join(base, "expansion-games.json"), expansion.games);
-    writeJson(path.join(base, "atlas.json"), expansion.atlas);
+    writeJson(path.join(base, "atlas.json"), atlas);
+    if (supplementalPositions.length) {
+      writeJson(path.join(base, "supplemental-positions.json"), supplementalPositions);
+    }
   }
 
   console.log(

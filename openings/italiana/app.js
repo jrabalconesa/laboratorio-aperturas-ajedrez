@@ -224,6 +224,23 @@ function boardAt(moves, ply) {
   return board;
 }
 
+function lessonMoves(lesson) {
+  return String(lesson.uci || "").split(/\s+/).filter(Boolean);
+}
+
+function lessonBoardAt(lesson, ply) {
+  const moves = lessonMoves(lesson);
+  return moves.length ? boardAt(moves, ply) : parseFen(lesson.fen || INITIAL_FEN);
+}
+
+function variantMoves(variant) {
+  return String(variant.moves || "").split(/\s+/).filter(Boolean);
+}
+
+const practiceLessons = lessons.some(lesson => lessonMoves(lesson).length)
+  ? lessons.filter(lesson => lessonMoves(lesson).length)
+  : lessons;
+
 function renderBoard(element, board, options={}) {
   element.innerHTML = "";
   const ranks = options.flipped ? [1,2,3,4,5,6,7,8] : [8,7,6,5,4,3,2,1];
@@ -302,10 +319,10 @@ function renderLessonList() {
 }
 
 function renderLesson() {
-  const lesson = lessons[state.lesson], moves = lesson.uci.split(" ");
+  const lesson = lessons[state.lesson], moves = lessonMoves(lesson);
   state.lessonPly = Math.min(state.lessonPly, moves.length);
   const last = state.lessonPly ? moves[state.lessonPly-1] : "";
-  renderBoard(document.getElementById("lessonBoard"), boardAt(moves, state.lessonPly), {lastMove:[last.slice(0,2), last.slice(2,4)]});
+  renderBoard(document.getElementById("lessonBoard"), lessonBoardAt(lesson, state.lessonPly), {lastMove:last ? [last.slice(0,2), last.slice(2,4)] : []});
   document.getElementById("lessonCode").textContent = lesson.code;
   document.getElementById("lessonStageLabel").textContent = lesson.stage;
   document.getElementById("lessonTitle").textContent = lesson.title;
@@ -315,8 +332,8 @@ function renderLesson() {
   document.getElementById("lessonExplanation").textContent = activeMove ? lessonMoveExplanation(lesson, activeMove) : lesson.explanation;
   document.getElementById("lessonIdeaLabel").textContent = activeMove ? `LECTURA TRAS LA JUGADA DE ${activeSide}` : "IDEA CLAVE";
   document.getElementById("lessonIdea").textContent = lesson.idea;
-  document.getElementById("lessonMoveCounter").textContent = `${state.lessonPly} / ${moves.length}`;
-  document.getElementById("lessonTurnLabel").textContent = state.lessonPly ? `Última: ${formatMove(moves[state.lessonPly-1])}` : "Posición inicial";
+  document.getElementById("lessonMoveCounter").textContent = moves.length ? `${state.lessonPly} / ${moves.length}` : "Diagrama";
+  document.getElementById("lessonTurnLabel").textContent = moves.length ? (state.lessonPly ? `Última: ${formatMove(moves[state.lessonPly-1])}` : "Posición inicial") : "Posición editorial";
   document.getElementById("lessonPrev").disabled = state.lessonPly === 0 && state.lesson === 0;
   document.getElementById("lessonNext").disabled = state.lessonPly === moves.length && state.lesson === lessons.length - 1;
   const complete = document.getElementById("completeLesson");
@@ -381,14 +398,14 @@ function previousLessonStep() {
     if (state.lessonPly > 0) state.lessonPly--;
     else if (state.lesson > 0) {
       state.lesson--;
-      state.lessonPly = lessons[state.lesson].uci.split(" ").length;
+      state.lessonPly = lessonMoves(lessons[state.lesson]).length;
     }
   });
 }
 
 function nextLessonStep() {
   renderLessonStep(() => {
-    const moves = lessons[state.lesson].uci.split(" ");
+    const moves = lessonMoves(lessons[state.lesson]);
     if (state.lessonPly < moves.length) state.lessonPly++;
     else if (state.lesson < lessons.length - 1) {
       state.lesson++;
@@ -398,8 +415,9 @@ function nextLessonStep() {
 }
 
 function challengeData() {
-  const lesson = lessons[state.challenge], moves = lesson.uci.split(" ");
-  return { lesson, moves, target:moves[moves.length-1], board:boardAt(moves, moves.length-1) };
+  const lesson = practiceLessons[state.challenge], moves = lessonMoves(lesson);
+  const target = moves.at(-1) || null;
+  return { lesson, moves, target, board:target ? boardAt(moves, moves.length-1) : parseFen(lesson.fen || INITIAL_FEN) };
 }
 
 const practiceTransitionDelay = 420;
@@ -410,7 +428,7 @@ function pausePracticeTransition() {
 
 async function nextPracticeChallenge() {
   const currentIndex = state.challenge;
-  const nextIndex = (currentIndex + 1) % lessons.length;
+  const nextIndex = (currentIndex + 1) % practiceLessons.length;
   const button = document.getElementById("nextChallenge");
   button.disabled = true;
   button.textContent = "Preparando siguiente posición…";
@@ -427,8 +445,8 @@ async function nextPracticeChallenge() {
     return;
   }
 
-  const currentMoves = lessons[currentIndex].uci.split(" ");
-  const nextMoves = lessons[nextIndex].uci.split(" ");
+  const currentMoves = lessonMoves(practiceLessons[currentIndex]);
+  const nextMoves = lessonMoves(practiceLessons[nextIndex]);
   const nextStartPly = nextMoves.length - 1;
   let sharedPly = 0;
   while (sharedPly < currentMoves.length && sharedPly < nextStartPly && currentMoves[sharedPly] === nextMoves[sharedPly]) {
@@ -457,27 +475,30 @@ async function nextPracticeChallenge() {
 function renderPractice(resetMessage=true) {
   const {lesson, moves, target, board} = challengeData();
   state.selected = null;
-  renderBoard(document.getElementById("practiceBoard"), board, {interactive:true});
+  renderBoard(document.getElementById("practiceBoard"), board, {interactive:Boolean(target)});
   document.getElementById("practiceCode").textContent = lesson.code;
   document.getElementById("practiceLevel").textContent = lesson.stage;
-  document.getElementById("practiceQuestion").textContent = "¿Puedes repetir la última jugada?";
-  document.getElementById("practiceContext").textContent = `Reconstruye la jugada que conduce a «${lesson.title}». Juegan ${moves.length % 2 ? "blancas" : "negras"}.`;
+  document.getElementById("practiceQuestion").textContent = target ? "¿Puedes repetir la última jugada?" : "¿Qué plan exige esta posición?";
+  document.getElementById("practiceContext").textContent = target
+    ? `Reconstruye la jugada que conduce a «${lesson.title}». Juegan ${moves.length % 2 ? "blancas" : "negras"}.`
+    : `Observa «${lesson.title}», formula dos candidatas y contrástalas con la pista editorial.`;
   const feedback = document.getElementById("practiceFeedback");
   feedback.className = "feedback";
   feedback.innerHTML = '<span>PISTA</span><p id="practiceHint"></p>';
   document.getElementById("practiceHint").textContent = resetMessage ? "Visualiza qué pieza cumple la idea central de esta posición." : lesson.hint;
   document.getElementById("showHint").hidden = false;
   const nextButton = document.getElementById("nextChallenge");
-  nextButton.hidden = true;
+  nextButton.hidden = Boolean(target);
   nextButton.disabled = false;
-  nextButton.textContent = state.challenge === lessons.length - 1 ? "Reiniciar práctica →" : "Siguiente posición →";
+  nextButton.textContent = state.challenge === practiceLessons.length - 1 ? "Reiniciar práctica →" : "Siguiente posición →";
   document.getElementById("streak").textContent = state.streak;
   const dots = document.getElementById("challengeDots");
-  dots.innerHTML = lessons.map((_,i)=>`<i class="${i < state.challenge ? "done" : i === state.challenge ? "active" : ""}"></i>`).join("");
+  dots.innerHTML = practiceLessons.map((_,i)=>`<i class="${i < state.challenge ? "done" : i === state.challenge ? "active" : ""}"></i>`).join("");
 }
 
 function handlePracticeSquare(square) {
   const data = challengeData();
+  if (!data.target) return;
   if (!state.selected) {
     state.selected = square;
     renderBoard(document.getElementById("practiceBoard"), data.board, {interactive:true, selected:square});
@@ -598,13 +619,14 @@ function recordVariantReview() {
 }
 function renderVariant() {
   const variant = variants[state.variant];
-  const moves = variant.moves.split(" ");
+  const moves = variantMoves(variant);
   state.variantPly = Math.min(state.variantPly, moves.length);
   const last = state.variantPly ? moves[state.variantPly - 1] : "";
-  renderBoard(document.getElementById("variantBoard"), boardAt(moves, state.variantPly), {lastMove:last ? [last.slice(0,2), last.slice(2,4)] : [], flipped:state.variantFlipped});
+  const board = moves.length ? boardAt(moves, state.variantPly) : parseFen(variant.fen || INITIAL_FEN);
+  renderBoard(document.getElementById("variantBoard"), board, {lastMove:last ? [last.slice(0,2), last.slice(2,4)] : [], flipped:state.variantFlipped});
   document.getElementById("variantFlip").textContent = state.variantFlipped ? "Ver desde blancas" : "Ver desde negras";
-  document.getElementById("variantMoveCounter").textContent = `${state.variantPly} / ${moves.length}`;
-  document.getElementById("variantTurnLabel").textContent = state.variantPly ? `Última: ${formatMove(last)}` : "Posición inicial";
+  document.getElementById("variantMoveCounter").textContent = moves.length ? `${state.variantPly} / ${moves.length}` : "Diagrama";
+  document.getElementById("variantTurnLabel").textContent = moves.length ? (state.variantPly ? `Última: ${formatMove(last)}` : "Posición inicial") : "Posición editorial";
   document.getElementById("variantStart").disabled = state.variantPly === 0;
   document.getElementById("variantPrev").disabled = state.variantPly === 0;
   document.getElementById("variantNext").disabled = state.variantPly === moves.length;
@@ -692,7 +714,15 @@ function selectExercise(index) {
 }
 
 function renderExercise() {
-  if (!exercises.length) return;
+  if (!exercises.length) {
+    document.getElementById("exerciseTitle").textContent = "Ejercicios en preparación editorial";
+    document.getElementById("exerciseObjective").textContent = "Este paquete conserva las posiciones y estructuras, pero no incluye todavía la colección completa de ejercicios en el CSV.";
+    document.getElementById("exerciseCounter").textContent = "0 / 0";
+    document.getElementById("exercisePrev").disabled = true;
+    document.getElementById("exerciseNext").disabled = true;
+    document.getElementById("exerciseReveal").disabled = true;
+    return;
+  }
   const exercise = exercises[state.exercise];
   const board = exercise.fen ? parseFen(exercise.fen) : boardAt(exercise.movesUci || [], (exercise.movesUci || []).length);
   const last = exercise.movesUci?.at(-1) || "";
@@ -721,7 +751,7 @@ document.getElementById("completeLesson").addEventListener("click",()=>{
   state.completed.has(code) ? state.completed.delete(code) : state.completed.add(code);
   updateProgress(); renderLesson();
 });
-document.getElementById("showHint").addEventListener("click",()=>{document.getElementById("practiceHint").textContent=lessons[state.challenge].hint;});
+document.getElementById("showHint").addEventListener("click",()=>{document.getElementById("practiceHint").textContent=practiceLessons[state.challenge].hint;});
 document.querySelectorAll(".decision-branch").forEach(button=>button.addEventListener("click",()=>selectVariant(Number(button.dataset.variant))));
 document.querySelectorAll(".mobile-disclosure").forEach(button => button.addEventListener("click", () => {
   const target = document.getElementById(button.getAttribute("aria-controls"));
@@ -735,7 +765,7 @@ document.getElementById("recordReview").addEventListener("click",recordVariantRe
 document.getElementById("variantStart").addEventListener("click",()=>{state.variantPly=0;renderVariant();});
 document.getElementById("variantPrev").addEventListener("click",()=>{state.variantPly--;renderVariant();});
 document.getElementById("variantNext").addEventListener("click",()=>{state.variantPly++;renderVariant();});
-document.getElementById("variantEnd").addEventListener("click",()=>{state.variantPly=variants[state.variant].moves.split(" ").length;renderVariant();});
+document.getElementById("variantEnd").addEventListener("click",()=>{state.variantPly=variantMoves(variants[state.variant]).length;renderVariant();});
 document.getElementById("nextChallenge").addEventListener("click", nextPracticeChallenge);
 document.getElementById("gamePrev").addEventListener("click",()=>{state.gamePly--;renderGame();});
 document.getElementById("gameNext").addEventListener("click",()=>{state.gamePly++;renderGame();});
@@ -748,7 +778,7 @@ document.addEventListener("keydown", event => {
   const active=document.querySelector(".view.active")?.id;
   if (active==="aprende" && event.key==="ArrowRight" && !document.getElementById("lessonNext").disabled) nextLessonStep();
   if (active==="aprende" && event.key==="ArrowLeft" && !document.getElementById("lessonPrev").disabled) previousLessonStep();
-  if (active==="variantes" && event.key==="ArrowRight" && state.variantPly<variants[state.variant].moves.split(" ").length) {state.variantPly++;renderVariant();}
+  if (active==="variantes" && event.key==="ArrowRight" && state.variantPly<variantMoves(variants[state.variant]).length) {state.variantPly++;renderVariant();}
   if (active==="variantes" && event.key==="ArrowLeft" && state.variantPly>0) {state.variantPly--;renderVariant();}
   if (active==="partidas" && event.key==="ArrowRight" && state.gamePly<games[state.game].moves.length) {state.gamePly++;renderGame();}
   if (active==="partidas" && event.key==="ArrowLeft" && state.gamePly>0) {state.gamePly--;renderGame();}

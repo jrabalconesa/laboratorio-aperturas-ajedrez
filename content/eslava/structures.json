@@ -1,0 +1,134 @@
+[
+  {
+    "id": "SLA-S01",
+    "kind": "structure",
+    "title": "Juegan las blancas",
+    "chapter": "Parte VIII",
+    "movesUci": [],
+    "fen": "r2q1rk1/pp1n1ppp/2p1pn2/5b2/PbBP4/2N1PN2/1P2QPPP/R1B2RK1 w - - 5 10",
+    "sideToMove": "white",
+    "objective": "si el centro se aclara, la actividad de piezas pesa más que la pequeña diferencia de espacio. Error: retirar el alfil varias veces sin ganar nada.",
+    "level": {
+      "label": "800-1400 Elo",
+      "minRating": 800,
+      "maxRating": 1400,
+      "stage": null
+    },
+    "whitePlan": "Consulta la lectura bilateral y las candidatas específicas de esta posición en el manual.",
+    "blackPlan": "Consulta la respuesta activa del rival y la ruptura asociada en el manual.",
+    "teachingContinuation": "Reproducir la posición, elegir dos candidatas y comparar con la continuación del manual.",
+    "manualReference": "SLA-S01",
+    "tags": [],
+    "openingId": "eslava"
+  },
+  {
+    "id": "SLA-S02",
+    "kind": "structure",
+    "title": "Juegan las blancas",
+    "chapter": "Parte VIII",
+    "movesUci": [],
+    "fen": "r2q1rk1/pp1n1ppp/2p1pn2/7b/Pb1PP3/2NB1N2/1P2QPPP/R1B2RK1 w - - 3 12",
+    "sideToMove": "white",
+    "objective": "si el centro se aclara, la actividad de piezas pesa más que la pequeña diferencia de espacio. Error: retirar el alfil varias veces sin ganar nada.",
+    "level": {
+      "label": "800-1400 Elo",
+      "minRating": 800,
+      "maxRating": 1400,
+      "stage": null
+    },
+    "whitePlan": "Consulta la lectura bilateral y las candidatas específicas de esta posición en el manual.",
+    "blackPlan": "Consulta la respuesta activa del rival y la ruptura asociada en el manual.",
+    "teachingContinuation": "Reproducir la posición, elegir dos candidatas y comparar con la continuación del manual.",
+    "manualReference": "SLA-S02",
+    "tags": [],
+    "openingId": "eslava"
+  },
+  {
+    "id": "SLA-S03",
+    "kind": "structure",
+    "title": "Juegan las blancas",
+    "chapter": "Parte VIII",
+    "movesUci": [],
+    "fen": "r2qkb1r/pp3ppp/2n1pn2/3p1b2/3P1B2/2N1PN2/PP3PPP/R2QKB1R w KQkq - 0 8",
+    "sideToMove": "white",
+    "objective": "Reconocer la decisión crítica y conectar apertura, estructura y plan.",
+    "level": {
+      "label": "800-1400 Elo",
+      "minRating": 800,
+      "maxRating": 1400,
+      "stage": null
+    },
+    "whitePlan": "Consulta la lectura bilateral y las candidatas específicas de esta posición en el manual.",
+    "blackPlan": "Consulta la respuesta activa del rival y la ruptura asociada en el manual.",
+    "teachingContinuation": "Reproducir la posición, elegir dos candidatas y comparar con la continuación del manual.",
+    "manualReference": "SLA-S03",
+    "tags": [],
+    "openingId": "eslava"
+  },
+  {
+    "id": "SLA-S04",
+    "kind": "structure",
+    "title": "Juegan las blancas",
+    "chapter": "Parte VIII",
+    "movesUci": [],
+    "fen": "r3k2r/pp3ppp/2nqpn2/3p4/3P4/2NQPN2/PP3PPP/R3K2R w KQkq - 0 11",
+    "sideToMove": "white",
+    "objective": "g6 puede ser débil, pero la mayoría de peones sigue sana y la torre h puede activarse. Error: jugar ...g5 o ...h5 antes de enrocar.",
+    "level": {
+      "label": "800-1400 Elo",
+      "minRating": 800,
+      "maxRating": 1400,
+      "stage": null
+    },
+    "whitePlan": "Consulta la lectura bilateral y las candidatas específicas de esta posición en el manual.",
+    "blackPlan": "Consulta la respuesta activa del rival y la ruptura asociada en el manual.",
+    "teachingContinuation": "Reproducir la posición, elegir dos candidatas y comparar con la continuación del manual.",
+    "manualReference": "SLA-S04",
+    "tags": [],
+    "openingId": "eslava"
+  },
+  {
+    "id": "SLA-S05",
+    "kind": "structure",
+    "title": "Juegan las blancas",
+    "chapter": "Parte VIII",
+    "movesUci": [],
+    "fen": "r2qkb1r/pp1n1pp1/2p1pnp1/3p4/2PP4/2NBP3/PP3PPP/R1BQK2R w KQkq - 2 9",
+    "sideToMove": "white",
+    "objective": "g6 puede ser débil, pero la mayoría de peones sigue sana y la torre h puede activarse. Error: jugar ...g5 o ...h5 antes de enrocar.",
+    "level": {
+      "label": "800-1400 Elo",
+      "minRating": 800,
+      "maxRating": 1400,
+      "stage": null
+    },
+    "whitePlan": "Consulta la lectura bilateral y las candidatas específicas de esta posición en el manual.",
+    "blackPlan": "Consulta la respuesta activa del rival y la ruptura asociada en el manual.",
+    "teachingContinuation": "Reproducir la posición, elegir dos candidatas y comparar con la continuación del manual.",
+    "manualReference": "SLA-S05",
+    "tags": [],
+    "openingId": "eslava"
+  },
+  {
+    "id": "SLA-S06",
+    "kind": "structure",
+    "title": "Juegan las blancas",
+    "chapter": "Parte VIII",
+    "movesUci": [],
+    "fen": "r4rk1/pp1nqpp1/3b1np1/3pp3/3P4/1PNBP2P/PB3PP1/R2Q1RK1 w - - 0 14",
+    "sideToMove": "white",
+    "objective": "calcula si Db3 ataca dos objetivos.",
+    "level": {
+      "label": "800-1400 Elo",
+      "minRating": 800,
+      "maxRating": 1400,
+      "stage": null
+    },
+    "whitePlan": "Consulta la lectura bilateral y las candidatas específicas de esta posición en el manual.",
+    "blackPlan": "Consulta la respuesta activa del rival y la ruptura asociada en el manual.",
+    "teachingContinuation": "Reproducir la posición, elegir dos candidatas y comparar con la continuación del manual.",
+    "manualReference": "SLA-S06",
+    "tags": [],
+    "openingId": "eslava"
+  }
+]

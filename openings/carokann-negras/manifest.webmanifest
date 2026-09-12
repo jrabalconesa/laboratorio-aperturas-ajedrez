@@ -1,0 +1,22 @@
+{
+  "name": "Defensa Caro-Kann contra 1.e4 · Mi Repertorio de Ajedrez",
+  "short_name": "La Caro-Kann",
+  "description": "Defiende con la Caro-Kann coordinando el desarrollo con los golpes ...c5 y ...e5.",
+  "lang": "es",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f4f0e7",
+  "theme_color": "#00796B",
+  "icons": [
+    {
+      "src": "assets/app-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/app-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

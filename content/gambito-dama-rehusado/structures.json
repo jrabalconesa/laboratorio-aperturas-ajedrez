@@ -1,0 +1,134 @@
+[
+  {
+    "id": "GDR-S01",
+    "kind": "structure",
+    "title": "Ortodoxa cerrada",
+    "chapter": "Parte VIII",
+    "movesUci": [],
+    "fen": "r1bq1rk1/pp1nbppp/2p1pn2/3p2B1/2PP4/2N1PN2/PP3PPP/2RQKB1R w K - 0 1",
+    "sideToMove": "white",
+    "objective": "forma parte de una mayoría central sana, pero c6/c7 puede convertirse en objetivo fijo.",
+    "level": {
+      "label": "800-1400 Elo",
+      "minRating": 800,
+      "maxRating": 1400,
+      "stage": null
+    },
+    "whitePlan": "Consulta la lectura bilateral y las candidatas específicas de esta posición en el manual.",
+    "blackPlan": "Consulta la respuesta activa del rival y la ruptura asociada en el manual.",
+    "teachingContinuation": "Reproducir la posición, elegir dos candidatas y comparar con la continuación del manual.",
+    "manualReference": "GDR-S01",
+    "tags": [],
+    "openingId": "gambito-dama-rehusado"
+  },
+  {
+    "id": "GDR-S02",
+    "kind": "structure",
+    "title": "Carlsbad",
+    "chapter": "Parte VIII",
+    "movesUci": [],
+    "fen": "r1bq1rk1/pppnbppp/5n2/3p2B1/3P4/2NBP3/PP3PPP/R2QK1NR w KQ - 0 1",
+    "sideToMove": "white",
+    "objective": "forma parte de una mayoría central sana, pero c6/c7 puede convertirse en objetivo fijo.",
+    "level": {
+      "label": "800-1400 Elo",
+      "minRating": 800,
+      "maxRating": 1400,
+      "stage": null
+    },
+    "whitePlan": "Consulta la lectura bilateral y las candidatas específicas de esta posición en el manual.",
+    "blackPlan": "Consulta la respuesta activa del rival y la ruptura asociada en el manual.",
+    "teachingContinuation": "Reproducir la posición, elegir dos candidatas y comparar con la continuación del manual.",
+    "manualReference": "GDR-S02",
+    "tags": [],
+    "openingId": "gambito-dama-rehusado"
+  },
+  {
+    "id": "GDR-S03",
+    "kind": "structure",
+    "title": "IQP negro",
+    "chapter": "Parte VIII",
+    "movesUci": [],
+    "fen": "rnbq1rk1/pp3ppp/5n2/2bp4/5B2/2N1PN2/PP3PPP/R2QKB1R w KQ - 0 1",
+    "sideToMove": "white",
+    "objective": "simplificar porque 'hay menos espacio' sin comprobar que el único rasgo restante sea d5 débil.",
+    "level": {
+      "label": "800-1400 Elo",
+      "minRating": 800,
+      "maxRating": 1400,
+      "stage": null
+    },
+    "whitePlan": "...Cbd7 y decidir entre ...c6, ...c5 o una captura en c4 cuando gane un tiempo. Blancas: Ag5/Af4, e3 y desarrollo, con opción de cambiar en d5. El alfil c8 sigue siendo la peor pieza negra; el caballo b1/c3 y el alfil c1 marcan qué plan blanco será más rápido.",
+    "blackPlan": "Consulta la respuesta activa del rival y la ruptura asociada en el manual.",
+    "teachingContinuation": "Reproducir la posición, elegir dos candidatas y comparar con la continuación del manual.",
+    "manualReference": "GDR-S03",
+    "tags": [],
+    "openingId": "gambito-dama-rehusado"
+  },
+  {
+    "id": "GDR-S04",
+    "kind": "structure",
+    "title": "Centro simétrico con tensión",
+    "chapter": "Parte VIII",
+    "movesUci": [],
+    "fen": "rnbq1rk1/ppp1bppp/4pn2/3p4/2PP4/2N1PN2/PP3PPP/R1BQKB1R w KQ - 0 1",
+    "sideToMove": "white",
+    "objective": "el objetivo no es ganar espacio por sí mismo, sino abrir líneas y liberar el alfil c8.",
+    "level": {
+      "label": "800-1400 Elo",
+      "minRating": 800,
+      "maxRating": 1400,
+      "stage": null
+    },
+    "whitePlan": "...Cbd7 y decidir entre ...c6, ...c5 o una captura en c4 cuando gane un tiempo. Blancas: Ag5/Af4, e3 y desarrollo, con opción de cambiar en d5. El alfil c8 sigue siendo la peor pieza negra; el caballo b1/c3 y el alfil c1 marcan qué plan blanco será más rápido.",
+    "blackPlan": "Consulta la respuesta activa del rival y la ruptura asociada en el manual.",
+    "teachingContinuation": "Reproducir la posición, elegir dos candidatas y comparar con la continuación del manual.",
+    "manualReference": "GDR-S04",
+    "tags": [],
+    "openingId": "gambito-dama-rehusado"
+  },
+  {
+    "id": "GDR-S05",
+    "kind": "structure",
+    "title": "Centro liberado por ...e5",
+    "chapter": "Parte VIII",
+    "movesUci": [],
+    "fen": "r1b2rk1/pp2qppp/2p5/4n3/2B5/2R1PN2/PP3PPP/3Q1RK1 w - - 0 1",
+    "sideToMove": "white",
+    "objective": "el objetivo no es ganar espacio por sí mismo, sino abrir líneas y liberar el alfil c8.",
+    "level": {
+      "label": "800-1400 Elo",
+      "minRating": 800,
+      "maxRating": 1400,
+      "stage": null
+    },
+    "whitePlan": "Consulta la lectura bilateral y las candidatas específicas de esta posición en el manual.",
+    "blackPlan": "Consulta la respuesta activa del rival y la ruptura asociada en el manual.",
+    "teachingContinuation": "Reproducir la posición, elegir dos candidatas y comparar con la continuación del manual.",
+    "manualReference": "GDR-S05",
+    "tags": [],
+    "openingId": "gambito-dama-rehusado"
+  },
+  {
+    "id": "GDR-S06",
+    "kind": "structure",
+    "title": "Harrwitz abierto",
+    "chapter": "Parte VIII",
+    "movesUci": [],
+    "fen": "r1bq1rk1/pp3ppp/2n1pn2/2bp4/2P2B2/2N1PN2/PPQ2PPP/R3KB1R w KQ - 0 1",
+    "sideToMove": "white",
+    "objective": "Reconocer la decisión crítica y conectar apertura, estructura y plan.",
+    "level": {
+      "label": "800-1400 Elo",
+      "minRating": 800,
+      "maxRating": 1400,
+      "stage": null
+    },
+    "whitePlan": "Consulta la lectura bilateral y las candidatas específicas de esta posición en el manual.",
+    "blackPlan": "Consulta la respuesta activa del rival y la ruptura asociada en el manual.",
+    "teachingContinuation": "Reproducir la posición, elegir dos candidatas y comparar con la continuación del manual.",
+    "manualReference": "GDR-S06",
+    "tags": [],
+    "openingId": "gambito-dama-rehusado"
+  }
+]

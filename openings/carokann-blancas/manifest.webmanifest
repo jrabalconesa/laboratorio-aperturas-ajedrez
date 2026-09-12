@@ -1,0 +1,22 @@
+{
+  "name": "Cómo jugar contra la Defensa Caro-Kann · Mi Repertorio de Ajedrez",
+  "short_name": "Contra la Caro-Kann",
+  "description": "Juega contra la Caro-Kann convirtiendo el espacio central en desarrollo, iniciativa y decisiones claras.",
+  "lang": "es",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f4f0e7",
+  "theme_color": "#C45112",
+  "icons": [
+    {
+      "src": "assets/app-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/app-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

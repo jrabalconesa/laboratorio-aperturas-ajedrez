@@ -1,0 +1,134 @@
+[
+  {
+    "id": "CKN-S01",
+    "kind": "structure",
+    "title": "En CKN-S01, tras el cambio de damas y con un caballo negro instalado en e4, compara el plan blanco 19.Ae3 con 19.Cxe4. ¿Qué quiere conservar negras?",
+    "chapter": "Parte VIII",
+    "movesUci": [],
+    "fen": "r4rk1/pp2bpp1/2p1p2p/4N2P/2PPn3/6N1/PP1B1PP1/1K1R3R w - - 0 19",
+    "sideToMove": "white",
+    "objective": "Reconocer la decisión crítica y conectar apertura, estructura y plan.",
+    "level": {
+      "label": "800-1400 Elo",
+      "minRating": 800,
+      "maxRating": 1400,
+      "stage": null
+    },
+    "whitePlan": "Consulta la lectura bilateral y las candidatas específicas de esta posición en el manual.",
+    "blackPlan": "Consulta la respuesta activa del rival y la ruptura asociada en el manual.",
+    "teachingContinuation": "Reproducir la posición, elegir dos candidatas y comparar con la continuación del manual.",
+    "manualReference": "CKN-S01",
+    "tags": [],
+    "openingId": "carokann-negras"
+  },
+  {
+    "id": "CKN-S02",
+    "kind": "structure",
+    "title": "En CKN-S02, el caballo g8 no puede ir cómodamente a f6. Elige entre ...Cge7 y ...Ch6 como plan de desarrollo y justifica la ruta posterior.",
+    "chapter": "Parte VIII",
+    "movesUci": [],
+    "fen": "r2qkb1r/pp2nppp/2n1p3/3pPb2/3P4/5N2/PP2BPPP/RNBQ1RK1 w kq - 0 9",
+    "sideToMove": "white",
+    "objective": "11.a3 Ae7 conserva el alfil y completa desarrollo. El peón d4 solo será un objetivo estable si las blancas pierden actividad. Atacarlo antes con ...Db6 puede permitir Ae3 y d5 con tiempos; primero se bloquea y se termina el desarrollo.",
+    "level": {
+      "label": "800-1400 Elo",
+      "minRating": 800,
+      "maxRating": 1400,
+      "stage": null
+    },
+    "whitePlan": "Consulta la lectura bilateral y las candidatas específicas de esta posición en el manual.",
+    "blackPlan": "Consulta la respuesta activa del rival y la ruptura asociada en el manual.",
+    "teachingContinuation": "Reproducir la posición, elegir dos candidatas y comparar con la continuación del manual.",
+    "manualReference": "CKN-S02",
+    "tags": [],
+    "openingId": "carokann-negras"
+  },
+  {
+    "id": "CKN-S03",
+    "kind": "structure",
+    "title": "En CKN-S03, con la columna c abierta y ambas coronas seguras, compara 16.Dd2 y 16.a3 para blancas. ¿Qué respuesta negra coordina mejor las piezas?",
+    "chapter": "Parte VIII",
+    "movesUci": [],
+    "fen": "2rq1rk1/pp1n1ppp/2n1p3/3pPb2/3P4/4BN2/PP2BPPP/2RQ1RK1 w - - 0 16",
+    "sideToMove": "white",
+    "objective": "11.a3 Ae7 conserva el alfil y completa desarrollo. El peón d4 solo será un objetivo estable si las blancas pierden actividad. Atacarlo antes con ...Db6 puede permitir Ae3 y d5 con tiempos; primero se bloquea y se termina el desarrollo.",
+    "level": {
+      "label": "800-1400 Elo",
+      "minRating": 800,
+      "maxRating": 1400,
+      "stage": null
+    },
+    "whitePlan": "Consulta la lectura bilateral y las candidatas específicas de esta posición en el manual.",
+    "blackPlan": "Consulta la respuesta activa del rival y la ruptura asociada en el manual.",
+    "teachingContinuation": "Reproducir la posición, elegir dos candidatas y comparar con la continuación del manual.",
+    "manualReference": "CKN-S03",
+    "tags": [],
+    "openingId": "carokann-negras"
+  },
+  {
+    "id": "CKN-S04",
+    "kind": "structure",
+    "title": "En CKN-S04, después de 10...Cf6, compara 11.a3 y 11.Ae3. ¿Por qué el modelo acepta 11.a3 Ae7 sin intentar ganar d4 ya?",
+    "chapter": "Parte VIII",
+    "movesUci": [],
+    "fen": "r1bq1rk1/pp3ppp/2n1pn2/8/1b1P4/2NB1N2/PP1B1PPP/R2Q1RK1 w - - 0 11",
+    "sideToMove": "white",
+    "objective": "11.a3 Ae7 conserva el alfil y completa desarrollo. El peón d4 solo será un objetivo estable si las blancas pierden actividad. Atacarlo antes con ...Db6 puede permitir Ae3 y d5 con tiempos; primero se bloquea y se termina el desarrollo.",
+    "level": {
+      "label": "800-1400 Elo",
+      "minRating": 800,
+      "maxRating": 1400,
+      "stage": null
+    },
+    "whitePlan": "Consulta la lectura bilateral y las candidatas específicas de esta posición en el manual.",
+    "blackPlan": "Consulta la respuesta activa del rival y la ruptura asociada en el manual.",
+    "teachingContinuation": "Reproducir la posición, elegir dos candidatas y comparar con la continuación del manual.",
+    "manualReference": "CKN-S04",
+    "tags": [],
+    "openingId": "carokann-negras"
+  },
+  {
+    "id": "CKN-S05",
+    "kind": "structure",
+    "title": "En la Variante del Cambio CKN-S05, blancas dispone de 6.Cf3 y 6.Af4. Propón un desarrollo negro que cree desequilibrio sin alterar la estructura de peones.",
+    "chapter": "Parte VIII",
+    "movesUci": [],
+    "fen": "r1bqkb1r/pp2pppp/2n2n2/3p4/3P4/2PB4/PP3PPP/RNBQK1NR w KQkq - 0 6",
+    "sideToMove": "white",
+    "objective": "Reconocer la decisión crítica y conectar apertura, estructura y plan.",
+    "level": {
+      "label": "800-1400 Elo",
+      "minRating": 800,
+      "maxRating": 1400,
+      "stage": null
+    },
+    "whitePlan": "Consulta la lectura bilateral y las candidatas específicas de esta posición en el manual.",
+    "blackPlan": "Consulta la respuesta activa del rival y la ruptura asociada en el manual.",
+    "teachingContinuation": "Reproducir la posición, elegir dos candidatas y comparar con la continuación del manual.",
+    "manualReference": "CKN-S05",
+    "tags": [],
+    "openingId": "carokann-negras"
+  },
+  {
+    "id": "CKN-S06",
+    "kind": "structure",
+    "title": "En CKN-S06, la cadena blanca e5-d4 ya está fijada. ¿Por qué ...c5 es una candidata más urgente que ...f6?",
+    "chapter": "Parte VIII",
+    "movesUci": [],
+    "fen": "rnbqkb1r/pp1n1ppp/2p1p3/3pP3/3P4/2N2P2/PPP3PP/R1BQKBNR w KQkq - 0 6",
+    "sideToMove": "white",
+    "objective": "Reconocer la decisión crítica y conectar apertura, estructura y plan.",
+    "level": {
+      "label": "800-1400 Elo",
+      "minRating": 800,
+      "maxRating": 1400,
+      "stage": null
+    },
+    "whitePlan": "Consulta la lectura bilateral y las candidatas específicas de esta posición en el manual.",
+    "blackPlan": "Consulta la respuesta activa del rival y la ruptura asociada en el manual.",
+    "teachingContinuation": "Reproducir la posición, elegir dos candidatas y comparar con la continuación del manual.",
+    "manualReference": "CKN-S06",
+    "tags": [],
+    "openingId": "carokann-negras"
+  }
+]

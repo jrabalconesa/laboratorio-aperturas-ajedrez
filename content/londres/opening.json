@@ -1,0 +1,36 @@
+{
+  "id": "londres",
+  "code": "LON",
+  "manualNumber": 11,
+  "title": "Sistemas contra la Apertura Londres",
+  "shortTitle": "Contra el Londres",
+  "version": "1.1",
+  "accent": "#A61E6E",
+  "boardDark": "#99617F",
+  "preview": {
+    "fen": "rnbqkb1r/pp2pppp/2n2n2/2pp4/3P1B2/4PN2/PPP2PPP/RN1QKB1R w KQkq - 2 5",
+    "line": "1.d4 d5 2.Cf3 Cf6 3.Af4 c5 4.e3 Cc6",
+    "lastMove": [
+      "b8",
+      "c6"
+    ]
+  },
+  "quote": {
+    "text": "Cuestiona el esquema antes de que juegue en automático.",
+    "author": "Mi Repertorio de Ajedrez"
+  },
+  "storageNamespace": "repertorio:londres:v1",
+  "interactiveAvailable": true,
+  "status": "partial",
+  "inventory": {
+    "position": 12,
+    "structure": 6,
+    "game_stop": 0,
+    "exercise": 40
+  },
+  "gameCount": 3,
+  "coreGameCount": 3,
+  "expansionGameCount": 0,
+  "atlasCount": 2,
+  "validationWarnings": 16
+}
