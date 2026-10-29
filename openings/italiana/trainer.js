@@ -1,6 +1,6 @@
 import {Chess} from './vendor/chess.js';
-import {compiled,START,key,uci,choices,expected,play,classify,readProgress,recordMistake,resolveMistake,complete,pickLine} from './training-core.js';
-import {spanish,pieceNames,moveIdea} from './training-lines.js';
+import {compiled,START,key,uci,choices,expected,play,classify,readProgress,recordMistake,resolveMistake,complete,pickLine} from './training-core.js?v=20261029-integrated-2';
+import {spanish,pieceNames,moveIdea} from './training-lines.js?v=20261029-integrated-2';
 const $=id=>document.getElementById('trainer-'+id),STORAGE='laboratorio-italiana-training-v1';
 let progress;try{progress=readProgress(window.LabProfiles.storage.getItem(STORAGE));}catch{progress=readProgress(null);$('storageWarning').hidden=false;}
 let run=null,selected=null,hintLevel=0,assisted=false,viewIndex=null,blocked=null,generation=0,busy=false;

@@ -9,6 +9,7 @@ const sourceLab = path.join(root, "openings", "italiana");
 // El piloto de entrenamiento solo pertenece a la Italiana. No propagar
 // enlaces a páginas inexistentes en los otros once cuadernos.
 const sourceHtml = fs.readFileSync(path.join(sourceLab, "index.html"), "utf8")
+  .replace('<button class="button primary" data-go="practica" data-basic-sequence>Aprender la secuencia <span>→</span></button>', '<button class="button primary" data-go="aprende">Empezar el recorrido <span>→</span></button>')
   .replace(/<!-- ITALIANA_TRAINER_START -->[\s\S]*?<!-- ITALIANA_TRAINER_END -->/g, "")
   .replace(/^.*data-italiana-trainer.*\r?\n/gm, "");
 const sourceEngine = fs.readFileSync(path.join(sourceLab, "app.js"), "utf8");

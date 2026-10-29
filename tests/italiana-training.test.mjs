@@ -91,3 +91,12 @@ test('El acceso antiguo vuelve a Practica y la secuencia básica termina tras oc
   assert.equal(final.get('g1').type,'k');assert.equal(final.get('g8').type,'k');
   assert.equal(final.get('c3').type,'n');assert.equal(final.get('b6').type,'b');
 });
+
+test('La página y sus módulos usan la misma versión para evitar mezclar datos en caché',()=>{
+  const at=p=>fs.readFileSync(new URL('../openings/italiana/'+p,import.meta.url),'utf8');
+  const release=at('index.html').match(/trainer\.js\?v=([^"']+)/)[1];
+  const trainer=at('trainer.js'),core=at('training-core.js'),worker=at('service-worker.js');
+  for(const dependency of ['training-core.js','training-lines.js'])assert.ok(trainer.includes(dependency+'?v='+release));
+  assert.ok(core.includes('training-lines.js?v='+release));
+  for(const file of ['trainer.js','training-core.js','training-lines.js','training.css'])assert.ok(worker.includes(file+'?v='+release));
+});
