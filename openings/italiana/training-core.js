@@ -1,5 +1,5 @@
 import {Chess} from './vendor/chess.js';
-import {lines,spanish,pieceNames} from './training-lines.js?v=20261029-integrated-2';
+import {lines,spanish,pieceNames} from './training-lines.js?v=20261029-integrated-3';
 export const START=new Chess().fen();
 export const key=fen=>new Chess(fen).fen().split(' ').slice(0,4).join(' ');
 export const uci=m=>m.from+m.to+(m.promotion||'');

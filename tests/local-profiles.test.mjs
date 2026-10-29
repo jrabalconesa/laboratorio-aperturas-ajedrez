@@ -40,3 +40,15 @@ test('Los doce cuadernos cargan perfiles antes de su app y guardan en su espacio
     assert.ok(app.includes('window.LabProfiles.storage.getItem'));
   }
 });
+
+test('Cada cuaderno mantiene el color de su apertura y los perfiles heredan ese tema',()=>{
+  const root=new URL('../',import.meta.url),catalog=JSON.parse(fs.readFileSync(new URL('content/catalog.json',root),'utf8'));
+  for(const opening of catalog){
+    const html=fs.readFileSync(new URL('openings/'+opening.id+'/index.html',root),'utf8');
+    const color=html.match(/<body[^>]*--red:([^;" ]+)/)[1];
+    assert.equal(color.toLowerCase(),opening.accent.toLowerCase(),opening.id);
+    assert.ok(html.includes('profiles.js?v=20261029-colors-2'));
+  }
+  assert.ok(code.includes('background:var(--red,#1c6239)'));
+  assert.ok(code.includes('color:var(--ink,#25432c)'));
+});

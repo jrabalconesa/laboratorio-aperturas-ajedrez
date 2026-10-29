@@ -1,6 +1,6 @@
 import {Chess} from './vendor/chess.js';
-import {compiled,START,key,uci,choices,expected,play,classify,readProgress,recordMistake,resolveMistake,complete,pickLine} from './training-core.js?v=20261029-integrated-2';
-import {spanish,pieceNames,moveIdea} from './training-lines.js?v=20261029-integrated-2';
+import {compiled,START,key,uci,choices,expected,play,classify,readProgress,recordMistake,resolveMistake,complete,pickLine} from './training-core.js?v=20261029-integrated-3';
+import {spanish,pieceNames,moveIdea} from './training-lines.js?v=20261029-integrated-3';
 const $=id=>document.getElementById('trainer-'+id),STORAGE='laboratorio-italiana-training-v1';
 let progress;try{progress=readProgress(window.LabProfiles.storage.getItem(STORAGE));}catch{progress=readProgress(null);$('storageWarning').hidden=false;}
 let run=null,selected=null,hintLevel=0,assisted=false,viewIndex=null,blocked=null,generation=0,busy=false;
@@ -35,7 +35,7 @@ function begin({line,side,start='initial',mistake=null,guided=false}){
   $('guideTab').setAttribute('aria-pressed',String(guided));$('basicTab').setAttribute('aria-pressed',String(run.basic&&!guided));$('variantsTab').setAttribute('aria-pressed',String(!run.basic));
   $('modeDescription').textContent=guided?'Observa las jugadas de ambos bandos y entiende su propósito. Avanza a tu ritmo.':run.basic?'Repite la secuencia que acabas de estudiar. Elige tu bando y usa las pistas cuando las necesites.':'Amplía la secuencia básica con otras respuestas y repasa tus dificultades.';
   $('basicSideControl').hidden=!run.basic||guided;
-  say(mistake?'Repaso de una dificultad':'Entrenamiento de variante',mistake?'Resuelve de nuevo esta posición. Intenta hacerlo sin pistas.':'Juega las continuaciones del repertorio. Puedes elegir otra línea conocida y el entrenador la reconocerá.');
+  say(mistake?'Repaso de una dificultad':run.basic?'Repetir la secuencia básica':'Entrenamiento de variante',mistake?'Resuelve de nuevo esta posición. Intenta hacerlo sin pistas.':run.basic?'Reproduce la línea que has estudiado. El rival hará sus jugadas y puedes pedir pistas cuando las necesites.':'Juega las continuaciones del repertorio. Puedes elegir otra línea conocida y el entrenador la reconocerá.');
   if(guided){say('Empezamos desde la posición inicial','Aprenderás una línea básica de la Italiana: 1.e4 e5 2.Cf3 Cc6 3.Ac4 Ac5. Después verás el enroque y la preparación del centro. Pulsa «Siguiente jugada».');}
   render();advance();
 }
@@ -188,7 +188,7 @@ function learnBasic(){begin({line:compiled.find(l=>l.id==='basic'),side:'w',guid
 function repeatBasic(){begin({line:compiled.find(l=>l.id==='basic'),side:$('basicSide').value});}
 $('guideTab').addEventListener('click',learnBasic);
 $('basicTab').addEventListener('click',repeatBasic);
-$('variantsTab').addEventListener('click',()=>{const side=$('side').value;begin({...($('line').value==='adaptive'?pickLine(progress,side):{line:compiled.find(l=>l.id===$('line').value)}),side,start:$('startAt').value});});
+$('variantsTab').addEventListener('click',()=>{const side=$('side').value;let choice=$('line').value==='adaptive'?pickLine(progress,side,'basic'):{line:compiled.find(l=>l.id===$('line').value)};if(choice.line.id==='basic')choice={line:compiled.find(l=>l.id==='centro')};begin({...choice,side,start:$('startAt').value});});
 $('guidePrevious').addEventListener('click',()=>seekGuide(Math.max(0,run.history.length-1)));
 $('guideNext').addEventListener('click',()=>seekGuide(Math.min(currentLine().steps.length,run.history.length+1)));
 $('guideRestart').addEventListener('click',learnBasic);

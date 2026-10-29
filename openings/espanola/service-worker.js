@@ -1,6 +1,6 @@
-const CACHE_NAME = "laboratorio-espanola-v15-profiles-1";
+const CACHE_NAME = "laboratorio-espanola-v15-profiles-colors-2";
 const APP_SHELL = [
-  "../../profiles.js?v=20261029-1",
+  "../../profiles.js?v=20261029-colors-2",
   "./",
   "./index.html",
   "./styles.css?v=20260809-global-density-1",

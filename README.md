@@ -58,10 +58,10 @@ Cada apertura conserva 12 posiciones esenciales y añade 6 posiciones opcionales
 
 ## Piloto de entrenamiento de la Italiana · 29/10/2026
 
-En la biblioteca, abrir Italiana y elegir **Entrenar la Italiana**, o acceder a
-`openings/italiana/entrenar.html`. El cuaderno y sus ejercicios originales se conservan.
+En el cuaderno de la Italiana, elegir **Aprender la secuencia** o abrir
+`openings/italiana/index.html#practica`. La práctica original se conserva en un desplegable.
 
-- Siete líneas didácticas completas con ambos bandos; inicio o posición clave.
+- Una secuencia básica guiada y siete variantes didácticas con ambos bandos; inicio o posición clave.
 - Reglas legales con chess.js 1.4.0 (BSD-2-Clause, licencia en `openings/italiana/vendor/`).
 - Alternativas del repertorio y transposiciones reconocidas por posición. Una jugada
   legal desconocida no se califica como mala. Las alertas tácticas se limitan a mate
@@ -101,3 +101,9 @@ practicarla con blancas o negras y pistas; una alternativa de otra línea no se
 penaliza como mala, pero se mantiene el objetivo de reproducir la línea básica.
 **3. Practica variantes** y **Mis repasos** conservan las funciones del piloto.
 La práctica original de doce posiciones sigue disponible en un desplegable.
+
+Los controles compartidos de perfiles heredan `--red` (acento), `--ink`, `--paper`,
+`--line` y `--orange` del cuaderno activo. Cada una de las doce aperturas conserva
+el color declarado en el catálogo. Las pruebas contrastan ese color con el HTML
+publicable de cada cuaderno. Las dependencias del entrenador llevan una versión
+común para impedir que la caché mezcle el código con un repertorio anterior.
