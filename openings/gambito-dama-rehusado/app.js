@@ -8,10 +8,10 @@ const moveExplanations={};
 const lessonMoveContexts={"GDR-P01":"Consulta la lectura bilateral y las candidatas específicas de esta posición en el manual. Consulta la respuesta activa del rival y la ruptura asociada en el manual.","GDR-P02":"Consulta la lectura bilateral y las candidatas específicas de esta posición en el manual. Consulta la respuesta activa del rival y la ruptura asociada en el manual.","GDR-P03":"Consulta la lectura bilateral y las candidatas específicas de esta posición en el manual. Consulta la respuesta activa del rival y la ruptura asociada en el manual.","GDR-P04":"Consulta la lectura bilateral y las candidatas específicas de esta posición en el manual. Consulta la respuesta activa del rival y la ruptura asociada en el manual.","GDR-P05":"Consulta la lectura bilateral y las candidatas específicas de esta posición en el manual. Consulta la respuesta activa del rival y la ruptura asociada en el manual.","GDR-P06":"Cge2, Dc2, O-O y luego b4-b5 o f3-e4. Negras: ...Te8 para usar e-file, ...Cf8-e6/g6 y ...c6/...c5 según el plan blanco. La iniciativa es estratégica: llegar primero a la ruptura o a la debilidad. Consulta la respuesta activa del rival y la ruptura asociada en el manual.","GDR-P07":"Cge2, Dc2, O-O y luego b4-b5 o f3-e4. Negras: ...Te8 para usar e-file, ...Cf8-e6/g6 y ...c6/...c5 según el plan blanco. La iniciativa es estratégica: llegar primero a la ruptura o a la debilidad. Consulta la respuesta activa del rival y la ruptura asociada en el manual.","GDR-P08":"Consulta la lectura bilateral y las candidatas específicas de esta posición en el manual. Consulta la respuesta activa del rival y la ruptura asociada en el manual.","GDR-P09":"Consulta la lectura bilateral y las candidatas específicas de esta posición en el manual. Consulta la respuesta activa del rival y la ruptura asociada en el manual.","GDR-P10":"Consulta la lectura bilateral y las candidatas específicas de esta posición en el manual. Consulta la respuesta activa del rival y la ruptura asociada en el manual.","GDR-P11":"Consulta la lectura bilateral y las candidatas específicas de esta posición en el manual. Consulta la respuesta activa del rival y la ruptura asociada en el manual.","GDR-P12":"Consulta la lectura bilateral y las candidatas específicas de esta posición en el manual. Consulta la respuesta activa del rival y la ruptura asociada en el manual."};
 function lessonMoveExplanation(lesson,move){return [moveExplanations[move]||lesson.explanation,lessonMoveContexts[lesson.code]].filter(Boolean).join(" ");}
 const state = {
-  completed: new Set(JSON.parse(localStorage.getItem("gambito-dama-rehusado-progress") || "[]")),
+  completed: new Set(JSON.parse(window.LabProfiles.storage.getItem("gambito-dama-rehusado-progress") || "[]")),
   lesson: 0, lessonPly: 0, challenge: 0, selected: null, streak: 0,
   variant: 0, variantPly: 0, variantFlipped: false,
-  variantReviews: JSON.parse(localStorage.getItem("gambito-dama-rehusado-variant-reviews") || "{}"),
+  variantReviews: JSON.parse(window.LabProfiles.storage.getItem("gambito-dama-rehusado-variant-reviews") || "{}"),
   game: 0, gamePly: 0, exercise: 0, exerciseRevealed: false
 };
 
@@ -128,7 +128,7 @@ function updateProgress() {
   const count = state.completed.size;
   document.getElementById("headerProgress").textContent = `${count}/12`;
   document.getElementById("headerProgressBar").style.width = `${count / 12 * 100}%`;
-  localStorage.setItem("gambito-dama-rehusado-progress", JSON.stringify([...state.completed]));
+  window.LabProfiles.storage.setItem("gambito-dama-rehusado-progress", JSON.stringify([...state.completed]));
 }
 
 function renderLessonList() {
@@ -344,8 +344,8 @@ function handlePracticeSquare(square) {
   } else {
     state.streak = 0;
     document.getElementById("streak").textContent = "0";
-    document.getElementById("practiceFeedback").className = "feedback error";
-    document.getElementById("practiceFeedback").innerHTML = `<span>REVISA EL PLAN</span><p>Esa jugada no construye esta posición. ${data.lesson.hint}</p>`;
+    document.getElementById("practiceFeedback").className = "feedback";
+    document.getElementById("practiceFeedback").innerHTML = `<span>REPRODUCE ESTA LÍNEA</span><p>Esa no es la jugada prevista en este ejercicio. Eso no significa que sea una mala jugada en la posición. ${data.lesson.hint}</p>`;
     state.selected = null;
     renderBoard(document.getElementById("practiceBoard"), data.board, {interactive:true});
   }
@@ -435,7 +435,7 @@ function recordVariantReview() {
   const next = new Date();
   next.setDate(next.getDate() + interval);
   state.variantReviews[code] = {count, next:next.toISOString()};
-  localStorage.setItem("gambito-dama-rehusado-variant-reviews", JSON.stringify(state.variantReviews));
+  window.LabProfiles.storage.setItem("gambito-dama-rehusado-variant-reviews", JSON.stringify(state.variantReviews));
   updateReviewCard();
 }
 function renderVariant() {

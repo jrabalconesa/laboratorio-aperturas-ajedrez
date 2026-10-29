@@ -8,10 +8,10 @@ const moveExplanations={"c2c4":"1.c4 e5 2.Cc3 Cf6 3.g3 d5 4.cxd5 Cxd5. | Persegu
 const lessonMoveContexts={"RAR-P01":"Cc3, g3, Ag2 y presión sobre d5/e5. ...Cf6, ...Cc6 y ...d5; si cambia cxd5, recapturar con caballo.","RAR-P02":"d3, Ae3, Tc1 y Ce4-c5/d6. Enrocar, ...Te8, ...Af8 y, si hace falta, ...c6.","RAR-P03":"g3/Ag2, c4 o d4, retrasando compromisos. ...d5, ...Cf6, enroque; adaptar ...c5/e5 a la transposición.","RAR-P04":"c3, d4 o Cc4; presionar d6/e5. ...e5, ...d4 si c3, y ...Ce8-d6.","RAR-P05":"Cf3, e3, b3, Ab2, Ae2, O-O y Ce5. ...d5, ...Cf6, ...g6, ...Ag7, ...O-O y ...c5.","RAR-P06":"Ce5, Af3, d3 y f5 cuando el centro esté estable. ...Ad7, ...Tc8 y ...d4; cambiar Ce5 si favorece la estructura.","RAR-P07":"Ab2, e3, Cf3, Ab5 y d4. ...Cc6, ...Cf6, ...Ad6, O-O, ...Te8.","RAR-P08":"Cfd2, c4 y ataque a e4/d5. ...d5, ...Af5 y sostener e4; cambiar en d4 si abre líneas favorables.","RAR-P09":"Ab2, e3, Cf3, d4 y a3 para ganar tiempo al alfil. ...e5, posible ...Axb4, ...d6, ...Cf6, O-O.","RAR-P10":"Cxd4, Af3 y c4; ganar tiempos al alfil. ...Te8, ...Ab6 y presión sobre d4/e3.","RAR-P11":"d4/e4 y desarrollo rápido. ...d5, ...Cf6, ...e6/c5 según centro.","RAR-P12":"Ag2, d3, Cf3, O-O y c4/e4. ...e5, ...d5, ...Cf6, ...Cc6, ...Ae7, O-O."};
 function lessonMoveExplanation(lesson,move){return [moveExplanations[move]||lesson.explanation,lessonMoveContexts[lesson.code]].filter(Boolean).join(" ");}
 const state = {
-  completed: new Set(JSON.parse(localStorage.getItem("raras-progress") || "[]")),
+  completed: new Set(JSON.parse(window.LabProfiles.storage.getItem("raras-progress") || "[]")),
   lesson: 0, lessonPly: 0, challenge: 0, selected: null, streak: 0,
   variant: 0, variantPly: 0, variantFlipped: false,
-  variantReviews: JSON.parse(localStorage.getItem("raras-variant-reviews") || "{}"),
+  variantReviews: JSON.parse(window.LabProfiles.storage.getItem("raras-variant-reviews") || "{}"),
   game: 0, gamePly: 0, exercise: 0, exerciseRevealed: false
 };
 
@@ -128,7 +128,7 @@ function updateProgress() {
   const count = state.completed.size;
   document.getElementById("headerProgress").textContent = `${count}/12`;
   document.getElementById("headerProgressBar").style.width = `${count / 12 * 100}%`;
-  localStorage.setItem("raras-progress", JSON.stringify([...state.completed]));
+  window.LabProfiles.storage.setItem("raras-progress", JSON.stringify([...state.completed]));
 }
 
 function renderLessonList() {
@@ -344,8 +344,8 @@ function handlePracticeSquare(square) {
   } else {
     state.streak = 0;
     document.getElementById("streak").textContent = "0";
-    document.getElementById("practiceFeedback").className = "feedback error";
-    document.getElementById("practiceFeedback").innerHTML = `<span>REVISA EL PLAN</span><p>Esa jugada no construye esta posición. ${data.lesson.hint}</p>`;
+    document.getElementById("practiceFeedback").className = "feedback";
+    document.getElementById("practiceFeedback").innerHTML = `<span>REPRODUCE ESTA LÍNEA</span><p>Esa no es la jugada prevista en este ejercicio. Eso no significa que sea una mala jugada en la posición. ${data.lesson.hint}</p>`;
     state.selected = null;
     renderBoard(document.getElementById("practiceBoard"), data.board, {interactive:true});
   }
@@ -435,7 +435,7 @@ function recordVariantReview() {
   const next = new Date();
   next.setDate(next.getDate() + interval);
   state.variantReviews[code] = {count, next:next.toISOString()};
-  localStorage.setItem("raras-variant-reviews", JSON.stringify(state.variantReviews));
+  window.LabProfiles.storage.setItem("raras-variant-reviews", JSON.stringify(state.variantReviews));
   updateReviewCard();
 }
 function renderVariant() {

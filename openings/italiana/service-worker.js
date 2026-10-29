@@ -1,11 +1,18 @@
-const CACHE_NAME = "la-italiana-v21";
+const CACHE_NAME = "la-italiana-v22-training";
 const APP_SHELL = [
+  "../../profiles.js?v=20261029-1",
   "./",
   "./index.html",
   "./styles.css?v=20260809-global-density-1",
   "./app.js?v=20260809-global-density-1",
   "./expansion-games.js",
   "./exercise-data.js",
+  "./entrenar.html",
+  "./training.css?v=20261029-1",
+  "./trainer.js?v=20261029-1",
+  "./training-core.js",
+  "./training-lines.js",
+  "./vendor/chess.js",
   "./manifest.webmanifest",
   "./assets/chess-pieces-modern.svg",
   "./assets/favicon-32.png",
@@ -22,7 +29,7 @@ self.addEventListener("install", event => {
 self.addEventListener("activate", event => {
   event.waitUntil(
     caches.keys().then(keys => Promise.all(
-      keys.filter(key => key !== CACHE_NAME).map(key => caches.delete(key))
+      keys.filter(key => key.startsWith("la-italiana-") && key !== CACHE_NAME).map(key => caches.delete(key))
     ))
   );
   self.clients.claim();
@@ -40,6 +47,6 @@ self.addEventListener("fetch", event => {
         }
         return response;
       })
-      .catch(() => caches.match(event.request).then(response => response || caches.match("./")))
+      .catch(() => caches.match(event.request).then(response => response || (event.request.mode === "navigate" ? caches.match("./") : new Response("Recurso no disponible sin conexión", {status:503}))))
   );
 });

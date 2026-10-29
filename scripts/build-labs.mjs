@@ -6,7 +6,10 @@ import { openings } from "./openings.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const sourceLab = path.join(root, "openings", "italiana");
-const sourceHtml = fs.readFileSync(path.join(sourceLab, "index.html"), "utf8");
+// El piloto de entrenamiento solo pertenece a la Italiana. No propagar
+// enlaces a páginas inexistentes en los otros once cuadernos.
+const sourceHtml = fs.readFileSync(path.join(sourceLab, "index.html"), "utf8")
+  .replace(/^.*data-italiana-trainer.*\r?\n/gm, "");
 const sourceEngine = fs.readFileSync(path.join(sourceLab, "app.js"), "utf8");
 const engineTail = sourceEngine.slice(sourceEngine.indexOf("const state ="));
 

@@ -8,10 +8,10 @@ const moveExplanations={"e2e4":"2.Cf3 Cc6 3.d4: desarrollo con amenaza y ruptura
 const lessonMoveContexts={"ESC-P01":"Jugar Cf3, d4 y recuperar con Cxd4, manteniendo piezas activas. Desarrollar Cc6 y contestar d4 con ...exd4 para evitar que las blancas mantengan dos peones centrales.","ESC-P02":"Abrir el centro con d4 antes de mover peones laterales. Aceptar la ruptura con ...exd4 y desarrollar ...Cf6 o ...Ac5.","ESC-P03":"Recuperar con Cxd4; evitar 4.Dxd4, que permite ...Cxd4 con ganancia de tiempo en muchas desviaciones. Atacar e4 con ...Cf6 o presionar el caballo d4 con ...Ac5.","ESC-P04":"Responder a ...Cf6 con Cxc6 para alterar la estructura y después desarrollar Ad3. Tras Cxc6, recapturar ...bxc6 para conservar la pareja de alfiles y preparar ...d5.","ESC-P05":"Desarrollar Ad3, enrocar y decidir si conviene e5 o exd5 según la preparación negra. Jugar ...d5 con apoyo, desarrollar ...Ae7 y enrocar antes de usar la columna b.","ESC-P06":"Calcular exd5; si las negras recapturan con el peón c, atacar d5 con Cc3, Te1 y Df3. Si exd5, recapturar ...cxd5 para activar la torre c8 y sostener un centro móvil.","ESC-P07":"Enrocar, colocar una torre en e1 y desarrollar el caballo b1 sin bloquear el alfil c1. Desarrollar ...Ae7 y enrocar; luego ...c5 para fijar el peón d5 o empujarlo a d4.","ESC-P08":"Jugar Te1 y Cd2; no iniciar un ataque en h7 mientras el caballo b1 siga en casa. Enrocar y jugar ...c5; evitar ...d4 si deja e4 o c4 sin control.","ESC-P09":"Desarrollar Cd2, b3 y Ab2; presionar d5 con Df3 o c4 cuando sea seguro. Activar ...c5 y ...Te8; buscar ...d4 cuando el caballo blanco no pueda ocupar c4.","ESC-P10":"Responder a ...c5 con desarrollo: b3, Ab2 y Df3; reservar c4 para cuando no debilite d4. Completar ...Te8 y ...Ae6; presionar e2/e1 si la torre blanca queda expuesta.","ESC-P11":"Completar Ab2 y Df3; si ...d4, buscar Cc4 y una presión sobre la diagonal a1-h8. Jugar ...Ae6, ...Tc8 y ...d4; la pareja de alfiles necesita líneas, no defensa pasiva.","ESC-P12":"Comparar Df3, c4 y Cf3-e5; elegir según la amenaza ...d4 y la colocación de las piezas negras. Preparar ...Tc8 y ...d4; si las blancas juegan c4, valorar ...d4 y la casilla e4 para el caballo."};
 function lessonMoveExplanation(lesson,move){return [moveExplanations[move]||lesson.explanation,lessonMoveContexts[lesson.code]].filter(Boolean).join(" ");}
 const state = {
-  completed: new Set(JSON.parse(localStorage.getItem("escocesa-progress") || "[]")),
+  completed: new Set(JSON.parse(window.LabProfiles.storage.getItem("escocesa-progress") || "[]")),
   lesson: 0, lessonPly: 0, challenge: 0, selected: null, streak: 0,
   variant: 0, variantPly: 0, variantFlipped: false,
-  variantReviews: JSON.parse(localStorage.getItem("escocesa-variant-reviews") || "{}"),
+  variantReviews: JSON.parse(window.LabProfiles.storage.getItem("escocesa-variant-reviews") || "{}"),
   game: 0, gamePly: 0, exercise: 0, exerciseRevealed: false
 };
 
@@ -128,7 +128,7 @@ function updateProgress() {
   const count = state.completed.size;
   document.getElementById("headerProgress").textContent = `${count}/12`;
   document.getElementById("headerProgressBar").style.width = `${count / 12 * 100}%`;
-  localStorage.setItem("escocesa-progress", JSON.stringify([...state.completed]));
+  window.LabProfiles.storage.setItem("escocesa-progress", JSON.stringify([...state.completed]));
 }
 
 function renderLessonList() {
@@ -344,8 +344,8 @@ function handlePracticeSquare(square) {
   } else {
     state.streak = 0;
     document.getElementById("streak").textContent = "0";
-    document.getElementById("practiceFeedback").className = "feedback error";
-    document.getElementById("practiceFeedback").innerHTML = `<span>REVISA EL PLAN</span><p>Esa jugada no construye esta posición. ${data.lesson.hint}</p>`;
+    document.getElementById("practiceFeedback").className = "feedback";
+    document.getElementById("practiceFeedback").innerHTML = `<span>REPRODUCE ESTA LÍNEA</span><p>Esa no es la jugada prevista en este ejercicio. Eso no significa que sea una mala jugada en la posición. ${data.lesson.hint}</p>`;
     state.selected = null;
     renderBoard(document.getElementById("practiceBoard"), data.board, {interactive:true});
   }
@@ -435,7 +435,7 @@ function recordVariantReview() {
   const next = new Date();
   next.setDate(next.getDate() + interval);
   state.variantReviews[code] = {count, next:next.toISOString()};
-  localStorage.setItem("escocesa-variant-reviews", JSON.stringify(state.variantReviews));
+  window.LabProfiles.storage.setItem("escocesa-variant-reviews", JSON.stringify(state.variantReviews));
   updateReviewCard();
 }
 function renderVariant() {

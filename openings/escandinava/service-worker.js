@@ -1,5 +1,6 @@
-const CACHE_NAME = "laboratorio-escandinava-v15";
+const CACHE_NAME = "laboratorio-escandinava-v15-profiles-1";
 const APP_SHELL = [
+  "../../profiles.js?v=20261029-1",
   "./",
   "./index.html",
   "./styles.css?v=20260809-global-density-1",
@@ -21,7 +22,7 @@ self.addEventListener("install", event => {
 self.addEventListener("activate", event => {
   event.waitUntil(
     caches.keys().then(keys => Promise.all(
-      keys.filter(key => key !== CACHE_NAME).map(key => caches.delete(key))
+      keys.filter(key => key.startsWith(CACHE_NAME.split("-v")[0] + "-") && key !== CACHE_NAME).map(key => caches.delete(key))
     ))
   );
   self.clients.claim();

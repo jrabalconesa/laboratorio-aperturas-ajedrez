@@ -4,6 +4,7 @@
     "private":  true,
     "type":  "module",
     "scripts":  {
+                    "test": "node --test tests/*.test.mjs",
                     "start":  "node server.cjs",
                     "build:content":  "node scripts/build-italiana-source.mjs \u0026\u0026 node scripts/build-expansions.mjs \u0026\u0026 node scripts/build-content.mjs",
                     "validate:content":  "node scripts/build-expansions.mjs \u0026\u0026 node scripts/build-content.mjs --check",

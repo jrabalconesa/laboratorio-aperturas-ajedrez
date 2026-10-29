@@ -15,7 +15,7 @@ fs.rmSync(dist, { recursive: true, force: true });
 fs.mkdirSync(client, { recursive: true });
 fs.mkdirSync(server, { recursive: true });
 
-for (const file of ["index.html", "app.js", "styles.css"]) {
+for (const file of ["index.html", "app.js", "styles.css", "profiles.js"]) {
   fs.copyFileSync(path.join(root, file), path.join(client, file));
 }
 

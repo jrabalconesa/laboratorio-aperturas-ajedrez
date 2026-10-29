@@ -183,10 +183,10 @@ function lessonMoveExplanation(lesson, move) {
 const exercises = window.OPENING_EXERCISES || [];
 
 const state = {
-  completed: new Set(JSON.parse(localStorage.getItem("italiana-progress") || "[]")),
+  completed: new Set(JSON.parse(window.LabProfiles.storage.getItem("italiana-progress") || "[]")),
   lesson: 0, lessonPly: 0, challenge: 0, selected: null, streak: 0,
   variant: 0, variantPly: 0, variantFlipped: false,
-  variantReviews: JSON.parse(localStorage.getItem("italiana-variant-reviews") || "{}"),
+  variantReviews: JSON.parse(window.LabProfiles.storage.getItem("italiana-variant-reviews") || "{}"),
   game: 0, gamePly: 0, exercise: 0, exerciseRevealed: false
 };
 
@@ -303,7 +303,7 @@ function updateProgress() {
   const count = state.completed.size;
   document.getElementById("headerProgress").textContent = `${count}/12`;
   document.getElementById("headerProgressBar").style.width = `${count / 12 * 100}%`;
-  localStorage.setItem("italiana-progress", JSON.stringify([...state.completed]));
+  window.LabProfiles.storage.setItem("italiana-progress", JSON.stringify([...state.completed]));
 }
 
 function renderLessonList() {
@@ -519,8 +519,8 @@ function handlePracticeSquare(square) {
   } else {
     state.streak = 0;
     document.getElementById("streak").textContent = "0";
-    document.getElementById("practiceFeedback").className = "feedback error";
-    document.getElementById("practiceFeedback").innerHTML = `<span>REVISA EL PLAN</span><p>Esa jugada no construye esta posición. ${data.lesson.hint}</p>`;
+    document.getElementById("practiceFeedback").className = "feedback";
+    document.getElementById("practiceFeedback").innerHTML = `<span>REPRODUCE ESTA LÍNEA</span><p>Esa no es la jugada prevista en este ejercicio. Eso no significa que sea una mala jugada en la posición. ${data.lesson.hint}</p>`;
     state.selected = null;
     renderBoard(document.getElementById("practiceBoard"), data.board, {interactive:true});
   }
@@ -614,7 +614,7 @@ function recordVariantReview() {
   const next = new Date();
   next.setDate(next.getDate() + interval);
   state.variantReviews[code] = {count, next:next.toISOString()};
-  localStorage.setItem("italiana-variant-reviews", JSON.stringify(state.variantReviews));
+  window.LabProfiles.storage.setItem("italiana-variant-reviews", JSON.stringify(state.variantReviews));
   updateReviewCard();
 }
 function renderVariant() {

@@ -8,10 +8,10 @@ const moveExplanations={"e2e4":"SIC-P02, SIC-P03, SIC-P05 · SIC-E01, SIC-E02 ·
 const lessonMoveContexts={"SIC-P01":"2.c3 para preparar d4, reducir la teoría de la Siciliana Abierta y llegar a estructuras repetibles. Responder con ...Cf6 o ...d5 antes de que e4-d4 se estabilice; si el blanco juega lento, golpear el centro.","SIC-P02":"Jugar d4 en cuanto el negro no lo impida; contra ...Cf6 responder con e5 y contra ...d5 aclarar el centro con exd5. 2...Cf6 ataca e4 con desarrollo; 2...d5 rompe de inmediato. 2...Cc6 es jugable, pero permite al blanco ocupar d4 con comodidad.","SIC-P03":"3.e5, después d4, Cf3 y desarrollo. No perseguir al caballo d5 con peones hasta asegurar la base de la cadena. Tras 3.e5 Cd5, preparar ...d6 para atacar la cadena e5-d4 y abrir el alfil c8.","SIC-P04":"Recapturar cxd4 cuando corresponda, desarrollar Ac4/Ae2, enrocar y sostener d4 antes de pensar en c4 o f4. ...Cc6 aumenta presión sobre d4/e5; ...d6 ataca la cadena; ...e6 prepara desarrollo y apoyo central.","SIC-P05":"4.d4, seguido de Cf3, Ae2 y O-O. c4 solo cuando gane espacio sin crear debilidades mayores. Desarrollar ...Cf6 y ...e6; retirar la dama si c4 la ataca, sin gastar más tiempos de los necesarios.","SIC-P06":"Ae2, O-O, y después c4 o Ae3 según la colocación negra. Si c4 gana un tiempo, preparar Cc3 y torres centrales. ...Ae7, ...O-O y ...Cc6; presionar d4 y aprovechar d5 si el centro blanco se fija.","SIC-P07":"Cf3, Cc3, Ae3/Ac4 y O-O; responder a ...d5 con cálculo, no con defensa pasiva. 4...d5 es el golpe principal; ...Nf6 también aumenta presión. ...e5 gana espacio pero deja d5 como casilla.","SIC-P08":"Cf3, Ae3/Ae2, O-O y decidir entre f3 o d5 solo después de neutralizar la ruptura ...d5. ...Ag7, ...O-O y ...d5. La presión central es más importante que una expansión de peones en el flanco de dama.","SIC-P09":"Desarrollar, enrocar y preparar c4 contra d5. Ab5 puede aumentar presión sobre c6 antes de resolver el centro. ...Nge7, ...Bd7 y luego ...f6 o ...cxd4 según la colocación blanca. El objetivo es atacar la cadena, no defender pasivamente.","SIC-P10":"Cf3, Cc3 y desarrollo rápido. Si el peón d5 cae, usar el tiempo para activar piezas y ocupar columnas. ...Ag7, O-O y presión sobre d5/d4. La prioridad es actividad, no bloquear el peón con demasiadas piezas.","SIC-P11":"Mantener la presión, completar Te1/d3 o d4 según la respuesta negra y usar d5 como casilla de entrada. ...d6, ...g6 o ...a6 para completar desarrollo y reducir presión. Evitar abrir el centro con el rey todavía en e8.","SIC-P12":"Cf3, Cc3 y Ae2/Ac4; aceptar devolver d5 si el negro gana demasiados tiempos atacándolo. ...e6 o ...g6, seguido de desarrollo y presión sobre d5. ...b5 solo cuando el centro ya no requiera atención inmediata."};
 function lessonMoveExplanation(lesson,move){return [moveExplanations[move]||lesson.explanation,lessonMoveContexts[lesson.code]].filter(Boolean).join(" ");}
 const state = {
-  completed: new Set(JSON.parse(localStorage.getItem("siciliana-progress") || "[]")),
+  completed: new Set(JSON.parse(window.LabProfiles.storage.getItem("siciliana-progress") || "[]")),
   lesson: 0, lessonPly: 0, challenge: 0, selected: null, streak: 0,
   variant: 0, variantPly: 0, variantFlipped: false,
-  variantReviews: JSON.parse(localStorage.getItem("siciliana-variant-reviews") || "{}"),
+  variantReviews: JSON.parse(window.LabProfiles.storage.getItem("siciliana-variant-reviews") || "{}"),
   game: 0, gamePly: 0, exercise: 0, exerciseRevealed: false
 };
 
@@ -128,7 +128,7 @@ function updateProgress() {
   const count = state.completed.size;
   document.getElementById("headerProgress").textContent = `${count}/12`;
   document.getElementById("headerProgressBar").style.width = `${count / 12 * 100}%`;
-  localStorage.setItem("siciliana-progress", JSON.stringify([...state.completed]));
+  window.LabProfiles.storage.setItem("siciliana-progress", JSON.stringify([...state.completed]));
 }
 
 function renderLessonList() {
@@ -344,8 +344,8 @@ function handlePracticeSquare(square) {
   } else {
     state.streak = 0;
     document.getElementById("streak").textContent = "0";
-    document.getElementById("practiceFeedback").className = "feedback error";
-    document.getElementById("practiceFeedback").innerHTML = `<span>REVISA EL PLAN</span><p>Esa jugada no construye esta posición. ${data.lesson.hint}</p>`;
+    document.getElementById("practiceFeedback").className = "feedback";
+    document.getElementById("practiceFeedback").innerHTML = `<span>REPRODUCE ESTA LÍNEA</span><p>Esa no es la jugada prevista en este ejercicio. Eso no significa que sea una mala jugada en la posición. ${data.lesson.hint}</p>`;
     state.selected = null;
     renderBoard(document.getElementById("practiceBoard"), data.board, {interactive:true});
   }
@@ -435,7 +435,7 @@ function recordVariantReview() {
   const next = new Date();
   next.setDate(next.getDate() + interval);
   state.variantReviews[code] = {count, next:next.toISOString()};
-  localStorage.setItem("siciliana-variant-reviews", JSON.stringify(state.variantReviews));
+  window.LabProfiles.storage.setItem("siciliana-variant-reviews", JSON.stringify(state.variantReviews));
   updateReviewCard();
 }
 function renderVariant() {

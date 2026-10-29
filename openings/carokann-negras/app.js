@@ -8,10 +8,10 @@ const moveExplanations={"e2e4":"Conectar con P02: el centro se desafía en la se
 const lessonMoveContexts={"CKN-P01":"Blancas buscan ocupar d4 y ganar espacio. Negras todavía no luchan por e4 con una pieza: preparan un golpe de peón estable.","CKN-P02":"Blancas deben elegir entre Avance, cambio o desarrollo que sostenga e4. Negras atacan e4 y pretenden definir la estructura antes de desarrollar de forma automática.","CKN-P03":"Blancas centralizan Cxe4 y ganan espacio temporal. Negras desarrollan con tiempo sobre e4 y evitan encerrar el alfil con ...e6.","CKN-P04":"Blancas pueden ganar espacio con h4-h5, pero ese avance no desarrolla piezas. Negras refuerzan f6/e5/c5 y dejan g8 libre para el caballo natural.","CKN-P05":"Blancas han cambiado el alfil de casillas claras y pueden usar la dama activa. Negras aceptan el cambio del alfil para reducir presión y consolidan d5/f5 con ...e6.","CKN-P06":"Blancas ganan espacio con e5 y restringen Cf6. Negras colocan el alfil fuera de la cadena y señalan d3/c2 antes de atacar d4.","CKN-P07":"Blancas quieren completar desarrollo y sostener e5-d4. Negras usan el peón c6 como ariete; ...c5 convierte la ventaja de espacio blanca en objetivo.","CKN-P08":"Blancas ya tienen un centro estable y buscan Cc3/Ae3. Negras evitan bloquear la diagonal del alfil y preparan ...Cc8-b6 o ...Cf5 según la estructura.","CKN-P09":"Blancas desarrollan Ad3 y pueden buscar c4 o Af4. Negras recapturan con c6xd5 para mantener presencia central y abrir la columna c.","CKN-P10":"Blancas aceptan un futuro peón d aislado para ganar actividad. Negras juegan ...Cf6 y ...e6; primero bloquean y desarrollan, después atacan d4.","CKN-P11":"Blancas sostienen e4 y sueñan con e5/f4. Negras usan ...e6 para mantener d5 y no abrir líneas cuando el rival tiene más peones en el centro.","CKN-P12":"Blancas retrasan d4 y desarrollan rápido. Negras clavan con ...Ag4, aclaran el alfil y después juegan ...e6 sin perder su pieza activa."};
 function lessonMoveExplanation(lesson,move){return [moveExplanations[move]||lesson.explanation,lessonMoveContexts[lesson.code]].filter(Boolean).join(" ");}
 const state = {
-  completed: new Set(JSON.parse(localStorage.getItem("carokann-negras-progress") || "[]")),
+  completed: new Set(JSON.parse(window.LabProfiles.storage.getItem("carokann-negras-progress") || "[]")),
   lesson: 0, lessonPly: 0, challenge: 0, selected: null, streak: 0,
   variant: 0, variantPly: 0, variantFlipped: false,
-  variantReviews: JSON.parse(localStorage.getItem("carokann-negras-variant-reviews") || "{}"),
+  variantReviews: JSON.parse(window.LabProfiles.storage.getItem("carokann-negras-variant-reviews") || "{}"),
   game: 0, gamePly: 0, exercise: 0, exerciseRevealed: false
 };
 
@@ -128,7 +128,7 @@ function updateProgress() {
   const count = state.completed.size;
   document.getElementById("headerProgress").textContent = `${count}/12`;
   document.getElementById("headerProgressBar").style.width = `${count / 12 * 100}%`;
-  localStorage.setItem("carokann-negras-progress", JSON.stringify([...state.completed]));
+  window.LabProfiles.storage.setItem("carokann-negras-progress", JSON.stringify([...state.completed]));
 }
 
 function renderLessonList() {
@@ -344,8 +344,8 @@ function handlePracticeSquare(square) {
   } else {
     state.streak = 0;
     document.getElementById("streak").textContent = "0";
-    document.getElementById("practiceFeedback").className = "feedback error";
-    document.getElementById("practiceFeedback").innerHTML = `<span>REVISA EL PLAN</span><p>Esa jugada no construye esta posición. ${data.lesson.hint}</p>`;
+    document.getElementById("practiceFeedback").className = "feedback";
+    document.getElementById("practiceFeedback").innerHTML = `<span>REPRODUCE ESTA LÍNEA</span><p>Esa no es la jugada prevista en este ejercicio. Eso no significa que sea una mala jugada en la posición. ${data.lesson.hint}</p>`;
     state.selected = null;
     renderBoard(document.getElementById("practiceBoard"), data.board, {interactive:true});
   }
@@ -435,7 +435,7 @@ function recordVariantReview() {
   const next = new Date();
   next.setDate(next.getDate() + interval);
   state.variantReviews[code] = {count, next:next.toISOString()};
-  localStorage.setItem("carokann-negras-variant-reviews", JSON.stringify(state.variantReviews));
+  window.LabProfiles.storage.setItem("carokann-negras-variant-reviews", JSON.stringify(state.variantReviews));
   updateReviewCard();
 }
 function renderVariant() {

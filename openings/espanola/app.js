@@ -8,10 +8,10 @@ const moveExplanations={"e2e4":"Tras 1.e4 e5, ambos bandos reclaman espacio cent
 const lessonMoveContexts={"ESP-P01":"Cf3 desarrolla con amenaza sobre e5 y acerca el enroque. La alternativa Cc3 es sana, pero no obliga a las negras a explicar cómo sostendrán e5. Las negras han igualado presencia en el centro. Su respuesta natural es ...Cc6: defiende e5, controla d4 y desarrolla una pieza.","ESP-P02":"3.Ab5 desarrolla el alfil, prepara O-O y aumenta la presión sobre el caballo que sostiene e5. No gana el peón todavía: tras Axc6 dxc6 Cxe5, las negras suelen disponer de Dd4. Las negras pueden elegir ...a6, ...Cf6 o ...f5. Para el repertorio principal, ...a6 pregunta al alfil y gana espacio sin resolver todavía la tensión central.","ESP-P03":"4.Aa4 conserva el alfil de casillas blancas, mantiene la presión indirecta sobre e5 y obliga a las negras a invertir otro tiempo si desean ganar espacio con ...b5. 4...Cf6 desarrolla atacando e4. Las negras no temen la clavada porque su rey aún no está enrocado y, en muchas líneas, pueden responder activamente con ...b5 y ...Ae7.","ESP-P04":"5.O-O es prioritario: pone el rey a salvo, activa Tf1 y permite responder a ...Cxe4 con d4, abriendo el centro cuando el caballo negro está expuesto. Las negras deben decidir entre ...Ae7, ...Cxe4 y ...b5. ...Ae7 es la opción más estable: prepara el enroque y elimina cualquier futura clavada sobre el rey.","ESP-P05":"6.Te1 refuerza e4 con una pieza, libera f1 para maniobras y coloca la torre frente al rey negro si el centro se abre. 6...b5 gana espacio y obliga al alfil a retirarse. Las negras obtienen territorio en el flanco de dama, pero crean casillas que pueden debilitarse, especialmente c6 y a6.","ESP-P06":"7.Ab3 conserva la diagonal b1-h7 y mantiene la vista sobre f7. También deja libre a2 para una retirada futura si ...Ca5 gana tiempo. 7...d6 sostiene e5 y abre el alfil de c8. Es sólida, pero bloquea temporalmente ese alfil y hace de ...d5 la ruptura liberadora que las negras deben preparar.","ESP-P07":"8.c3 prepara d4, ofrece c2 al alfil y evita que un caballo negro se instale cómodamente en d4. No amenaza nada inmediato: es una jugada de infraestructura. 8...O-O asegura el rey. A partir de aquí, las negras pueden reorganizarse con ...Cb8-d7, ...Te8 y ...Af8, o buscar ...d5 si la táctica lo permite.","ESP-P08":"9.h3 evita ...Ag4, que podría clavar Cf3 y aumentar la presión sobre e4. También crea una casilla de escape para el rey, pero no debe convertirse en una excusa para lanzar g4. Las negras eligen una reorganización. ...Cb8 parece retroceder, pero libera c6 para un peón y prepara ...Cbd7, reforzando e5 sin bloquear el peón c.","ESP-P09":"10.d4 reclama espacio y desafía e5. Si las negras mantienen la tensión, las blancas ganan libertad; si capturan, se abren líneas para las piezas blancas. 10...Cbd7 completa la idea de ...Cb8: el caballo refuerza e5, controla c5 y f6 y deja c6 disponible para ...c6 o una maniobra de dama.","ESP-P10":"11.Cbd2 desarrolla el caballo por d2 para no bloquear el peón c. Su ruta típica es f1-g3, desde donde apoya f5, h5 y e4. 11...c5 ataca la base d4 y gana espacio en el flanco de dama. A cambio, fija casillas oscuras y puede dejar d5 como puesto avanzado si las blancas cierran.","ESP-P11":"12.d5 gana espacio, fija el caballo d7 y convierte la partida en una lucha de maniobras. La decisión es buena si las blancas aceptan que el ataque no será inmediato. 12...Dc7 conecta torres, apoya ...c4 o ...Te8 y evita que la dama quede atrapada tras una futura apertura de la columna d.","ESP-P12":"13.Cf1 y 14.Cg3 completan la ruta del caballo. Desde g3, defiende e4, mira f5 y h5 y coopera con el alfil de b3 contra el rey. Las negras responden con ...g6 y ...Te8: controlan f5, refuerzan e5 y preparan ...Af8. Su contrajuego principal sigue siendo ...c4, ...Af8-g7 o ...d5 si el centro se abre."};
 function lessonMoveExplanation(lesson,move){return [moveExplanations[move]||lesson.explanation,lessonMoveContexts[lesson.code]].filter(Boolean).join(" ");}
 const state = {
-  completed: new Set(JSON.parse(localStorage.getItem("espanola-progress") || "[]")),
+  completed: new Set(JSON.parse(window.LabProfiles.storage.getItem("espanola-progress") || "[]")),
   lesson: 0, lessonPly: 0, challenge: 0, selected: null, streak: 0,
   variant: 0, variantPly: 0, variantFlipped: false,
-  variantReviews: JSON.parse(localStorage.getItem("espanola-variant-reviews") || "{}"),
+  variantReviews: JSON.parse(window.LabProfiles.storage.getItem("espanola-variant-reviews") || "{}"),
   game: 0, gamePly: 0, exercise: 0, exerciseRevealed: false
 };
 
@@ -128,7 +128,7 @@ function updateProgress() {
   const count = state.completed.size;
   document.getElementById("headerProgress").textContent = `${count}/12`;
   document.getElementById("headerProgressBar").style.width = `${count / 12 * 100}%`;
-  localStorage.setItem("espanola-progress", JSON.stringify([...state.completed]));
+  window.LabProfiles.storage.setItem("espanola-progress", JSON.stringify([...state.completed]));
 }
 
 function renderLessonList() {
@@ -344,8 +344,8 @@ function handlePracticeSquare(square) {
   } else {
     state.streak = 0;
     document.getElementById("streak").textContent = "0";
-    document.getElementById("practiceFeedback").className = "feedback error";
-    document.getElementById("practiceFeedback").innerHTML = `<span>REVISA EL PLAN</span><p>Esa jugada no construye esta posición. ${data.lesson.hint}</p>`;
+    document.getElementById("practiceFeedback").className = "feedback";
+    document.getElementById("practiceFeedback").innerHTML = `<span>REPRODUCE ESTA LÍNEA</span><p>Esa no es la jugada prevista en este ejercicio. Eso no significa que sea una mala jugada en la posición. ${data.lesson.hint}</p>`;
     state.selected = null;
     renderBoard(document.getElementById("practiceBoard"), data.board, {interactive:true});
   }
@@ -435,7 +435,7 @@ function recordVariantReview() {
   const next = new Date();
   next.setDate(next.getDate() + interval);
   state.variantReviews[code] = {count, next:next.toISOString()};
-  localStorage.setItem("espanola-variant-reviews", JSON.stringify(state.variantReviews));
+  window.LabProfiles.storage.setItem("espanola-variant-reviews", JSON.stringify(state.variantReviews));
   updateReviewCard();
 }
 function renderVariant() {
