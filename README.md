@@ -107,3 +107,13 @@ Los controles compartidos de perfiles heredan `--red` (acento), `--ink`, `--pape
 el color declarado en el catálogo. Las pruebas contrastan ese color con el HTML
 publicable de cada cuaderno. Las dependencias del entrenador llevan una versión
 común para impedir que la caché mezcle el código con un repertorio anterior.
+
+### Recorrido continuo P01-P12
+
+En Aprende, las fichas conservan las jugadas comunes ya visibles. Al ampliar una
+línea se añaden solo las jugadas nuevas. Al cambiar de rama se avisa y se deshace
+cada movimiento hasta el punto común; las flechas permiten continuar desde ahí.
+Si dos fichas comparten la misma secuencia, el tablero permanece en esa posición.
+El índice y los controles Ficha anterior / Continuar utilizan este recorrido en
+los doce cuadernos. Repetir desde el inicio sigue disponible como elección expresa.
+En la Italiana, P08-P09 vuelve hasta 3...Ac5 y después permite seguir con 4.d3.

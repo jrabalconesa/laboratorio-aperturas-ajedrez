@@ -13,7 +13,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
   <link rel="manifest" href="manifest.webmanifest">
-  <link rel="stylesheet" href="styles.css?v=20260913-structure-cards-2">
+  <link rel="stylesheet" href="styles.css?v=20261029-lesson-route-1">
   <script src="../../profiles.js?v=20261029-colors-2"></script>
 </head>
 <body style="--red:#174A7E;--orange:#3777A8;--dark-square:#587A98;">
@@ -134,7 +134,7 @@
       <section id="aprende" class="view">
         <div class="section-intro">
           <div><p class="eyebrow">RECORRIDO GUIADO</p><h1>Doce posiciones.<br><em>Un hilo conductor.</em></h1></div>
-          <p>Usa las flechas para recorrer la secuencia. Cuando puedas explicar la idea sin mirar, marca la posición como comprendida.</p>
+          <p>Avanza por las fichas sin repetir las jugadas ya vistas. Al cambiar de variante, volvemos al punto común. Cuando puedas explicar la idea sin mirar, marca la posición como comprendida.</p>
         </div>
         <div class="lesson-layout">
           <aside class="lesson-index" aria-label="Índice de posiciones">
@@ -148,6 +148,12 @@
                 <button id="lessonPrev" class="icon-button" aria-label="Jugada anterior">←</button>
                 <span><b id="lessonMoveCounter">0 / 0</b><small id="lessonTurnLabel">Posición inicial</small></span>
                 <button id="lessonNext" class="icon-button" aria-label="Jugada siguiente">→</button>
+              </div>
+              <p id="lessonTransitionNotice" class="lesson-transition-notice" role="status" aria-live="polite" hidden></p>
+              <div class="lesson-card-navigation" aria-label="Recorrido entre fichas">
+                <button id="lessonPreviousCard" type="button">← Ficha anterior</button>
+                <button id="lessonNextCard" type="button">Continuar →</button>
+                <button id="lessonReplay" type="button">Repetir desde el inicio</button>
               </div>
             </div>
             <article class="lesson-copy">
@@ -343,6 +349,6 @@
     </footer>
   </div>
   <script src="exercise-data.js"></script>
-  <script src="app.js?v=20260913-structure-cards-2"></script>
+  <script src="app.js?v=20261029-lesson-route-1"></script>
 </body>
 </html>

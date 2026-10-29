@@ -983,3 +983,13 @@ footer { min-height: 64px; padding: 0 6vw; border-top: 1px solid var(--line); di
 .study-card-grid figcaption{color:var(--muted);font-size:11px;font-weight:800;letter-spacing:.1em;padding:10px 4px 2px;text-transform:uppercase}
 @media(max-width:900px){.study-card-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:560px){.study-card-grid{grid-template-columns:1fr}}
+
+/* Recorrido continuo P01-P12: colores heredados de cada apertura. */
+.lesson-transition-notice{font-family:var(--sans);font-size:12px;line-height:1.65;margin:14px 0 0;padding:12px 14px;background:var(--cream);border-left:3px solid var(--red);color:var(--ink)}
+.lesson-transition-notice[hidden]{display:none}
+.lesson-card-navigation{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px}
+.lesson-card-navigation button{padding:10px 12px;border:1px solid var(--line);color:var(--ink);background:transparent;font-family:var(--sans);font-size:11px;cursor:pointer;min-height:38px}
+.lesson-card-navigation button:hover{background:var(--cream)}
+.lesson-card-navigation button:disabled{opacity:.45;cursor:default}
+.lesson-card-navigation #lessonNextCard{background:var(--red);border-color:var(--red);color:white}
+@media(max-width:600px){.lesson-card-navigation{gap:6px}.lesson-card-navigation button{flex:1;font-size:10px;padding:9px 7px}.lesson-card-navigation #lessonReplay{flex-basis:100%;min-height:32px}.lesson-transition-notice{font-size:11px}}

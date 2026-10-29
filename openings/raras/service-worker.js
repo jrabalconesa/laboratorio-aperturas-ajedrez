@@ -1,10 +1,10 @@
-const CACHE_NAME = "laboratorio-raras-v15-profiles-colors-2";
+const CACHE_NAME = "laboratorio-raras-v15-profiles-colors-2-lesson-route-1";
 const APP_SHELL = [
   "../../profiles.js?v=20261029-colors-2",
   "./",
   "./index.html",
-  "./styles.css?v=20260809-global-density-1",
-  "./app.js?v=20260809-global-density-1",
+  "./styles.css?v=20261029-lesson-route-1",
+  "./app.js?v=20261029-lesson-route-1",
   "./exercise-data.js",
   "./manifest.webmanifest",
   "./assets/chess-pieces-modern.svg",

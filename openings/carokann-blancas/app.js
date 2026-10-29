@@ -138,7 +138,7 @@ function renderLessonList() {
     const button = document.createElement("button");
     button.className = `lesson-list-button ${i === state.lesson ? "active" : ""} ${state.completed.has(lesson.code) ? "done" : ""}`;
     button.innerHTML = `<span class="dot"></span><span>${lesson.code.replace("CKB-","")}</span><span class="lesson-name">${lesson.title}</span>`;
-    button.addEventListener("click", () => { state.lesson=i; state.lessonPly=0; renderLesson(); });
+    button.addEventListener("click", () => { void goToLesson(i); });
     list.appendChild(button);
   });
 }
@@ -165,6 +165,17 @@ function renderLesson() {
   const done = state.completed.has(lesson.code);
   complete.classList.toggle("done", done);
   complete.textContent = done ? "✓ Posición comprendida" : "Marcar como comprendida";
+  const notice = document.getElementById("lessonTransitionNotice");
+  notice.hidden = !lessonTransitionMessage;
+  notice.textContent = lessonTransitionMessage;
+  document.getElementById("lessonPreviousCard").disabled = lessonTransitionBusy || state.lesson === 0;
+  document.getElementById("lessonNextCard").disabled = lessonTransitionBusy || state.lesson === lessons.length - 1;
+  document.getElementById("lessonNextCard").textContent = state.lesson === lessons.length - 1 ? (state.lessonPly === moves.length ? "Recorrido completo" : "Última ficha") : `Continuar a ${lessons[state.lesson+1].code} →`;
+  document.getElementById("lessonReplay").disabled = !moves.length;
+  document.getElementById("lessonPrev").disabled = lessonTransitionBusy || (state.lessonPly === 0 && state.lesson === 0);
+  document.getElementById("lessonNext").disabled = lessonTransitionBusy || (state.lessonPly === moves.length && state.lesson === lessons.length - 1);
+  document.getElementById("lessonNext").setAttribute("aria-label", state.lessonPly === moves.length && state.lesson < lessons.length-1 ? `Continuar a ${lessons[state.lesson+1].code}` : "Jugada siguiente");
+  complete.disabled = lessonTransitionBusy;
   renderLessonList();
 }
 
@@ -218,25 +229,67 @@ function renderLessonStep(updateState) {
   requestAnimationFrame(() => window.scrollTo({top: scrollPosition, left: 0, behavior: "instant"}));
 }
 
+// Decide la transición desde la posición visible, no desde el inicio de la ficha.
+function planLessonTransition(fromMoves, toMoves, fromPly) {
+  const visible = Math.max(0, Math.min(fromPly, fromMoves.length));
+  let shared = 0;
+  while (shared < visible && shared < toMoves.length && fromMoves[shared] === toMoves[shared]) shared++;
+  return { shared, rewind: visible - shared, samePosition: shared === visible && shared === toMoves.length };
+}
+
+let lessonTransitionSerial = 0;
+let lessonTransitionBusy = false;
+let lessonTransitionMessage = "";
+
+async function goToLesson(index) {
+  if (index < 0 || index >= lessons.length) return;
+  const ticket = ++lessonTransitionSerial;
+  lessonTransitionBusy = false;
+  if (index === state.lesson) { lessonTransitionMessage = ""; renderLesson(); return; }
+  const source = lessons[state.lesson], target = lessons[index];
+  const fromMoves = lessonMoves(source), toMoves = lessonMoves(target);
+  const route = planLessonTransition(fromMoves, toMoves, state.lessonPly);
+  const branch = route.rewind > 0 && route.shared < toMoves.length;
+  lessonTransitionBusy = true;
+  lessonTransitionMessage = branch
+    ? `Ahora exploramos otra continuación: ${target.title}. Retrocedemos hasta el punto común; después continúa con las jugadas nuevas.`
+    : route.rewind > 0
+      ? `Volvemos a ${target.code}, conservando el tramo que comparten ambas fichas.`
+      : route.samePosition
+        ? `La posición se mantiene. ${target.code} explica un nuevo concepto sobre el mismo tablero.`
+        : `Continuamos hacia ${target.code} desde la posición actual. Solo quedan por añadir las jugadas nuevas.`;
+  renderLessonStep(() => {});
+  // Retroceso visible, movimiento a movimiento. Otra selección cancela esta ruta.
+  while (state.lessonPly > route.shared) {
+    await new Promise(resolve => setTimeout(resolve, 140));
+    if (ticket !== lessonTransitionSerial) return;
+    renderLessonStep(() => { state.lessonPly--; });
+  }
+  if (ticket !== lessonTransitionSerial) return;
+  lessonTransitionBusy = false;
+  renderLessonStep(() => { state.lesson = index; state.lessonPly = route.shared; });
+}
+
+function replayLessonFromStart() {
+  lessonTransitionSerial++;
+  lessonTransitionBusy = false;
+  lessonTransitionMessage = "Repetición desde el inicio elegida por ti. Avanza con la flecha para reconstruir esta línea.";
+  renderLessonStep(() => { state.lessonPly = 0; });
+}
+
 function previousLessonStep() {
-  renderLessonStep(() => {
-    if (state.lessonPly > 0) state.lessonPly--;
-    else if (state.lesson > 0) {
-      state.lesson--;
-      state.lessonPly = lessonMoves(lessons[state.lesson]).length;
-    }
-  });
+  if (lessonTransitionBusy) return;
+  if (state.lessonPly === 0 && state.lesson > 0) { void goToLesson(state.lesson - 1); return; }
+  lessonTransitionMessage = "";
+  renderLessonStep(() => { if (state.lessonPly > 0) state.lessonPly--; });
 }
 
 function nextLessonStep() {
-  renderLessonStep(() => {
-    const moves = lessonMoves(lessons[state.lesson]);
-    if (state.lessonPly < moves.length) state.lessonPly++;
-    else if (state.lesson < lessons.length - 1) {
-      state.lesson++;
-      state.lessonPly = 0;
-    }
-  });
+  if (lessonTransitionBusy) return;
+  const moves = lessonMoves(lessons[state.lesson]);
+  if (state.lessonPly === moves.length && state.lesson < lessons.length - 1) { void goToLesson(state.lesson + 1); return; }
+  lessonTransitionMessage = "";
+  renderLessonStep(() => { if (state.lessonPly < moves.length) state.lessonPly++; });
 }
 
 function challengeData() {
@@ -565,6 +618,9 @@ function renderExercise() {
 }
 document.querySelectorAll(".nav-link").forEach(button=>button.addEventListener("click",()=>showView(button.dataset.view)));
 document.querySelectorAll("[data-go]").forEach(button=>button.addEventListener("click",()=>showView(button.dataset.go)));
+document.getElementById("lessonPreviousCard").addEventListener("click", () => { void goToLesson(state.lesson - 1); });
+document.getElementById("lessonNextCard").addEventListener("click", () => { void goToLesson(state.lesson + 1); });
+document.getElementById("lessonReplay").addEventListener("click", replayLessonFromStart);
 document.getElementById("lessonPrev").addEventListener("click", previousLessonStep);
 document.getElementById("lessonNext").addEventListener("click", nextLessonStep);
 document.getElementById("completeLesson").addEventListener("click",()=>{

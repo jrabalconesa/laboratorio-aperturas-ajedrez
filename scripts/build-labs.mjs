@@ -200,7 +200,7 @@ function buildHtml(id, config, structures, data, cardNames) {
     .replace("CUADERNO 1", `CUADERNO ${config.manual}`)
     .replace(`../../index.html#/aperturas/${config.adjective.toLowerCase()}`, `../../index.html#/aperturas/${id}`)
     .replace(/\s*<script src="expansion-games\.js"><\/script>/, "")
-    .replace(/styles\.css\?v=[^"]+/, "styles.css?v=20260913-structure-cards-2")
+    .replace(/styles\.css\?v=[^"]+/, "styles.css?v=20261029-lesson-route-1")
     .replace(/app\.js\?v=[^"]+/, "app.js?v=20260913-structure-cards-2");
 }
 
@@ -219,7 +219,9 @@ for (const [id, config] of Object.entries(configurations)) {
     : [];
   if (cardNames.length) fs.cpSync(cardsSource, path.join(target, "assets", "tarjetas"), { recursive: true, force: true });
   const serviceWorker = fs.readFileSync(path.join(sourceLab, "service-worker.js"), "utf8")
-    .replace("la-italiana-v21", `laboratorio-${id}-v15`)
+    .replace(/const CACHE_NAME = "[^"]+";/, `const CACHE_NAME = "laboratorio-${id}-v16-lesson-route-1";`)
+    .replace(/key\.startsWith\("la-italiana-"\)/g, `key.startsWith("laboratorio-${id}-")`)
+    .replace(/\s*"[^"\n]*(?:entrenar\.html|training\.css|trainer\.js|training-core\.js|training-lines\.js|vendor\/chess\.js)[^"\n]*",/g, "")
     .replace(/\s*"\.\/expansion-games\.js",/, "");
   fs.writeFileSync(path.join(target, "service-worker.js"), serviceWorker, "utf8");
   fs.writeFileSync(path.join(target, "index.html"), buildHtml(id, config, structures, data, cardNames), "utf8");

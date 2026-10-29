@@ -1,10 +1,10 @@
-const CACHE_NAME = "la-italiana-v26-integrated-colors";
+const CACHE_NAME = "la-italiana-v26-integrated-colors-lesson-route-1";
 const APP_SHELL = [
   "../../profiles.js?v=20261029-colors-2",
   "./",
   "./index.html",
-  "./styles.css?v=20260809-global-density-1",
-  "./app.js?v=20260809-global-density-1",
+  "./styles.css?v=20261029-lesson-route-1",
+  "./app.js?v=20261029-lesson-route-1",
   "./expansion-games.js",
   "./exercise-data.js",
   "./entrenar.html",
