@@ -42,6 +42,13 @@ export const pieceNames = {p:'peón',n:'caballo',b:'alfil',r:'torre',q:'dama',k:
 export function spanish(san){return san.replace(/[KQRBN]/g,p=>({K:'R',Q:'D',R:'T',B:'A',N:'C'})[p]);}
 export function moveIdea(move, line, side){
   const plan=side==='w'?line.plan:line.blackPlan;
+  if(move.from==='e2'&&move.to==='e4')return 'e4 ocupa el centro y abre diagonales para la dama y el alfil de f1. El siguiente objetivo es desarrollar las piezas y preparar el enroque.';
+  if(move.from==='e7'&&move.to==='e5')return '...e5 disputa el centro, controla d4 y libera el alfil de f8. Ahora toca desarrollar y defender el peón central.';
+  if(move.from==='g1'&&move.to==='f3')return 'Cf3 desarrolla con una amenaza sobre e5 y acerca el enroque. El rival debe considerar cómo defender su peón central.';
+  if(move.from==='b8'&&move.to==='c6')return '...Cc6 desarrolla una pieza y defiende e5 frente al caballo de f3. Defensa y desarrollo se combinan en un solo tiempo.';
+  if(move.from==='f1'&&move.to==='c4')return 'Ac4 desarrolla hacia f7 y libera el camino del enroque. La presión sobre f7 todavía no justifica atacar sin preparación.';
+  if(move.from==='f8'&&move.to==='c5')return '...Ac5 desarrolla hacia f2 y despeja f8 para el enroque. Vigila la futura ruptura blanca d4, que atacaría al alfil.';
+  if(move.from==='g8'&&move.to==='f6')return '...Cf6 desarrolla y ataca e4. Las blancas deben comprobar cómo sostener el centro antes de continuar su plan.';
   if(move.isKingsideCastle())return 'El enroque aparta al rey del centro y activa la torre. '+plan;
   if(move.san.includes('+'))return 'Das jaque: el rival debe atender a su rey antes de continuar su plan.';
   if(move.captured)return 'Capturas un '+pieceNames[move.captured]+'. Comprueba la recaptura y las líneas que se abren. '+plan;
