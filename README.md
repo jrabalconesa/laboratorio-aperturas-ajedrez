@@ -87,3 +87,17 @@ Italiana, los repasos y el aislamiento/migración de perfiles. `node scripts/bui
 prepara los recursos actuales en `dist/client`; el manifiesto Sites declara esa
 carpeta estática. `npm run build` reconstruye también los contenidos editoriales:
 revisar sus diferencias por separado antes de publicarlas.
+
+### Integración en Practica y secuencia básica
+
+El entrenador forma parte de `openings/italiana/index.html#practica`, con la
+misma cabecera, navegación, tipografía y colores del cuaderno. El acceso antiguo
+`entrenar.html` redirige a esa sección. Los perfiles y datos previos se conservan.
+
+El recorrido abre en **1. Aprende la secuencia**: dieciséis movimientos individuales
+(hasta 8...d6), con avance manual, retroceso, vuelta al inicio y explicación de
+ambos bandos. Ver la secuencia no cuenta como resolverla. **2. Repítela** permite
+practicarla con blancas o negras y pistas; una alternativa de otra línea no se
+penaliza como mala, pero se mantiene el objetivo de reproducir la línea básica.
+**3. Practica variantes** y **Mis repasos** conservan las funciones del piloto.
+La práctica original de doce posiciones sigue disponible en un desplegable.

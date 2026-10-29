@@ -76,7 +76,6 @@ function route() {
     <a class="back-link" href="#/">← Todas las aperturas</a>
     <div class="opening-header"><div><p class="eyebrow">CUADERNO ${String(opening.manualNumber).padStart(2, "0")} · VERSIÓN ${escapeHtml(opening.version)}</p><h1>${escapeHtml(opening.shortTitle)}</h1><p>${escapeHtml(opening.title)}</p></div>${renderOpeningPreview(opening)}</div>
     <a class="launch-module" href="openings/${opening.id}/index.html">Entrar en el laboratorio completo <span>→</span></a>
-    ${opening.id === 'italiana' ? '<a class="launch-module" href="openings/italiana/entrenar.html">Entrenar la Italiana · Variantes, AIA y repaso <span>→</span></a>' : ''}
     <nav class="module-nav">${[["Inicio","inicio"],["Aprende","aprende"],["Practica","practica"],["Estructuras","variantes"],["Partidas","partidas"],["Ejercicios","ejercicios"],["Plan de estudio","plan"]].map(([item, view]) => `<a href="openings/${opening.id}/index.html#${view}">${item}</a>`).join("")}</nav>
     <div class="inventory-grid">${Object.entries(opening.inventory).map(([kind, count]) => `<article><strong>${count}</strong><span>${labels[kind]}</span></article>`).join("")}<article><strong>${opening.atlasCount ?? 0}</strong><span>Posiciones de ampliación</span></article><article><strong>${opening.gameCount}</strong><span>Partidas modelo</span></article></div>
     ${renderCompletionMessage(opening)}`;

@@ -1,6 +1,11 @@
 // Líneas didácticas originales. Las alternativas se aceptan por posición legal,
 // incluidos órdenes de jugadas que transponen. No son una evaluación de motor.
 export const lines = [
+  {id:'basic',title:'Secuencia básica · centro y desarrollo',level:0,
+    moves:'e4 e5 Nf3 Nc6 Bc4 Bc5 O-O Nf6 c3 O-O d4 exd4 cxd4 Bb6 Nc3 d6',
+    plan:'Primero ocupa el centro, desarrolla caballo y alfil y enroca. Después prepara d4 con c3 y completa el desarrollo.',
+    blackPlan:'Disputa el centro con ...e5, desarrolla y enroca. Tras d4, resuelve la tensión central y retira el alfil atacado.',
+    checkpoint:6},
   {id:'centro', title:'Italiana abierta · preparar c3–d4', level:1,
     moves:'e4 e5 Nf3 Nc6 Bc4 Bc5 O-O Nf6 c3 O-O d4 exd4 cxd4 Bb6 Nc3 d6 Be3 Bg4 Re1 Re8',
     plan:'Con el rey seguro, c3 sostiene d4. Tras abrir el centro, termina el desarrollo y activa las torres.',
@@ -49,6 +54,9 @@ export function moveIdea(move, line, side){
   if(move.from==='f1'&&move.to==='c4')return 'Ac4 desarrolla hacia f7 y libera el camino del enroque. La presión sobre f7 todavía no justifica atacar sin preparación.';
   if(move.from==='f8'&&move.to==='c5')return '...Ac5 desarrolla hacia f2 y despeja f8 para el enroque. Vigila la futura ruptura blanca d4, que atacaría al alfil.';
   if(move.from==='g8'&&move.to==='f6')return '...Cf6 desarrolla y ataca e4. Las blancas deben comprobar cómo sostener el centro antes de continuar su plan.';
+  if(move.from==='c5'&&move.to==='b6')return 'El peón blanco de d4 ataca al alfil de c5. ...Ab6 retira el alfil y mantiene presión sobre d4 desde su nueva diagonal.';
+  if(move.from==='b1'&&move.to==='c3')return 'Cc3 incorpora el caballo que seguía en la primera fila. Refuerza e4 y d5 cuando el centro ya está abierto.';
+  if(move.from==='d7'&&move.to==='d6')return '...d6 controla e5 y abre la diagonal del alfil de c8. Las negras preparan la coordinación de las piezas que quedan por desarrollar.';
   if(move.isKingsideCastle())return 'El enroque aparta al rey del centro y activa la torre. '+plan;
   if(move.san.includes('+'))return 'Das jaque: el rival debe atender a su rey antes de continuar su plan.';
   if(move.captured)return 'Capturas un '+pieceNames[move.captured]+'. Comprueba la recaptura y las líneas que se abren. '+plan;

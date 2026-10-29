@@ -1,7 +1,7 @@
 import {Chess} from './vendor/chess.js';
 import {compiled,START,key,uci,choices,expected,play,classify,readProgress,recordMistake,resolveMistake,complete,pickLine} from './training-core.js';
 import {spanish,pieceNames,moveIdea} from './training-lines.js';
-const $=id=>document.getElementById(id),STORAGE='laboratorio-italiana-training-v1';
+const $=id=>document.getElementById('trainer-'+id),STORAGE='laboratorio-italiana-training-v1';
 let progress;try{progress=readProgress(window.LabProfiles.storage.getItem(STORAGE));}catch{progress=readProgress(null);$('storageWarning').hidden=false;}
 let run=null,selected=null,hintLevel=0,assisted=false,viewIndex=null,blocked=null,generation=0,busy=false;
 function save(){try{window.LabProfiles.storage.setItem(STORAGE,JSON.stringify(progress));}catch{$('storageWarning').hidden=false;}summary();}
@@ -15,11 +15,11 @@ function say(title,message,kind='neutral'){
 }
 function currentLine(){return compiled.find(l=>l.id===run.lineId);}
 function resetHints(){hintLevel=0;assisted=false;selected=null;$('hintLevel').textContent='0/4';$('hintText').hidden=true;}
-function showTraining(){ $('training').hidden=false;$('review').hidden=true;$('trainTab').setAttribute('aria-current','page');$('reviewTab').removeAttribute('aria-current'); }
-function begin({line,side,start='initial',mistake=null}){
+function showTraining(){ $('training').hidden=false;$('review').hidden=true;$('trainTab').hidden=true;$('reviewTab').removeAttribute('aria-current'); }
+function begin({line,side,start='initial',mistake=null,guided=false}){
   generation++;busy=false;blocked=null;viewIndex=null;resetHints();
   const c=new Chess();
-  run={chess:c,lineId:line.id,side,history:[],snapshots:[START],messages:[],clean:true,done:false,reviewId:mistake?.id||null,reviewOnly:!!mistake,startPly:0,ownMoves:0};
+  run={chess:c,lineId:line.id,side,history:[],snapshots:[START],messages:[],clean:true,done:false,reviewId:mistake?.id||null,reviewOnly:!!mistake,startPly:0,ownMoves:0,guided,basic:line.id==='basic'};
   if(mistake){c.load(mistake.fen);run.snapshots=[c.fen()];}
   else if(start==='key'){
     for(const step of line.steps.slice(0,line.checkpoint))append(play(c,step.uci),'Posición de partida del ejercicio.');
@@ -28,7 +28,15 @@ function begin({line,side,start='initial',mistake=null}){
   showTraining();$('lineTitle').textContent=line.title;$('plan').textContent=side==='w'?line.plan:line.blackPlan;
   $('configuration').open=false;$('configurationLabel').textContent='Configurar práctica · '+(side==='w'?'Blancas':'Negras')+' · '+(mistake?'Repaso':line.title);
   $('next').hidden=true;$('retry').hidden=true;$('returnLive').hidden=true;
+  $('guideControls').hidden=!guided;$('guideIntro').hidden=!guided;
+  $('guideCompletion').hidden=true;
+  $('configuration').hidden=guided||run.basic;
+  $('manualControls').hidden=guided;$('helpControls').hidden=guided;
+  $('guideTab').setAttribute('aria-pressed',String(guided));$('basicTab').setAttribute('aria-pressed',String(run.basic&&!guided));$('variantsTab').setAttribute('aria-pressed',String(!run.basic));
+  $('modeDescription').textContent=guided?'Observa las jugadas de ambos bandos y entiende su propósito. Avanza a tu ritmo.':run.basic?'Repite la secuencia que acabas de estudiar. Elige tu bando y usa las pistas cuando las necesites.':'Amplía la secuencia básica con otras respuestas y repasa tus dificultades.';
+  $('basicSideControl').hidden=!run.basic||guided;
   say(mistake?'Repaso de una dificultad':'Entrenamiento de variante',mistake?'Resuelve de nuevo esta posición. Intenta hacerlo sin pistas.':'Juega las continuaciones del repertorio. Puedes elegir otra línea conocida y el entrenador la reconocerá.');
+  if(guided){say('Empezamos desde la posición inicial','Aprenderás una línea básica de la Italiana: 1.e4 e5 2.Cf3 Cc6 3.Ac4 Ac5. Después verás el enroque y la preparación del centro. Pulsa «Siguiente jugada».');}
   render();advance();
 }
 function append(move,message){run.history.push({san:move.san,uci:uci(move),color:move.color,fullmove:run.chess.fen().split(' ')[5]});run.snapshots.push(run.chess.fen());run.messages.push(message);}
@@ -40,7 +48,7 @@ function finish(){
   render();
 }
 function advance(){
-  if(!run||run.done||viewIndex!==null||blocked)return;
+  if(!run||run.guided||run.done||viewIndex!==null||blocked)return;
   const step=expected(run.chess.fen(),run.lineId);
   if(!step){finish();return;}
   if(!step.lines.some(l=>l.id===run.lineId)){finish();return;}
@@ -62,6 +70,9 @@ function attempt(move){
   if(result.kind==='illegal'){
     say('Movimiento ilegal',result.message,'bad');selected=null;render();return;
   }
+  if(run.basic&&result.kind==='alternative'){
+    say('Es otra línea válida del repertorio','En este paso estamos aprendiendo la secuencia básica. Prueba su continuación o pide una pista; podrás explorar esa alternativa en «Variantes».','caution');selected=null;render();return;
+  }
   if(['outside','risk','error'].includes(result.kind)){
     mistake(result.kind,result.message,move);
     const c=new Chess(before);play(c,move);blocked=c.fen();selected=null;
@@ -82,7 +93,7 @@ function attempt(move){
   render();if(run.reviewOnly){finish();return;}advance();
 }
 function handleSquare(square){
-  if(!run||run.done||busy||blocked||viewIndex!==null||run.chess.turn()!==run.side)return;
+  if(!run||run.guided||run.done||busy||blocked||viewIndex!==null||run.chess.turn()!==run.side)return;
   const p=run.chess.get(square);
   if(p?.color===run.side){selected=selected===square?null:square;renderBoard();return;}
   if(!selected)return;
@@ -93,7 +104,7 @@ function renderBoard(){
   const fen=blocked||(viewIndex!==null?run.snapshots[viewIndex]:run.chess.fen()),c=new Chess(fen);
   const ranks=run.side==='w'?[8,7,6,5,4,3,2,1]:[1,2,3,4,5,6,7,8],files=(run.side==='w'?'abcdefgh':'hgfedcba').split('');
   const board=$('board');board.replaceChildren();
-  const interactive=!busy&&!run.done&&!blocked&&viewIndex===null&&run.chess.turn()===run.side;
+  const interactive=!run.guided&&!busy&&!run.done&&!blocked&&viewIndex===null&&run.chess.turn()===run.side;
   const targets=selected?run.chess.moves({square:selected,verbose:true}).map(m=>m.to):[];
   const attacked=$('threats').checked?threats(c):[];
   const last=viewIndex!==null?run.history[viewIndex-1]:run.history.at(-1);
@@ -110,13 +121,14 @@ function renderBoard(){
 }
 function render(){
   if(!run)return;renderBoard();
-  $('turn').textContent=viewIndex!==null?'Revisando posición':blocked?'Compara y reconsidera':run.done?'Práctica terminada':busy?'Responde el rival…':('Juegas con '+(run.side==='w'?'blancas':'negras'));
+  $('turn').textContent=run.guided?(run.history.length+'/'+currentLine().steps.length+' jugadas individuales'):viewIndex!==null?'Revisando posición':blocked?'Compara y reconsidera':run.done?'Práctica terminada':busy?'Responde el rival…':('Juegas con '+(run.side==='w'?'blancas':'negras'));
   $('hint').disabled=run.done||busy||!!blocked||viewIndex!==null||hintLevel>=4;
   $('stepCount').textContent=run.ownMoves+' decisiones';$('moves').replaceChildren();
+  if(run.guided){$('stepCount').textContent=run.history.length+'/'+currentLine().steps.length;$('guidePrevious').disabled=run.history.length===0;$('guideNext').disabled=run.history.length===currentLine().steps.length;$('guideRepeat').hidden=run.history.length!==currentLine().steps.length;}
   run.history.forEach((m,i)=>{
     const button=document.createElement('button');button.type='button';button.textContent=(m.color==='w'?Math.floor((Number(new Chess(run.snapshots[i]).fen().split(' ')[5])))+'. ':'… ')+spanish(m.san);
     button.className=(viewIndex===i+1?'current':'');button.setAttribute('aria-label','Revisar '+button.textContent);
-    button.addEventListener('click',()=>{generation++;busy=false;viewIndex=i+1;selected=null;$('returnLive').hidden=false;$('retry').hidden=true;
+    button.addEventListener('click',()=>{if(run.guided){seekGuide(i+1);return;}generation++;busy=false;viewIndex=i+1;selected=null;$('returnLive').hidden=false;$('retry').hidden=true;
       say('Revisión · '+spanish(m.san),run.messages[i]);$('hintText').hidden=true;render();});$('moves').append(button);
   });
 }
@@ -138,7 +150,8 @@ function formatDate(time){return new Date(time).toLocaleDateString('es-ES',{day:
 function button(text,action){const b=document.createElement('button');b.type='button';b.textContent=text;b.addEventListener('click',action);return b;}
 function p(text){const n=document.createElement('p');n.textContent=text;return n;}
 function review(){
-  generation++;busy=false;$('training').hidden=true;$('review').hidden=false;$('reviewTab').setAttribute('aria-current','page');$('trainTab').removeAttribute('aria-current');
+  generation++;busy=false;$('training').hidden=true;$('review').hidden=false;$('reviewTab').setAttribute('aria-current','page');$('trainTab').hidden=false;
+  for(const id of ['guideTab','basicTab','variantsTab'])$(id).setAttribute('aria-pressed','false');
   $('lineProgress').replaceChildren();
   for(const line of compiled){
     const card=document.createElement('article');card.className='progress-item';const title=document.createElement('h3');title.textContent=line.title;card.append(title);
@@ -156,6 +169,31 @@ function review(){
   }
   $('reviewDue').disabled=!list.some(m=>m.due<=Date.now());summary();
 }
+function seekGuide(ply){
+  if(!run?.guided)return;
+  const line=currentLine();generation++;run.chess=new Chess();run.history=[];run.snapshots=[START];run.messages=[];viewIndex=null;selected=null;
+  for(const step of line.steps.slice(0,ply)){const m=play(run.chess,step.uci);append(m,moveIdea(m,line,m.color));}
+  if(ply===0)say('Posición inicial','Antes de memorizar, comprende: centro, desarrollo y seguridad del rey. Pulsa «Siguiente jugada».');
+  else{
+    const m=run.history.at(-1),fullmove=Math.ceil(ply/2);
+    say((m.color==='w'?'Blancas · ':'Negras · ')+fullmove+(m.color==='w'?'. ':'… ')+spanish(m.san),run.messages.at(-1),'good');
+  }
+  if(ply===line.steps.length){
+    window.LabProfiles.storage.setItem('italiana-basic-guide-v1',JSON.stringify({seen:true,date:Date.now()}));
+    $('guideCompletion').hidden=false;
+  }else $('guideCompletion').hidden=true;
+  render();
+}
+function learnBasic(){begin({line:compiled.find(l=>l.id==='basic'),side:'w',guided:true});}
+function repeatBasic(){begin({line:compiled.find(l=>l.id==='basic'),side:$('basicSide').value});}
+$('guideTab').addEventListener('click',learnBasic);
+$('basicTab').addEventListener('click',repeatBasic);
+$('variantsTab').addEventListener('click',()=>{const side=$('side').value;begin({...($('line').value==='adaptive'?pickLine(progress,side):{line:compiled.find(l=>l.id===$('line').value)}),side,start:$('startAt').value});});
+$('guidePrevious').addEventListener('click',()=>seekGuide(Math.max(0,run.history.length-1)));
+$('guideNext').addEventListener('click',()=>seekGuide(Math.min(currentLine().steps.length,run.history.length+1)));
+$('guideRestart').addEventListener('click',learnBasic);
+$('guideRepeat').addEventListener('click',repeatBasic);
+$('basicSide').addEventListener('change',repeatBasic);
 for(const line of compiled){const option=document.createElement('option');option.value=line.id;option.textContent=line.title;$('line').append(option);}
 try{
   const settings=JSON.parse(window.LabProfiles.storage.getItem('italiana-training-settings')||'{}');
@@ -174,6 +212,7 @@ $('retry').addEventListener('click',()=>{blocked=null;viewIndex=null;selected=nu
 $('returnLive').addEventListener('click',()=>{viewIndex=null;selected=null;$('returnLive').hidden=true;$('retry').hidden=!blocked;say('Ejercicio recuperado','Continúa desde tu última posición de entrenamiento.');$('hintText').hidden=hintLevel===0;render();advance();});
 $('threats').addEventListener('change',()=>{if($('threats').checked&&run&&!run.done){assisted=true;run.clean=false;if(run.chess.turn()===run.side)mistake('hint','Posición practicada con piezas atacadas visibles.','');}renderBoard();});
 $('next').addEventListener('click',()=>{
+  if(run.basic){repeatBasic();return;}
   const side=run.side,choice=$('line').value==='adaptive'?pickLine(progress,side,run.lineId):{line:compiled.find(l=>l.id===$('line').value)};begin({...choice,side,start:$('startAt').value});
 });
 $('reviewTab').addEventListener('click',review);
@@ -182,5 +221,5 @@ $('reviewDue').addEventListener('click',()=>{
   const item=[...progress.mistakes].filter(m=>m.due<=Date.now()).sort((a,b)=>a.due-b.due)[0];
   if(item)begin({line:compiled.find(l=>l.id===item.lineId),side:new Chess(item.fen).turn(),mistake:item});
 });
-summary();begin({...($('line').value==='adaptive'?pickLine(progress,$('side').value):{line:compiled.find(l=>l.id===$('line').value)}),side:$('side').value,start:$('startAt').value});
+summary();learnBasic();
 if('serviceWorker' in navigator)navigator.serviceWorker.register('./service-worker.js').catch(()=>{});

@@ -1,4 +1,4 @@
-const CACHE_NAME = "la-italiana-v22-training";
+const CACHE_NAME = "la-italiana-v23-integrated";
 const APP_SHELL = [
   "../../profiles.js?v=20261029-1",
   "./",
@@ -8,8 +8,8 @@ const APP_SHELL = [
   "./expansion-games.js",
   "./exercise-data.js",
   "./entrenar.html",
-  "./training.css?v=20261029-1",
-  "./trainer.js?v=20261029-1",
+  "./training.css?v=20261029-integrated-1",
+  "./trainer.js?v=20261029-integrated-1",
   "./training-core.js",
   "./training-lines.js",
   "./vendor/chess.js",

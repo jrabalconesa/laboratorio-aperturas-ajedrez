@@ -4,8 +4,8 @@ import fs from 'node:fs';
 import vm from 'node:vm';
 import {Chess} from '../openings/italiana/vendor/chess.js';
 import {compiled,START,key,play,choices,expected,classify,newProgress,readProgress,recordMistake,resolveMistake,complete,pickLine,auditLessons} from '../openings/italiana/training-core.js';
-test('Las siete variantes son legales y se pueden recorrer con ambos bandos',()=>{
-  assert.equal(compiled.length,7);
+test('La secuencia básica y las siete variantes son legales y se pueden recorrer con ambos bandos',()=>{
+  assert.equal(compiled.length,8);
   for(const line of compiled)for(const side of ['w','b']){
     const c=new Chess();let own=0;
     for(const step of line.steps){
@@ -57,7 +57,7 @@ test('El progreso de blancas y negras es independiente y la ayuda no acredita do
   complete(p,'centro',true,now,'w');complete(p,'centro',true,now,'w');complete(p,'centro',false,now,'b');
   assert.equal(p.lines['centro:w'].streak,2);assert.equal(p.lines['centro:b'].streak,0);
   assert.equal(readProgress(JSON.stringify(p)).lines['centro:w'].streak,2);
-  assert.equal(pickLine(p,'w','lenta',now).line.id,'orden');
+  assert.equal(pickLine(p,'w','lenta',now).line.id,'basic');
 });
 test('AIA prioriza errores pendientes del bando correcto y tolera almacenamiento inválido',()=>{
   const p=newProgress(),now=10000000000,c=new Chess();c.move('e4');
@@ -66,4 +66,28 @@ test('AIA prioriza errores pendientes del bando correcto y tolera almacenamiento
   assert.ok(pickLine(p,'b',null,now).mistake);
   assert.deepEqual(readProgress('{invalid'),newProgress());
   assert.deepEqual(readProgress('{"version":99}'),newProgress());
+});
+
+test('El entrenador comparte Practica y los identificadores del cuaderno son únicos',()=>{
+  const html=fs.readFileSync(new URL('../openings/italiana/index.html',import.meta.url),'utf8');
+  const ids=[...html.matchAll(/\bid="([^"]+)"/g)].map(m=>m[1]);
+  assert.equal(ids.length,new Set(ids).size,'Hay identificadores duplicados con el cuaderno');
+  const practice=html.slice(html.indexOf('<section id="practica"'),html.indexOf('<section id="variantes"'));
+  assert.ok(practice.includes('id="trainerApp"'));
+  assert.ok(practice.includes('id="practiceBoard"'),'Se conserva el ejercicio original');
+  assert.ok(practice.includes('1. Aprende la secuencia'));
+  assert.ok(practice.includes('2. Repítela'));
+  assert.ok(practice.includes('3. Practica variantes'));
+  const otherTemplates=html.replace(/<!-- ITALIANA_TRAINER_START -->[\s\S]*?<!-- ITALIANA_TRAINER_END -->/g,'').replace(/^.*data-italiana-trainer.*\r?\n/gm,'');
+  assert.equal(otherTemplates.includes('trainerApp'),false);
+  assert.equal(otherTemplates.includes('trainer.js'),false);
+  assert.ok(otherTemplates.includes('id="practiceBoard"'));
+});
+test('El acceso antiguo vuelve a Practica y la secuencia básica termina tras ocho jugadas',()=>{
+  const redirect=fs.readFileSync(new URL('../openings/italiana/entrenar.html',import.meta.url),'utf8');
+  assert.ok(redirect.includes("location.replace('index.html#practica')"));
+  const basic=compiled.find(l=>l.id==='basic');assert.equal(basic.steps.length,16);
+  const final=new Chess(basic.steps.at(-1).after);assert.equal(final.turn(),'w');
+  assert.equal(final.get('g1').type,'k');assert.equal(final.get('g8').type,'k');
+  assert.equal(final.get('c3').type,'n');assert.equal(final.get('b6').type,'b');
 });

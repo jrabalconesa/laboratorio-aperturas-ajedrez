@@ -15,6 +15,8 @@
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="stylesheet" href="styles.css?v=20260809-global-density-1">
   <script src="../../profiles.js?v=20261029-1"></script>
+  <link data-italiana-trainer rel="stylesheet" href="training.css?v=20261029-integrated-1">
+  <script data-italiana-trainer type="module" src="trainer.js?v=20261029-integrated-1"></script>
 </head>
 <body style="--red:#008C45;--orange:#38A76B;--dark-square:#6F9278;">
   <svg class="piece-sprite" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
@@ -56,7 +58,6 @@
         <button class="nav-link active" data-view="inicio">Inicio</button>
         <button class="nav-link" data-view="aprende">Aprende</button>
         <button class="nav-link" data-view="practica">Practica</button>
-        <a class="nav-link" data-italiana-trainer href="entrenar.html">Entrenar variantes</a>
         <button class="nav-link" data-view="variantes">Estructuras</button>
         <button class="nav-link" data-view="partidas">Partidas</button>
         <button class="nav-link" data-view="ejercicios">Ejercicios</button>
@@ -167,7 +168,53 @@
       </section>
 
       <section id="practica" class="view">
-        <p data-italiana-trainer><a class="button primary" href="entrenar.html">Entrenar variantes completas · AIA y repaso →</a></p>
+<!-- ITALIANA_TRAINER_START -->
+<div id="trainerApp"><div class="trainer-intro"><p class="eyebrow">PRÁCTICA PASO A PASO</p><h1>Primero comprende.<br><em>Después, juega.</em></h1><p>Aprende la secuencia básica de la Italiana antes de ampliar tus respuestas.</p><span id="trainer-summary" class="trainer-summary"></span></div>    <div class="learning-path" aria-label="Pasos de aprendizaje">
+<button id="trainer-guideTab" type="button">1. Aprende la secuencia</button>
+<button id="trainer-basicTab" type="button">2. Repítela</button>
+<button id="trainer-variantsTab" type="button">3. Practica variantes</button>
+<button id="trainer-reviewTab" type="button">Mis repasos <span id="trainer-dueCount"></span></button>
+<button id="trainer-trainTab" type="button" hidden>Volver a la práctica</button>
+</div>
+    <section id="trainer-training" aria-label="Aprender y practicar la Italiana">
+<p id="trainer-modeDescription" class="mode-description"></p>
+<div id="trainer-guideIntro" class="guide-intro"><strong>Secuencia básica: una línea para empezar</strong><p>Primero verás cómo se construye la Italiana. Esta es una continuación didáctica; el rival también puede elegir otras respuestas. Las estudiarás después en Variantes.</p></div>
+<label id="trainer-basicSideControl" class="basic-side" hidden>Repetir con <select id="trainer-basicSide"><option value="w">Blancas</option><option value="b">Negras</option></select></label>
+      <details id="trainer-configuration"><summary id="trainer-configurationLabel">Configurar práctica · Blancas</summary><form id="trainer-setup" class="setup">
+        <label>Recorrido<select id="trainer-line"><option value="adaptive">AIA · práctica adaptativa</option></select></label>
+        <label>Tu bando<select id="trainer-side"><option value="w">Blancas</option><option value="b">Negras</option></select></label>
+        <label>Comenzar<select id="trainer-startAt"><option value="initial">Desde el inicio</option><option value="key">Desde la posición clave</option></select></label>
+        <button class="primary" type="submit">Comenzar</button>
+      </form></details>
+      <div class="workspace">
+        <div class="board-panel">
+          <div class="board-title"><strong id="trainer-lineTitle">Elige un recorrido</strong><span id="trainer-turn">Tu turno</span></div>
+          <div id="trainer-feedback" class="feedback neutral" role="status" aria-live="polite"></div>
+          <div id="trainer-board" class="chessboard board" role="group" aria-label="Tablero de entrenamiento"></div>
+          <div id="trainer-guideControls" class="board-actions guide-controls"><button type="button" id="trainer-guidePrevious">← Anterior</button><button type="button" id="trainer-guideNext" class="primary">Siguiente jugada →</button><button type="button" id="trainer-guideRestart">Volver al inicio</button><button type="button" id="trainer-guideRepeat" class="primary" hidden>Ahora repítela →</button></div>
+<p id="trainer-guideCompletion" class="guide-completion" hidden>Ya has recorrido la secuencia. Ahora repítela a tu ritmo; las pistas seguirán disponibles.</p>
+<div id="trainer-manualControls" class="board-actions"><button id="trainer-hint">Pedir pista <span id="trainer-hintLevel">0/4</span></button><button id="trainer-retry" hidden>Reconsiderar</button><button id="trainer-next" hidden class="primary">Siguiente práctica →</button></div>
+          <div id="trainer-hintText" class="hint" role="status" hidden></div>
+          <div id="trainer-helpControls"><label class="toggle"><input type="checkbox" id="trainer-threats"> Señalar mis piezas atacadas</label>
+          <p id="trainer-threatText" class="small"></p></div>
+        </div>
+        <aside>
+          <article class="card"><p class="eyebrow">EL PLAN DE TU BANDO</p><p id="trainer-plan"></p><a href="#variantes" data-go="variantes">Estudiar estructuras y planes →</a></article>
+          <article class="card"><div class="card-title"><h2>Tu recorrido</h2><span id="trainer-stepCount"></span></div><div id="trainer-moves" class="moves"></div><p class="small">Toca una jugada para revisar su posición. «Volver al ejercicio» recupera tu práctica.</p><button id="trainer-returnLive" hidden>Volver al ejercicio</button></article>
+          <article class="card explain"><h2>Para practicar después</h2><p><b class="green">Verde:</b> continuación del repertorio. <b class="amber">Ámbar:</b> alternativa o jugada fuera del repertorio. <b class="red">Rojo:</b> movimiento ilegal o alerta táctica concreta.</p><p class="small">Las alternativas conocidas están verificadas como legales. Este piloto no calcula una valoración de Stockfish. Una jugada fuera del repertorio no se considera mala por ese motivo.</p></article>
+        </aside>
+      </div>
+    </section>
+    <section id="trainer-review" hidden aria-label="Mi práctica">
+      <div class="review-heading"><div><h2>Mi práctica de la Italiana</h2><p>Repasa tus dificultades y consulta lo practicado con cada bando.</p></div><button id="trainer-reviewDue" class="primary">Repasar pendientes</button></div>
+      <div id="trainer-lineProgress" class="progress-grid"></div>
+      <h2>Posiciones para repasar</h2><p class="small">Se guardan errores, jugadas fuera del repertorio y posiciones resueltas con pistas. Un acierto sin ayuda amplía el intervalo de repaso.</p><div id="trainer-mistakes"></div>
+      <p class="storage-note">El progreso se guarda en este navegador y dispositivo. Las lecciones del cuaderno y estos repasos se conservan por separado dentro del perfil activo.</p>
+    </section>
+    <p id="trainer-storageWarning" role="status" class="storage-note" hidden>No se ha podido guardar el progreso en este navegador. Puedes seguir practicando durante esta sesión.</p>
+</div>
+<details class="legacy-memory"><summary>Práctica original por posiciones · 12 retos</summary>
+<!-- ITALIANA_TRAINER_END -->
         <div class="section-intro compact">
           <div><p class="eyebrow">ENTRENAMIENTO ACTIVO</p><h1>Tu turno.<br><em>Encuentra el plan.</em></h1></div>
           <p>Selecciona una pieza y después su casilla de destino. La pista te recuerda la idea, no la respuesta.</p>
@@ -195,6 +242,9 @@
             </div>
           </article>
         </div>
+<!-- ITALIANA_TRAINER_START -->
+</details>
+<!-- ITALIANA_TRAINER_END -->
       </section>
 
       <section id="variantes" class="view">
